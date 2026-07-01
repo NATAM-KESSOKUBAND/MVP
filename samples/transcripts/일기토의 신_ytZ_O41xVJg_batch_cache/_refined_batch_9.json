@@ -1,0 +1,162 @@
+[
+  {
+    "segment_id": 180,
+    "start": 858.0,
+    "end": 859.5,
+    "original_text": "안 아픈가?",
+    "corrected_text": "안 아픈가?",
+    "correction_reason": "교정 사항이 발견되지 않음"
+  },
+  {
+    "segment_id": 181,
+    "start": 859.5,
+    "end": 902.5,
+    "original_text": "올해 흉작이라 돈 벌러 왔다 이 새끼야",
+    "corrected_text": "올해 흉작이라 돈 벌러 왔다 이 새끼야",
+    "correction_reason": "교정 사항이 발견되지 않음"
+  },
+  {
+    "segment_id": 182,
+    "start": 902.5,
+    "end": 905.5,
+    "original_text": "네가 농민의 슬픔을 알아? 이것 안 아프냐?",
+    "corrected_text": "네가 농민의 슬픔을 알아? 이건 안 아프냐?",
+    "correction_reason": "구어체 맥락에서 '이것'보다 축약형인 '이건'이 더 자연스럽게 사용되는 경향이 관찰됨"
+  },
+  {
+    "segment_id": 183,
+    "start": 905.5,
+    "end": 909.5,
+    "original_text": "아프지? 아 아 아 아",
+    "corrected_text": "아프지? 아 아 아 아",
+    "correction_reason": "교정 사항이 발견되지 않음"
+  },
+  {
+    "segment_id": 184,
+    "start": 909.5,
+    "end": 912.5,
+    "original_text": "아 이 개새끼야 오지 마 오지 마 오지 마 오지 마",
+    "corrected_text": "아 이 개새끼야 오지 마 오지 마 오지 마 오지 마",
+    "correction_reason": "교정 사항이 발견되지 않음"
+  },
+  {
+    "segment_id": 185,
+    "start": 912.5,
+    "end": 914.0,
+    "original_text": "이씨 이씨",
+    "corrected_text": "이씨 이씨",
+    "correction_reason": "교정 사항이 발견되지 않음"
+  },
+  {
+    "segment_id": 186,
+    "start": 914.0,
+    "end": 916.0,
+    "original_text": "아 왜 다 져? 왜 다 져?",
+    "corrected_text": "아 왜 다 져? 왜 다 져?",
+    "correction_reason": "교정 사항이 발견되지 않음"
+  },
+  {
+    "segment_id": 187,
+    "start": 917.0,
+    "end": 919.5,
+    "original_text": "또 주먹이야? 아 주먹 자신 없는데",
+    "corrected_text": "또 주먹이야? 아 주먹 자신 없는데",
+    "correction_reason": "교정 사항이 발견되지 않음"
+  },
+  {
+    "segment_id": 188,
+    "start": 920.5,
+    "end": 922.5,
+    "original_text": "오케이",
+    "corrected_text": "오케이",
+    "correction_reason": "교정 사항이 발견되지 않음"
+  },
+  {
+    "segment_id": 189,
+    "start": 922.5,
+    "end": 925.5,
+    "original_text": "오케이 오케이 상대 데미지 입었어 데미지 입었어",
+    "corrected_text": "오케이 오케이 상대 데미지 입었어 데미지 입었어",
+    "correction_reason": "교정 사항이 발견되지 않음"
+  },
+  {
+    "segment_id": 190,
+    "start": 925.5,
+    "end": 929.0,
+    "original_text": "그렇지 그렇지 가 가 가 가",
+    "corrected_text": "그렇지 그렇지 가 가 가 가",
+    "correction_reason": "교정 사항이 발견되지 않음"
+  },
+  {
+    "segment_id": 191,
+    "start": 929.0,
+    "end": 933.0,
+    "original_text": "으아 으아 으아",
+    "corrected_text": "으아 으아 으아",
+    "correction_reason": "교정 사항이 발견되지 않음"
+  },
+  {
+    "segment_id": 192,
+    "start": 933.0,
+    "end": 935.5,
+    "original_text": "5라운드 또 해요?",
+    "corrected_text": "5라운드 또 해요?",
+    "correction_reason": "교정 사항이 발견되지 않음"
+  },
+  {
+    "segment_id": 193,
+    "start": 935.5,
+    "end": 938.5,
+    "original_text": "잡지 마 이 새끼야 이 새끼야",
+    "corrected_text": "잡지 마 이 새끼야 이 새끼야",
+    "correction_reason": "교정 사항이 발견되지 않음"
+  },
+  {
+    "segment_id": 194,
+    "start": 938.5,
+    "end": 942.0,
+    "original_text": "으아",
+    "corrected_text": "으아",
+    "correction_reason": "교정 사항이 발견되지 않음"
+  },
+  {
+    "segment_id": 195,
+    "start": 942.0,
+    "end": 944.5,
+    "original_text": "나 맨손부터 다시 시작한다 나 농번기의 이도원",
+    "corrected_text": "나 맨손부터 다시 시작한다 나 농번기의 이도원",
+    "correction_reason": "교정 사항이 발견되지 않음"
+  },
+  {
+    "segment_id": 196,
+    "start": 945.5,
+    "end": 947.5,
+    "original_text": "하",
+    "corrected_text": "하",
+    "correction_reason": "교정 사항이 발견되지 않음"
+  },
+  {
+    "segment_id": 197,
+    "start": 947.5,
+    "end": 951.0,
+    "original_text": "간장치기 간장치기",
+    "corrected_text": "간장치기 간장치기",
+    "correction_reason": "교정 사항이 발견되지 않음"
+  },
+  {
+    "segment_id": 198,
+    "start": 951.0,
+    "end": 953.0,
+    "original_text": "이 새끼야",
+    "corrected_text": "이 새끼야",
+    "correction_reason": "교정 사항이 발견되지 않음"
+  },
+  {
+    "segment_id": 199,
+    "start": 953.0,
+    "end": 957.0,
+    "original_text": "나 농번기의 이도원 싸움에 도가 텄다 지금 리치 거리 재주면서",
+    "corrected_text": "나 농번기의 이도원 싸움에 도가 텄다 지금 리치 거리 재주면서",
+    "correction_reason": "교정 사항이 발견되지 않음"
+  }
+]

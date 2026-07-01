@@ -1,0 +1,162 @@
+[
+  {
+    "segment_id": 20,
+    "start": 37.0,
+    "end": 39.0,
+    "original_text": "월세가 500만 원이라고 해도",
+    "corrected_text": "월세가 500만 원이라고 해도",
+    "correction_reason": "특이 사항이 관찰되지 않음."
+  },
+  {
+    "segment_id": 21,
+    "start": 39.0,
+    "end": 42.0,
+    "original_text": "그냥 인생 영끌해가지고 대출받고 들어가고 싶은 그런",
+    "corrected_text": "그냥 인생 영끌해가지고 대출받고 들어가고 싶은 그런",
+    "correction_reason": "신조어('영끌')를 사용하는 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 22,
+    "start": 42.0,
+    "end": 44.0,
+    "original_text": "루피는 그냥 병신 짓을 하고 있는 거야.",
+    "corrected_text": "루피는 그냥 바보 같은 짓을 하고 있는 거야.",
+    "correction_reason": "비속어('병신 짓')를 사용하여 시청자에게 불쾌감을 줄 수 있는 위기 요인이 관찰됨."
+  },
+  {
+    "segment_id": 23,
+    "start": 44.0,
+    "end": 46.0,
+    "original_text": "이 목단 가슴 사이에 원피스가 여기 있는데",
+    "corrected_text": "이 목단 가슴 사이에 원피스가 여기 있는데",
+    "correction_reason": "특정 신체 부위를 직접적으로 언급하며 선정성을 강조하는 경향이 있음."
+  },
+  {
+    "segment_id": 24,
+    "start": 46.0,
+    "end": 49.0,
+    "original_text": "심지어 밑가슴만 먹으면 좀 심심할까 봐",
+    "corrected_text": "심지어 밑가슴만 보면 좀 심심할까 봐",
+    "correction_reason": "맥락상 발음 오류('먹으면' -> '보면')가 관찰되며, 선정적 표현이 지속되는 패턴이 있음."
+  },
+  {
+    "segment_id": 25,
+    "start": 49.0,
+    "end": 51.5,
+    "original_text": "거울로 윗가슴까지 보여주는 친절함까지",
+    "corrected_text": "거울로 윗가슴까지 보여주는 친절함까지",
+    "correction_reason": "선정적 요소를 긍정적으로 묘사하는 발언 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 26,
+    "start": 51.5,
+    "end": 53.0,
+    "original_text": "그런데 이 스킨이 처음 나왔을 때",
+    "corrected_text": "그런데 이 스킨이 처음 나왔을 때",
+    "correction_reason": "특이 사항이 관찰되지 않음."
+  },
+  {
+    "segment_id": 27,
+    "start": 53.0,
+    "end": 55.0,
+    "original_text": "당연히 노팬티인 줄 알고",
+    "corrected_text": "당연히 노팬티인 줄 알고",
+    "correction_reason": "자극적인 단어('노팬티')를 직접 언급하는 경향이 있음."
+  },
+  {
+    "segment_id": 28,
+    "start": 55.0,
+    "end": 57.5,
+    "original_text": "그날 밤에 축배라도 한잔해야 하나 생각했었는데",
+    "corrected_text": "그날 밤에 축배라도 한잔해야 하나 생각했었는데",
+    "correction_reason": "특이 사항이 관찰되지 않음."
+  },
+  {
+    "segment_id": 29,
+    "start": 57.5,
+    "end": 59.5,
+    "original_text": "막상 공개되고 나니까",
+    "corrected_text": "막상 공개되고 나니까",
+    "correction_reason": "특이 사항이 관찰되지 않음."
+  },
+  {
+    "segment_id": 30,
+    "start": 59.5,
+    "end": 61.5,
+    "original_text": "개 좆같은 끈팬티를 입고 있더라고요?",
+    "corrected_text": "매우 실망스러운 끈팬티를 입고 있더라고요?",
+    "correction_reason": "심각한 욕설('개 좆같은')과 선정적 단어를 사용하여 플랫폼 가이드라인 위반 위험을 높이는 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 31,
+    "start": 61.5,
+    "end": 63.5,
+    "original_text": "소비자 보호법으로 신고하려다가 참았는데",
+    "corrected_text": "소비자보호법으로 신고하려다가 참았는데",
+    "correction_reason": "과장된 표현을 사용하는 경향이 있음."
+  },
+  {
+    "segment_id": 32,
+    "start": 63.5,
+    "end": 65.0,
+    "original_text": "제가 뭐 큰 거는 안 바라고",
+    "corrected_text": "제가 뭐 큰 거는 안 바라고",
+    "correction_reason": "특이 사항이 관찰되지 않음."
+  },
+  {
+    "segment_id": 33,
+    "start": 65.0,
+    "end": 67.5,
+    "original_text": "잠수함 패치로 갑자기 막 끈이 사라지는",
+    "corrected_text": "잠수함 패치로 갑자기 막 끈이 사라지는",
+    "correction_reason": "게임 용어('잠수함 패치')를 사용하는 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 34,
+    "start": 67.5,
+    "end": 69.0,
+    "original_text": "그런 패치를 해줬으면 좋겠네요.",
+    "corrected_text": "그런 패치를 해줬으면 좋겠네요.",
+    "correction_reason": "특이 사항이 관찰되지 않음."
+  },
+  {
+    "segment_id": 35,
+    "start": 69.0,
+    "end": 71.5,
+    "original_text": "아니 엉덩이 골은 돌려놓고 팬티는 왜",
+    "corrected_text": "아니 엉덩이 골은 돌려놓고 팬티는 왜",
+    "correction_reason": "특정 신체 부위('엉덩이 골')를 언급하며 선정적 불만을 표출하는 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 36,
+    "start": 71.5,
+    "end": 73.0,
+    "original_text": "또 어울리지 않는 옷을 입어서인지",
+    "corrected_text": "또 어울리지 않는 옷을 입어서인지",
+    "correction_reason": "특이 사항이 관찰되지 않음."
+  },
+  {
+    "segment_id": 37,
+    "start": 73.0,
+    "end": 75.0,
+    "original_text": "이 부끄러워하는 표정도 미식이야.",
+    "corrected_text": "이 부끄러워하는 표정도 별미야.",
+    "correction_reason": "서브컬처 수용자층의 은어('미식')를 사용하는 경향이 있음."
+  },
+  {
+    "segment_id": 38,
+    "start": 75.0,
+    "end": 78.0,
+    "original_text": "모란 따까리들은 시발 존나 부럽다.",
+    "corrected_text": "모란 부하들은 정말 부럽다.",
+    "correction_reason": "비하적 표현('따까리')과 강한 욕설('시발 존나')을 사용하여 콘텐츠의 유해성을 높이는 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 39,
+    "start": 78.0,
+    "end": 80.5,
+    "original_text": "매일매일 출근할 때마다 야스하는 기분이겠지.",
+    "corrected_text": "매일매일 출근할 때마다 연애하는 기분이겠지.",
+    "correction_reason": "성관계를 뜻하는 인터넷 은어('야스')를 사용하여 연령 제한 및 심의 위반 가능성을 높이는 경향이 관찰됨."
+  }
+]

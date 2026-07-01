@@ -1,0 +1,162 @@
+[
+  {
+    "segment_id": 20,
+    "start": 126.0,
+    "end": 129.0,
+    "original_text": "상대가 리드해 상황이 이어졌다",
+    "corrected_text": "상대가 리드해 상황이 이어졌다",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 21,
+    "start": 129.0,
+    "end": 131.0,
+    "original_text": "다만 꽃이 발아하지 못했다",
+    "corrected_text": "다만 꽃이 발아하지 못했다",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 22,
+    "start": 131.0,
+    "end": 139.0,
+    "original_text": "그 이후에도 연락만 이어가다가 2주 정도 지나서 외박을 허락받아 밥 카페 찍고 숙소에서 육질 테스트를 했다",
+    "corrected_text": "그 이후에도 연락만 이어가다가 2주 정도 지나서 외박을 허락받아 밥 카페 찍고 숙소에서 육체적 관계를 했다",
+    "correction_reason": "성적인 맥락에서 '육질 테스트'는 '육체적 관계'의 유사 발음 오인으로 보임."
+  },
+  {
+    "segment_id": 23,
+    "start": 139.0,
+    "end": 143.9,
+    "original_text": "그 후 2주 지나 부모님이 여행 갔을 때 집으로 불러서 며칠 지냈다",
+    "corrected_text": "그 후 2주 지나 부모님이 여행 갔을 때 집으로 불러서 며칠 지냈다",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 24,
+    "start": 143.9,
+    "end": 147.2,
+    "original_text": "낮에는 학교 저녁은 하고 시간을 보냈다",
+    "corrected_text": "낮에는 학교 저녁은 학원 가고 시간을 보냈다",
+    "correction_reason": "'저녁은 하고'는 문법적으로 불완전하며, 일상적인 활동을 나타내는 '학원 가고'가 맥락상 자연스러움."
+  },
+  {
+    "segment_id": 25,
+    "start": 147.2,
+    "end": 156.0,
+    "original_text": "그런데 마지막 날 이후로 연락이 뜸해져 자기 생활에 집중한다더라 나중 이야기로는 전 썸남이랑 다시 연락을 한 게..",
+    "corrected_text": "그런데 마지막 날 이후로 연락이 뜸해져 자기 생활에 집중한다더라 나중 이야기로는 전 썸남이랑 다시 연락을 한 게..",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 26,
+    "start": 156.0,
+    "end": 161.0,
+    "original_text": "그런데 그 년도 썸남 데리고 이런 거 보면",
+    "corrected_text": "그런데 그 썸남 데리고 이런 거 보면",
+    "correction_reason": "'그 년도'는 맥락상 어색하며, 앞선 '전 썸남' 언급과 연결하여 '그 썸남'이 자연스러움."
+  },
+  {
+    "segment_id": 27,
+    "start": 161.0,
+    "end": 165.0,
+    "original_text": "그 썸남도 트윗남인 시존재 콘텐츠 아닐까",
+    "corrected_text": "그 썸남도 트윗남인 실존하는 콘텐츠 아닐까",
+    "correction_reason": "'시존재 콘텐츠'는 의미가 불분명하며, '실존하는 콘텐츠'가 온라인상의 인물을 콘텐츠로 취급하는 맥락에 부합함."
+  },
+  {
+    "segment_id": 28,
+    "start": 165.0,
+    "end": 170.0,
+    "original_text": "여자들은 얼마나 외로움에 빠져 있으면 이러고 있냐",
+    "corrected_text": "여자들은 얼마나 외로움에 빠져 있으면 이러고 있냐",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 29,
+    "start": 170.0,
+    "end": 172.0,
+    "original_text": "참고 버티는 게 어렵나?",
+    "corrected_text": "참고 버티는 게 어렵나?",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 30,
+    "start": 172.0,
+    "end": 176.0,
+    "original_text": "여자라는 게 거대한 정신병 집합체가 아닐까 한다",
+    "corrected_text": "여자라는 게 거대한 정신병 집합체가 아닐까 한다",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 31,
+    "start": 176.0,
+    "end": 180.0,
+    "original_text": "그 이후로는 가끔 생일이나 주고받는 사이가 되어",
+    "corrected_text": "그 이후로는 가끔 생일이나 주고받는 사이가 되어",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 32,
+    "start": 180.0,
+    "end": 182.0,
+    "original_text": "더 이상 만난 적 없었다",
+    "corrected_text": "더 이상 만난 적 없었다",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 33,
+    "start": 182.0,
+    "end": 184.0,
+    "original_text": "그때의 감정이 무엇이었는지 모르겠다",
+    "corrected_text": "그때의 감정이 무엇이었는지 모르겠다",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 34,
+    "start": 184.0,
+    "end": 190.0,
+    "original_text": "외로움 때문이었는지 처음이라 더 크게 느껴졌던 것인지",
+    "corrected_text": "외로움 때문이었는지 처음이라 더 크게 느껴졌던 것인지",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 35,
+    "start": 190.0,
+    "end": 193.0,
+    "original_text": "무한한 공허함의 관짝에 들어갔다",
+    "corrected_text": "무한한 공허함의 관짝에 들어갔다",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 36,
+    "start": 193.0,
+    "end": 196.0,
+    "original_text": "한동안 끊었다가 10월 다시 부활",
+    "corrected_text": "한동안 끊었다가 10월 다시 부활",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 37,
+    "start": 196.0,
+    "end": 198.0,
+    "original_text": "온라인 알파메일",
+    "corrected_text": "온라인 알파메일",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 38,
+    "start": 198.0,
+    "end": 202.0,
+    "original_text": "유해조수 포획단이 되어 멘헤라의 아랫입에 대전차 지뢰를 매설하며 X 다를 때렸다",
+    "corrected_text": "유해조수 포획단이 되어 멘헤라의 아랫입에 대전차 지뢰를 매설하며 X 박았다",
+    "correction_reason": "성적인 비속어 맥락에서 'X 다를 때렸다'는 'X 박았다'의 유사 발음 오인으로 보임."
+  },
+  {
+    "segment_id": 39,
+    "start": 202.0,
+    "end": 208.0,
+    "original_text": "온팬, 비게 영상으로 돈을 버는 사람들을 보고 직접 시작도 했다",
+    "corrected_text": "온팬, 비계 영상으로 돈을 버는 사람들을 보고 직접 시작도 했다",
+    "correction_reason": "'비게 영상'은 의미가 불분명하며, 유료 콘텐츠를 지칭하는 '비계 영상'이 맥락상 적절함."
+  }
+]

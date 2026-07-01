@@ -1,0 +1,162 @@
+[
+  {
+    "segment_id": 180,
+    "start": 806.0,
+    "end": 808.0,
+    "original_text": "욕심이야 욕심 그래.",
+    "corrected_text": "욕심이야 욕심 그래.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 181,
+    "start": 808.0,
+    "end": 809.0,
+    "original_text": "아 10번은 뭐.",
+    "corrected_text": "아 10번은 뭐.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 182,
+    "start": 809.0,
+    "end": 810.0,
+    "original_text": "오케이 20번.",
+    "corrected_text": "오케이 20번.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 183,
+    "start": 810.0,
+    "end": 814.0,
+    "original_text": "동서남북",
+    "corrected_text": "동서남북",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 184,
+    "start": 814.0,
+    "end": 815.0,
+    "original_text": "변동.",
+    "corrected_text": "변동.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 185,
+    "start": 815.0,
+    "end": 816.0,
+    "original_text": "다음 변동.",
+    "corrected_text": "다음 변동.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 186,
+    "start": 816.0,
+    "end": 818.0,
+    "original_text": "하 20번. 이 정도는 예상한 일.",
+    "corrected_text": "하 20번. 이 정도는 예상한 일.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 187,
+    "start": 818.0,
+    "end": 821.0,
+    "original_text": "몇 개를 주려고. 노란색 나올 때 안 됐니?",
+    "corrected_text": "몇 개를 주려고. 노란색 나올 때 안 됐니?",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 188,
+    "start": 821.0,
+    "end": 824.0,
+    "original_text": "아 씨",
+    "corrected_text": "아 씨",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 189,
+    "start": 824.0,
+    "end": 826.0,
+    "original_text": "아직 아직까지 괜찮아 30번.",
+    "corrected_text": "아직 아직까지 괜찮아 30번.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 190,
+    "start": 826.0,
+    "end": 829.0,
+    "original_text": "오케이 40번.",
+    "corrected_text": "오케이 40번.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 191,
+    "start": 833.0,
+    "end": 835.0,
+    "original_text": "아",
+    "corrected_text": "아",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 192,
+    "start": 836.0,
+    "end": 837.0,
+    "original_text": "50번.",
+    "corrected_text": "50번.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 193,
+    "start": 837.0,
+    "end": 841.0,
+    "original_text": "와! 우와 정말.",
+    "corrected_text": "와! 우와 정말.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 194,
+    "start": 841.0,
+    "end": 843.0,
+    "original_text": "우와 진짜.",
+    "corrected_text": "우와 진짜.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 195,
+    "start": 843.0,
+    "end": 845.0,
+    "original_text": "반가워.",
+    "corrected_text": "반가워.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 196,
+    "start": 845.0,
+    "end": 846.0,
+    "original_text": "60번.",
+    "corrected_text": "60번.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 197,
+    "start": 846.0,
+    "end": 849.0,
+    "original_text": "와! 수니스는 커녕 SSR 그림자도 안 보임.",
+    "corrected_text": "와! SR은 커녕 SSR 그림자도 안 보임.",
+    "correction_reason": "발음 유사 단어 교정: '수니스'는 게임 등급 'SR'의 오인식으로 판단됨. 'SSR'과 함께 언급되는 맥락상 'SR'이 적절함."
+  },
+  {
+    "segment_id": 198,
+    "start": 849.0,
+    "end": 851.0,
+    "original_text": "70번인데. 70번 노수스알인데.",
+    "corrected_text": "70번인데. 70번 노 SSR인데.",
+    "correction_reason": "발음 유사 단어 교정: '노수스알'은 게임 등급 'SSR'의 오인식으로 판단됨. '노 SSR'이 적절함."
+  },
+  {
+    "segment_id": 199,
+    "start": 851.0,
+    "end": 856.0,
+    "original_text": "아 진짜 미치겠네.",
+    "corrected_text": "아 진짜 미치겠네.",
+    "correction_reason": ""
+  }
+]

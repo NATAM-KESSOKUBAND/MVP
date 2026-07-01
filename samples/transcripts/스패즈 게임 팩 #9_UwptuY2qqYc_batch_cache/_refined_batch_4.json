@@ -1,0 +1,162 @@
+[
+  {
+    "segment_id": 80,
+    "start": 338.0,
+    "end": 340.0,
+    "original_text": "Oh my god 알라 또 온다",
+    "corrected_text": "Oh my god 애들 또 온다",
+    "correction_reason": "특정 종교적 명칭으로 오인식될 경우 크리에이터에게 불필요한 종교 비하 논란 등 위기 상황이 발생할 수 있는 패턴이 관찰됨. 맥락상 '애들'로 교정하는 것이 리스크 관리 측면에서 안전한 경향이 있음."
+  },
+  {
+    "segment_id": 81,
+    "start": 342.0,
+    "end": 343.0,
+    "original_text": "작전 수행 보고서 미션 실패",
+    "corrected_text": "작전 수행 보고서 미션 실패",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 82,
+    "start": 344.0,
+    "end": 346.0,
+    "original_text": "차량 탑재 IED로부터 호송대를 방어",
+    "corrected_text": "차량 탑재 IED로부터 호송대를 방어",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 83,
+    "start": 348.0,
+    "end": 350.0,
+    "original_text": "미션 실패 레드팀 승리",
+    "corrected_text": "미션 실패 레드팀 승리",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 84,
+    "start": 351.0,
+    "end": 353.0,
+    "original_text": "문 열어 발로 차서 진입해",
+    "corrected_text": "문 열어 발로 차서 진입해",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 85,
+    "start": 353.0,
+    "end": 354.0,
+    "original_text": "꼬라박네 그냥",
+    "corrected_text": "꼬라박네 그냥",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 86,
+    "start": 354.0,
+    "end": 356.0,
+    "original_text": "안녕 얘들아",
+    "corrected_text": "안녕 얘들아",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 87,
+    "start": 400.0,
+    "end": 403.0,
+    "original_text": "스탠리 안녀어엉 나이트 시티",
+    "corrected_text": "스탠의 안녀어엉 나이트 시티",
+    "correction_reason": "게임 내 라디오 오프닝 고유 대사인 '스탠의 안녕, 나이트 시티'를 '스탠리'로 오인식한 패턴이 관찰됨. 고유 대사의 정확한 전달은 시청자의 몰입도를 유지하는 데 기여하는 경향이 있음."
+  },
+  {
+    "segment_id": 88,
+    "start": 407.0,
+    "end": 409.0,
+    "original_text": "새로운 소식",
+    "corrected_text": "새로운 소식",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 89,
+    "start": 412.0,
+    "end": 414.0,
+    "original_text": "소문은 진짜였습니다 나이트 시티",
+    "corrected_text": "소문은 진짜였습니다 나이트 시티",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 90,
+    "start": 415.0,
+    "end": 417.0,
+    "original_text": "리어스 모터스",
+    "corrected_text": "리어스 모터스",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 91,
+    "start": 422.0,
+    "end": 425.0,
+    "original_text": "My brother used to break in our house and steal the TV",
+    "corrected_text": "My brother used to break into our house and steal the TV",
+    "correction_reason": "영어 숙어 'break into'를 'break in'으로 오인식한 패턴이 관찰됨. 자막의 문법적 정확성은 콘텐츠의 전반적인 완성도와 크리에이터의 신뢰도를 높이는 경향이 있음."
+  },
+  {
+    "segment_id": 92,
+    "start": 425.0,
+    "end": 426.0,
+    "original_text": "But now hes dead",
+    "corrected_text": "But now hes dead",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 93,
+    "start": 427.0,
+    "end": 429.0,
+    "original_text": "Come on and kiss me on my hot mouth",
+    "corrected_text": "Come on and kiss me on my hot mouth",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 94,
+    "start": 435.0,
+    "end": 437.0,
+    "original_text": "밟아 재키 빨리 튀어",
+    "corrected_text": "밟아 재키 빨리 튀어",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 95,
+    "start": 439.0,
+    "end": 442.0,
+    "original_text": "스틴츠 빵에 가서 빵 좀 먹어야지",
+    "corrected_text": "스틴츠 빵에 가서 빵 좀 먹어야지",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 96,
+    "start": 451.0,
+    "end": 452.0,
+    "original_text": "웰치 오작동 감지됨",
+    "corrected_text": "렐릭 오작동 감지됨",
+    "correction_reason": "게임 '사이버펑크 2077'의 핵심 설정인 '렐릭(Relic)'을 음료 브랜드인 '웰치'로 오인식한 패턴이 관찰됨. 핵심 고유 명사의 오류는 크리에이터의 게임 이해도 부족으로 비칠 수 있는 리스크가 있음."
+  },
+  {
+    "segment_id": 97,
+    "start": 453.0,
+    "end": 455.0,
+    "original_text": "키로시 안구 MK.1",
+    "corrected_text": "키로시 안구 MK.1",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 98,
+    "start": 459.0,
+    "end": 461.0,
+    "original_text": "마이크로 노래를 불렀는데 왜 쫓겨났을까?",
+    "corrected_text": "마이크로 노래를 불렀는데 왜 쫓겨났을까?",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 99,
+    "start": 461.0,
+    "end": 463.0,
+    "original_text": "마이 크게 불렀거든 하하",
+    "corrected_text": "마이 크게 불렀거든 하하",
+    "correction_reason": ""
+  }
+]

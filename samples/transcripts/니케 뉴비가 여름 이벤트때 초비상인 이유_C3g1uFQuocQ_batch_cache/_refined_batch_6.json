@@ -1,0 +1,162 @@
+[
+  {
+    "segment_id": 120,
+    "start": 515.0,
+    "end": 516.0,
+    "original_text": "안 돼요.",
+    "corrected_text": "안 돼요.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 121,
+    "start": 516.0,
+    "end": 517.0,
+    "original_text": "뭐야?",
+    "corrected_text": "뭐야?",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 122,
+    "start": 517.0,
+    "end": 519.0,
+    "original_text": "왜 저도 100 받았는데 200은 아니죠.",
+    "corrected_text": "왜 저도 100 받았는데 200은 아니죠.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 123,
+    "start": 519.0,
+    "end": 520.0,
+    "original_text": "그럼 나도 100",
+    "corrected_text": "그럼 나도 100",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 124,
+    "start": 520.0,
+    "end": 521.0,
+    "original_text": "안 돼요.",
+    "corrected_text": "안 돼요.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 125,
+    "start": 521.0,
+    "end": 524.0,
+    "original_text": "여기 여기로 오시나요?",
+    "corrected_text": "여기 여기로 오시나요?",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 126,
+    "start": 524.0,
+    "end": 527.0,
+    "original_text": "스튜디오 여기 엄마 집으로 오시나요?",
+    "corrected_text": "스튜디오 여기 엄마 집으로 오시나요?",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 127,
+    "start": 527.0,
+    "end": 530.0,
+    "original_text": "이것 혹시 도파민을 선물로 드리고 싶어 가지고.",
+    "corrected_text": "이것 혹시 도파민을 선물로 드리고 싶어 가지고.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 128,
+    "start": 530.0,
+    "end": 533.0,
+    "original_text": "안 돼 안 돼 안 돼. 내가 가면 안 돼. 돈 쓰러 가는 거잖아 안 돼.",
+    "corrected_text": "안 돼 안 돼 안 돼. 내가 가면 안 돼. 돈 쓰러 가는 거잖아 안 돼.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 129,
+    "start": 533.0,
+    "end": 539.0,
+    "original_text": "참아볼게. 내가 참아야지.",
+    "corrected_text": "참아볼게. 내가 참아야지.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 130,
+    "start": 539.0,
+    "end": 541.0,
+    "original_text": "까비.",
+    "corrected_text": "까비.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 131,
+    "start": 541.0,
+    "end": 543.0,
+    "original_text": "어우 겁나 당할 뻔했네.",
+    "corrected_text": "어우 겁나 당할 뻔했네.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 132,
+    "start": 543.0,
+    "end": 544.0,
+    "original_text": "네 조심히 오시고요. 나중에 나 집에서 봬요.",
+    "corrected_text": "네 조심히 오시고요. 나중에 나 집에서 봬요.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 133,
+    "start": 544.0,
+    "end": 546.0,
+    "original_text": "어 씨 그런데 식은땀 나네.",
+    "corrected_text": "어 씨 그런데 식은땀 나네.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 134,
+    "start": 546.0,
+    "end": 551.0,
+    "original_text": "200 달라고 할 것임 라고 얘기하니까 갑자기 추상도 이랬겠구나.",
+    "corrected_text": "200 달라고 할 것임 라고 얘기하니까 갑자기 추상도 이랬겠구나.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 135,
+    "start": 551.0,
+    "end": 554.0,
+    "original_text": "바로 농담이겠지 가 나와버리네.",
+    "corrected_text": "바로 농담이겠지 가 나와버리네.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 136,
+    "start": 554.0,
+    "end": 558.0,
+    "original_text": "일단 이것은 갈게요. 어차피 어차피 걸린 거 뭐 있나 인생.",
+    "corrected_text": "일단 이것은 갈게요. 어차피 어차피 걸린 거 뭐 있나 인생.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 137,
+    "start": 558.0,
+    "end": 602.0,
+    "original_text": "이것이 9만 원짜리 스킨이에요. 그래서 9만 원짜리인데 스킨이 공짜예요? 사실 재화를 성장 재화를 사는 거고요. 스킨은 공짜입니다. 스킨은 서비스로 주는 거예요?",
+    "corrected_text": "이것이 9만 원짜리 스킨이에요. 그래서 9만 원짜리인데 스킨이 공짜예요? 사실 재화를 성장 재화를 사는 거고요. 스킨은 공짜입니다. 스킨은 서비스로 주는 거예요?",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 138,
+    "start": 602.0,
+    "end": 609.0,
+    "original_text": "이해 좀 시켜주세요.",
+    "corrected_text": "이해 좀 시켜주세요.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 139,
+    "start": 609.0,
+    "end": 610.0,
+    "original_text": "오케이 이번에 뜰 수도 있다.",
+    "corrected_text": "오케이 이번에 뜰 수도 있다.",
+    "correction_reason": ""
+  }
+]

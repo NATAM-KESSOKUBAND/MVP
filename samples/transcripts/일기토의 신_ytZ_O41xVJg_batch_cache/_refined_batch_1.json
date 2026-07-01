@@ -1,0 +1,162 @@
+[
+  {
+    "segment_id": 20,
+    "start": 39.0,
+    "end": 41.0,
+    "original_text": "아이 개새끼야 오지마",
+    "corrected_text": "아이 개새끼야 오지 마",
+    "correction_reason": "한글 맞춤법 띄어쓰기 규칙에 따라 '오지 마'로 교정함. 감정이 격앙된 상태에서 비속어와 거부 표현을 동시에 사용하는 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 21,
+    "start": 41.0,
+    "end": 43.5,
+    "original_text": "아이 새끼가 새끼가 이 새끼가 이 새끼가",
+    "corrected_text": "아 이 새끼가 새끼가 이 새끼가 이 새끼가",
+    "correction_reason": "감탄사 '아'와 대명사 '이'를 분리하여 교정함. 흥분한 상태에서 동일한 비속어 표현을 반복적으로 사용하는 경향이 있음."
+  },
+  {
+    "segment_id": 22,
+    "start": 43.5,
+    "end": 46.0,
+    "original_text": "너랑 나랑 같아? 너랑 나랑 같아 보여?",
+    "corrected_text": "너랑 나랑 같아? 너랑 나랑 같아 보여?",
+    "correction_reason": "원본 텍스트가 맥락상 정확하여 그대로 유지함. 상대방과의 서열이나 능력을 비교하며 도발하는 언어 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 23,
+    "start": 46.0,
+    "end": 49.5,
+    "original_text": "야 이 새끼야 너랑 나랑 같냐 이 어? 뭐 어떻게",
+    "corrected_text": "야 이 새끼야 너랑 나랑 같냐? 어? 뭐 어떻게",
+    "correction_reason": "불필요하게 반복된 음절 '이'를 정리하고 문장 부호를 교정함. 감정 과열로 인해 문장 구조가 매끄럽지 못하게 출력되는 경향이 있음."
+  },
+  {
+    "segment_id": 24,
+    "start": 50.0,
+    "end": 51.5,
+    "original_text": "덤벼",
+    "corrected_text": "덤벼",
+    "correction_reason": "원본 텍스트가 정확하여 그대로 유지함. 상대방에게 공격적인 태도를 취하는 단발성 발언 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 25,
+    "start": 51.5,
+    "end": 53.0,
+    "original_text": "어 상대가 달라졌어",
+    "corrected_text": "어 상대가 달라졌어",
+    "correction_reason": "원본 텍스트가 정확하여 그대로 유지함. 대치 중인 상대방의 변화를 인지하고 독백하는 경향이 있음."
+  },
+  {
+    "segment_id": 26,
+    "start": 53.0,
+    "end": 54.5,
+    "original_text": "좀 빨라졌나?",
+    "corrected_text": "좀 빨라졌나?",
+    "correction_reason": "원본 텍스트가 정확하여 그대로 유지함. 상대방의 속도 변화를 의문형으로 분석하는 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 27,
+    "start": 54.5,
+    "end": 56.0,
+    "original_text": "그런다고 뭐가 달라져?",
+    "corrected_text": "그런다고 뭐가 달라져?",
+    "correction_reason": "원본 텍스트가 정확하여 그대로 유지함. 상대방의 변화를 무시하거나 과소평가하는 발언 경향이 있음."
+  },
+  {
+    "segment_id": 28,
+    "start": 56.0,
+    "end": 57.0,
+    "original_text": "으아",
+    "corrected_text": "으아",
+    "correction_reason": "원본 텍스트가 정확하여 그대로 유지함. 교전 중 발생하는 비언어적 기합 소리가 관찰됨."
+  },
+  {
+    "segment_id": 29,
+    "start": 57.0,
+    "end": 59.5,
+    "original_text": "자 모가지 찔렀지 이 새끼야",
+    "corrected_text": "자 모가지 찔렀지 이 새끼야",
+    "correction_reason": "원본 텍스트가 정확하여 그대로 유지함. 신체 부위를 겨냥한 폭력적인 묘사와 비속어를 결합하여 사용하는 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 30,
+    "start": 59.5,
+    "end": 61.5,
+    "original_text": "어디 어디",
+    "corrected_text": "어디 어디",
+    "correction_reason": "원본 텍스트가 정확하여 그대로 유지함. 급박한 상황에서 특정 단어를 반복하여 외치는 경향이 있음."
+  },
+  {
+    "segment_id": 31,
+    "start": 61.5,
+    "end": 65.0,
+    "original_text": "칼 칼 칼 칼 칼 칼 칼 칼 칼 칼",
+    "corrected_text": "칼 칼 칼 칼 칼 칼 칼 칼 칼 칼",
+    "correction_reason": "원본 텍스트가 정확하여 그대로 유지함. 무기명을 극도로 반복하여 외치는 흥분 상태가 관찰됨."
+  },
+  {
+    "segment_id": 32,
+    "start": 106.5,
+    "end": 108.0,
+    "original_text": "허 아 아",
+    "corrected_text": "허 아 아",
+    "correction_reason": "원본 텍스트가 정확하여 그대로 유지함. 호흡이 가빠지며 발생하는 비언어적 소리가 관찰됨."
+  },
+  {
+    "segment_id": 33,
+    "start": 111.0,
+    "end": 113.5,
+    "original_text": "아 때리지 마 때리지 마 자 자 자 자 자",
+    "corrected_text": "아 때리지 마 때리지 마 자 자 자 자 자",
+    "correction_reason": "원본 텍스트가 정확하여 그대로 유지함. 피격 상황에서 방어적인 태도로 동일 단어를 연달아 발화하는 경향이 있음."
+  },
+  {
+    "segment_id": 34,
+    "start": 115.5,
+    "end": 116.5,
+    "original_text": "어",
+    "corrected_text": "어",
+    "correction_reason": "원본 텍스트가 정확하여 그대로 유지함. 단발성 감탄사 발화 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 35,
+    "start": 116.5,
+    "end": 119.0,
+    "original_text": "잠깐만 잠깐만 타임 타임 비겁하게",
+    "corrected_text": "잠깐만 잠깐만 타임 타임 비겁하게",
+    "correction_reason": "원본 텍스트가 정확하여 그대로 유지함. 불리한 상황에서 일시 중지를 요청하며 상대방에게 책임을 전가하는 언어 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 36,
+    "start": 119.0,
+    "end": 121.0,
+    "original_text": "발차기 이때다",
+    "corrected_text": "발차기 이때다",
+    "correction_reason": "원본 텍스트가 정확하여 그대로 유지함. 공격 기술을 언급하며 반격을 시도하는 상황이 관찰됨."
+  },
+  {
+    "segment_id": 37,
+    "start": 121.0,
+    "end": 122.5,
+    "original_text": "으아",
+    "corrected_text": "으아",
+    "correction_reason": "원본 텍스트가 정확하여 그대로 유지함. 공격 시점에 발생하는 비언어적 기합 소리가 관찰됨."
+  },
+  {
+    "segment_id": 38,
+    "start": 122.5,
+    "end": 124.5,
+    "original_text": "아",
+    "corrected_text": "아",
+    "correction_reason": "원본 텍스트가 정확하여 그대로 유지함. 단발성 비명 소리가 관찰됨."
+  },
+  {
+    "segment_id": 39,
+    "start": 124.5,
+    "end": 126.5,
+    "original_text": "아우 고추",
+    "corrected_text": "아우 고통",
+    "correction_reason": "맥락상 타격으로 인한 아픔을 호소하는 단어인 '고통'을 오인식했을 가능성이 높아 교정함. 신체 부위로 오해받을 수 있는 발음이 관찰됨."
+  }
+]

@@ -1,0 +1,162 @@
+[
+  {
+    "segment_id": 60,
+    "start": 121.0,
+    "end": 123.0,
+    "original_text": "아주 의도가 다분하다고 볼 수 있는데",
+    "corrected_text": "아주 의도가 다분하다고 볼 수 있는데",
+    "correction_reason": "발화 내용에 오류나 위기 요인이 없어 원문이 그대로 유지됨."
+  },
+  {
+    "segment_id": 61,
+    "start": 123.0,
+    "end": 125.0,
+    "original_text": "이번에 지휘관이 직접 선크림을 발라주지 않을까",
+    "corrected_text": "이번에 지휘관이 직접 선크림을 발라주지 않을까",
+    "correction_reason": "콘텐츠 맥락상 특이사항이 없어 원문이 그대로 유지됨."
+  },
+  {
+    "segment_id": 62,
+    "start": 125.0,
+    "end": 127.0,
+    "original_text": "내 생각에는",
+    "corrected_text": "내 생각에는",
+    "correction_reason": "단순 의견 표명으로 오류가 없어 원문이 그대로 유지됨."
+  },
+  {
+    "segment_id": 63,
+    "start": 127.0,
+    "end": 129.0,
+    "original_text": "이 선크림을 나가한테만 발라줬다가",
+    "corrected_text": "이 선크림을 나가한테만 발라줬다가",
+    "correction_reason": "게임 캐릭터명을 올바르게 발음하여 원문이 그대로 유지됨."
+  },
+  {
+    "segment_id": 64,
+    "start": 129.0,
+    "end": 130.5,
+    "original_text": "옆에서 티아가 개지랄할 거 같아.",
+    "corrected_text": "옆에서 티아가 난리칠 거 같아.",
+    "correction_reason": "비속어('개지랄') 사용으로 인한 시청자 거부감 유발 및 플랫폼 제재 위험을 방지하기 위해 순화된 표현으로 교정하는 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 65,
+    "start": 130.5,
+    "end": 133.5,
+    "original_text": "그래서 결국 지휘관이 모두의 엉덩이에 선크림을 발라주는 그런 스토리로 가지 않을까",
+    "corrected_text": "그래서 결국 지휘관이 모두의 엉덩이에 선크림을 발라주는 그런 스토리로 가지 않을까",
+    "correction_reason": "게임 내 연출에 대한 단순 추측으로 판단되어 원문이 그대로 유지됨."
+  },
+  {
+    "segment_id": 66,
+    "start": 133.5,
+    "end": 136.0,
+    "original_text": "하체 부분이 천으로 가려져 있어서 실망할 수도 있는데",
+    "corrected_text": "하체 부분이 천으로 가려져 있어서 실망할 수도 있는데",
+    "correction_reason": "캐릭터 디자인에 대한 감상으로 오류가 없어 원문이 그대로 유지됨."
+  },
+  {
+    "segment_id": 67,
+    "start": 136.0,
+    "end": 139.0,
+    "original_text": "다행히 사격 모션에서는 나가의 거대한 엉덩이를 볼 수 있다는 거",
+    "corrected_text": "다행히 사격 모션에서는 나가의 거대한 엉덩이를 볼 수 있다는 거",
+    "correction_reason": "게임 캐릭터의 디자인적 특징을 묘사한 것으로 판단되어 원문이 그대로 유지됨."
+  },
+  {
+    "segment_id": 68,
+    "start": 139.0,
+    "end": 141.0,
+    "original_text": "오히려 천이 있어서 더 꼴리는 거 같아.",
+    "corrected_text": "오히려 천이 있어서 더 매력적인 거 같아.",
+    "correction_reason": "성적 대상화 및 자극적 은어('꼴리는') 사용을 완화하여 대중적 수용도를 높이는 경향이 관찰됨."
+  },
+  {
+    "segment_id": 69,
+    "start": 141.0,
+    "end": 143.0,
+    "original_text": "또 모르시는 분들이 있을 거 같은데",
+    "corrected_text": "또 모르시는 분들이 있을 거 같은데",
+    "correction_reason": "정보 전달을 위한 도입부로 오류가 없어 원문이 그대로 유지됨."
+  },
+  {
+    "segment_id": 70,
+    "start": 143.0,
+    "end": 145.0,
+    "original_text": "나가의 등에는 원래 문신이 있죠.",
+    "corrected_text": "나가의 등에는 원래 문신이 있죠.",
+    "correction_reason": "게임 내 캐릭터 설정을 정확히 언급하여 원문이 그대로 유지됨."
+  },
+  {
+    "segment_id": 71,
+    "start": 145.0,
+    "end": 147.0,
+    "original_text": "전 뭐 이런 문신은 별로 안 좋아하고",
+    "corrected_text": "전 뭐 이런 문신은 별로 안 좋아하고",
+    "correction_reason": "개인적 선호도 표현으로 판단되어 원문이 그대로 유지됨."
+  },
+  {
+    "segment_id": 72,
+    "start": 147.0,
+    "end": 149.5,
+    "original_text": "이제 뭐 허벅지에 바를 정 자 그런 거",
+    "corrected_text": "이제 뭐 허벅지에 바를 정 자 그런 거",
+    "correction_reason": "특정 서브컬처 밈 언급이나 수위 조절 범위 내로 판단되어 원문이 그대로 유지됨."
+  },
+  {
+    "segment_id": 73,
+    "start": 149.5,
+    "end": 151.0,
+    "original_text": "마지막으로 EH 스킨",
+    "corrected_text": "마지막으로 E.H. 스킨",
+    "correction_reason": "게임 내 캐릭터명인 'E.H.'의 영문 표기 오류를 맥락에 맞게 바로잡음."
+  },
+  {
+    "segment_id": 74,
+    "start": 151.0,
+    "end": 153.0,
+    "original_text": "이것는 뭐 시발 내가 역으로 들박당할 거 같은데?",
+    "corrected_text": "이것은 뭐 내가 역으로 당할 거 같은데?",
+    "correction_reason": "조사 오류('이것는' -> '이것은')를 수정하고, 욕설('시발') 및 자극적인 성적 은어('들박당할') 사용을 배제하여 위기 요인을 감소시키는 경향이 있음."
+  },
+  {
+    "segment_id": 75,
+    "start": 153.0,
+    "end": 155.5,
+    "original_text": "아니 무슨 골반이랑 가슴 크기가",
+    "corrected_text": "아니 무슨 골반이랑 가슴 크기가",
+    "correction_reason": "캐릭터 외형에 대한 단순 감탄으로 판단되어 원문이 그대로 유지됨."
+  },
+  {
+    "segment_id": 76,
+    "start": 155.5,
+    "end": 157.0,
+    "original_text": "그래서 오히려 좋아.",
+    "corrected_text": "그래서 오히려 좋아.",
+    "correction_reason": "대중적인 밈 표현으로 오류가 없어 원문이 그대로 유지됨."
+  },
+  {
+    "segment_id": 77,
+    "start": 157.0,
+    "end": 159.0,
+    "original_text": "EH가 원래 옷도 나쁘지 않았는데",
+    "corrected_text": "E.H.가 원래 옷도 나쁘지 않았는데",
+    "correction_reason": "캐릭터명 'E.H.'의 표기를 정확하게 교정함."
+  },
+  {
+    "segment_id": 78,
+    "start": 159.0,
+    "end": 161.0,
+    "original_text": "정장을 입으니까 캐릭터가 확 사네.",
+    "corrected_text": "정장을 입으니까 캐릭터가 확 사네.",
+    "correction_reason": "캐릭터 디자인에 대한 긍정적 평가로 오류가 없어 원문이 그대로 유지됨."
+  },
+  {
+    "segment_id": 79,
+    "start": 161.0,
+    "end": 163.0,
+    "original_text": "가슴에 있던 속박도 풀어서",
+    "corrected_text": "가슴에 있던 속박도 풀어서",
+    "correction_reason": "캐릭터 디자인 요소에 대한 묘사로 판단되어 원문이 그대로 유지됨."
+  }
+]

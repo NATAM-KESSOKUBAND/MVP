@@ -1,0 +1,162 @@
+[
+  {
+    "segment_id": 100,
+    "start": 664.4,
+    "end": 665.6,
+    "original_text": "C4를 던져준 다음에",
+    "corrected_text": "C4를 던져준 다음에",
+    "correction_reason": "특이사항 없음"
+  },
+  {
+    "segment_id": 101,
+    "start": 665.6,
+    "end": 667.8,
+    "original_text": "바리케이드를 열기",
+    "corrected_text": "바리케이드를 열기",
+    "correction_reason": "특이사항 없음"
+  },
+  {
+    "segment_id": 102,
+    "start": 667.8,
+    "end": 668.4,
+    "original_text": "완벽",
+    "corrected_text": "완벽",
+    "correction_reason": "특이사항 없음"
+  },
+  {
+    "segment_id": 103,
+    "start": 709.2,
+    "end": 710.4,
+    "original_text": "조져",
+    "corrected_text": "조져",
+    "correction_reason": "특이사항 없음"
+  },
+  {
+    "segment_id": 104,
+    "start": 710.4,
+    "end": 711.6,
+    "original_text": "계단에 있는데",
+    "corrected_text": "계단에 있는데",
+    "correction_reason": "특이사항 없음"
+  },
+  {
+    "segment_id": 105,
+    "start": 712.8,
+    "end": 715.8,
+    "original_text": "아이 그걸 다 막아주면 어떡하냐",
+    "corrected_text": "아니 그걸 다 막아주면 어떡하냐",
+    "correction_reason": "맥락상 부정 및 반박의 의미를 담은 '아니'가 '아이'로 오인식된 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 106,
+    "start": 717.0,
+    "end": 718.2,
+    "original_text": "원탭",
+    "corrected_text": "원탭",
+    "correction_reason": "특이사항 없음"
+  },
+  {
+    "segment_id": 107,
+    "start": 719.4,
+    "end": 720.6,
+    "original_text": "죽였음",
+    "corrected_text": "죽였음",
+    "correction_reason": "특이사항 없음"
+  },
+  {
+    "segment_id": 108,
+    "start": 726.6,
+    "end": 728.4,
+    "original_text": "오딜 아웃플레이 하려고",
+    "corrected_text": "어딜 아웃플레이 하려고",
+    "correction_reason": "반어적 의문사 '어딜'이 '오딜'로 잘못 발음되거나 오인식된 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 109,
+    "start": 731.4,
+    "end": 733.8,
+    "original_text": "이야 어코그 이것 맛이 다르다 야",
+    "corrected_text": "이야 에이코그 이거 맛이 다르다 야",
+    "correction_reason": "게임 내 조준경 명칭인 'ACOG(에이코그)'와 구어체 대명사 '이거'가 오인식된 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 110,
+    "start": 735.6,
+    "end": 736.8,
+    "original_text": "일어나",
+    "corrected_text": "일어나",
+    "correction_reason": "특이사항 없음"
+  },
+  {
+    "segment_id": 111,
+    "start": 737.4,
+    "end": 739.2,
+    "original_text": "이야 어코그 R4C 이것 맛이 다르다",
+    "corrected_text": "이야 에이코그 R4C 이거 맛이 다르다",
+    "correction_reason": "게임 내 조준경 명칭인 'ACOG(에이코그)'와 구어체 대명사 '이거'가 오인식된 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 112,
+    "start": 739.2,
+    "end": 740.4,
+    "original_text": "아욱",
+    "corrected_text": "아웃",
+    "correction_reason": "게임 내 상황 맥락상 탈락을 의미하는 '아웃(Out)'이 '아욱'으로 오인식된 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 113,
+    "start": 743.4,
+    "end": 746.4,
+    "original_text": "나도 브라보팩 열어볼까요 초록색 우후",
+    "corrected_text": "나도 브라보팩 열어볼까요 초록색 우후",
+    "correction_reason": "특이사항 없음"
+  },
+  {
+    "segment_id": 114,
+    "start": 747.6,
+    "end": 750.6,
+    "original_text": "개미친 비질 투구 나왔네요 행복하다",
+    "corrected_text": "개미친 비질 투구 나왔네요 행복하다",
+    "correction_reason": "특이사항 없음"
+  },
+  {
+    "segment_id": 115,
+    "start": 751.2,
+    "end": 752.4,
+    "original_text": "행복해 보여",
+    "corrected_text": "행복해 보여",
+    "correction_reason": "특이사항 없음"
+  },
+  {
+    "segment_id": 116,
+    "start": 753.0,
+    "end": 754.2,
+    "original_text": "다행이네",
+    "corrected_text": "다행이네",
+    "correction_reason": "특이사항 없음"
+  },
+  {
+    "segment_id": 117,
+    "start": 754.8,
+    "end": 757.8,
+    "original_text": "영어 어려워요우 한국말 잘 못해요",
+    "corrected_text": "영어 어려워요 한국말 잘 못해요",
+    "correction_reason": "종결어미 '어려워요' 뒤에 불필요한 음절 '우'가 추가 인식된 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 118,
+    "start": 757.8,
+    "end": 759.6,
+    "original_text": "그럼 무슨 말을",
+    "corrected_text": "그럼 무슨 말을",
+    "correction_reason": "특이사항 없음"
+  },
+  {
+    "segment_id": 119,
+    "start": 759.6,
+    "end": 761.4,
+    "original_text": "할 수 있는 거야?",
+    "corrected_text": "할 수 있는 거야?",
+    "correction_reason": "특이사항 없음"
+  }
+]

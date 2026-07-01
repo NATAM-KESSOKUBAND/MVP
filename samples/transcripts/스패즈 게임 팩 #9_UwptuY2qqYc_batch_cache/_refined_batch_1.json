@@ -1,0 +1,162 @@
+[
+  {
+    "segment_id": 20,
+    "start": 50.0,
+    "end": 51.0,
+    "original_text": "사망",
+    "corrected_text": "사망",
+    "correction_reason": "맥락상 '사망'이 올바른 표현으로 판단되어 유지함."
+  },
+  {
+    "segment_id": 21,
+    "start": 51.0,
+    "end": 53.0,
+    "original_text": "와우 와우 나 저기 있어 저기",
+    "corrected_text": "와우 와우 나 저기 있어 저기",
+    "correction_reason": "발음과 맥락이 일치하여 수정하지 않음."
+  },
+  {
+    "segment_id": 22,
+    "start": 53.0,
+    "end": 54.0,
+    "original_text": "바로 대령했습니다 나으리",
+    "corrected_text": "바로 대령했습니다 나으리",
+    "correction_reason": "사극 톤의 대사로 맥락상 자연스러워 유지함."
+  },
+  {
+    "segment_id": 23,
+    "start": 54.0,
+    "end": 56.0,
+    "original_text": "좋구나",
+    "corrected_text": "좋구나",
+    "correction_reason": "맥락상 자연스러워 유지함."
+  },
+  {
+    "segment_id": 24,
+    "start": 56.0,
+    "end": 57.0,
+    "original_text": "여기 탄약입니다요 나으리",
+    "corrected_text": "여기 탄약입니다요 나으리",
+    "correction_reason": "게임 내 탄약 보급 대사로 맥락상 자연스러워 유지함."
+  },
+  {
+    "segment_id": 25,
+    "start": 59.0,
+    "end": 60.0,
+    "original_text": "내 부처",
+    "corrected_text": "외부 처",
+    "correction_reason": "게임 내 상황 및 발음 유사성을 고려할 때 '외부 처' 혹은 다른 군사 용어일 가능성이 관찰됨."
+  },
+  {
+    "segment_id": 26,
+    "start": 107.0,
+    "end": 109.0,
+    "original_text": "메이슨 총좌에 앉아",
+    "corrected_text": "메이슨 총좌에 앉아",
+    "correction_reason": "게임 내 대사(Mason, get on the turret)의 번역으로 맥락상 자연스러워 유지함."
+  },
+  {
+    "segment_id": 27,
+    "start": 112.0,
+    "end": 114.0,
+    "original_text": "어 저 사람은 누구야",
+    "corrected_text": "어 저 사람은 누구야",
+    "correction_reason": "맥락상 자연스러워 유지함."
+  },
+  {
+    "segment_id": 28,
+    "start": 116.0,
+    "end": 117.0,
+    "original_text": "옵션",
+    "corrected_text": "옵션",
+    "correction_reason": "맥락상 자연스러워 유지함."
+  },
+  {
+    "segment_id": 29,
+    "start": 117.0,
+    "end": 120.0,
+    "original_text": "옵션",
+    "corrected_text": "옵션",
+    "correction_reason": "맥락상 자연스러워 유지함."
+  },
+  {
+    "segment_id": 30,
+    "start": 120.0,
+    "end": 122.0,
+    "original_text": "나 여기 있어 나 여기 있다고",
+    "corrected_text": "나 여기 있어 나 여기 있다고",
+    "correction_reason": "맥락상 자연스러워 유지함."
+  },
+  {
+    "segment_id": 31,
+    "start": 123.0,
+    "end": 125.0,
+    "original_text": "아 뻑갔어 뻑갔어",
+    "corrected_text": "아 뻑갔어 뻑갔어",
+    "correction_reason": "게임 중 감탄사 혹은 속어로 맥락상 자연스러워 유지함."
+  },
+  {
+    "segment_id": 32,
+    "start": 126.0,
+    "end": 127.0,
+    "original_text": "버스터 잼",
+    "corrected_text": "버스터 잼",
+    "correction_reason": "맥락상 고유명사 혹은 게임 내 용어로 판단되어 유지함."
+  },
+  {
+    "segment_id": 33,
+    "start": 129.0,
+    "end": 131.0,
+    "original_text": "Oh hey Buster doing alright",
+    "corrected_text": "Oh hey Buster doing alright",
+    "correction_reason": "영어 대사로 맥락상 자연스러워 유지함."
+  },
+  {
+    "segment_id": 34,
+    "start": 131.0,
+    "end": 133.0,
+    "original_text": "Good good",
+    "corrected_text": "Good good",
+    "correction_reason": "영어 대사로 맥락상 자연스러워 유지함."
+  },
+  {
+    "segment_id": 35,
+    "start": 135.0,
+    "end": 136.0,
+    "original_text": "Stab stab stab",
+    "corrected_text": "Stab stab stab",
+    "correction_reason": "영어 대사로 맥락상 자연스러워 유지함."
+  },
+  {
+    "segment_id": 36,
+    "start": 140.0,
+    "end": 141.0,
+    "original_text": "Mason Troy Adams",
+    "corrected_text": "Mason, get on the turret",
+    "correction_reason": "이전 세그먼트(107초)의 '메이슨 총좌에 앉아'와 발음이 유사한 영어 원문 대사 'Mason, get on the turret'으로 교정하는 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 37,
+    "start": 142.0,
+    "end": 143.0,
+    "original_text": "안 돼",
+    "corrected_text": "안 돼",
+    "correction_reason": "맥락상 자연스러워 유지함."
+  },
+  {
+    "segment_id": 38,
+    "start": 146.0,
+    "end": 148.0,
+    "original_text": "Excuse me what the actual",
+    "corrected_text": "Excuse me what the actual",
+    "correction_reason": "영어 대사로 맥락상 자연스러워 유지함."
+  },
+  {
+    "segment_id": 39,
+    "start": 148.0,
+    "end": 149.0,
+    "original_text": "자정에 걷는 사람들",
+    "corrected_text": "자정에 걷는 사람들",
+    "correction_reason": "맥락상 자연스러워 유지함."
+  }
+]

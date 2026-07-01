@@ -1,0 +1,162 @@
+[
+  {
+    "segment_id": 40,
+    "start": 80.5,
+    "end": 82.5,
+    "original_text": "다음은 이제 나가의 수영복 스킨",
+    "corrected_text": "다음은 이제 나가의 수영복 스킨",
+    "correction_reason": "오류가 발견되지 않아 원본 텍스트를 유지함."
+  },
+  {
+    "segment_id": 41,
+    "start": 82.5,
+    "end": 85.0,
+    "original_text": "여름 이벤트 전에 나가 수영복이 나왔다는 거는",
+    "corrected_text": "여름 이벤트 전에 나가 수영복이 나왔다는 거는",
+    "correction_reason": "오류가 발견되지 않아 원본 텍스트를 유지함."
+  },
+  {
+    "segment_id": 42,
+    "start": 85.0,
+    "end": 87.5,
+    "original_text": "아마 이번에 제 최애캐 중 하나인",
+    "corrected_text": "아마 이번에 제 최애캐 중 하나인",
+    "correction_reason": "오류가 발견되지 않아 원본 텍스트를 유지함."
+  },
+  {
+    "segment_id": 43,
+    "start": 87.5,
+    "end": 89.0,
+    "original_text": "티아도 같이 나오지 않을까",
+    "corrected_text": "티아도 같이 나오지 않을까",
+    "correction_reason": "오류가 발견되지 않아 원본 텍스트를 유지함."
+  },
+  {
+    "segment_id": 44,
+    "start": 89.0,
+    "end": 91.0,
+    "original_text": "원래 둘이 약간 11 느낌이라",
+    "corrected_text": "원래 둘이 약간 1+1 느낌이라",
+    "correction_reason": "맥락상 캐릭터 두 명이 세트로 구성된 상황을 뜻하는 '1+1(원플러스원)'을 숫자 '11'로 오인식한 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 45,
+    "start": 91.0,
+    "end": 93.0,
+    "original_text": "덮밥으로 같이 해 먹어야 하기 때문에",
+    "corrected_text": "덮밥으로 같이 해 먹어야 하기 때문에",
+    "correction_reason": "오류가 발견되지 않아 원본 텍스트를 유지함."
+  },
+  {
+    "segment_id": 46,
+    "start": 93.0,
+    "end": 95.0,
+    "original_text": "그런데 보니까 나가가 확실히 수영복을 입을 줄 아네.",
+    "corrected_text": "그런데 보니까 나가가 확실히 수영복을 입을 줄 아네.",
+    "correction_reason": "오류가 발견되지 않아 원본 텍스트를 유지함."
+  },
+  {
+    "segment_id": 47,
+    "start": 95.0,
+    "end": 97.5,
+    "original_text": "이런 KF94 마스크 같이 생긴 수영복을 입어야",
+    "corrected_text": "이런 KF94 마스크같이 생긴 수영복을 입어야",
+    "correction_reason": "앞말에 붙여 써야 하는 격 조사 '같이'를 띄어 쓴 오류가 관찰됨."
+  },
+  {
+    "segment_id": 48,
+    "start": 97.5,
+    "end": 100.0,
+    "original_text": "이 밑가슴이라든지 아니면 윗가슴 이렇게 둘 다 즐길 수 있는데",
+    "corrected_text": "이 밑가슴이라든지 아니면 윗가슴 이렇게 둘 다 즐길 수 있는데",
+    "correction_reason": "오류가 발견되지 않아 원본 텍스트를 유지함."
+  },
+  {
+    "segment_id": 49,
+    "start": 100.0,
+    "end": 102.0,
+    "original_text": "일반적인 비키니는 이런 거 못하지.",
+    "corrected_text": "일반적인 비키니는 이런 거 못하지.",
+    "correction_reason": "오류가 발견되지 않아 원본 텍스트를 유지함."
+  },
+  {
+    "segment_id": 50,
+    "start": 102.0,
+    "end": 103.5,
+    "original_text": "그런데 이 스킨의 단점이라고 하면",
+    "corrected_text": "그런데 이 스킨의 단점이라고 하면",
+    "correction_reason": "오류가 발견되지 않아 원본 텍스트를 유지함."
+  },
+  {
+    "segment_id": 51,
+    "start": 103.5,
+    "end": 105.0,
+    "original_text": "아이스크림 색깔이 마음에 안 들어.",
+    "corrected_text": "아이스크림 색깔이 마음에 안 들어.",
+    "correction_reason": "오류가 발견되지 않아 원본 텍스트를 유지함."
+  },
+  {
+    "segment_id": 52,
+    "start": 105.0,
+    "end": 107.5,
+    "original_text": "이런 민초 맛 날 거 같은 아이스크림을 쳐먹으니까",
+    "corrected_text": "이런 민초 맛 날 것 같은 아이스크림을 처먹으니까",
+    "correction_reason": "의존명사 '것'의 구어체 표현인 '거'를 '것'으로 교정하고, '마구 먹다'를 뜻하는 접두사 '처-'를 '쳐-'로 잘못 표기한 오류가 관찰됨."
+  },
+  {
+    "segment_id": 53,
+    "start": 107.5,
+    "end": 110.0,
+    "original_text": "터치 모션에서 가슴에 흘려도 색깔이 별로야.",
+    "corrected_text": "터치 모션에서 가슴에 흘려도 색깔이 별로야.",
+    "correction_reason": "오류가 발견되지 않아 원본 텍스트를 유지함."
+  },
+  {
+    "segment_id": 54,
+    "start": 110.0,
+    "end": 112.5,
+    "original_text": "아니 옥동자 같은 하얀색 아이스크림을 먹어야",
+    "corrected_text": "아니 옥동자 같은 하얀색 아이스크림을 먹어야",
+    "correction_reason": "오류가 발견되지 않아 원본 텍스트를 유지함."
+  },
+  {
+    "segment_id": 55,
+    "start": 112.5,
+    "end": 115.0,
+    "original_text": "가슴에 흘렸을 때 뭐 그렇고 그런 기분이 나는데",
+    "corrected_text": "가슴에 흘렸을 때 뭐 그렇고 그런 기분이 나는데",
+    "correction_reason": "오류가 발견되지 않아 원본 텍스트를 유지함."
+  },
+  {
+    "segment_id": 56,
+    "start": 115.0,
+    "end": 116.5,
+    "original_text": "이것이 유일한 단점이지 않을까",
+    "corrected_text": "이것이 유일한 단점이지 않을까",
+    "correction_reason": "오류가 발견되지 않아 원본 텍스트를 유지함."
+  },
+  {
+    "segment_id": 57,
+    "start": 116.5,
+    "end": 118.0,
+    "original_text": "그리고 중요하게 보셔야 할 게 있는데",
+    "corrected_text": "그리고 중요하게 보셔야 할 게 있는데",
+    "correction_reason": "오류가 발견되지 않아 원본 텍스트를 유지함."
+  },
+  {
+    "segment_id": 58,
+    "start": 118.0,
+    "end": 119.5,
+    "original_text": "바로 이 선크림",
+    "corrected_text": "바로 이 선크림",
+    "correction_reason": "오류가 발견되지 않아 원본 텍스트를 유지함."
+  },
+  {
+    "segment_id": 59,
+    "start": 119.5,
+    "end": 121.0,
+    "original_text": "이걸 그냥 가지고 오진 않았을 거 아니야?",
+    "corrected_text": "이걸 그냥 가지고 오진 않았을 거 아니야?",
+    "correction_reason": "오류가 발견되지 않아 원본 텍스트를 유지함."
+  }
+]

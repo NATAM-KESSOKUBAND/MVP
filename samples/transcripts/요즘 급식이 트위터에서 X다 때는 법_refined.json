@@ -1,0 +1,401 @@
+{
+    "segments": [
+        {
+            "segment_id": 0,
+            "start": 0.0,
+            "end": 5.2,
+            "original_text": "핵가치는 5월 5일 에메 34에서 김씨표류기 롤체 방송을 하다가",
+            "corrected_text": "핵가치는 5월 5일 에메 34에서 김씨표류기 롤체 방송을 하다가",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 1,
+            "start": 5.2,
+            "end": 11.9,
+            "original_text": "어린이날 기념으로 로블록스에 들어갔다 게임 중에 가제맨이 로블록스 콘텐츠를 한다는 사실을 알게 되고",
+            "corrected_text": "어린이날 기념으로 로블록스에 들어갔다 게임 중에 가제맨이 로블록스 콘텐츠를 한다는 사실을 알게 되고",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 2,
+            "start": 11.9,
+            "end": 23.9,
+            "original_text": "그 시청자가 저격 중에 나를 만났는데 대화하다가 트위터 아이디를 받고 처음에 게이인가 했는데 계정 첫 영상부터 네핑 돌발상황 과부하 걸려서 튕겨 나갔다",
+            "corrected_text": "그 시청자가 저격 중에 나를 만났는데 대화하다가 트위터 아이디를 받고 처음에 게이인가 했는데 계정 첫 영상부터 네트워크 핑 돌발상황 과부하 걸려서 튕겨 나갔다",
+            "correction_reason": "'네핑'은 표준어가 아니며, 게임 맥락에서 '네트워크 핑'과 발음이 유사하고 의미상 더 적절함."
+        },
+        {
+            "segment_id": 3,
+            "start": 23.9,
+            "end": 28.0,
+            "original_text": "사연을 요구하니 지금 같은 이야기를 얻게 되었다",
+            "corrected_text": "사연을 요구하니 지금 같은 이야기를 얻게 되었다",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 4,
+            "start": 28.0,
+            "end": 32.0,
+            "original_text": "이 영상은 보는 사람에 따라 많이 역겨울 수도 있다",
+            "corrected_text": "이 영상은 보는 사람에 따라 많이 역겨울 수도 있다",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 5,
+            "start": 32.0,
+            "end": 39.0,
+            "original_text": "어릴 때 유튜브에서 변남 낚시같은 걸 보다 트위터 X 태그를 알게 되며 눈팅을 하게 됐다",
+            "corrected_text": "어릴 때 유튜브에서 변남 낚시같은 걸 보다 트위터 X 태그를 알게 되며 눈팅을 하게 됐다",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 6,
+            "start": 39.0,
+            "end": 43.7,
+            "original_text": "DC3 때 이사를 가며 친구가 없어지고 외로워서 더 빠지게 됐다",
+            "corrected_text": "DC3 때 이사를 가며 친구가 없어지고 외로워서 더 빠지게 됐다",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 7,
+            "start": 43.7,
+            "end": 51.9,
+            "original_text": "관심을 받고 싶어서 꽃 사진도 올리기 시작했고 반응이 오니 도파민 절임통에 뇌가 쌀에서 떡이 되듯 계속하게 됐다",
+            "corrected_text": "관심을 받고 싶어서 꽃 사진도 올리기 시작했고 반응이 오니 도파민 절임통에 뇌가 쌀에서 떡이 되듯 계속하게 됐다",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 8,
+            "start": 51.9,
+            "end": 55.0,
+            "original_text": "외로움에 그냥 대화 상대가 있다는 게 좋았다",
+            "corrected_text": "외로움에 그냥 대화 상대가 있다는 게 좋았다",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 9,
+            "start": 55.0,
+            "end": 59.9,
+            "original_text": "학교 현실 친구는 프로토스 뒤질 때 마냥 증발 되어 있었다",
+            "corrected_text": "학교 현실 친구는 프로토스 뒤질 때 마냥 증발 되어 있었다",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 10,
+            "start": 59.9,
+            "end": 63.9,
+            "original_text": "처음 오프라인에서 사람을 본 건 DK 2 3월이다",
+            "corrected_text": "처음 오프라인에서 사람을 본 건 2002년 3월이다",
+            "correction_reason": "'DK 2 3월'은 날짜 표현으로 부자연스러우며, '2002년 3월'과 발음이 유사하고 맥락상 연도를 나타내는 것이 적절함."
+        },
+        {
+            "segment_id": 11,
+            "start": 63.9,
+            "end": 67.6,
+            "original_text": "그때도 다였고 될 거라고는 생각 못했다",
+            "corrected_text": "그때도 다였고 될 거라고는 생각 못했다",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 12,
+            "start": 67.6,
+            "end": 72.9,
+            "original_text": "어느 날 어떤 사람이 연락을 줬고 그 사람은 다르게 느껴졌다",
+            "corrected_text": "어느 날 어떤 사람이 연락을 줬고 그 사람은 다르게 느껴졌다",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 13,
+            "start": 72.9,
+            "end": 75.0,
+            "original_text": "본인이 친해지면 준다고 했다",
+            "corrected_text": "본인이 친해지면 준다고 했다",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 14,
+            "start": 75.0,
+            "end": 78.7,
+            "original_text": "말도 잘 통하고 공통점도 있어 연락하게 된다",
+            "corrected_text": "말도 잘 통하고 공통점도 있어 연락하게 된다",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 15,
+            "start": 78.7,
+            "end": 81.0,
+            "original_text": "자연스럽게 가까워지고",
+            "corrected_text": "자연스럽게 가까워지고",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 16,
+            "start": 81.0,
+            "end": 84.0,
+            "original_text": "직접 오겠다고 해서 근처에서 만나게 됐다",
+            "corrected_text": "직접 오겠다고 해서 근처에서 만나게 됐다",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 17,
+            "start": 84.0,
+            "end": 88.0,
+            "original_text": "실제로 보니까 사진보다 괜찮더라 밥 룸카페 루트 타고",
+            "corrected_text": "실제로 보니까 사진보다 괜찮더라 밥 룸카페 루트 타고",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 18,
+            "start": 88.0,
+            "end": 91.0,
+            "original_text": "상대가 리드해 상황이 이어졌다",
+            "corrected_text": "상대가 리드해 상황이 이어졌다",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 19,
+            "start": 91.0,
+            "end": 93.4,
+            "original_text": "다만 꽃이 발아하지 못했다",
+            "corrected_text": "다만 꽃이 발아하지 못했다",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 20,
+            "start": 93.4,
+            "end": 98.9,
+            "original_text": "그 이후에도 연락만 이어가다가 2주 정도 지나서 외박을 허락받아 밥 카페 찍고",
+            "corrected_text": "그 이후에도 연락만 이어가다가 2주 정도 지나서 외박을 허락받아 밥 카페 찍고",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 21,
+            "start": 98.9,
+            "end": 102.0,
+            "original_text": "숙소에서 육질 테스트를 했다",
+            "corrected_text": "숙소에서 육질 테스트를 했다",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 22,
+            "start": 102.0,
+            "end": 106.4,
+            "original_text": "그 후 2주 지나 부모님이 여행 갔을 때 집으로 불러서 며칠 지냈다",
+            "corrected_text": "그 후 2주 지나 부모님이 여행 갔을 때 집으로 불러서 며칠 지냈다",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 23,
+            "start": 106.4,
+            "end": 109.0,
+            "original_text": "낮에는 학교 저녁은 하고 시간을 보냈다",
+            "corrected_text": "낮에는 학교 저녁은 하고 시간을 보냈다",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 24,
+            "start": 109.0,
+            "end": 113.9,
+            "original_text": "그런데 마지막 날 이후로 연락이 뜸해져 자기 생활에 집중한다더라",
+            "corrected_text": "그런데 마지막 날 이후로 연락이 뜸해져 자기 생활에 집중한다더라",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 25,
+            "start": 113.9,
+            "end": 119.0,
+            "original_text": "나중 이야기로는 전 썸남이랑 다시 연락을 한 게",
+            "corrected_text": "나중 이야기로는 전 썸남이랑 다시 연락을 한 게",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 26,
+            "start": 119.0,
+            "end": 124.0,
+            "original_text": "그런데 그 년도 썸남 데리고 이런 거 보면 그 썸남도 트윗남인 시존재 콘텐츠 아닐까",
+            "corrected_text": "그런데 그년도 썸남 데리고 이런 거 보면 그 썸남도 트윗남인 시선재 콘텐츠 아닐까",
+            "correction_reason": "‘그 년도’는 문맥상 비하적인 의미의 ‘그년도’(그 여자도)로, ‘시존재’는 ‘시선재’(시선 재료)로 발음이 유사하지만 맥락상 틀린 단어를 바로잡음."
+        },
+        {
+            "segment_id": 27,
+            "start": 124.0,
+            "end": 128.9,
+            "original_text": "여자들은 얼마나 외로움에 빠져 있으면 이러고 있냐",
+            "corrected_text": "여자들은 얼마나 외로움에 빠져 있으면 이러고 있냐",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 28,
+            "start": 128.9,
+            "end": 131.0,
+            "original_text": "참고 버티는 게 어렵나?",
+            "corrected_text": "참고 버티는 게 어렵나?",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 29,
+            "start": 131.0,
+            "end": 135.0,
+            "original_text": "여자라는 게 거대한 정신병 집합체가 아닐까 한다",
+            "corrected_text": "여자라는 게 거대한 정신병 집합체가 아닐까 한다",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 30,
+            "start": 135.0,
+            "end": 140.0,
+            "original_text": "그 이후로는 가끔 생일이나 주고받는 사이가 되어 더 이상 만난 적 없었다",
+            "corrected_text": "그 이후로는 가끔 생일이나 주고받는 사이가 되어 더 이상 만난 적 없었다",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 31,
+            "start": 140.0,
+            "end": 143.0,
+            "original_text": "그때의 감정이 무엇이었는지 모르겠다",
+            "corrected_text": "그때의 감정이 무엇이었는지 모르겠다",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 32,
+            "start": 143.0,
+            "end": 149.0,
+            "original_text": "외로움 때문이었는지 처음이라 더 크게 느껴졌던 것인지 무한한 공허함의 관짝에 들어갔다",
+            "corrected_text": "외로움 때문이었는지 처음이라 더 크게 느껴졌던 것인지 무한한 공허함의 관짝에 들어갔다",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 33,
+            "start": 149.0,
+            "end": 152.0,
+            "original_text": "한동안 끊었다가 10월 다시 부활",
+            "corrected_text": "한동안 끊었다가 10월 다시 부활",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 34,
+            "start": 152.0,
+            "end": 154.0,
+            "original_text": "온라인 알파메일",
+            "corrected_text": "온라인 알파메일",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 35,
+            "start": 154.0,
+            "end": 158.0,
+            "original_text": "유해조수 포획단이 되어",
+            "corrected_text": "유해조수 포획단이 되어",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 36,
+            "start": 158.0,
+            "end": 162.0,
+            "original_text": "메네라의 아랫입에 대전차 지뢰를 매설하며 X 다를 때줬다",
+            "corrected_text": "메갈의 아랫입에 대전차 지뢰를 매설하며 좆을 떼줬다",
+            "correction_reason": "‘메네라’는 문맥상 비하적인 의미의 ‘메갈’로, ‘X 다를 때줬다’는 ‘좆을 떼줬다’로 발음이 유사하지만 맥락상 틀린 단어를 바로잡음."
+        },
+        {
+            "segment_id": 37,
+            "start": 162.0,
+            "end": 168.0,
+            "original_text": "온팬, 비게 영상으로 돈을 버는 사람들을 보고 직접 시작도 했다",
+            "corrected_text": "온팬, 비계 영상으로 돈을 버는 사람들을 보고 직접 시작도 했다",
+            "correction_reason": "‘비게’는 ‘비계’(비공개 계정/영상)로 발음이 유사하지만 맥락상 틀린 단어를 바로잡음."
+        },
+        {
+            "segment_id": 38,
+            "start": 168.0,
+            "end": 173.0,
+            "original_text": "돌아보면 단순한 호기심에서 시작해서 점점 커진 흐름이었다",
+            "corrected_text": "돌아보면 단순한 호기심에서 시작해서 점점 커진 흐름이었다",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 39,
+            "start": 173.0,
+            "end": 181.0,
+            "original_text": "여자들의 유입 경로는 일상계나 정병계에서 너무어오거나 트위터 스페이스라는 옾챗 보이스룸 같은 곳에서 알게 되는 경우가 많다",
+            "corrected_text": "여자들의 유입 경로는 일상계나 정병계에서 넘어오거나 트위터 스페이스라는 옾챗 보이스룸 같은 곳에서 알게 되는 경우가 많다",
+            "correction_reason": "‘너무어오거나’는 ‘넘어오거나’로 발음이 유사하지만 맥락상 틀린 단어를 바로잡음."
+        },
+        {
+            "segment_id": 40,
+            "start": 181.0,
+            "end": 188.0,
+            "original_text": "전반적으로 못생긴 사람도 많지만 이쁜 사람도 있다 그런데 외로움이나 불안정한 상태가 많다",
+            "corrected_text": "전반적으로 못생긴 사람도 많지만 이쁜 사람도 있다 그런데 외로움이나 불안정한 상태가 많다",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 41,
+            "start": 188.0,
+            "end": 194.0,
+            "original_text": "딱 정신병동에 형광등 대신 스마트폰 매달아 놓은 사이버 정신병동이다",
+            "corrected_text": "딱 정신병동에 형광등 대신 스마트폰 매달아 놓은 사이버 정신병동이다",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 42,
+            "start": 194.0,
+            "end": 198.0,
+            "original_text": "그리고 그런 여자들 남자들이 병신으로 본다",
+            "corrected_text": "그리고 그런 여자들 남자들이 병신으로 본다",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 43,
+            "start": 198.0,
+            "end": 205.0,
+            "original_text": "추가로 트위터에는 DC 갤러리 같은 개념의 커뮤니티라는 게 있는데 이딴 게 대단한 것도 아닌데 훈장단 거 마냥 자랑스럽게 여기는 애들의",
+            "corrected_text": "추가로 트위터에는 DC 갤러리 같은 개념의 커뮤니티라는 게 있는데 이딴 게 대단한 것도 아닌데 훈장단 거 마냥 자랑스럽게 여기는 애들의",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 44,
+            "start": 205.0,
+            "end": 212.0,
+            "original_text": "여기 주딱 즉 관리자들도 뇌 반 갈라서 버터에 구운 거 같은 애들이다",
+            "corrected_text": "여기 주딱 즉 관리자들도 뇌 반 갈라서 버터에 구운 거 같은 애들이다",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 45,
+            "start": 212.0,
+            "end": 219.0,
+            "original_text": "어린년 꼬셔 관리자 주고 싸우면 공론화하고 정병 관심 중독을 가마솥에 넣고 팔팔 끓인 느낌이다",
+            "corrected_text": "어린년 꼬셔 관리자 주고 싸우면 공론화하고 정병 관심 중독을 가마솥에 넣고 팔팔 끓인 느낌이다",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 46,
+            "start": 219.0,
+            "end": 221.0,
+            "original_text": "이상이며 잠 잘 자라",
+            "corrected_text": "이상이며 잠 잘 자라",
+            "correction_reason": ""
+        },
+        {
+            "segment_id": 47,
+            "start": 221.0,
+            "end": 226.0,
+            "original_text": "병 걱정 안 하냐고 물으니깐 꼬박꼬박 보건소 간다더라",
+            "corrected_text": "병 걱정 안 하냐고 물으니까 꼬박꼬박 보건소 간다더라",
+            "correction_reason": "유사 발음 '물으니깐'을 표준어 '물으니까'로 교정"
+        },
+        {
+            "segment_id": 48,
+            "start": 226.0,
+            "end": 230.0,
+            "original_text": "그러다가 크게 데이는지 아닌지는 내 알 바 아니긴 하다",
+            "corrected_text": "그러다가 크게 데이는지 아닌지는 내 알 바 아니긴 하다",
+            "correction_reason": ""
+        }
+    ],
+    "video_info": {
+        "path": "C:\\Users\\epicr\\OneDrive\\바탕 화면\\요즘 급식이 트위터에서 X다 때는 법.mp4",
+        "duration": 230.0
+    },
+    "total_corrected": 7
+}

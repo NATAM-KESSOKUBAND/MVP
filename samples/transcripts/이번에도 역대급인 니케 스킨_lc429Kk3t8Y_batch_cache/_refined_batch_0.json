@@ -1,0 +1,162 @@
+[
+  {
+    "segment_id": 0,
+    "start": 0.0,
+    "end": 2.0,
+    "original_text": "이번에 나왔던 스킨들 리뷰해 보려고 하는데",
+    "corrected_text": "이번에 나왔던 스킨들 리뷰해 보려고 하는데",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 1,
+    "start": 2.0,
+    "end": 3.5,
+    "original_text": "좀 늦긴 했지만",
+    "corrected_text": "좀 늦긴 했지만",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 2,
+    "start": 3.5,
+    "end": 4.5,
+    "original_text": "그래도 할 건 해야지",
+    "corrected_text": "그래도 할 건 해야지",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 3,
+    "start": 4.5,
+    "end": 6.5,
+    "original_text": "꼴리는 걸 보고 그냥 지나치는 건",
+    "corrected_text": "꼴리는 걸 보고 그냥 지나치는 건",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 4,
+    "start": 6.5,
+    "end": 8.5,
+    "original_text": "내 삶의 가치관에 어긋나는 행동이기 때문에",
+    "corrected_text": "내 삶의 가치관에 어긋나는 행동이기 때문에",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 5,
+    "start": 8.5,
+    "end": 10.0,
+    "original_text": "간단하게라도 리뷰해 보려고 합니다.",
+    "corrected_text": "간단하게라도 리뷰해 보려고 합니다.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 6,
+    "start": 10.0,
+    "end": 12.5,
+    "original_text": "일단 먼저 목단의 첫 유니크 코스튬인",
+    "corrected_text": "일단 먼저 목단의 첫 유니크 코스튬인",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 7,
+    "start": 12.5,
+    "end": 13.5,
+    "original_text": "화중지왕",
+    "corrected_text": "화중지왕",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 8,
+    "start": 13.5,
+    "end": 15.5,
+    "original_text": "무슨 뜻인지는 정확하게 모르겠는데",
+    "corrected_text": "무슨 뜻인지는 정확하게 모르겠는데",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 9,
+    "start": 15.5,
+    "end": 18.0,
+    "original_text": "뭐 좆지를 화나게 하는 데 있어서 왕이다 뭐 그런 뜻인 거 같고요.",
+    "corrected_text": "뭐 바지를 화나게 하는 데 있어서 왕이다 뭐 그런 뜻인 거 같고요.",
+    "correction_reason": "맥락상 '바지를 화나게 하다'라는 표현이 사용된 것으로 보이나, 발음의 유사성으로 인해 '좆지'로 오인식된 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 10,
+    "start": 18.0,
+    "end": 20.5,
+    "original_text": "참고로 전 목단이 없는데도 불구하고 뽑았어요.",
+    "corrected_text": "참고로 전 목단이 없는데도 불구하고 뽑았어요.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 11,
+    "start": 20.5,
+    "end": 22.5,
+    "original_text": "제가 제일 좋아하는 치파오를 입고 있어서",
+    "corrected_text": "제가 제일 좋아하는 치파오를 입고 있어서",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 12,
+    "start": 22.5,
+    "end": 24.5,
+    "original_text": "치파오를 누가 만들었는지 모르겠는데",
+    "corrected_text": "치파오를 누가 만들었는지 모르겠는데",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 13,
+    "start": 24.5,
+    "end": 26.5,
+    "original_text": "만든 사람한테는 노벨꼴림상 뭐 이런 거 만들어 줘야 해.",
+    "corrected_text": "만든 사람한테는 노벨꼴림상 뭐 이런 거 만들어 줘야 해.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 14,
+    "start": 26.5,
+    "end": 28.5,
+    "original_text": "난 솔직히 바니걸보다",
+    "corrected_text": "난 솔직히 바니걸보다",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 15,
+    "start": 28.5,
+    "end": 29.5,
+    "original_text": "치파오가 더 꼴려.",
+    "corrected_text": "치파오가 더 꼴려.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 16,
+    "start": 29.5,
+    "end": 32.0,
+    "original_text": "몸매 라인 따라 이렇게 밀착돼 있는 핏이랑",
+    "corrected_text": "몸매 라인 따라 이렇게 밀착돼 있는 핏이랑",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 17,
+    "start": 32.0,
+    "end": 34.0,
+    "original_text": "입으로 불면 전부 보일 거 같은 그런 옆트임까지",
+    "corrected_text": "바람 불면 전부 보일 거 같은 그런 옆트임까지",
+    "correction_reason": "의상의 옆트임이 노출되는 상황을 표현할 때 '바람 불면'이 맥락상 자연스러우며, 발음 유사성으로 인해 '입으로 불면'으로 잘못 인식된 것으로 분석됨."
+  },
+  {
+    "segment_id": 18,
+    "start": 34.0,
+    "end": 36.0,
+    "original_text": "와 그리고 이 목단의 밑가슴 사이",
+    "corrected_text": "와 그리고 이 목단의 밑가슴 사이",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 19,
+    "start": 36.0,
+    "end": 37.0,
+    "original_text": "여긴 진짜",
+    "corrected_text": "여긴 진짜",
+    "correction_reason": ""
+  }
+]

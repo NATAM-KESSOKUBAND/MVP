@@ -1,0 +1,162 @@
+[
+  {
+    "segment_id": 80,
+    "start": 308.5,
+    "end": 310.5,
+    "original_text": "냄뚜 전사 대령이오",
+    "corrected_text": "냄뚜 전사 대령이오",
+    "correction_reason": "맥락상 메이플스토리의 '냄비 뚜껑 전사'를 뜻하는 '냄뚜 전사'가 올바르게 표기된 것으로 판단되어 유지함"
+  },
+  {
+    "segment_id": 81,
+    "start": 310.5,
+    "end": 313.5,
+    "original_text": "냄뚜 전사 으아",
+    "corrected_text": "냄뚜 전사 으아",
+    "correction_reason": "맥락상 올바른 표기로 판단되어 유지함"
+  },
+  {
+    "segment_id": 82,
+    "start": 313.5,
+    "end": 317.0,
+    "original_text": "하하하하 냄뚜 전사 하하하하",
+    "corrected_text": "하하하하 냄뚜 전사 하하하하",
+    "correction_reason": "맥락상 올바른 표기로 판단되어 유지함"
+  },
+  {
+    "segment_id": 83,
+    "start": 320.0,
+    "end": 325.0,
+    "original_text": "썩마딕 썩마딕 썩마딕 썩마딕",
+    "corrected_text": "Suck my dick Suck my dick Suck my dick Suck my dick",
+    "correction_reason": "영어 비속어 표현인 'Suck my dick'의 한국어 발음 표기를 영문 원어로 교정함"
+  },
+  {
+    "segment_id": 84,
+    "start": 325.0,
+    "end": 326.5,
+    "original_text": "next fight",
+    "corrected_text": "Next fight",
+    "correction_reason": "문장 시작의 영문 대문자 표기 규칙을 적용함"
+  },
+  {
+    "segment_id": 85,
+    "start": 326.5,
+    "end": 328.5,
+    "original_text": "냄뚜 전사 아",
+    "corrected_text": "냄뚜 전사 아",
+    "correction_reason": "맥락상 올바른 표기로 판단되어 유지함"
+  },
+  {
+    "segment_id": 86,
+    "start": 328.5,
+    "end": 333.5,
+    "original_text": "냄뚜 전사 출격이오 쉬쉬 쉬쉬손손",
+    "corrected_text": "냄뚜 전사 출격이오 쉭쉭 쉭쉭",
+    "correction_reason": "무기를 휘두르는 소리인 의성어 '쉭쉭'이 오인식된 패턴이 관찰되어 교정함"
+  },
+  {
+    "segment_id": 87,
+    "start": 333.5,
+    "end": 337.5,
+    "original_text": "아 아 아",
+    "corrected_text": "아 아 아",
+    "correction_reason": "단순 감탄사로 판단되어 유지함"
+  },
+  {
+    "segment_id": 88,
+    "start": 337.5,
+    "end": 341.0,
+    "original_text": "일어나 일어나 일어나 일어나 일어나 일어나 일어나 일어나 일어나 일어나",
+    "corrected_text": "일어나 일어나 일어나 일어나 일어나 일어나 일어나 일어나 일어나 일어나",
+    "correction_reason": "반복되는 대사가 올바르게 인식된 것으로 판단되어 유지함"
+  },
+  {
+    "segment_id": 89,
+    "start": 341.0,
+    "end": 345.5,
+    "original_text": "두한아 두한아 두한아",
+    "corrected_text": "두한아 두한아 두한아",
+    "correction_reason": "특정 대사 밈(야인시대)을 인용한 발음이 올바르게 인식된 것으로 판단되어 유지함"
+  },
+  {
+    "segment_id": 90,
+    "start": 345.5,
+    "end": 346.5,
+    "original_text": "아",
+    "corrected_text": "아",
+    "correction_reason": "단순 감탄사로 판단되어 유지함"
+  },
+  {
+    "segment_id": 91,
+    "start": 346.5,
+    "end": 348.5,
+    "original_text": "아 너무 깝쳤어",
+    "corrected_text": "아 너무 깝쳤어",
+    "correction_reason": "구어체 표현이 올바르게 인식된 것으로 판단되어 유지함"
+  },
+  {
+    "segment_id": 92,
+    "start": 348.5,
+    "end": 350.0,
+    "original_text": "똑같이는 안 당한다",
+    "corrected_text": "똑같이는 안 당한다",
+    "correction_reason": "맥락상 올바른 표기로 판단되어 유지함"
+  },
+  {
+    "segment_id": 93,
+    "start": 350.0,
+    "end": 353.5,
+    "original_text": "냄뚜 전사 휘둘러봐",
+    "corrected_text": "냄뚜 전사 휘둘러봐",
+    "correction_reason": "맥락상 올바른 표기로 판단되어 유지함"
+  },
+  {
+    "segment_id": 94,
+    "start": 353.5,
+    "end": 356.5,
+    "original_text": "아 아 뼈가 났어 뼈가 났어 뼈 뼈 뼈 뼈 뼈 뼈",
+    "corrected_text": "아 아 뼈가 나갔어 뼈가 나갔어 뼈 뼈 뼈 뼈 뼈 뼈",
+    "correction_reason": "타격을 입은 상황에서 '뼈가 나갔다(탈구/골절)'는 표현이 '뼈가 났다'로 오인식된 패턴이 관찰되어 교정함"
+  },
+  {
+    "segment_id": 95,
+    "start": 356.5,
+    "end": 401.5,
+    "original_text": "아 아 진짜 존나 아파 아 잠깐만 잠깐만 존나 아파 진짜 아",
+    "corrected_text": "아 아 진짜 존나 아파 아 잠깐만 잠깐만 존나 아파 진짜 아",
+    "correction_reason": "실제 발화된 비속어 및 구어 표현이 올바르게 인식된 것으로 판단되어 유지함"
+  },
+  {
+    "segment_id": 96,
+    "start": 401.5,
+    "end": 405.5,
+    "original_text": "쉬쉬손손 와라 쉬쉬손손",
+    "corrected_text": "쉭쉭 와라 쉭쉭",
+    "correction_reason": "무기를 휘두르는 소리인 의성어 '쉭쉭'이 오인식된 패턴이 관찰되어 교정함"
+  },
+  {
+    "segment_id": 97,
+    "start": 406.0,
+    "end": 408.0,
+    "original_text": "쉬쉬손손",
+    "corrected_text": "쉭쉭",
+    "correction_reason": "의성어 '쉭쉭'이 오인식된 패턴이 관찰되어 교정함"
+  },
+  {
+    "segment_id": 98,
+    "start": 411.0,
+    "end": 415.0,
+    "original_text": "이 씨발놈아 일로 오라고 개새끼 짜증 나니까 쉬쉬손손 새끼야",
+    "corrected_text": "이 씨발놈아 일로 오라고 개새끼 짜증 나니까 쉭쉭 새끼야",
+    "correction_reason": "의성어 '쉭쉭'이 오인식된 패턴이 관찰되어 교정함"
+  },
+  {
+    "segment_id": 99,
+    "start": 415.0,
+    "end": 417.5,
+    "original_text": "쉬쉬손손 쉬쉬손",
+    "corrected_text": "쉭쉭 쉭쉭",
+    "correction_reason": "의성어 '쉭쉭'이 오인식된 패턴이 관찰되어 교정함"
+  }
+]

@@ -1,0 +1,162 @@
+[
+  {
+    "segment_id": 40,
+    "start": 126.5,
+    "end": 128.5,
+    "original_text": "고추",
+    "corrected_text": "우측",
+    "correction_reason": "게임 플레이 중 방향을 지시하는 상황에서 '우측'이 '고추'로 오인식된 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 41,
+    "start": 128.5,
+    "end": 130.5,
+    "original_text": "고추 새끼야 고추",
+    "corrected_text": "우측 새끼야 우측",
+    "correction_reason": "동일하게 방향 지시어 '우측' 발음이 '고추'로 오인식된 현상이 반복적으로 나타남."
+  },
+  {
+    "segment_id": 42,
+    "start": 130.5,
+    "end": 133.5,
+    "original_text": "고추 고추 새끼야",
+    "corrected_text": "우측 우측 새끼야",
+    "correction_reason": "방향 지시어 '우측'이 '고추'로 잘못 변환된 오류가 지속됨."
+  },
+  {
+    "segment_id": 43,
+    "start": 133.5,
+    "end": 135.0,
+    "original_text": "고추 새끼야 피해봐 피해봐",
+    "corrected_text": "우측 새끼야 피해봐 피해봐",
+    "correction_reason": "회피를 지시하는 맥락('피해봐')과 결합하여 '우측'이 '고추'로 오인식된 사실이 확인됨."
+  },
+  {
+    "segment_id": 44,
+    "start": 135.0,
+    "end": 136.5,
+    "original_text": "아",
+    "corrected_text": "아",
+    "correction_reason": "단순 감탄사로 오인식이나 교정 필요성이 발견되지 않음."
+  },
+  {
+    "segment_id": 45,
+    "start": 136.5,
+    "end": 139.0,
+    "original_text": "아 씨 아 어 살았다 살았다 아 죽은 줄 알았다",
+    "corrected_text": "아 씨 아 어 살았다 살았다 아 죽은 줄 알았다",
+    "correction_reason": "발화 내용이 상황 맥락과 일치하여 교정하지 않음."
+  },
+  {
+    "segment_id": 46,
+    "start": 139.0,
+    "end": 141.0,
+    "original_text": "아 꿈인가? 꿈이었나?",
+    "corrected_text": "아 꿈인가? 꿈이었나?",
+    "correction_reason": "맥락상 자연스러운 발화로 판단되어 원본을 유지함."
+  },
+  {
+    "segment_id": 47,
+    "start": 141.0,
+    "end": 143.0,
+    "original_text": "야 칼 주울 수 있는 거야 다시? 잠깐만 최대한 크게 돌아",
+    "corrected_text": "야 칼 주울 수 있는 거야 다시? 잠깐만 최대한 크게 돌아",
+    "correction_reason": "게임 상황(무기 회수 및 이동)에 부합하는 발화로 분석됨."
+  },
+  {
+    "segment_id": 48,
+    "start": 143.0,
+    "end": 144.5,
+    "original_text": "아 아",
+    "corrected_text": "아 아",
+    "correction_reason": "단순 신음 및 감탄사로 교정 대상에서 제외됨."
+  },
+  {
+    "segment_id": 49,
+    "start": 144.5,
+    "end": 146.0,
+    "original_text": "아 여기 부딪혀도 안 돼?",
+    "corrected_text": "아 여기 부딪혀도 안 돼?",
+    "correction_reason": "지형지물 충돌 상황에 대한 의문문으로 맥락상 적절함."
+  },
+  {
+    "segment_id": 50,
+    "start": 146.0,
+    "end": 147.5,
+    "original_text": "최대한 크게 돌아",
+    "corrected_text": "최대한 크게 돌아",
+    "correction_reason": "이동 경로를 지시하는 정상적인 발화로 확인됨."
+  },
+  {
+    "segment_id": 51,
+    "start": 147.5,
+    "end": 149.5,
+    "original_text": "이야 주워야 해",
+    "corrected_text": "이거 주워야 해",
+    "correction_reason": "앞선 맥락('칼 주울 수 있는 거야')과 연결할 때 지시대명사 '이거'가 '이야'로 오인식된 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 52,
+    "start": 149.5,
+    "end": 152.5,
+    "original_text": "아 아 아 아",
+    "corrected_text": "아 아 아 아",
+    "correction_reason": "단순 감탄사로 교정이 불필요함."
+  },
+  {
+    "segment_id": 53,
+    "start": 153.0,
+    "end": 155.5,
+    "original_text": "아 투구 왜 쓴 거야? 아니 투구 효과가 없잖아",
+    "corrected_text": "아 투구 왜 쓴 거야? 아니 투구 효과가 없잖아",
+    "correction_reason": "장비 아이템(투구)의 효용성에 대한 의문으로 맥락상 오류가 없음."
+  },
+  {
+    "segment_id": 54,
+    "start": 155.5,
+    "end": 157.0,
+    "original_text": "아 E가 줍는 거야?",
+    "corrected_text": "아 E로 줍는 거야?",
+    "correction_reason": "키보드 조작키 'E'를 이용한 상호작용을 묻는 맥락에서 조사 '가'가 '로'의 오인식일 가능성이 높음."
+  },
+  {
+    "segment_id": 55,
+    "start": 157.0,
+    "end": 159.5,
+    "original_text": "예 E 아",
+    "corrected_text": "에이 아",
+    "correction_reason": "탄식하는 감탄사 '에이'가 알파벳 'E'와 긍정 대답 '예'로 분절되어 오인식된 패턴이 나타남."
+  },
+  {
+    "segment_id": 56,
+    "start": 159.5,
+    "end": 202.5,
+    "original_text": "이겼다 이 새끼야 넌 뒤졌다 밤기사 출동이요",
+    "corrected_text": "이겼다 이 새끼야 넌 뒤졌다 밤 기사 출동이요",
+    "correction_reason": "게임 내 고유 명칭인 '밤 기사'의 띄어쓰기 오류가 관찰됨."
+  },
+  {
+    "segment_id": 57,
+    "start": 203.5,
+    "end": 205.0,
+    "original_text": "으아",
+    "corrected_text": "으아",
+    "correction_reason": "단순 비명으로 교정하지 않음."
+  },
+  {
+    "segment_id": 58,
+    "start": 205.0,
+    "end": 208.5,
+    "original_text": "아하하하하 하하하하",
+    "corrected_text": "아하하하하 하하하하",
+    "correction_reason": "웃음소리 표현으로 원본 유지가 적절함."
+  },
+  {
+    "segment_id": 59,
+    "start": 208.5,
+    "end": 211.5,
+    "original_text": "일어나라 기회를 주겠다 정식으로 붙자",
+    "corrected_text": "일어나라 기회를 주겠다 정식으로 붙자",
+    "correction_reason": "전투 상황에서의 대사로 맥락상 오류가 발견되지 않음."
+  }
+]

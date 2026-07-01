@@ -1,0 +1,162 @@
+[
+  {
+    "segment_id": 80,
+    "start": 317.0,
+    "end": 319.0,
+    "original_text": "아 일단 일단 들어보세요. 일단 다 뽑겠다는 소리는 아니고요.",
+    "corrected_text": "아 일단 일단 들어보세요. 일단 다 뽑겠다는 소리는 아니고요.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 81,
+    "start": 319.0,
+    "end": 323.0,
+    "original_text": "그 중에 이 여섯 명 중에 두 명이 일단",
+    "corrected_text": "그중에 이 여섯 명 중에 두 명이 일단",
+    "correction_reason": "띄어쓰기 교정: '그 중에' -> '그중에'"
+  },
+  {
+    "segment_id": 82,
+    "start": 323.0,
+    "end": 326.0,
+    "original_text": "그러니까 4명은 그냥 뽑지 말라는 얘기가 더 많았고요.",
+    "corrected_text": "그러니까 4명은 그냥 뽑지 말라는 얘기가 더 많았고요.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 83,
+    "start": 326.0,
+    "end": 328.0,
+    "original_text": "두 명은 일단은",
+    "corrected_text": "두 명은 일단은",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 84,
+    "start": 328.0,
+    "end": 330.0,
+    "original_text": "아 뽑으면 좋을 것 같은데",
+    "corrected_text": "아 뽑으면 좋을 것 같은데",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 85,
+    "start": 330.0,
+    "end": 338.0,
+    "original_text": "그런데 이제 나중에 한 1년 뒤쯤에 더 좋은 애들이 나올 수도 있다 나올 수도 있다예요. 그러니까 얘네들보다 더 좋은 애들이 나올 수도 있다.",
+    "corrected_text": "그런데 이제 나중에 한 1년 뒤쯤에 더 좋은 애들이 나올 수도 있다 나올 수도 있다예요. 그러니까 얘네들보다 더 좋은 애들이 나올 수도 있다.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 86,
+    "start": 338.0,
+    "end": 339.0,
+    "original_text": "수헬름 비추.",
+    "corrected_text": "수헬름 비추.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 87,
+    "start": 339.0,
+    "end": 343.0,
+    "original_text": "아 그러니까 이것이 지금 이 파란색 머리는 어 뽑지 말라는 얘기가 좀 더 많고요.",
+    "corrected_text": "아 그러니까 이것이 지금 이 파란색 머리는 어 뽑지 말라는 얘기가 좀 더 많고요.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 88,
+    "start": 343.0,
+    "end": 345.0,
+    "original_text": "이 친구는 뽑아야 합니다.",
+    "corrected_text": "이 친구는 뽑아야 합니다.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 89,
+    "start": 345.0,
+    "end": 346.0,
+    "original_text": "이것거든요.",
+    "corrected_text": "이것거든요.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 90,
+    "start": 346.0,
+    "end": 349.0,
+    "original_text": "이것 말이 안 되거든요.",
+    "corrected_text": "이것 말이 안 되거든요.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 91,
+    "start": 349.0,
+    "end": 351.0,
+    "original_text": "그 사실은 이 친구가",
+    "corrected_text": "그 사실은 이 친구가",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 92,
+    "start": 351.0,
+    "end": 353.0,
+    "original_text": "이 친구는 안 뽑아도 됨인데 이 친구가 진짜 엄청납니다.",
+    "corrected_text": "이 친구는 안 뽑아도 됨인데 이 친구가 진짜 엄청납니다.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 93,
+    "start": 353.0,
+    "end": 356.0,
+    "original_text": "보시죠 한번 보시죠.",
+    "corrected_text": "보시죠. 한번 보시죠.",
+    "correction_reason": "문장 부호 교정: 문장 분리"
+  },
+  {
+    "segment_id": 94,
+    "start": 358.0,
+    "end": 359.0,
+    "original_text": "이야!",
+    "corrected_text": "이야!",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 95,
+    "start": 359.0,
+    "end": 401.0,
+    "original_text": "그냥 뽑겠다는 것 아닙니까?",
+    "corrected_text": "그냥 뽑겠다는 것 아닙니까?",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 96,
+    "start": 401.0,
+    "end": 402.0,
+    "original_text": "맞습니다.",
+    "corrected_text": "맞습니다.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 97,
+    "start": 402.0,
+    "end": 406.0,
+    "original_text": "뽑는 거고요. 솔직히 다른 애들도 안 필요한데 한번 보시겠어요?",
+    "corrected_text": "뽑는 거고요. 솔직히 다른 애들도 안 필요한데 한번 보시겠어요?",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 98,
+    "start": 406.0,
+    "end": 411.0,
+    "original_text": "이 친구들도 사실은",
+    "corrected_text": "이 친구들도 사실은",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 99,
+    "start": 413.0,
+    "end": 414.0,
+    "original_text": "이왕 바다에 왔으니",
+    "corrected_text": "이왕 바다에 왔으니",
+    "correction_reason": ""
+  }
+]

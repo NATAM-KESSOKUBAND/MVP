@@ -1,0 +1,162 @@
+[
+  {
+    "segment_id": 140,
+    "start": 723.0,
+    "end": 724.0,
+    "original_text": "500 cigarettes",
+    "corrected_text": "500 cigarettes",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 141,
+    "start": 730.0,
+    "end": 732.0,
+    "original_text": "안녕하세요 저는 캐나다에서 온",
+    "corrected_text": "안녕하세요 저는 캐나다에서 온",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 142,
+    "start": 733.0,
+    "end": 735.0,
+    "original_text": "여기 집라인도 있어 얘들아 오 어",
+    "corrected_text": "여기 짚라인도 있어 얘들아 오 어",
+    "correction_reason": "외래어 표기법상 '짚라인'을 '집라인'으로 오기한 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 143,
+    "start": 736.0,
+    "end": 736.0,
+    "original_text": "I wanna break up",
+    "corrected_text": "I wanna break up",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 144,
+    "start": 739.0,
+    "end": 739.0,
+    "original_text": "Im sorry",
+    "corrected_text": "Im sorry",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 145,
+    "start": 741.0,
+    "end": 743.0,
+    "original_text": "You know I love you 야 이 게임 재밌네",
+    "corrected_text": "You know I love you 야 이 게임 재밌네",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 146,
+    "start": 744.0,
+    "end": 748.0,
+    "original_text": "벨라토레스 6년간 637억 원이 들어간 대작이라고 할 수 있지",
+    "corrected_text": "벨라토레스 6년간 637억 원이 들어간 대작이라고 할 수 있지",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 147,
+    "start": 748.0,
+    "end": 750.0,
+    "original_text": "와 많이도 들어갔다",
+    "corrected_text": "와 많이도 들어갔다",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 148,
+    "start": 750.0,
+    "end": 751.0,
+    "original_text": "이 서든어택이라고 지금",
+    "corrected_text": "이 서든어택이라고 지금",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 149,
+    "start": 751.0,
+    "end": 753.0,
+    "original_text": "오 트레뷰셋 이래놓고",
+    "corrected_text": "오 트레일러 이래놓고",
+    "correction_reason": "게임 홍보 영상인 '트레일러'를 발음이 유사한 '트레뷰셋'으로 오인식한 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 150,
+    "start": 754.0,
+    "end": 757.0,
+    "original_text": "평타는 자동으로 때리고 스킬만 누르는 거기만 해봐 바로 꺼버린다?",
+    "corrected_text": "평타는 자동으로 때리고 스킬만 누르는 거기만 해봐 바로 꺼버린다?",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 151,
+    "start": 759.0,
+    "end": 760.0,
+    "original_text": "이것이 전투야?",
+    "corrected_text": "이것이 전투야?",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 152,
+    "start": 761.0,
+    "end": 762.0,
+    "original_text": "쉬프트 회피하고 이동 끊기는 거 이것 아",
+    "corrected_text": "쉬프트 회피하고 이동 끊기는 거 이것 아",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 153,
+    "start": 803.0,
+    "end": 804.0,
+    "original_text": "설치보다 짧은 시간이 지난 후",
+    "corrected_text": "설치보다 짧은 플레이 후",
+    "correction_reason": "게임 설치 시간보다 플레이 시간이 짧았음을 뜻하는 맥락에서 '플레이 후'를 '시간이 지난 후'로 오인식한 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 154,
+    "start": 805.0,
+    "end": 806.0,
+    "original_text": "이것 아 눕",
+    "corrected_text": "이거 안 해",
+    "correction_reason": "게임을 중단하며 외치는 '이거 안 해'를 '이것 아 눕'으로 오인식한 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 155,
+    "start": 808.0,
+    "end": 808.0,
+    "original_text": "왜 저래",
+    "corrected_text": "왜 저래",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 156,
+    "start": 811.0,
+    "end": 812.0,
+    "original_text": "첫째",
+    "corrected_text": "첫째",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 157,
+    "start": 815.0,
+    "end": 816.0,
+    "original_text": "너 반주 한잔했어?",
+    "corrected_text": "너 반주 한잔했어?",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 158,
+    "start": 818.0,
+    "end": 821.0,
+    "original_text": "Touch some grass 밖에 좀 나가",
+    "corrected_text": "Touch some grass 밖에 좀 나가",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 159,
+    "start": 822.0,
+    "end": 826.0,
+    "original_text": "만지지 마 안 돼 만지지 마 만지지 마",
+    "corrected_text": "만지지 마 안 돼 만지지 마 만지지 마",
+    "correction_reason": ""
+  }
+]

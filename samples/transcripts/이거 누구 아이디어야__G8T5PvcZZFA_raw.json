@@ -1,0 +1,1331 @@
+{
+    "video_info": {
+        "path": "downloads\\이거 누구 아이디어야__G8T5PvcZZFA.mp4",
+        "duration": 1342.8
+    },
+    "segments": [
+        {
+            "id": 0,
+            "start": 0.0,
+            "end": 1.2,
+            "text": "와",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 1,
+            "start": 3.0,
+            "end": 4.8,
+            "text": "나이스",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 2,
+            "start": 13.8,
+            "end": 15.0,
+            "text": "와 디퓨저다",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 3,
+            "start": 20.4,
+            "end": 21.6,
+            "text": "나 집 갈래",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 4,
+            "start": 22.8,
+            "end": 24.0,
+            "text": "아우 와우",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 5,
+            "start": 24.0,
+            "end": 25.8,
+            "text": "어? 밖에 있네 저기",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 6,
+            "start": 25.8,
+            "end": 27.0,
+            "text": "밖에?",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 7,
+            "start": 36.0,
+            "end": 37.8,
+            "text": "존나 억울하겠다",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 8,
+            "start": 37.8,
+            "end": 39.6,
+            "text": "와 이거 뭐야",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 9,
+            "start": 39.6,
+            "end": 40.8,
+            "text": "와",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 10,
+            "start": 44.4,
+            "end": 45.6,
+            "text": "수류탄 한번 던져봐",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 11,
+            "start": 48.6,
+            "end": 49.8,
+            "text": "왜 안 들어갔음",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 12,
+            "start": 104.4,
+            "end": 105.6,
+            "text": "너 뭐 어케 한겨?",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 13,
+            "start": 113.4,
+            "end": 115.2,
+            "text": "어 너무 뒤에 던졌다 와우",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 14,
+            "start": 117.6,
+            "end": 119.4,
+            "text": "아니 미친 새끼야",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 15,
+            "start": 136.8,
+            "end": 138.6,
+            "text": "내가 드로닝 해볼게",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 16,
+            "start": 149.4,
+            "end": 151.2,
+            "text": "아 누가 가방 저따가 떨궜어",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 17,
+            "start": 151.2,
+            "end": 153.0,
+            "text": "개민폐 민폐",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 18,
+            "start": 203.4,
+            "end": 206.4,
+            "text": "동욱이랑 나 질 수 없는 듀오죠",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 19,
+            "start": 208.2,
+            "end": 210.0,
+            "text": "우와",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 20,
+            "start": 214.2,
+            "end": 216.0,
+            "text": "진짜 존나 절묘한 타이밍",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 21,
+            "start": 223.8,
+            "end": 225.6,
+            "text": "아 레이저 필수네 진짜",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 22,
+            "start": 225.6,
+            "end": 228.6,
+            "text": "레이저를 써야지 뭔가 줌 인을 하는 느낌이 들어",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 23,
+            "start": 228.6,
+            "end": 231.6,
+            "text": "내가 가서 외벽 앞에다가 고요를 깔게",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 24,
+            "start": 231.6,
+            "end": 233.4,
+            "text": "그러면 존나 난감하겠지?",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 25,
+            "start": 233.4,
+            "end": 234.6,
+            "text": "왜 안 깔려",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 26,
+            "start": 238.8,
+            "end": 240.0,
+            "text": "컷",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 27,
+            "start": 240.6,
+            "end": 243.6,
+            "text": "야 방어막 뚫고 이건 못 참거든요",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 28,
+            "start": 251.4,
+            "end": 253.8,
+            "text": "갑자기 뻥 하고 나와서",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 29,
+            "start": 300.6,
+            "end": 301.8,
+            "text": "일단 안 올리네",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 30,
+            "start": 306.0,
+            "end": 307.8,
+            "text": "이렇게",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 31,
+            "start": 308.4,
+            "end": 309.6,
+            "text": "한번 해봐",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 32,
+            "start": 313.8,
+            "end": 315.6,
+            "text": "근데 여기 디퓨저가 저기 있을까?",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 33,
+            "start": 317.4,
+            "end": 318.6,
+            "text": "놉",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 34,
+            "start": 321.6,
+            "end": 322.8,
+            "text": "나 여기 들어갈까?",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 35,
+            "start": 323.4,
+            "end": 324.6,
+            "text": "와 저기 있다",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 36,
+            "start": 326.4,
+            "end": 328.2,
+            "text": "와 얼음 쓰는 사람이다",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 37,
+            "start": 331.8,
+            "end": 333.0,
+            "text": "오른쪽에 있음",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 38,
+            "start": 335.4,
+            "end": 336.6,
+            "text": "밖으로 나가는",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 39,
+            "start": 340.2,
+            "end": 342.0,
+            "text": "WTF",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 40,
+            "start": 343.8,
+            "end": 345.0,
+            "text": "아니 동욱이",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 41,
+            "start": 347.4,
+            "end": 348.6,
+            "text": "드론 데굴",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 42,
+            "start": 348.6,
+            "end": 349.8,
+            "text": "앞에 사람 있어",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 43,
+            "start": 349.8,
+            "end": 351.0,
+            "text": "너가 죽여",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 44,
+            "start": 351.0,
+            "end": 352.8,
+            "text": "이쪽 각인데",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 45,
+            "start": 353.4,
+            "end": 354.6,
+            "text": "컷",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 46,
+            "start": 355.2,
+            "end": 357.0,
+            "text": "내는 모르는 척할게",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 47,
+            "start": 357.0,
+            "end": 358.8,
+            "text": "모르는 척 먹혔다",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 48,
+            "start": 359.4,
+            "end": 361.2,
+            "text": "너 가서 그냥 왼쪽 쏘면서 들어가",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 49,
+            "start": 401.4,
+            "end": 402.6,
+            "text": "잘했어",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 50,
+            "start": 404.4,
+            "end": 405.6,
+            "text": "오 쉣",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 51,
+            "start": 407.4,
+            "end": 409.2,
+            "text": "어차피 위험했어 너도 위험",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 52,
+            "start": 409.8,
+            "end": 411.6,
+            "text": "설치할 거야",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 53,
+            "start": 413.4,
+            "end": 415.2,
+            "text": "머리에서 한 방이라",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 54,
+            "start": 418.8,
+            "end": 420.6,
+            "text": "오케이 사살 지원",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 55,
+            "start": 420.6,
+            "end": 421.8,
+            "text": "난 속았어",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 56,
+            "start": 421.8,
+            "end": 423.0,
+            "text": "뭐가",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 57,
+            "start": 423.0,
+            "end": 424.2,
+            "text": "속은 것 같다 야",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 58,
+            "start": 424.2,
+            "end": 425.4,
+            "text": "근데 뭐에 속은 거니?",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 59,
+            "start": 429.6,
+            "end": 431.4,
+            "text": "HOLY SHIT",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 60,
+            "start": 431.4,
+            "end": 435.6,
+            "text": "아 뒤치기 하고 있는데 자칼이 내 발냄새 킁카킁카 냠냠쓰",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 61,
+            "start": 435.6,
+            "end": 439.8,
+            "text": "안 되겠다 워든 특능 후각 센서",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 62,
+            "start": 440.4,
+            "end": 442.2,
+            "text": "뭐야 멍멍이야?",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 63,
+            "start": 442.8,
+            "end": 444.6,
+            "text": "와 도치 와 짱돌",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 64,
+            "start": 447.6,
+            "end": 450.6,
+            "text": "캅칸 있으면 나 블리츠 안 함 어",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 65,
+            "start": 453.6,
+            "end": 455.4,
+            "text": "택티컬하게 가자",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 66,
+            "start": 458.4,
+            "end": 459.6,
+            "text": "준비",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 67,
+            "start": 507.6,
+            "end": 508.8,
+            "text": "어?",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 68,
+            "start": 510.0,
+            "end": 513.0,
+            "text": "나 방패 쉴드 나 방패 체력 까짐",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 69,
+            "start": 516.6,
+            "end": 517.8,
+            "text": "쟤 뭐해?",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 70,
+            "start": 517.8,
+            "end": 518.4,
+            "text": "쟤?",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 71,
+            "start": 518.4,
+            "end": 520.2,
+            "text": "몰라 내 접착폭약에 맞던데?",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 72,
+            "start": 520.2,
+            "end": 522.0,
+            "text": "그럼 자기 잘못 아님?",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 73,
+            "start": 530.4,
+            "end": 532.2,
+            "text": "아군 컷",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 74,
+            "start": 532.2,
+            "end": 533.4,
+            "text": "예아 사살 지원",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 75,
+            "start": 535.8,
+            "end": 537.0,
+            "text": "닥컷",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 76,
+            "start": 538.2,
+            "end": 540.0,
+            "text": "나한테 불똥 하나 쏘고 죽었네",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 77,
+            "start": 545.4,
+            "end": 547.8,
+            "text": "오 오 오 오 반동 씨발것",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 78,
+            "start": 547.8,
+            "end": 549.0,
+            "text": "나이스 헤드야 헤드",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 79,
+            "start": 550.2,
+            "end": 552.6,
+            "text": "아니 저렇게 맨날 킬을 하니까 헤드",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 80,
+            "start": 552.6,
+            "end": 554.4,
+            "text": "샷률이 높지",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 81,
+            "start": 555.0,
+            "end": 558.0,
+            "text": "킬을 못 하거나 아님 헤드잖아 그냥",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 82,
+            "start": 559.2,
+            "end": 561.0,
+            "text": "이렇게 된 거 해치로 간다",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 83,
+            "start": 609.6,
+            "end": 610.8,
+            "text": "오예",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 84,
+            "start": 612.6,
+            "end": 614.4,
+            "text": "어?",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 85,
+            "start": 618.6,
+            "end": 620.4,
+            "text": "야 소음기 달린 거 봐 진짜 조용하다",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 86,
+            "start": 627.6,
+            "end": 628.8,
+            "text": "예?",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 87,
+            "start": 630.6,
+            "end": 631.8,
+            "text": "죽여",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 88,
+            "start": 633.6,
+            "end": 636.0,
+            "text": "오오오오오오",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 89,
+            "start": 639.0,
+            "end": 640.8,
+            "text": "바로 해제해버려",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 90,
+            "start": 640.8,
+            "end": 642.6,
+            "text": "하는 척하면서 여기서 해제해버려 몸을 좀 숨기고",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 91,
+            "start": 642.6,
+            "end": 643.8,
+            "text": "그렇지",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 92,
+            "start": 643.8,
+            "end": 645.6,
+            "text": "그러면서 이제 넌 헤드샷 맞고 죽는 거지",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 93,
+            "start": 645.6,
+            "end": 646.8,
+            "text": "아니죠",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 94,
+            "start": 646.8,
+            "end": 648.0,
+            "text": "될 거 같은데",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 95,
+            "start": 649.8,
+            "end": 652.8,
+            "text": "어 나 발견됐다 에임 보소 나 죽이고 말 거야",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 96,
+            "start": 654.6,
+            "end": 657.6,
+            "text": "여기서 갑자기 싹 나가서",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 97,
+            "start": 658.8,
+            "end": 659.4,
+            "text": "컷",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 98,
+            "start": 659.4,
+            "end": 660.6,
+            "text": "오 싹 나가서",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 99,
+            "start": 661.2,
+            "end": 662.4,
+            "text": "그다음에 카이드 이렇게 뿌려주고",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 100,
+            "start": 664.4,
+            "end": 665.6,
+            "text": "C4를 던져준 다음에",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 101,
+            "start": 665.6,
+            "end": 667.8,
+            "text": "바리케이드를 열기",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 102,
+            "start": 667.8,
+            "end": 668.4,
+            "text": "완벽",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 103,
+            "start": 709.2,
+            "end": 710.4,
+            "text": "조져",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 104,
+            "start": 710.4,
+            "end": 711.6,
+            "text": "계단에 있는데",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 105,
+            "start": 712.8,
+            "end": 715.8,
+            "text": "아이 그걸 다 막아주면 어떡하냐",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 106,
+            "start": 717.0,
+            "end": 718.2,
+            "text": "원탭",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 107,
+            "start": 719.4,
+            "end": 720.6,
+            "text": "죽였음",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 108,
+            "start": 726.6,
+            "end": 728.4,
+            "text": "오딜 아웃플레이 하려고",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 109,
+            "start": 731.4,
+            "end": 733.8,
+            "text": "이야 어코그 이거 맛이 다르다 야",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 110,
+            "start": 735.6,
+            "end": 736.8,
+            "text": "일어나",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 111,
+            "start": 737.4,
+            "end": 739.2,
+            "text": "이야 어코그 R4C 이거 맛이 다르다",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 112,
+            "start": 739.2,
+            "end": 740.4,
+            "text": "아욱",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 113,
+            "start": 743.4,
+            "end": 746.4,
+            "text": "나도 브라보팩 열어볼까요 초록색 우후",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 114,
+            "start": 747.6,
+            "end": 750.6,
+            "text": "개미친 비질 투구 나왔네요 행복하다",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 115,
+            "start": 751.2,
+            "end": 752.4,
+            "text": "행복해 보여",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 116,
+            "start": 753.0,
+            "end": 754.2,
+            "text": "다행이네",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 117,
+            "start": 754.8,
+            "end": 757.8,
+            "text": "영어 어려워요우 한국말 잘 못해요",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 118,
+            "start": 757.8,
+            "end": 759.6,
+            "text": "그럼 무슨 말을",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 119,
+            "start": 759.6,
+            "end": 761.4,
+            "text": "할 수 있는 거야?",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 120,
+            "start": 804.0,
+            "end": 805.8,
+            "text": "말을 잘 못해요",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 121,
+            "start": 821.4,
+            "end": 822.6,
+            "text": "오 우사다",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 122,
+            "start": 832.2,
+            "end": 834.0,
+            "text": "아 아이언 사이트라 줌이 너무 많이 됐다",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 123,
+            "start": 834.6,
+            "end": 835.8,
+            "text": "어스면 한 명",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 124,
+            "start": 838.8,
+            "end": 840.6,
+            "text": "아 븅신",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 125,
+            "start": 843.6,
+            "end": 846.6,
+            "text": "방금 조금 찐텐이었다",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 126,
+            "start": 849.6,
+            "end": 852.6,
+            "text": "나 데이모스한테 타겟 당했어 동욱아 어떡해",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 127,
+            "start": 853.8,
+            "end": 855.0,
+            "text": "동욱아 어떡해",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 128,
+            "start": 855.0,
+            "end": 856.2,
+            "text": "동욱아 어떡해",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 129,
+            "start": 856.2,
+            "end": 859.2,
+            "text": "나 데이모스한테 타겟 당해 핑이 실시간으로 찍히고 있어",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 130,
+            "start": 859.2,
+            "end": 860.4,
+            "text": "내가 지켜줄게",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 131,
+            "start": 901.2,
+            "end": 903.6,
+            "text": "실시간으로 찍히고 있다고 어떡해 동욱아",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 132,
+            "start": 903.6,
+            "end": 906.0,
+            "text": "시야만 가리지 말아봐 씨바새끼야",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 133,
+            "start": 907.2,
+            "end": 909.6,
+            "text": "데이모스 여기로 들어온대",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 134,
+            "start": 909.6,
+            "end": 910.8,
+            "text": "그렇지네",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 135,
+            "start": 910.8,
+            "end": 912.0,
+            "text": "믿어볼게",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 136,
+            "start": 917.4,
+            "end": 918.6,
+            "text": "어 죽였어",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 137,
+            "start": 919.2,
+            "end": 920.4,
+            "text": "그거 데이모스 아닌데",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 138,
+            "start": 920.4,
+            "end": 922.2,
+            "text": "나 그거 몰라 그냥 쐈어",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 139,
+            "start": 922.2,
+            "end": 923.4,
+            "text": "어 저거 데이모스다",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 140,
+            "start": 924.6,
+            "end": 925.8,
+            "text": "어 데이모스 죽었다",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 141,
+            "start": 925.8,
+            "end": 927.6,
+            "text": "뭐야",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 142,
+            "start": 927.6,
+            "end": 928.8,
+            "text": "액팅뮤직",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 143,
+            "start": 928.8,
+            "end": 932.4,
+            "text": "어어어어어어 와 와 이걸 못 살게 해?",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 144,
+            "start": 932.4,
+            "end": 935.4,
+            "text": "어차피 내가 C4 던져서 죽일려고 하긴 했는데",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 145,
+            "start": 935.4,
+            "end": 936.6,
+            "text": "왜?",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 146,
+            "start": 939.6,
+            "end": 942.6,
+            "text": "나 데이모스한테 타겟 당하고 있어 어떡해 이자슥아",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 147,
+            "start": 944.4,
+            "end": 945.6,
+            "text": "데이모스 어디있는데",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 148,
+            "start": 945.6,
+            "end": 949.2,
+            "text": "아 나 리피리 나 라이언한테도 핑 찍히고 막 그냥 좆되고 있어 그냥 어떡해",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 149,
+            "start": 951.0,
+            "end": 952.8,
+            "text": "데이모스 여기로 들어온대",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 150,
+            "start": 958.2,
+            "end": 959.4,
+            "text": "어 데이모스 죽었어",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 151,
+            "start": 959.4,
+            "end": 1001.4,
+            "text": "그거 하라고 동욱아 동욱아 그거 해",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 152,
+            "start": 1002.0,
+            "end": 1003.8,
+            "text": "그거 하면 바로 1킬임",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 153,
+            "start": 1004.4,
+            "end": 1005.6,
+            "text": "뿌웅",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 154,
+            "start": 1005.6,
+            "end": 1007.4,
+            "text": "웅",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 155,
+            "start": 1007.4,
+            "end": 1009.2,
+            "text": "뛰어내리자 동욱아",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 156,
+            "start": 1009.2,
+            "end": 1011.0,
+            "text": "뛰어내리자 그럼",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 157,
+            "start": 1011.6,
+            "end": 1012.8,
+            "text": "아이고야 안 내려가지네",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 158,
+            "start": 1012.8,
+            "end": 1015.2,
+            "text": "어 저기 아까 멀리 멀리 사람 보였지? 지금 쏴",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 159,
+            "start": 1015.2,
+            "end": 1017.6,
+            "text": "아 꺼져 씨발것",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 160,
+            "start": 1020.0,
+            "end": 1022.4,
+            "text": "저 새끼가 막아가지고 내가",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 161,
+            "start": 1023.0,
+            "end": 1025.4,
+            "text": "어 그럼 펜리르 대가리를 날리고 네가 걔를 잡았어야지",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 162,
+            "start": 1026.0,
+            "end": 1027.2,
+            "text": "진짜 뭐함",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 163,
+            "start": 1027.2,
+            "end": 1029.6,
+            "text": "아니 펜리르도 억울했을 거임",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 164,
+            "start": 1029.6,
+            "end": 1030.8,
+            "text": "펜리르는 억울하지 않지",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 165,
+            "start": 1030.8,
+            "end": 1033.2,
+            "text": "딱히 방해되지 않았어 동욱이가",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 166,
+            "start": 1035.0,
+            "end": 1038.6,
+            "text": "아니 그냥 방해도 못했음 열심히 쐈는데 동욱이가 갑자기 뒤에서 욕함",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 167,
+            "start": 1054.8,
+            "end": 1056.6,
+            "text": "유 뻑",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 168,
+            "start": 1107.6,
+            "end": 1109.4,
+            "text": "아이 엠 낫 던 위드 유",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 169,
+            "start": 1140.6,
+            "end": 1142.4,
+            "text": "닌자 엘라 화이팅",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 170,
+            "start": 1152.6,
+            "end": 1153.8,
+            "text": "어디",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 171,
+            "start": 1155.0,
+            "end": 1156.2,
+            "text": "아이 엠 리로딩",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 172,
+            "start": 1209.6,
+            "end": 1210.8,
+            "text": "닌자 엘라 닌자 엘라",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 173,
+            "start": 1210.8,
+            "end": 1213.2,
+            "text": "어 빨리 빨리 빨리 빨리 빨리 나가 나가 한 명 기절해 있어",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 174,
+            "start": 1214.4,
+            "end": 1215.6,
+            "text": "저 밖에 있는데?",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 175,
+            "start": 1215.6,
+            "end": 1216.8,
+            "text": "아니 아니 기절한 거야 저거",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 176,
+            "start": 1216.8,
+            "end": 1218.6,
+            "text": "아니 살아 있어 쟤",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 177,
+            "start": 1219.8,
+            "end": 1221.0,
+            "text": "까비 이게 안 죽네",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 178,
+            "start": 1235.4,
+            "end": 1236.6,
+            "text": "유 아 익스포즈드",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 179,
+            "start": 1252.8,
+            "end": 1254.6,
+            "text": "야 위에 뭐 죽는데?",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 180,
+            "start": 1258.8,
+            "end": 1300.8,
+            "text": "기습 설치",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 181,
+            "start": 1305.0,
+            "end": 1306.2,
+            "text": "비질 딸피",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 182,
+            "start": 1311.0,
+            "end": 1312.8,
+            "text": "나이스",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 183,
+            "start": 1317.6,
+            "end": 1318.8,
+            "text": "예아 사살 지원",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 184,
+            "start": 1325.4,
+            "end": 1327.8,
+            "text": "모르는 척 당구공인 척",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 185,
+            "start": 1330.2,
+            "end": 1331.4,
+            "text": "속았스",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 186,
+            "start": 1331.4,
+            "end": 1332.6,
+            "text": "에?",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 187,
+            "start": 1332.6,
+            "end": 1333.8,
+            "text": "속았다?",
+            "avg_logprob": 0.0
+        },
+        {
+            "id": 188,
+            "start": 1341.6,
+            "end": 1342.8,
+            "text": "조질 컷",
+            "avg_logprob": 0.0
+        }
+    ]
+}

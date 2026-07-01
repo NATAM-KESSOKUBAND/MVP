@@ -1,0 +1,162 @@
+[
+  {
+    "segment_id": 40,
+    "start": 151.0,
+    "end": 153.0,
+    "original_text": "Fire bomb",
+    "corrected_text": "Fire bomb",
+    "correction_reason": "영어 발음이 명확하여 원문 그대로 유지한 패턴이 관찰됨"
+  },
+  {
+    "segment_id": 41,
+    "start": 157.0,
+    "end": 158.0,
+    "original_text": "Stab stab stab",
+    "corrected_text": "Stab stab stab",
+    "correction_reason": "영어 발음이 명확하여 원문 그대로 유지한 패턴이 관찰됨"
+  },
+  {
+    "segment_id": 42,
+    "start": 207.0,
+    "end": 209.0,
+    "original_text": "KKK?",
+    "corrected_text": "ㅋㅋㅋ?",
+    "correction_reason": "한국어 웃음소리인 'ㅋㅋㅋ'가 영문 자판 오기로 입력된 것으로 분석됨"
+  },
+  {
+    "segment_id": 43,
+    "start": 209.0,
+    "end": 210.0,
+    "original_text": "롤권",
+    "corrected_text": "철권",
+    "correction_reason": "후속 맥락에서 격투 게임을 언급하고 있어 발음이 유사한 게임명 '철권'으로 교정함"
+  },
+  {
+    "segment_id": 44,
+    "start": 211.0,
+    "end": 213.0,
+    "original_text": "Riot blast",
+    "corrected_text": "Riot blast",
+    "correction_reason": "게임 내 기술명으로 판단되어 원문 그대로 유지함"
+  },
+  {
+    "segment_id": 45,
+    "start": 213.0,
+    "end": 215.0,
+    "original_text": "A new challenger",
+    "corrected_text": "A new challenger",
+    "correction_reason": "격투 게임의 표준 시스템 음성으로 판단되어 원문 그대로 유지함"
+  },
+  {
+    "segment_id": 46,
+    "start": 215.0,
+    "end": 217.0,
+    "original_text": "KO",
+    "corrected_text": "K.O.",
+    "correction_reason": "격투 게임의 종료 선언인 'K.O.'의 표준 표기법으로 교정함"
+  },
+  {
+    "segment_id": 47,
+    "start": 218.0,
+    "end": 220.0,
+    "original_text": "이것이 격투게임이다",
+    "corrected_text": "이것이 격투 게임이다",
+    "correction_reason": "한글 맞춤법 띄어쓰기 규정에 따라 '격투 게임'으로 교정함"
+  },
+  {
+    "segment_id": 48,
+    "start": 220.0,
+    "end": 221.0,
+    "original_text": "이것이 격겜?",
+    "corrected_text": "이것이 격겜?",
+    "correction_reason": "격투 게임의 대중적인 줄임말인 '격겜'이 맥락상 적절하여 유지함"
+  },
+  {
+    "segment_id": 49,
+    "start": 225.0,
+    "end": 226.0,
+    "original_text": "저기요",
+    "corrected_text": "저기요",
+    "correction_reason": "발음과 맥락이 일치하여 원문 그대로 유지함"
+  },
+  {
+    "segment_id": 50,
+    "start": 226.0,
+    "end": 227.0,
+    "original_text": "왜요",
+    "corrected_text": "왜요",
+    "correction_reason": "발음과 맥락이 일치하여 원문 그대로 유지함"
+  },
+  {
+    "segment_id": 51,
+    "start": 227.0,
+    "end": 229.0,
+    "original_text": "저기요",
+    "corrected_text": "저기요",
+    "correction_reason": "발음과 맥락이 일치하여 원문 그대로 유지함"
+  },
+  {
+    "segment_id": 52,
+    "start": 231.0,
+    "end": 233.0,
+    "original_text": "저기요 저기요",
+    "corrected_text": "저기요 저기요",
+    "correction_reason": "발음과 맥락이 일치하여 원문 그대로 유지함"
+  },
+  {
+    "segment_id": 53,
+    "start": 233.0,
+    "end": 235.0,
+    "original_text": "저기요 저기요",
+    "corrected_text": "저기요 저기요",
+    "correction_reason": "발음과 맥락이 일치하여 원문 그대로 유지함"
+  },
+  {
+    "segment_id": 54,
+    "start": 236.0,
+    "end": 237.0,
+    "original_text": "재미없다",
+    "corrected_text": "재미없다",
+    "correction_reason": "발음과 맥락이 일치하여 원문 그대로 유지함"
+  },
+  {
+    "segment_id": 55,
+    "start": 242.0,
+    "end": 243.0,
+    "original_text": "9관왕 원정대",
+    "corrected_text": "구관조 원정대",
+    "correction_reason": "자연물(꽃)을 언급하는 후속 맥락과 발음 유사성을 고려할 때 '구관조 원정대'로 교정하는 것이 타당한 것으로 분석됨"
+  },
+  {
+    "segment_id": 56,
+    "start": 243.0,
+    "end": 244.0,
+    "original_text": "하아 아이 회오리",
+    "corrected_text": "하아 나의 회오리",
+    "correction_reason": "맥락상 1인칭 소유 표현인 '나의 회오리'가 오인식된 것으로 판단되어 교정함"
+  },
+  {
+    "segment_id": 57,
+    "start": 244.0,
+    "end": 246.0,
+    "original_text": "내 꽃을 까먹을 뻔 했구만",
+    "corrected_text": "내 꽃을 까먹을 뻔했구만",
+    "correction_reason": "보조형용사 '뻔하다'의 붙여쓰기 규정에 따라 띄어쓰기 오류를 교정함"
+  },
+  {
+    "segment_id": 58,
+    "start": 246.0,
+    "end": 249.0,
+    "original_text": "이렇게 꽃이 너무쳐나는 동네에서 이 꽃 한 송이를",
+    "corrected_text": "이렇게 꽃이 넘쳐나는 동네에서 이 꽃 한 송이를",
+    "correction_reason": "발음 오기인 '너무쳐나는'을 표준어 '넘쳐나는'으로 교정함"
+  },
+  {
+    "segment_id": 59,
+    "start": 249.0,
+    "end": 250.0,
+    "original_text": "얘가 훨씬 예쁜데?",
+    "corrected_text": "얘가 훨씬 예쁜데?",
+    "correction_reason": "발음과 맥락이 일치하여 원문 그대로 유지함"
+  }
+]

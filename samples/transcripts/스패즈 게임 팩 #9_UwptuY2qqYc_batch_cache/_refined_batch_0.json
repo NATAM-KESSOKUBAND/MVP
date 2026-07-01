@@ -1,0 +1,162 @@
+[
+  {
+    "segment_id": 0,
+    "start": 0.0,
+    "end": 3.0,
+    "original_text": "Call of Doodoo Advanced Poo Poo",
+    "corrected_text": "Call of Doodoo Advanced Poo Poo",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 1,
+    "start": 3.0,
+    "end": 5.0,
+    "original_text": "They with the rat",
+    "corrected_text": "They with the rat",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 2,
+    "start": 5.0,
+    "end": 7.0,
+    "original_text": "Hit him with the chopper thats the rat trap",
+    "corrected_text": "Hit him with the chopper thats the rat trap",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 3,
+    "start": 7.0,
+    "end": 11.0,
+    "original_text": "바닥에 아이언리자드가 너무 많아",
+    "corrected_text": "바닥에 아이언리자드가 너무 많아",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 4,
+    "start": 11.0,
+    "end": 12.0,
+    "original_text": "아이언리자드",
+    "corrected_text": "아이언리자드",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 5,
+    "start": 12.0,
+    "end": 14.0,
+    "original_text": "little",
+    "corrected_text": "little",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 6,
+    "start": 14.0,
+    "end": 16.0,
+    "original_text": "스패즈 미친놈아",
+    "corrected_text": "스패즈 미친놈아",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 7,
+    "start": 16.0,
+    "end": 18.0,
+    "original_text": "스패즈",
+    "corrected_text": "스패즈",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 8,
+    "start": 19.0,
+    "end": 20.0,
+    "original_text": "남부",
+    "corrected_text": "본부",
+    "correction_reason": "맥락상 무전으로 '본부'를 부르는 상황이나 발음이 유사한 '남부'로 오인식됨"
+  },
+  {
+    "segment_id": 9,
+    "start": 20.0,
+    "end": 22.0,
+    "original_text": "황당파의 음모가 실패해버렸습니다",
+    "corrected_text": "악당들의 음모가 실패해버렸습니다",
+    "correction_reason": "대사 맥락상 '악당들의 음모'가 발음이 유사한 '황당파의 음모'로 오인식됨"
+  },
+  {
+    "segment_id": 10,
+    "start": 22.0,
+    "end": 25.0,
+    "original_text": "야 이씨 야 진짜로 우릴 쏘는 거 같아",
+    "corrected_text": "야 이씨 야 진짜로 우릴 쏘는 거 같아",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 11,
+    "start": 25.0,
+    "end": 27.0,
+    "original_text": "쏘는 거 맞아 이 미친놈아",
+    "corrected_text": "쏘는 거 맞아 이 미친놈아",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 12,
+    "start": 27.0,
+    "end": 29.0,
+    "original_text": "이래야 광복절이지",
+    "corrected_text": "이래야 총격전이지",
+    "correction_reason": "총을 쏘고 맞는 긴박한 상황에서 '총격전이지'가 발음이 유사한 '광복절이지'로 오인식됨"
+  },
+  {
+    "segment_id": 13,
+    "start": 29.0,
+    "end": 30.0,
+    "original_text": "나 살려줘",
+    "corrected_text": "나 살려줘",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 14,
+    "start": 33.0,
+    "end": 35.0,
+    "original_text": "오오 감격의 눈물",
+    "corrected_text": "오오 감격의 눈물",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 15,
+    "start": 35.0,
+    "end": 36.0,
+    "original_text": "우으액",
+    "corrected_text": "우으액",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 16,
+    "start": 39.0,
+    "end": 40.0,
+    "original_text": "야 이 미친 적탄병 나 발견했어",
+    "corrected_text": "야 이 미친 적 한 명이 나 발견했어",
+    "correction_reason": "'적 한 명이'라는 발음이 연음 및 유사 발음으로 인해 '적탄병'으로 오인식됨"
+  },
+  {
+    "segment_id": 17,
+    "start": 40.0,
+    "end": 43.0,
+    "original_text": "야 이 미친놈 이것",
+    "corrected_text": "야 이 미친놈 이것",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 18,
+    "start": 43.0,
+    "end": 45.0,
+    "original_text": "모두 자리에 앉으셨죠?",
+    "corrected_text": "모두 자리에 앉으셨죠?",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 19,
+    "start": 46.0,
+    "end": 48.0,
+    "original_text": "Why do birds",
+    "corrected_text": "Why do birds",
+    "correction_reason": ""
+  }
+]

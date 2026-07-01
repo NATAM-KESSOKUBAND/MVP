@@ -1,0 +1,162 @@
+[
+  {
+    "segment_id": 140,
+    "start": 610.0,
+    "end": 614.0,
+    "original_text": "여기에서 뜨는 건 너무 욕심인가.",
+    "corrected_text": "여기에서 뜨는 건 너무 욕심인가.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 141,
+    "start": 620.0,
+    "end": 621.0,
+    "original_text": "파랭이",
+    "corrected_text": "파랭이",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 142,
+    "start": 621.0,
+    "end": 623.0,
+    "original_text": "지금 딱 파란색이 나와버리네.",
+    "corrected_text": "지금 딱 파란색이 나와버리네.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 143,
+    "start": 623.0,
+    "end": 624.0,
+    "original_text": "노란색 슛!",
+    "corrected_text": "노란색 슛!",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 144,
+    "start": 626.0,
+    "end": 627.0,
+    "original_text": "또 파랭이",
+    "corrected_text": "또 파랭이",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 145,
+    "start": 627.0,
+    "end": 628.0,
+    "original_text": "요긴하게 잘 써라.",
+    "corrected_text": "요긴하게 잘 써라.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 146,
+    "start": 628.0,
+    "end": 629.0,
+    "original_text": "와 억까 미쳤다.",
+    "corrected_text": "와 억까 미쳤다.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 147,
+    "start": 629.0,
+    "end": 631.0,
+    "original_text": "한몫 잡아보자.",
+    "corrected_text": "한몫 잡아보자.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 148,
+    "start": 631.0,
+    "end": 633.0,
+    "original_text": "아 진짜 그만 사고 싶은데 나 그냥 노란색 나오게 해주면 안 돼?",
+    "corrected_text": "아 진짜 그만 사고 싶은데 나 그냥 노란색 나오게 해주면 안 돼?",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 149,
+    "start": 638.0,
+    "end": 639.0,
+    "original_text": "요긴하게 잘 써라.",
+    "corrected_text": "요긴하게 잘 써라.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 150,
+    "start": 639.0,
+    "end": 640.0,
+    "original_text": "아!",
+    "corrected_text": "아!",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 151,
+    "start": 640.0,
+    "end": 642.0,
+    "original_text": "차라리 보라색 나오지.",
+    "corrected_text": "차라리 보라색 나오지.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 152,
+    "start": 642.0,
+    "end": 643.0,
+    "original_text": "아 나 진짜.",
+    "corrected_text": "아 나 진짜.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 153,
+    "start": 643.0,
+    "end": 645.0,
+    "original_text": "여기서 떠주나?",
+    "corrected_text": "여기서 떠주나?",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 154,
+    "start": 645.0,
+    "end": 646.0,
+    "original_text": "사기 한번 치나?",
+    "corrected_text": "사기 한번 치나?",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 155,
+    "start": 649.0,
+    "end": 651.0,
+    "original_text": "아!",
+    "corrected_text": "아!",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 156,
+    "start": 651.0,
+    "end": 652.0,
+    "original_text": "네 정가 구매 갑니다.",
+    "corrected_text": "네 정가 구매 갑니다.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 157,
+    "start": 652.0,
+    "end": 654.0,
+    "original_text": "9만 원이죠?",
+    "corrected_text": "9만 원이죠?",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 158,
+    "start": 654.0,
+    "end": 658.0,
+    "original_text": "네 나 이제 니케 도토리 창고 9만 원 남았네.",
+    "corrected_text": "네 나 이제 니케 도토리 창고 9만 원 남았네.",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 159,
+    "start": 658.0,
+    "end": 700.0,
+    "original_text": "아니 그런데 이제 현질할 거 없잖아.",
+    "corrected_text": "아니 그런데 이제 현질할 거 없잖아.",
+    "correction_reason": ""
+  }
+]

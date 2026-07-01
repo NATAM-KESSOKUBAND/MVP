@@ -1,0 +1,162 @@
+[
+  {
+    "segment_id": 120,
+    "start": 619.0,
+    "end": 621.0,
+    "original_text": "편안한 여행 되길 바란다",
+    "corrected_text": "편안한 여행 되길 바란다",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 121,
+    "start": 623.0,
+    "end": 624.0,
+    "original_text": "멋지게 갔어 네가 원하던 대로야",
+    "corrected_text": "멋지게 갔어 네가 원하던 대로야",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 122,
+    "start": 625.0,
+    "end": 626.0,
+    "original_text": "팬앰 한 가지 더 보상을 줘야지",
+    "corrected_text": "팬앰, 한 가지 더. 보상을 줘야지.",
+    "correction_reason": "호칭과 문장 간 구분이 모호하여 크리에이터의 메시지 전달력이 저하되는 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 123,
+    "start": 627.0,
+    "end": 628.0,
+    "original_text": "오버워치",
+    "corrected_text": "오버워치",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 124,
+    "start": 631.0,
+    "end": 632.0,
+    "original_text": "케리 너 좀 변했다 가슴이 빵빵한데",
+    "corrected_text": "케리, 너 좀 변했다. 가슴이 찡한데.",
+    "correction_reason": "맥락에 맞지 않는 단어 선택으로 인해 콘텐츠의 감정선 전달에 오류가 발생하는 경향이 있음."
+  },
+  {
+    "segment_id": 125,
+    "start": 632.0,
+    "end": 633.0,
+    "original_text": "Oh my god",
+    "corrected_text": "Oh my god",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 126,
+    "start": 634.0,
+    "end": 636.0,
+    "original_text": "이 애들의 잠재력을 못 보면 케리는 눈이 먼 거야",
+    "corrected_text": "이 애들의 잠재력을 못 보면 케리는 눈이 먼 거야",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 127,
+    "start": 637.0,
+    "end": 639.0,
+    "original_text": "잠재력 상태",
+    "corrected_text": "잠재력 자체",
+    "correction_reason": "유사 발음으로 인한 오인식으로 문맥의 일관성이 저해되는 현상이 관찰됨."
+  },
+  {
+    "segment_id": 128,
+    "start": 641.0,
+    "end": 643.0,
+    "original_text": "내려가 이러면 널 가두겠어",
+    "corrected_text": "내려가 이러면 널 가두겠어",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 129,
+    "start": 649.0,
+    "end": 651.0,
+    "original_text": "Im about to bomb this whole motherfucking plane",
+    "corrected_text": "Im about to bomb this whole motherfucking plane",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 130,
+    "start": 653.0,
+    "end": 654.0,
+    "original_text": "난 절대 안 잡혀",
+    "corrected_text": "난 절대 안 잡혀",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 131,
+    "start": 658.0,
+    "end": 700.0,
+    "original_text": "리드 손에 든 건 뭐지?",
+    "corrected_text": "리드 손에 든 건 뭐지?",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 132,
+    "start": 705.0,
+    "end": 707.0,
+    "original_text": "슬라이더 자 그럼 뭐가 들었는지 볼까?",
+    "corrected_text": "슬라이더 자 그럼 뭐가 들었는지 볼까?",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 133,
+    "start": 708.0,
+    "end": 709.0,
+    "original_text": "죽었어",
+    "corrected_text": "죽었어",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 134,
+    "start": 709.0,
+    "end": 710.0,
+    "original_text": "죽었어",
+    "corrected_text": "죽었어",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 135,
+    "start": 710.0,
+    "end": 711.0,
+    "original_text": "어러커설",
+    "corrected_text": "아라사카",
+    "correction_reason": "콘텐츠 내 핵심 고유 명사가 왜곡되어 시청자의 몰입을 방해하는 위기 요인이 관찰됨."
+  },
+  {
+    "segment_id": 136,
+    "start": 712.0,
+    "end": 713.0,
+    "original_text": "죽었어",
+    "corrected_text": "죽었어",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 137,
+    "start": 713.0,
+    "end": 714.0,
+    "original_text": "리드 상황 보고해 이상 없나?",
+    "corrected_text": "리드 상황 보고해 이상 없나?",
+    "correction_reason": ""
+  },
+  {
+    "segment_id": 138,
+    "start": 714.0,
+    "end": 716.0,
+    "original_text": "Arctic eggs",
+    "corrected_text": "아라사카",
+    "correction_reason": "한국어 고유 명사가 영문 음성으로 오인식되어 자막의 신뢰도를 떨어뜨리는 경향이 있음."
+  },
+  {
+    "segment_id": 139,
+    "start": 719.0,
+    "end": 721.0,
+    "original_text": "Yeah did you see that?",
+    "corrected_text": "Yeah did you see that?",
+    "correction_reason": ""
+  }
+]

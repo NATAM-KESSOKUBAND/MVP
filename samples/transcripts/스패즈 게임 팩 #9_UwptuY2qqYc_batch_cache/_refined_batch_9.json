@@ -1,0 +1,162 @@
+[
+  {
+    "segment_id": 180,
+    "start": 927.0,
+    "end": 928.0,
+    "original_text": "극혐인데",
+    "corrected_text": "극혐인데",
+    "correction_reason": "발음 및 맥락상 오류가 없는 것으로 판단됨."
+  },
+  {
+    "segment_id": 181,
+    "start": 929.0,
+    "end": 930.0,
+    "original_text": "검은 새들",
+    "corrected_text": "검은 새들",
+    "correction_reason": "게임 콘텐츠 맥락상 자연스러운 표현으로 판단되어 유지함."
+  },
+  {
+    "segment_id": 182,
+    "start": 930.0,
+    "end": 931.0,
+    "original_text": "나 봐봐",
+    "corrected_text": "나 봐봐",
+    "correction_reason": "발음 및 맥락상 오류가 없는 것으로 판단됨."
+  },
+  {
+    "segment_id": 183,
+    "start": 931.0,
+    "end": 932.0,
+    "original_text": "와",
+    "corrected_text": "와",
+    "correction_reason": "단순 감탄사로 오류가 없는 것으로 판단됨."
+  },
+  {
+    "segment_id": 184,
+    "start": 932.0,
+    "end": 935.0,
+    "original_text": "더블 킬 더블 킬",
+    "corrected_text": "더블 킬 더블 킬",
+    "correction_reason": "게임 용어가 정확하게 인식된 것으로 판단됨."
+  },
+  {
+    "segment_id": 185,
+    "start": 937.0,
+    "end": 939.0,
+    "original_text": "제가 소형면허가 없어서",
+    "corrected_text": "제가 소형 면허가 없어서",
+    "correction_reason": "한글 맞춤법 띄어쓰기 규정에 따라 '소형'과 '면허'를 띄어 쓴 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 186,
+    "start": 940.0,
+    "end": 941.0,
+    "original_text": "Let it die inferno",
+    "corrected_text": "Let it die inferno",
+    "correction_reason": "외래어 발음이 그대로 인식된 것으로 판단되어 유지함."
+  },
+  {
+    "segment_id": 187,
+    "start": 943.0,
+    "end": 945.0,
+    "original_text": "무슨 점프 같은 걸 하나하나 알려주고 앉았어",
+    "corrected_text": "무슨 점프 같은 걸 하나하나 알려주고 앉았어",
+    "correction_reason": "구어체 표현이 맥락상 자연스럽게 인식된 것으로 판단됨."
+  },
+  {
+    "segment_id": 188,
+    "start": 957.0,
+    "end": 958.0,
+    "original_text": "이예",
+    "corrected_text": "이예",
+    "correction_reason": "단순 감탄사로 오류가 없는 것으로 판단됨."
+  },
+  {
+    "segment_id": 189,
+    "start": 958.0,
+    "end": 959.0,
+    "original_text": "튜토리얼 넣는 개발자 모습",
+    "corrected_text": "튜토리얼 넣는 개발자 모습",
+    "correction_reason": "맥락상 오류가 없는 것으로 판단됨."
+  },
+  {
+    "segment_id": 190,
+    "start": 1000.0,
+    "end": 1001.0,
+    "original_text": "영상의 찌꺼기들",
+    "corrected_text": "영상의 찌꺼기들",
+    "correction_reason": "맥락상 오류가 없는 것으로 판단됨."
+  },
+  {
+    "segment_id": 191,
+    "start": 1001.0,
+    "end": 1002.0,
+    "original_text": "오 수캐 빨리 가네",
+    "corrected_text": "오 우측에 빨리 가네",
+    "correction_reason": "발음 유사성 및 게임 진행 맥락을 고려할 때 '우측에'가 '수캐'로 오인식된 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 192,
+    "start": 1002.0,
+    "end": 1003.0,
+    "original_text": "여긴 내가 맵을 알거든",
+    "corrected_text": "여긴 내가 맵을 알거든",
+    "correction_reason": "맥락상 오류가 없는 것으로 판단됨."
+  },
+  {
+    "segment_id": 193,
+    "start": 1004.0,
+    "end": 1006.0,
+    "original_text": "그런데 이것은 몰랐을 걸?",
+    "corrected_text": "그런데 이것은 몰랐을걸?",
+    "correction_reason": "한글 맞춤법 규정에 따라 어미 '-ㄹ걸'은 붙여 쓰는 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 194,
+    "start": 1006.0,
+    "end": 1007.0,
+    "original_text": "으아",
+    "corrected_text": "으아",
+    "correction_reason": "단순 비명 소리로 오류가 없는 것으로 판단됨."
+  },
+  {
+    "segment_id": 195,
+    "start": 1007.0,
+    "end": 1010.0,
+    "original_text": "아 망했다 세상에",
+    "corrected_text": "아 망했다 세상에",
+    "correction_reason": "맥락상 오류가 없는 것으로 판단됨."
+  },
+  {
+    "segment_id": 196,
+    "start": 1011.0,
+    "end": 1013.0,
+    "original_text": "아",
+    "corrected_text": "아",
+    "correction_reason": "단순 탄식으로 오류가 없는 것으로 판단됨."
+  },
+  {
+    "segment_id": 197,
+    "start": 1015.0,
+    "end": 1016.0,
+    "original_text": "우리 한 명이야?",
+    "corrected_text": "우린 한 팀이야?",
+    "correction_reason": "발음 유사성 및 협동 게임 맥락을 고려할 때 '한 팀이야'가 '한 명이야'로 오인식된 패턴이 관찰됨."
+  },
+  {
+    "segment_id": 198,
+    "start": 1019.0,
+    "end": 1021.0,
+    "original_text": "여기는 아 뭐야 오케이 오케이 일로 와 생일 축하해",
+    "corrected_text": "여기는 아 뭐야 오케이 오케이 일로 와 생일 축하해",
+    "correction_reason": "구어체 표현 및 밈(meme) 사용 맥락상 오류가 없는 것으로 판단됨."
+  },
+  {
+    "segment_id": 199,
+    "start": 1022.0,
+    "end": 1024.0,
+    "original_text": "난 어둠 속에서 공격하지",
+    "corrected_text": "난 어둠 속에서 공격하지",
+    "correction_reason": "맥락상 오류가 없는 것으로 판단됨."
+  }
+]
