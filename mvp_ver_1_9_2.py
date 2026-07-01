@@ -30,7 +30,7 @@ except ImportError:
 # ⚙️  설정
 # ════════════════════════════════════════════════════════
 
-API_KEY                  = os.getenv("GEMINI_API_KEY", r'REDACTED_LEAKED_KEY_ROTATED')
+API_KEY                  = os.getenv("GEMINI_API_KEY", "")
 EMBED_MODEL              = os.getenv("EMBED_MODEL", "models/gemini-embedding-2")    # 001 → 2 (최신)
 GEN_MODEL                = os.getenv("GEN_MODEL",   "models/gemini-3.5-flash")       # 2.5 → 3.5 (최신 flash)
 WHISPER_MODEL            = "turbo"
