@@ -1,0 +1,657 @@
+{
+  "job_id": "65556f36",
+  "video_path": "c:\\Users\\epicr\\OneDrive\\바탕 화면\\copyright_detector\\copyright_detector\\temp\\downloads\\UwptuY2qqYc.mp4",
+  "video_filename": "UwptuY2qqYc.mp4",
+  "video_duration": 778.40254,
+  "processing_time_sec": 1724.2820405960083,
+  "own_channels": [
+    "스패즈"
+  ],
+  "findings": [
+    {
+      "job_id": "65556f36",
+      "finding_type": "music",
+      "timestamp_start": 0.0,
+      "timestamp_end": 12.0,
+      "timestamp_display": "00:00",
+      "title": "Riley",
+      "author": "Juicy J",
+      "rights_holder": "Cell Shocked Music",
+      "source": "acrcloud",
+      "external_id": "bc1e3b839086610ceaca4249cfa9525e",
+      "confidence_score": 0.79,
+      "risk_score": 0.79,
+      "risk_level": "HIGH",
+      "description": "'Riley' by Juicy J (© Cell Shocked Music)",
+      "raw_response": {
+        "status": {
+          "msg": "Success",
+          "code": 0,
+          "version": "1.0"
+        },
+        "result_type": 0,
+        "cost_time": 1.4879999160767,
+        "metadata": {
+          "music": [
+            {
+              "duration_ms": 173297,
+              "release_date": "2013-07-08",
+              "sample_begin_time_offset_ms": 3460,
+              "sample_end_time_offset_ms": 10520,
+              "db_begin_time_offset_ms": 28380,
+              "db_end_time_offset_ms": 35440,
+              "play_offset_ms": 36660,
+              "result_from": 1,
+              "score": 79,
+              "artists": [
+                {
+                  "name": "Juicy J"
+                }
+              ],
+              "label": "Cell Shocked Music",
+              "external_metadata": {
+                "deezer": {
+                  "track": {
+                    "id": "1100241092",
+                    "name": "Riley"
+                  },
+                  "artists": [
+                    {
+                      "name": "Juicy J",
+                      "id": "12294"
+                    }
+                  ],
+                  "album": {
+                    "name": ""
+                  }
+                },
+                "spotify": {
+                  "track": {
+                    "id": "7jnSn33i5CrbecAXwwiVAy",
+                    "name": "Riley"
+                  },
+                  "artists": [
+                    {
+                      "id": "0I9l4QsVgo4g9NjIH0fGwh",
+                      "name": "Juice"
+                    }
+                  ],
+                  "album": {
+                    "name": "Double Cup",
+                    "id": "6gyAY1JLq78jlDHBY7ckEk"
+                  }
+                },
+                "youtube": {
+                  "vid": "TGKCDLkcIW4"
+                }
+              },
+              "title": "Riley",
+              "album": {
+                "name": "Blue Dream & Lean"
+              },
+              "external_ids": {
+                "isrc": "QMFMF1315090",
+                "upc": "0081159995515"
+              },
+              "genres": [
+                {
+                  "name": "Hip Hop"
+                },
+                {
+                  "name": "Dirty South"
+                }
+              ],
+              "acrid": "bc1e3b839086610ceaca4249cfa9525e"
+            },
+            {
+              "duration_ms": 173000,
+              "release_date": "2011-11-29",
+              "sample_begin_time_offset_ms": 3480,
+              "sample_end_time_offset_ms": 10540,
+              "external_ids": {
+                "isrc": "USASN2005213",
+                "upc": "0097037017965"
+              },
+              "db_begin_time_offset_ms": 28400,
+              "db_end_time_offset_ms": 35460,
+              "play_offset_ms": 36660,
+              "result_from": 1,
+              "artists": [
+                {
+                  "name": "Juicy J"
+                }
+              ],
+              "title": "Riley",
+              "external_metadata": {
+                "deezer": {
+                  "track": {
+                    "id": "1100241092",
+                    "name": "Riley"
+                  },
+                  "artists": [
+                    {
+                      "name": "Juicy J",
+                      "id": "12294"
+                    }
+                  ],
+                  "album": {
+                    "name": ""
+                  }
+                },
+                "spotify": {
+                  "track": {
+                    "id": "1dHda8ZPcauIUV8kdvdLEc",
+                    "name": "Riley"
+                  },
+                  "artists": [
+                    {
+                      "name": "Juicy J",
+                      "id": "5gCRApTajqwbnHHPbr2Fpi"
+                    }
+                  ],
+                  "album": {
+                    "name": "Blue Dream & Lean",
+                    "id": "3bxNHyJ8SybGCVvaou9Dnm"
+                  }
+                },
+                "youtube": {
+                  "vid": "ZjgreqGLbqc"
+                }
+              },
+              "label": "Mixtape Records",
+              "genres": [
+                {
+                  "name": "Hip-hop/Rap"
+                }
+              ],
+              "album": {
+                "name": "Blue Dream & Lean"
+              },
+              "score": 73,
+              "acrid": "ab8cadff80f8c9d070801669b1b91276"
+            },
+            {
+              "duration_ms": 204700,
+              "release_date": "2025-10-15",
+              "sample_begin_time_offset_ms": 3460,
+              "sample_end_time_offset_ms": 10340,
+              "db_begin_time_offset_ms": 35240,
+              "db_end_time_offset_ms": 42120,
+              "play_offset_ms": 43520,
+              "result_from": 1,
+              "album": {
+                "name": "Riley (FAAAHHH Remix)"
+              },
+              "external_ids": {
+                "isrc": "QM24S2506351",
+                "upc": "0193436446174"
+              },
+              "artists": [
+                {
+                  "name": "Juicy J"
+                }
+              ],
+              "external_metadata": {
+                "deezer": {
+                  "track": {
+                    "id": "3602640742",
+                    "name": "Riley (FAAAHHH Remix)"
+                  },
+                  "artists": [
+                    {
+                      "name": "Juicy J",
+                      "id": "12294"
+                    }
+                  ],
+                  "album": {
+                    "name": "Riley (FAAAHHH Remix)",
+                    "id": "838075522"
+                  }
+                },
+                "spotify": {
+                  "track": {
+                    "id": "41JieZnmKWocQgwJjuJujh",
+                    "name": "Riley - FAAAHHH Remix"
+                  },
+                  "artists": [
+                    {
+                      "name": "Juicy J",
+                      "id": "5gCRApTajqwbnHHPbr2Fpi"
+                    }
+                  ],
+                  "album": {
+                    "name": "Riley (FAAAHHH Remix)",
+                    "id": "72bYVsRhWzg37zjmX3F2Q7"
+                  }
+                }
+              },
+              "title": "Riley - FAAAHHH Remix",
+              "score": 61,
+              "label": "Trippy Music LLC",
+              "acrid": "bf3ad46e5e97683b6135dd66092846a5"
+            }
+          ],
+          "timestamp_utc": "2026-06-11 15:05:56"
+        }
+      }
+    },
+    {
+      "job_id": "65556f36",
+      "finding_type": "music",
+      "timestamp_start": 40.0,
+      "timestamp_end": 52.0,
+      "timestamp_display": "00:40",
+      "title": "(They Long To Be) Close To You",
+      "author": "Carpenters",
+      "rights_holder": "A&M",
+      "source": "acrcloud",
+      "external_id": "b432eb637af2e18f502169eecd26dfbe",
+      "confidence_score": 1.0,
+      "risk_score": 1.0,
+      "risk_level": "HIGH",
+      "description": "'(They Long To Be) Close To You' by Carpenters (© A&M)",
+      "raw_response": {
+        "status": {
+          "msg": "Success",
+          "code": 0,
+          "version": "1.0"
+        },
+        "result_type": 0,
+        "cost_time": 0.40700006484985,
+        "metadata": {
+          "music": [
+            {
+              "release_date": "2018-08-31",
+              "db_begin_time_offset_ms": 8340,
+              "db_end_time_offset_ms": 12700,
+              "play_offset_ms": 15460,
+              "result_from": 3,
+              "label": "A&M",
+              "duration_ms": 220000,
+              "works": [
+                {
+                  "creators": [
+                    {
+                      "name": "BACHARACH BURT F",
+                      "ipi": 1751821,
+                      "last_name": "BACHARACH",
+                      "roles": [
+                        "Composer"
+                      ]
+                    },
+                    {
+                      "name": "DAVID HAL",
+                      "ipi": 7575092,
+                      "last_name": "DAVID",
+                      "roles": [
+                        "Composer"
+                      ]
+                    },
+                    {
+                      "name": "SONGS OF FUJIMUSIC ",
+                      "ipi": 798401502,
+                      "last_name": "SONGS OF FUJIMUSIC",
+                      "roles": [
+                        "Publisher"
+                      ]
+                    },
+                    {
+                      "name": "NEW-HIDDEN-VALLEY-MUSIC COMPANY ",
+                      "ipi": 60802405,
+                      "last_name": "NEW-HIDDEN-VALLEY-MUSIC COMPANY",
+                      "roles": [
+                        "Publisher"
+                      ]
+                    },
+                    {
+                      "name": "BMG RIGHTS MANAGEMENT (UK) LTD (HAL DAVID) ",
+                      "ipi": 738116932,
+                      "last_name": "BMG RIGHTS MANAGEMENT (UK) LTD (HAL DAVID)",
+                      "roles": [
+                        "Publisher"
+                      ]
+                    }
+                  ],
+                  "id": "T0700287235",
+                  "iswc": "T0700287235",
+                  "name": "THEY LONG TO BE CLOSE TO YOU"
+                }
+              ],
+              "sample_begin_time_offset_ms": 4620,
+              "sample_end_time_offset_ms": 8980,
+              "title": "(They Long To Be) Close To You",
+              "album": {
+                "name": "The Singles 1969 - 1973"
+              },
+              "score": 100,
+              "external_metadata": {
+                "musicbrainz": {
+                  "track": {
+                    "id": "989d6d12-3dd9-4411-98e2-7506e2833710"
+                  }
+                },
+                "deezer": {
+                  "track": {
+                    "id": "881131992",
+                    "name": "(They Long to Be) Close To You"
+                  },
+                  "artists": [
+                    {
+                      "name": "The Carpenters",
+                      "id": "80733"
+                    }
+                  ],
+                  "album": {
+                    "name": ""
+                  }
+                },
+                "spotify": {
+                  "track": {
+                    "id": "4IeStM4M9uQ1X0s4LdSLuC",
+                    "name": "(They Long To Be) Close To You"
+                  },
+                  "artists": [
+                    {
+                      "id": "1eEfMU2AhEo7XnKgL7c304",
+                      "name": "Carpenters"
+                    }
+                  ],
+                  "album": {
+                    "name": "The Singles 1969 - 1973",
+                    "id": "7Gj3BAgd9eX99FScIas2RF"
+                  }
+                },
+                "youtube": {
+                  "vid": "bz7eK_-fZcE"
+                }
+              },
+              "external_ids": {
+                "upc": "00602567822318",
+                "isrc": "USAM19100302"
+              },
+              "artists": [
+                {
+                  "name": "Carpenters"
+                }
+              ],
+              "genres": [
+                {
+                  "name": "Pop"
+                },
+                {
+                  "name": "Dance"
+                }
+              ],
+              "acrid": "b432eb637af2e18f502169eecd26dfbe"
+            },
+            {
+              "external_ids": {
+                "upc": "0190394617370",
+                "isrc": "USDY41655949"
+              },
+              "release_date": "2006-11-12",
+              "sample_begin_time_offset_ms": 5540,
+              "sample_end_time_offset_ms": 6660,
+              "duration_ms": 123012,
+              "db_begin_time_offset_ms": 10120,
+              "db_end_time_offset_ms": 11240,
+              "play_offset_ms": 16320,
+              "result_from": 3,
+              "album": {
+                "name": "Dirt Bacharach"
+              },
+              "label": "R.I.A.A.",
+              "title": "Birds",
+              "external_metadata": {
+                "musicbrainz": {
+                  "track": {
+                    "id": "ec80d247-f859-4076-8742-008705392643"
+                  }
+                },
+                "deezer": {
+                  "track": {
+                    "id": "126894303",
+                    "name": "Birds"
+                  },
+                  "artists": [
+                    {
+                      "name": "Riaa",
+                      "id": "5629585"
+                    }
+                  ],
+                  "album": {
+                    "name": "Dirt Bacharach",
+                    "id": "13372489"
+                  }
+                },
+                "spotify": {
+                  "track": {
+                    "id": "2h02L6KcbL26IqwwcT9v28",
+                    "name": "Birds"
+                  },
+                  "artists": [
+                    {
+                      "id": "1zIcWlVYySMuth8cqgVSpd",
+                      "name": "R.I.A.A."
+                    }
+                  ],
+                  "album": {
+                    "name": "Dirt Bacharach",
+                    "id": "5B9xUyC89G30sMOz30QBk3"
+                  }
+                },
+                "youtube": {
+                  "vid": "xWb8dV56X9Y"
+                }
+              },
+              "genres": [
+                {
+                  "name": "Electro",
+                  "id": 106
+                }
+              ],
+              "artists": [
+                {
+                  "name": "Riaa"
+                }
+              ],
+              "score": 100,
+              "acrid": "d44e8781fa69bfa35ada5fb513a3eac1"
+            }
+          ],
+          "timestamp_utc": "2026-06-11 15:05:57"
+        }
+      }
+    },
+    {
+      "job_id": "65556f36",
+      "finding_type": "music",
+      "timestamp_start": 100.0,
+      "timestamp_end": 112.0,
+      "timestamp_display": "01:40",
+      "title": "TV WORLD",
+      "author": "Toby Fox",
+      "rights_holder": "Materia Collective",
+      "source": "acrcloud",
+      "external_id": "2dbd6e656ca31bf7216c56259afebf13",
+      "confidence_score": 1.0,
+      "risk_score": 1.0,
+      "risk_level": "HIGH",
+      "description": "'TV WORLD' by Toby Fox (© Materia Collective)",
+      "raw_response": {
+        "status": {
+          "msg": "Success",
+          "code": 0,
+          "version": "1.0"
+        },
+        "result_type": 0,
+        "cost_time": 1.0469999313354,
+        "metadata": {
+          "music": [
+            {
+              "duration_ms": 128900,
+              "release_date": "2025-06-04",
+              "sample_begin_time_offset_ms": 4260,
+              "sample_end_time_offset_ms": 11220,
+              "db_begin_time_offset_ms": 15960,
+              "db_end_time_offset_ms": 22920,
+              "play_offset_ms": 23360,
+              "result_from": 1,
+              "album": {
+                "name": "DELTARUNE Chapters 3+4 (Original Game Soundtrack)"
+              },
+              "artists": [
+                {
+                  "name": "Toby Fox"
+                }
+              ],
+              "external_ids": {
+                "isrc": "QZ6K42500774",
+                "upc": "0810179611316"
+              },
+              "external_metadata": {
+                "deezer": {
+                  "track": {
+                    "id": "3398311141",
+                    "name": "TV WORLD"
+                  },
+                  "artists": [
+                    {
+                      "name": "Toby Fox",
+                      "id": "10468691"
+                    }
+                  ],
+                  "album": {
+                    "name": "DELTARUNE Chapters 3+4 (Original Game Soundtrack)",
+                    "id": "767036801"
+                  }
+                },
+                "spotify": {
+                  "track": {
+                    "id": "4dCf5JiHTFjDyJ3Lso0FPx",
+                    "name": "TV WORLD"
+                  },
+                  "artists": [
+                    {
+                      "name": "Toby Fox",
+                      "id": "57DlMWmbVIf2ssJ8QBpBau"
+                    }
+                  ],
+                  "album": {
+                    "name": "DELTARUNE Chapters 3+4 (Original Game Soundtrack)",
+                    "id": "4wsN31rpFBwGS06xi3rp1P"
+                  }
+                }
+              },
+              "label": "Materia Collective",
+              "title": "TV WORLD",
+              "score": 100,
+              "acrid": "2dbd6e656ca31bf7216c56259afebf13"
+            },
+            {
+              "duration_ms": 265000,
+              "release_date": "2024-12-12",
+              "sample_begin_time_offset_ms": 7220,
+              "sample_end_time_offset_ms": 8400,
+              "db_begin_time_offset_ms": 198620,
+              "db_end_time_offset_ms": 199800,
+              "play_offset_ms": 203060,
+              "result_from": 1,
+              "album": {
+                "name": "Winter Serenade"
+              },
+              "external_ids": {
+                "isrc": "QZZ7U2470991",
+                "upc": "0199096287898"
+              },
+              "artists": [
+                {
+                  "name": "L0RN"
+                }
+              ],
+              "external_metadata": {
+                "youtube": {
+                  "vid": "E4uzqgwoHTM"
+                },
+                "deezer": {
+                  "track": {
+                    "id": "3138565451",
+                    "name": "Winter Serenade"
+                  },
+                  "artists": [
+                    {
+                      "name": "L0RN",
+                      "id": "245456902"
+                    }
+                  ],
+                  "album": {
+                    "name": "Winter Serenade",
+                    "id": "682762781"
+                  }
+                },
+                "spotify": {
+                  "track": {
+                    "id": "78uionObAevnlE73BJnL2y",
+                    "name": "Winter Serenade"
+                  },
+                  "artists": [
+                    {
+                      "name": "L0RN",
+                      "id": "62kAjPsEhtWoZlNfVHrEFQ"
+                    }
+                  ],
+                  "album": {
+                    "name": "Winter Serenade",
+                    "id": "5Va1LzAhwLQR4ChLeFWYdP"
+                  }
+                }
+              },
+              "genres": [
+                {
+                  "name": "Metal",
+                  "id": 464
+                }
+              ],
+              "title": "Winter Serenade",
+              "label": "Safehaven Recordings",
+              "score": 34,
+              "acrid": "ad7986a0e0e261c3568724d118568464"
+            }
+          ],
+          "timestamp_utc": "2026-06-11 15:06:05"
+        }
+      }
+    },
+    {
+      "job_id": "65556f36",
+      "finding_type": "logo",
+      "timestamp_start": 607.6,
+      "timestamp_end": 607.6,
+      "timestamp_display": "10:07",
+      "title": "Naruto: Rise of a Ninja",
+      "source": "google_vision",
+      "confidence_score": 0.873801052570343,
+      "risk_score": 0.6247677525877953,
+      "risk_level": "MEDIUM",
+      "description": "브랜드 로고 감지: Naruto: Rise of a Ninja",
+      "raw_response": {
+        "brand_name": "Naruto: Rise of a Ninja",
+        "confidence": 0.873801052570343,
+        "risk_score": 0.6247677525877953,
+        "source": "google_vision"
+      }
+    }
+  ],
+  "summary": {
+    "overall_risk_level": "HIGH",
+    "overall_risk_score": 1.0,
+    "total_issues_found": 4,
+    "by_type": {
+      "music": 3,
+      "logo": 1
+    },
+    "high_count": 3,
+    "medium_count": 1,
+    "low_count": 0
+  }
+}

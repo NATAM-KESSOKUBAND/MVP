@@ -1,0 +1,223 @@
+{
+  "job_id": "45d9a0b0",
+  "video_path": "C:\\Users\\epicr\\OneDrive\\바탕 화면\\요즘 급식이 트위터에서 X다 때는 법.mp4",
+  "video_filename": "요즘 급식이 트위터에서 X다 때는 법.mp4",
+  "video_duration": 222.307846,
+  "processing_time_sec": 541.7266278266907,
+  "own_channels": [
+    "홱같"
+  ],
+  "findings": [
+    {
+      "job_id": "45d9a0b0",
+      "finding_type": "image",
+      "timestamp_start": 78.54513333333334,
+      "timestamp_end": 78.54513333333334,
+      "timestamp_display": "01:18",
+      "title": "인터넷 이미지: Spike Jonze",
+      "rights_holder": "",
+      "source": "google_vision_web_search",
+      "confidence_score": 0.72,
+      "risk_score": 0.652,
+      "risk_level": "MEDIUM",
+      "description": "Google 역이미지: sbs.com.au, techpolicy.press, wired.com에서 발견됨",
+      "reference_url": "https://www.sbs.com.au/whats-on/article/her-review/vctyklfh7"
+    },
+    {
+      "job_id": "45d9a0b0",
+      "finding_type": "video_clip",
+      "timestamp_start": 104.57113333333334,
+      "timestamp_end": 104.57113333333334,
+      "timestamp_display": "01:44",
+      "title": "YouTube 원본 의심: The basics of line artwork tutorial",
+      "rights_holder": "",
+      "source": "youtube_api_entity_search",
+      "confidence_score": 0.7,
+      "risk_score": 0.65,
+      "risk_level": "MEDIUM",
+      "description": "Vision 엔티티 'Line art' YouTube 검색: 'The basics of line artwork tutorial' — 채널: Isaac Prior Art",
+      "reference_url": "https://www.youtube.com/watch?v=SVMeTnqIlZ0"
+    },
+    {
+      "job_id": "45d9a0b0",
+      "finding_type": "image",
+      "timestamp_start": 131.59813333333332,
+      "timestamp_end": 131.59813333333332,
+      "timestamp_display": "02:11",
+      "title": "인터넷 이미지: Cartoon",
+      "rights_holder": "",
+      "source": "google_vision_web_search",
+      "confidence_score": 0.72,
+      "risk_score": 0.413,
+      "risk_level": "MEDIUM",
+      "description": "Google 역이미지: spongebob.fandom.com, youtube.com, gitlab.com에서 발견됨",
+      "reference_url": "https://spongebob.fandom.com/f/p/4400000000000016166"
+    },
+    {
+      "job_id": "45d9a0b0",
+      "finding_type": "logo",
+      "timestamp_start": 154.62113333333335,
+      "timestamp_end": 154.62113333333335,
+      "timestamp_display": "02:34",
+      "title": "OnlyFans",
+      "rights_holder": "",
+      "source": "internal_db",
+      "confidence_score": 1.0,
+      "risk_score": 0.95,
+      "risk_level": "HIGH",
+      "description": "로고 감지: OnlyFans (내부 DB)"
+    },
+    {
+      "job_id": "45d9a0b0",
+      "finding_type": "music",
+      "timestamp_start": 180.0,
+      "timestamp_end": 192.0,
+      "timestamp_display": "03:00",
+      "title": "우아한 만찬",
+      "author": "김수진, Illi",
+      "rights_holder": "Danal Entertainment",
+      "source": "acrcloud",
+      "external_id": "a720897b5ade8c78b1fca46748554296",
+      "confidence_score": 0.67,
+      "risk_score": 0.67,
+      "risk_level": "MEDIUM",
+      "description": "'우아한 만찬' by 김수진, Illi (© Danal Entertainment)",
+      "raw_response": {
+        "status": {
+          "msg": "Success",
+          "code": 0,
+          "version": "1.0"
+        },
+        "result_type": 0,
+        "cost_time": 0.98299980163574,
+        "metadata": {
+          "music": [
+            {
+              "duration_ms": 162000,
+              "release_date": "2014-01-16",
+              "sample_begin_time_offset_ms": 2640,
+              "sample_end_time_offset_ms": 10120,
+              "external_ids": {
+                "upc": "8806163392509",
+                "isrc": "KRA341401610"
+              },
+              "db_begin_time_offset_ms": 19740,
+              "db_end_time_offset_ms": 27220,
+              "play_offset_ms": 28700,
+              "result_from": 3,
+              "album": {
+                "name": "식샤를 합시다 OST Part 4"
+              },
+              "label": "Danal Entertainment",
+              "title": "우아한 만찬",
+              "external_metadata": {
+                "deezer": {
+                  "track": {
+                    "id": "810204402",
+                    "name": "우아한 만찬"
+                  },
+                  "artists": [
+                    {
+                      "name": "illi",
+                      "id": "89673942"
+                    },
+                    {
+                      "name": "김수진",
+                      "id": "53055672"
+                    }
+                  ],
+                  "album": {
+                    "name": "Let's Eat (tvN DRAMA) OST Part.4",
+                    "id": "119292002"
+                  }
+                },
+                "spotify": {
+                  "track": {
+                    "id": "0tjy7BWEP2EEM6pG64uT80",
+                    "name": "우아한 만찬"
+                  },
+                  "artists": [
+                    {
+                      "name": "illi",
+                      "id": "2oHR1pZEVZw6hZVgSur7He"
+                    },
+                    {
+                      "name": "김수진",
+                      "id": "5MPtabZ14O2EApe3TBEfk7"
+                    }
+                  ],
+                  "album": {
+                    "name": "Let's Eat (tvN DRAMA) OST Part.4",
+                    "id": "24Hmzi3XSnRG5shBI1LbHw"
+                  }
+                }
+              },
+              "genres": [
+                {
+                  "name": "Films/Games",
+                  "id": 173
+                },
+                {
+                  "name": "Film Scores",
+                  "id": 174
+                }
+              ],
+              "artists": [
+                {
+                  "name": "김수진, Illi"
+                }
+              ],
+              "score": 67,
+              "acrid": "a720897b5ade8c78b1fca46748554296"
+            }
+          ],
+          "timestamp_utc": "2026-06-11 10:54:18"
+        }
+      }
+    },
+    {
+      "job_id": "45d9a0b0",
+      "finding_type": "image",
+      "timestamp_start": 186.65313333333333,
+      "timestamp_end": 186.65313333333333,
+      "timestamp_display": "03:06",
+      "title": "인터넷 이미지: Chimpanzee",
+      "rights_holder": "",
+      "source": "google_vision_web_search",
+      "confidence_score": 0.72,
+      "risk_score": 0.652,
+      "risk_level": "MEDIUM",
+      "description": "Google 역이미지: cnn.com, depositphotos.com, kottke.org에서 발견됨",
+      "reference_url": "https://www.cnn.com/2025/07/10/science/chimpanzees-grass-behavior-scli-intl"
+    },
+    {
+      "job_id": "45d9a0b0",
+      "finding_type": "image",
+      "timestamp_start": 199.66613333333333,
+      "timestamp_end": 199.66613333333333,
+      "timestamp_display": "03:19",
+      "title": "인터넷 이미지: Brain",
+      "rights_holder": "",
+      "source": "google_vision_web_search",
+      "confidence_score": 0.72,
+      "risk_score": 0.651,
+      "risk_level": "MEDIUM",
+      "description": "Google 역이미지: pcdn.hu, youtube.com에서 발견됨",
+      "reference_url": "https://pcdn.hu/articles/images-xs/g/e/t/gettyimages-1157798734-823244.jpg"
+    }
+  ],
+  "summary": {
+    "overall_risk_level": "HIGH",
+    "overall_risk_score": 0.95,
+    "total_issues_found": 7,
+    "by_type": {
+      "image": 4,
+      "video_clip": 1,
+      "logo": 1,
+      "music": 1
+    },
+    "high_count": 1,
+    "medium_count": 6,
+    "low_count": 0
+  }
+}

@@ -2,20 +2,20 @@
 *.env
 !.env.example
 
-__pycache__/
-*.pyc
-
-# credentials / secrets
 *credentials*.json
 *.pem
 *.key
 
-# local databases
 *.sqlite
 *.sqlite.bak*
 *.sqlite3
 
-# venvs / build artifacts
 venv/
 .venv/
+__pycache__/
+*.pyc
 
+temp/
+results/
+downloads/
+.git/

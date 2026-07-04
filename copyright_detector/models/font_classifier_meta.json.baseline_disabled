@@ -1,0 +1,129 @@
+{
+  "input": {
+    "h": 48,
+    "w": 256
+  },
+  "val_accuracy": 0.3563,
+  "classes": [
+    {
+      "name": "HY헤드라인M",
+      "commercial": true,
+      "foundry": "HY",
+      "risk": 0.82
+    },
+    {
+      "name": "HY중고딕",
+      "commercial": true,
+      "foundry": "HY",
+      "risk": 0.82
+    },
+    {
+      "name": "HY신명조",
+      "commercial": true,
+      "foundry": "HY",
+      "risk": 0.82
+    },
+    {
+      "name": "HY그래픽",
+      "commercial": true,
+      "foundry": "HY",
+      "risk": 0.77
+    },
+    {
+      "name": "HY엽서",
+      "commercial": true,
+      "foundry": "HY",
+      "risk": 0.77
+    },
+    {
+      "name": "HY샘물M",
+      "commercial": true,
+      "foundry": "HY",
+      "risk": 0.72
+    },
+    {
+      "name": "HY궁서B",
+      "commercial": true,
+      "foundry": "HY",
+      "risk": 0.72
+    },
+    {
+      "name": "HY목각파임B",
+      "commercial": true,
+      "foundry": "HY",
+      "risk": 0.82
+    },
+    {
+      "name": "굴림",
+      "commercial": false,
+      "foundry": "HY/Windows",
+      "risk": 0.5
+    },
+    {
+      "name": "돋움",
+      "commercial": false,
+      "foundry": "HY/Windows",
+      "risk": 0.5
+    },
+    {
+      "name": "바탕",
+      "commercial": false,
+      "foundry": "HY/Windows",
+      "risk": 0.5
+    },
+    {
+      "name": "궁서",
+      "commercial": false,
+      "foundry": "HY/Windows",
+      "risk": 0.5
+    },
+    {
+      "name": "새굴림",
+      "commercial": false,
+      "foundry": "HY/Windows",
+      "risk": 0.5
+    },
+    {
+      "name": "맑은고딕",
+      "commercial": false,
+      "foundry": "Microsoft",
+      "risk": 0.5
+    },
+    {
+      "name": "본고딕(Noto Sans KR)",
+      "commercial": false,
+      "foundry": "Google",
+      "risk": 0.5
+    },
+    {
+      "name": "본명조(Noto Serif KR)",
+      "commercial": false,
+      "foundry": "Google",
+      "risk": 0.5
+    },
+    {
+      "name": "배민주아체",
+      "commercial": false,
+      "foundry": "Woowa Bros",
+      "risk": 0.5
+    },
+    {
+      "name": "배민한나체",
+      "commercial": false,
+      "foundry": "Woowa Bros",
+      "risk": 0.5
+    },
+    {
+      "name": "KIMM체",
+      "commercial": false,
+      "foundry": "한국기계연구원",
+      "risk": 0.5
+    },
+    {
+      "name": "에이투지체",
+      "commercial": false,
+      "foundry": "에이투지",
+      "risk": 0.5
+    }
+  ]
+}

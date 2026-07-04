@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>저작권 분석 리포트 — 요즘 급식이 트위터에서 X다 때는 법.mp4</title>
+<style>
+  :root {
+    --bg: #0f172a; --surface: #1e293b; --surface2: #334155;
+    --text: #f1f5f9; --muted: #94a3b8;
+    --red: #ef4444; --yellow: #f59e0b; --blue: #3b82f6; --green: #10b981;
+    --border: rgba(148,163,184,0.15);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, 'Noto Sans KR', sans-serif; background: var(--bg); color: var(--text); }
+  .container { max-width: 1100px; margin: 0 auto; padding: 32px 20px; }
+
+  /* Header */
+  .header { background: var(--surface); border-radius: 16px; padding: 28px 32px; margin-bottom: 24px;
+             border: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .header-title { font-size: 22px; font-weight: 700; }
+  .header-sub { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+  /* Risk Badge */
+  .risk-badge { padding: 10px 24px; border-radius: 50px; font-size: 18px; font-weight: 700;
+                 color: white; background: #ef4444; box-shadow: 0 0 20px #ef444455; }
+
+  /* Stats Grid */
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 24px; }
+  .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+               padding: 20px 24px; }
+  .stat-value { font-size: 32px; font-weight: 800; }
+  .stat-label { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+  /* Type Stats */
+  .type-stats { background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+                padding: 20px 24px; margin-bottom: 24px; }
+  .type-stat { display: flex; justify-content: space-between; align-items: center;
+               padding: 8px 0; border-bottom: 1px solid var(--border); }
+  .type-stat:last-child { border-bottom: none; }
+  .badge { padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+  .badge-red { background: rgba(239,68,68,0.2); color: var(--red); }
+  .badge-green { background: rgba(16,185,129,0.2); color: var(--green); }
+
+  /* Timeline */
+  .timeline-section { background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+                       padding: 24px; margin-bottom: 24px; }
+  .section-title { font-size: 16px; font-weight: 700; margin-bottom: 16px; }
+  .timeline-bar { position: relative; height: 48px; background: var(--surface2); border-radius: 8px; overflow: hidden; margin-bottom: 16px; }
+  .timeline-marker { position: absolute; height: 100%; min-width: 4px; border-radius: 2px; opacity: 0.85; }
+  .timeline-tooltip { display: none; position: absolute; bottom: 120%; left: 50%; transform: translateX(-50%);
+                        background: #0f172a; border: 1px solid var(--border); border-radius: 8px;
+                        padding: 8px 12px; font-size: 12px; white-space: nowrap; z-index: 10; }
+  .timeline-marker:hover .timeline-tooltip { display: block; }
+  .timeline-marker:hover { opacity: 1; cursor: pointer; }
+
+  /* Findings Table */
+  .findings-section { margin-bottom: 24px; }
+  .findings-header { background: var(--surface); border: 1px solid var(--border); border-radius: 12px 12px 0 0;
+                      padding: 16px 24px; font-weight: 700; font-size: 15px; }
+  table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: 0 0 12px 12px;
+           overflow: hidden; border: 1px solid var(--border); border-top: none; }
+  th { padding: 10px 16px; text-align: left; font-size: 12px; color: var(--muted); text-transform: uppercase;
+        background: rgba(51,65,85,0.5); border-bottom: 1px solid var(--border); }
+  td { padding: 12px 16px; font-size: 13px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover { background: rgba(148,163,184,0.05); }
+  .ts { font-family: monospace; font-size: 13px; color: var(--blue); font-weight: 600; }
+  .risk-high { color: var(--red); font-weight: 700; }
+  .risk-medium { color: var(--yellow); font-weight: 700; }
+  .risk-low { color: var(--blue); font-weight: 600; }
+  .risk-safe { color: var(--green); }
+  .score-bar { width: 60px; height: 6px; background: var(--surface2); border-radius: 3px; display: inline-block; vertical-align: middle; margin-right: 6px; }
+  .score-fill { height: 100%; border-radius: 3px; }
+  .footer { text-align: center; color: var(--muted); font-size: 12px; margin-top: 32px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <div class="header-title">🔍 저작권 분석 리포트</div>
+      <div class="header-sub">
+        📁 요즘 급식이 트위터에서 X다 때는 법.mp4 &nbsp;|&nbsp;
+        ⏱️ 3분 42초 &nbsp;|&nbsp;
+        🕐 분석 시간: 542초 &nbsp;|&nbsp;
+        🗂️ Job ID: 45d9a0b0
+      </div>
+    </div>
+    <div class="risk-badge">🔴 HIGH — 0.9%</div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-value" style="color:#ef4444">0.9%</div>
+      <div class="stat-label">전체 저작권 위험도</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" style="color:var(--red)">0</div>
+      <div class="stat-label">🔴 HIGH 위험 항목</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" style="color:var(--yellow)">0</div>
+      <div class="stat-label">🟡 MEDIUM 위험 항목</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">7</div>
+      <div class="stat-label">총 발견 항목</div>
+    </div>
+  </div>
+
+  <!-- Type Stats -->
+  <div class="type-stats">
+    <div class="section-title">📊 분류별 현황</div>
+    <div class="type-stat">
+            <span>🖼️ 이미지/사진</span>
+            <span class="badge badge-red">4건</span>
+        </div><div class="type-stat">
+            <span>🎬 영상 클립</span>
+            <span class="badge badge-red">1건</span>
+        </div><div class="type-stat">
+            <span>🏷️ 로고/상표</span>
+            <span class="badge badge-red">1건</span>
+        </div><div class="type-stat">
+            <span>🎵 음악</span>
+            <span class="badge badge-red">1건</span>
+        </div>
+  </div>
+
+  <!-- Timeline -->
+  <div class="timeline-section">
+    <div class="section-title">⏱️ 타임라인</div>
+    
+    <div class="timeline-bar">
+        <div class="timeline-marker" style="left:35.3%;width:1.0%;background:#f59e0b">
+          <div class="timeline-tooltip">01:18 | 🖼️ 이미지/사진 | 인터넷 이미지: Spike Jonze</div>
+        </div>
+        <div class="timeline-marker" style="left:47.0%;width:1.0%;background:#f59e0b">
+          <div class="timeline-tooltip">01:44 | 🎬 영상 클립 | YouTube 원본 의심: The basics of l</div>
+        </div>
+        <div class="timeline-marker" style="left:59.2%;width:1.0%;background:#f59e0b">
+          <div class="timeline-tooltip">02:11 | 🖼️ 이미지/사진 | 인터넷 이미지: Cartoon</div>
+        </div>
+        <div class="timeline-marker" style="left:69.6%;width:1.0%;background:#ef4444">
+          <div class="timeline-tooltip">02:34 | 🏷️ 로고/상표 | OnlyFans</div>
+        </div>
+        <div class="timeline-marker" style="left:81.0%;width:5.0%;background:#f59e0b">
+          <div class="timeline-tooltip">03:00 | 🎵 음악 | 우아한 만찬</div>
+        </div>
+        <div class="timeline-marker" style="left:84.0%;width:1.0%;background:#f59e0b">
+          <div class="timeline-tooltip">03:06 | 🖼️ 이미지/사진 | 인터넷 이미지: Chimpanzee</div>
+        </div>
+        <div class="timeline-marker" style="left:89.8%;width:1.0%;background:#f59e0b">
+          <div class="timeline-tooltip">03:19 | 🖼️ 이미지/사진 | 인터넷 이미지: Brain</div>
+        </div></div>
+    <div style="position:relative;height:20px"><span style="position:absolute;left:0%;font-size:11px;color:var(--muted);transform:translateX(-50%)">00:00</span><span style="position:absolute;left:25%;font-size:11px;color:var(--muted);transform:translateX(-50%)">00:55</span><span style="position:absolute;left:50%;font-size:11px;color:var(--muted);transform:translateX(-50%)">01:51</span><span style="position:absolute;left:75%;font-size:11px;color:var(--muted);transform:translateX(-50%)">02:46</span><span style="position:absolute;left:100%;font-size:11px;color:var(--muted);transform:translateX(-50%)">03:42</span></div>
+    <div style="margin-top:12px;font-size:12px;color:var(--muted)">
+      <span style="margin-right:16px">🔴 HIGH</span>
+      <span style="margin-right:16px">🟡 MEDIUM</span>
+      <span style="margin-right:16px">🔵 LOW</span>
+    </div>
+  </div>
+
+  <!-- Findings by Type -->
+  
+        <div class="findings-section">
+          <div class="findings-header">🖼️ 이미지/사진 <span style="font-size:13px;color:var(--muted);font-weight:400">— 4건 발견</span></div>
+          <table>
+            <thead><tr>
+              <th>시간</th><th>제목</th><th>권리자</th>
+              <th>위험도</th><th>소스</th><th>설명</th>
+            </tr></thead>
+            <tbody><tr>
+              <td><span class="ts">01:18</span></td>
+              <td>인터넷 이미지: Spike Jonze</td>
+              <td style="color:var(--muted);font-size:12px"></td>
+              <td>
+                <div class="score-bar"><div class="score-fill" style="width:65.2%;background:#f59e0b"></div></div>
+                <span class="risk-medium">🟡 65%</span>
+              </td>
+              <td style="color:var(--muted);font-size:12px">google_vision_web_search</td>
+              <td style="font-size:12px;color:var(--muted)">Google 역이미지: sbs.com.au, techpolicy.press, wired.com에서 발견됨</td>
+            </tr><tr>
+              <td><span class="ts">02:11</span></td>
+              <td>인터넷 이미지: Cartoon</td>
+              <td style="color:var(--muted);font-size:12px"></td>
+              <td>
+                <div class="score-bar"><div class="score-fill" style="width:41.3%;background:#f59e0b"></div></div>
+                <span class="risk-medium">🟡 41%</span>
+              </td>
+              <td style="color:var(--muted);font-size:12px">google_vision_web_search</td>
+              <td style="font-size:12px;color:var(--muted)">Google 역이미지: spongebob.fandom.com, youtube.com, gitlab.com에서</td>
+            </tr><tr>
+              <td><span class="ts">03:06</span></td>
+              <td>인터넷 이미지: Chimpanzee</td>
+              <td style="color:var(--muted);font-size:12px"></td>
+              <td>
+                <div class="score-bar"><div class="score-fill" style="width:65.2%;background:#f59e0b"></div></div>
+                <span class="risk-medium">🟡 65%</span>
+              </td>
+              <td style="color:var(--muted);font-size:12px">google_vision_web_search</td>
+              <td style="font-size:12px;color:var(--muted)">Google 역이미지: cnn.com, depositphotos.com, kottke.org에서 발견됨</td>
+            </tr><tr>
+              <td><span class="ts">03:19</span></td>
+              <td>인터넷 이미지: Brain</td>
+              <td style="color:var(--muted);font-size:12px"></td>
+              <td>
+                <div class="score-bar"><div class="score-fill" style="width:65.1%;background:#f59e0b"></div></div>
+                <span class="risk-medium">🟡 65%</span>
+              </td>
+              <td style="color:var(--muted);font-size:12px">google_vision_web_search</td>
+              <td style="font-size:12px;color:var(--muted)">Google 역이미지: pcdn.hu, youtube.com에서 발견됨</td>
+            </tr></tbody>
+          </table>
+        </div>
+        <div class="findings-section">
+          <div class="findings-header">🎬 영상 클립 <span style="font-size:13px;color:var(--muted);font-weight:400">— 1건 발견</span></div>
+          <table>
+            <thead><tr>
+              <th>시간</th><th>제목</th><th>권리자</th>
+              <th>위험도</th><th>소스</th><th>설명</th>
+            </tr></thead>
+            <tbody><tr>
+              <td><span class="ts">01:44</span></td>
+              <td>YouTube 원본 의심: The basics of line artwork tutorial</td>
+              <td style="color:var(--muted);font-size:12px"></td>
+              <td>
+                <div class="score-bar"><div class="score-fill" style="width:65.0%;background:#f59e0b"></div></div>
+                <span class="risk-medium">🟡 65%</span>
+              </td>
+              <td style="color:var(--muted);font-size:12px">youtube_api_entity_search</td>
+              <td style="font-size:12px;color:var(--muted)">Vision 엔티티 'Line art' YouTube 검색: 'The basics of line artwor</td>
+            </tr></tbody>
+          </table>
+        </div>
+        <div class="findings-section">
+          <div class="findings-header">🏷️ 로고/상표 <span style="font-size:13px;color:var(--muted);font-weight:400">— 1건 발견</span></div>
+          <table>
+            <thead><tr>
+              <th>시간</th><th>제목</th><th>권리자</th>
+              <th>위험도</th><th>소스</th><th>설명</th>
+            </tr></thead>
+            <tbody><tr>
+              <td><span class="ts">02:34</span></td>
+              <td>OnlyFans</td>
+              <td style="color:var(--muted);font-size:12px"></td>
+              <td>
+                <div class="score-bar"><div class="score-fill" style="width:95.0%;background:#ef4444"></div></div>
+                <span class="risk-high">🔴 95%</span>
+              </td>
+              <td style="color:var(--muted);font-size:12px">internal_db</td>
+              <td style="font-size:12px;color:var(--muted)">로고 감지: OnlyFans (내부 DB)</td>
+            </tr></tbody>
+          </table>
+        </div>
+        <div class="findings-section">
+          <div class="findings-header">🎵 음악 <span style="font-size:13px;color:var(--muted);font-weight:400">— 1건 발견</span></div>
+          <table>
+            <thead><tr>
+              <th>시간</th><th>제목</th><th>권리자</th>
+              <th>위험도</th><th>소스</th><th>설명</th>
+            </tr></thead>
+            <tbody><tr>
+              <td><span class="ts">03:00</span></td>
+              <td>우아한 만찬</td>
+              <td style="color:var(--muted);font-size:12px">Danal Entertainment</td>
+              <td>
+                <div class="score-bar"><div class="score-fill" style="width:67.0%;background:#f59e0b"></div></div>
+                <span class="risk-medium">🟡 67%</span>
+              </td>
+              <td style="color:var(--muted);font-size:12px">acrcloud</td>
+              <td style="font-size:12px;color:var(--muted)">'우아한 만찬' by 김수진, Illi (© Danal Entertainment)</td>
+            </tr></tbody>
+          </table>
+        </div>
+
+  <div class="footer">
+    생성 시각: 2026-06-11 19:56:06 &nbsp;|&nbsp;
+    Copyright Detector v1.0
+  </div>
+</div>
+</body>
+</html>
