@@ -19,3 +19,7 @@ __pycache__/
 venv/
 .venv/
 
+# 다운로드 영상/오디오 · 전사 결과 (로컬 산출물, 커밋 제외)
+downloads/
+transcripts/
+
