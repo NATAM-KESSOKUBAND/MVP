@@ -2,8 +2,16 @@ import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
+# Windows 한국어 콘솔(cp949)에서 이모지/한글 출력 시 UnicodeEncodeError 방지 → UTF-8 강제
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8")
+    except (AttributeError, ValueError):
+        pass
+
 from dotenv import load_dotenv
-load_dotenv()
+# .env는 이 스크립트와 같은 폴더에서 로드 (실행 위치와 무관하게 항상 읽히도록)
+load_dotenv(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env"))
 
 import whisper
 from google import genai

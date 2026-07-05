@@ -1,0 +1,164 @@
+{
+  "job_id": "258e6b38",
+  "video_path": "c:\\Users\\user\\Desktop\\NATAM\\copyright_detector\\temp\\downloads\\UAzU3nbNSUI.mp4",
+  "video_filename": "UAzU3nbNSUI.mp4",
+  "video_duration": 800.763356,
+  "processing_time_sec": 549.8796327114105,
+  "own_channels": [
+    "하이유"
+  ],
+  "findings": [
+    {
+      "job_id": "258e6b38",
+      "finding_type": "image",
+      "timestamp_start": 144.5,
+      "timestamp_end": 144.5,
+      "timestamp_display": "02:24",
+      "title": "인터넷 이미지: Konomi Inagaki",
+      "rights_holder": "",
+      "source": "google_vision_web_search",
+      "confidence_score": 0.72,
+      "risk_score": 0.616,
+      "risk_level": "MEDIUM",
+      "description": "Google 역이미지: i.redd.it, youtube.com에서 발견됨",
+      "reference_url": "https://i.redd.it/who-to-mlb-v0-w7r25z2jmt9h1.png?width=1920&format=png&auto=webp&s=e13a627638e457c2f870d758eb510de1622e9806"
+    },
+    {
+      "job_id": "258e6b38",
+      "finding_type": "video_clip",
+      "timestamp_start": 184.5,
+      "timestamp_end": 720.5,
+      "timestamp_display": "03:04~12:00",
+      "title": "YouTube 원본 의심: 25 Minutes of PC Gameplay | GODDESS OF V",
+      "rights_holder": "",
+      "source": "youtube_api_entity_search",
+      "confidence_score": 0.805,
+      "risk_score": 0.702,
+      "risk_level": "MEDIUM",
+      "description": "Vision 엔티티 'Goddess of Victory: Nikke' YouTube 검색: '25 Minutes of PC Gameplay | GODDESS OF VICTORY: NIKKE' — 채널: justonegamr [동일 출처 2회 감지]",
+      "reference_url": "https://www.youtube.com/watch?v=IjZ_HNPoMIU"
+    },
+    {
+      "job_id": "258e6b38",
+      "finding_type": "music",
+      "timestamp_start": 400.0,
+      "timestamp_end": 412.0,
+      "timestamp_display": "06:40",
+      "title": "Suspense Ba Hamar Life Main",
+      "author": "Rahul Kumar",
+      "rights_holder": "AG MUSIC",
+      "source": "acrcloud",
+      "external_id": "66f8a603cbe4d783024f39d5c88a602e",
+      "confidence_score": 0.85,
+      "risk_score": 0.85,
+      "risk_level": "HIGH",
+      "description": "'Suspense Ba Hamar Life Main' by Rahul Kumar (© AG MUSIC)",
+      "raw_response": {
+        "status": {
+          "msg": "Success",
+          "code": 0,
+          "version": "1.0"
+        },
+        "result_type": 0,
+        "cost_time": 0.3529999256134,
+        "metadata": {
+          "music": [
+            {
+              "duration_ms": 571000,
+              "release_date": "2023-08-07",
+              "sample_begin_time_offset_ms": 4800,
+              "sample_end_time_offset_ms": 7060,
+              "db_begin_time_offset_ms": 299460,
+              "db_end_time_offset_ms": 301720,
+              "play_offset_ms": 306360,
+              "result_from": 3,
+              "score": 85,
+              "genres": [
+                {
+                  "name": "Indian - Bhojpuri"
+                }
+              ],
+              "artists": [
+                {
+                  "name": "Rahul Kumar"
+                }
+              ],
+              "title": "Suspense Ba Hamar Life Main",
+              "external_metadata": {
+                "deezer": {
+                  "track": {
+                    "id": "2403981985",
+                    "name": "Suspense Ba Hamar Life Main"
+                  },
+                  "artists": [
+                    {
+                      "name": "Rahul Kumar",
+                      "id": "12409696"
+                    }
+                  ],
+                  "album": {
+                    "name": "Suspense Ba Hamar Life Main",
+                    "id": "474469705"
+                  }
+                }
+              },
+              "album": {
+                "name": "Suspense Ba Hamar Life Main"
+              },
+              "external_ids": {
+                "isrc": "DGA072382563",
+                "upc": "3617226309298"
+              },
+              "label": "AG MUSIC",
+              "acrid": "66f8a603cbe4d783024f39d5c88a602e"
+            }
+          ],
+          "timestamp_utc": "2026-07-05 02:59:17"
+        }
+      }
+    },
+    {
+      "job_id": "258e6b38",
+      "finding_type": "image",
+      "timestamp_start": 616.5,
+      "timestamp_end": 616.5,
+      "timestamp_display": "10:16",
+      "title": "[자체학습] 인터넷 영상: Goddess of Victory: Nikke",
+      "rights_holder": "",
+      "source": "internal_embedding_db",
+      "confidence_score": 0.9524,
+      "risk_score": 0.413,
+      "risk_level": "LOW",
+      "description": "자체 학습 DB 일치 (유사도 95%, 누적 1회, 학습ID emb:2 — 오학습이면 python main.py --forget emb:2): 인터넷 영상: Goddess of Victory: Nikke",
+      "reference_url": "https://nikke-goddess-of-victory-international.fandom.com/wiki/Brid:_Silent_Track/Story"
+    },
+    {
+      "job_id": "258e6b38",
+      "finding_type": "video_clip",
+      "timestamp_start": 720.5,
+      "timestamp_end": 720.5,
+      "timestamp_display": "12:00",
+      "title": "인터넷 영상: Goddess of Victory: Nikke",
+      "rights_holder": "",
+      "source": "google_vision_web_search+clip",
+      "confidence_score": 0.68,
+      "risk_score": 0.413,
+      "risk_level": "MEDIUM",
+      "description": "Google 역이미지: nikke-goddess-of-victory-international.fandom.com, youtube.com에서 발견됨",
+      "reference_url": "https://nikke-goddess-of-victory-international.fandom.com/wiki/Brid:_Silent_Track/Story"
+    }
+  ],
+  "summary": {
+    "overall_risk_level": "HIGH",
+    "overall_risk_score": 0.85,
+    "total_issues_found": 5,
+    "by_type": {
+      "image": 2,
+      "video_clip": 2,
+      "music": 1
+    },
+    "high_count": 1,
+    "medium_count": 3,
+    "low_count": 1
+  }
+}

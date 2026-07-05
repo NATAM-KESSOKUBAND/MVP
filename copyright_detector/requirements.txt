@@ -38,4 +38,16 @@ jinja2>=3.1.0
 pandas>=2.1.0
 
 # Logging
-structlog>=23.1.0c
+structlog>=23.1.0
+
+# ML / Vision models
+torch>=2.0.0
+torchvision>=0.15.0
+transformers>=4.30.0
+
+# CLI output / Search
+rich>=13.0.0
+serpapi>=0.1.5
+
+# Video download
+yt-dlp>=2024.1.0

@@ -66,6 +66,20 @@ def print_summary(results: dict):
     print(f"  발견 항목:  {total}건")
     print(f"    🔴 HIGH:   {summary.get('high_risk_count', 0)}건")
     print(f"    🟡 MEDIUM: {summary.get('medium_risk_count', 0)}건")
+
+    # ── 유튜브 스튜디오 관점 예측 ──
+    yt = summary.get("youtube")
+    if yt:
+        monet_color = {"높음": "\033[91m", "중간": "\033[93m",
+                       "낮음": "\033[94m", "없음": "\033[92m"}.get(
+                           yt.get("monetization_impact"), "")
+        print(f"\n  {BOLD}📺 유튜브 스튜디오 예측(추정):{RESET}")
+        print(f"    {yt.get('headline', '')}")
+        print(f"    수익화 영향(노란 딱지): {monet_color}{BOLD}{yt.get('monetization_impact')}{RESET}"
+              f"   |  Content ID 클레임 확률: {BOLD}{yt.get('claim_probability')}%{RESET}")
+        print(f"    차단 위험: {yt.get('block_risk')}   |  저작권 경고(Strike) 위험: {yt.get('strike_risk')}")
+        if yt.get("advice"):
+            print(f"    💡 {yt.get('advice')}")
     print(f"\n  분류별:")
     for t, c in summary.get("by_type", {}).items():
         type_labels = {
@@ -100,7 +114,11 @@ def print_summary(results: dict):
                 "image": "🖼️", "logo": "🏷️", "font": "🔤",
             }
             t_emoji = type_labels.get(t, "📌")
+            yt_label = item.get("yt_outcome_label", "")
+            yt_e = item.get("yt_emoji", "")
             print(f"  [{ts}] {t_emoji} {color}{emoji} {risk_s}{RESET}  {title}")
+            if yt_label:
+                print(f"          └─ {yt_e} {yt_label} (클레임 {item.get('yt_claim_prob', '?')})")
     else:
         print(f"  {'\033[92m'}✅ 높은 위험도 항목 없음{RESET}")
 

@@ -29,6 +29,8 @@ import structlog
 from typing import Dict, List, Optional, Tuple
 from urllib.parse import urlparse
 
+from config import config
+
 logger = structlog.get_logger()
 
 VISION_API_URL = "https://vision.googleapis.com/v1/images:annotate"
@@ -480,6 +482,8 @@ class GoogleVisionSearcher:
         self._enabled = bool(self._api_key)
         self._cache: Dict[str, Optional[Dict]] = {}
         self._cache_lock = threading.Lock()
+        self._call_count = 0          # 작업당 실제 HTTP 호출 수 (캐시 히트 제외)
+        self._budget_warned = False
         if not self._enabled:
             logger.debug("google_vision_searcher_disabled",
                          reason="GOOGLE_API_KEY not set in .env")
@@ -490,9 +494,11 @@ class GoogleVisionSearcher:
 
     # ── 캐시 관리 ──────────────────────────────
     def clear_cache(self) -> None:
-        """새 분석 작업 시작 전 캐시 초기화"""
+        """새 분석 작업 시작 전 캐시 + 호출 예산 초기화"""
         with self._cache_lock:
             self._cache.clear()
+            self._call_count = 0
+            self._budget_warned = False
         logger.debug("vision_cache_cleared")
 
     def _cache_get(self, frame: np.ndarray) -> Tuple[bool, Optional[Dict]]:
@@ -562,6 +568,16 @@ class GoogleVisionSearcher:
         hit, cached = self._cache_get(frame)
         if hit:
             return cached
+
+        # 작업당 호출 예산 확인 (비용 상한 — 캐시 히트는 무제한)
+        with self._cache_lock:
+            if self._call_count >= config.pipeline.vision_max_calls_per_job:
+                if not self._budget_warned:
+                    self._budget_warned = True
+                    logger.warning("vision_budget_exhausted",
+                                   limit=config.pipeline.vision_max_calls_per_job)
+                return None
+            self._call_count += 1
 
         b64 = _encode_frame(frame, max_size)
         payload = {

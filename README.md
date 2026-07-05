@@ -11,3 +11,5 @@ controversy_samples.json과 cade_db.json을 이용해서 controversy_model.jobli
 trend_updater.py를 사용해서 최근 뉴스/기사 분석, 키워드, 사건 등을 찾고 review_update.py로 검토 후 controversy_model.joblib 학습
 
 현재 API 노출로 인해 다시 조금 수정해서 사용하고 싶으면 개인적으로 API 보내줘야됨
+
+python 3.14로 실행

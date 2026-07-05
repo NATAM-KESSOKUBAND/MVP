@@ -45,13 +45,33 @@ def get_video_info_from_url(url: str) -> Dict:
     }
 
 
-def download_video(url: str, output_dir: str = "temp/downloads") -> str:
+def _build_format(max_height: int) -> str:
+    """
+    yt-dlp format 문자열 생성.
+    비디오는 max_height 이하로 제한(다운로드/디코딩 절감)하되
+    오디오는 항상 최고품질(음악 인식 정확도 유지).
+    max_height <= 0 이면 원본 최고화질.
+    """
+    if max_height and max_height > 0:
+        return (
+            f"bestvideo[height<={max_height}][ext=mp4]+bestaudio[ext=m4a]/"
+            f"best[height<={max_height}][ext=mp4]/"
+            f"bestvideo[height<={max_height}]+bestaudio/"
+            f"best[height<={max_height}]/best"  # 최후 폴백: 상한 스트림 없으면 원본
+        )
+    return "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best"
+
+
+def download_video(url: str, output_dir: str = "temp/downloads",
+                   max_height: int = None) -> str:
     """
     URL 영상을 output_dir에 다운로드하고 저장된 파일 경로를 반환.
 
     Args:
         url:        다운로드할 영상 URL
         output_dir: 저장 디렉터리 경로
+        max_height: 비디오 세로 해상도 상한(px). None이면 config 기본(720).
+                    0 이면 무제한(원본 최고화질).
 
     Returns:
         다운로드된 파일의 절대 경로 (str)
@@ -60,6 +80,13 @@ def download_video(url: str, output_dir: str = "temp/downloads") -> str:
         import yt_dlp  # type: ignore
     except ImportError:
         raise RuntimeError("yt-dlp가 설치되지 않았습니다. pip install yt-dlp")
+
+    if max_height is None:
+        try:
+            from config import config
+            max_height = config.pipeline.download_max_height
+        except Exception:
+            max_height = 720
 
     Path(output_dir).mkdir(parents=True, exist_ok=True)
 
@@ -71,10 +98,11 @@ def download_video(url: str, output_dir: str = "temp/downloads") -> str:
         "no_warnings": True,
         "noplaylist":  True,
         "outtmpl":     outtmpl,
-        # 최대 화질 mp4 우선, 없으면 최선의 단일 스트림
-        "format":      "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best",
+        "format":      _build_format(max_height),
         "merge_output_format": "mp4",
     }
+
+    logger.info("download_quality", max_height=max_height or "unlimited")
 
     saved_path: str = ""
 

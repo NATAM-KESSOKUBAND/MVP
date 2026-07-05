@@ -1,0 +1,1472 @@
+{
+  "job_id": "b44af384",
+  "video_path": "c:\\Users\\user\\Desktop\\NATAM\\copyright_detector\\temp\\downloads\\lUTubM7fVTQ.mp4",
+  "video_filename": "lUTubM7fVTQ.mp4",
+  "video_duration": 405.582948,
+  "processing_time_sec": 722.3633499145508,
+  "own_channels": [
+    "이도원"
+  ],
+  "findings": [
+    {
+      "job_id": "b44af384",
+      "finding_type": "music",
+      "timestamp_start": 0.0,
+      "timestamp_end": 12.0,
+      "timestamp_display": "00:00",
+      "title": "Keep It Off",
+      "author": "Soul One",
+      "rights_holder": "STEREO TRIBE",
+      "source": "acrcloud",
+      "external_id": "63f0398680da5a25f99aeef948795be2",
+      "confidence_score": 0.94,
+      "risk_score": 0.94,
+      "risk_level": "HIGH",
+      "description": "'Keep It Off' by Soul One (© STEREO TRIBE)",
+      "raw_response": {
+        "status": {
+          "version": "1.0",
+          "msg": "Success",
+          "code": 0
+        },
+        "result_type": 0,
+        "cost_time": 1.0629999637604,
+        "metadata": {
+          "music": [
+            {
+              "play_offset_ms": 37200,
+              "result_from": 1,
+              "genres": [
+                {
+                  "name": "Pop"
+                }
+              ],
+              "language": "ko",
+              "score": 94,
+              "title": "Keep It Off",
+              "acrid": "63f0398680da5a25f99aeef948795be2",
+              "release_date": "2018-02-02",
+              "db_end_time_offset_ms": 30300,
+              "external_metadata": {
+                "deezer": {
+                  "album": {
+                    "name": "Fade to Blue",
+                    "id": "8329824"
+                  },
+                  "artists": [
+                    {
+                      "id": "466476",
+                      "name": "Mardra Thomas"
+                    }
+                  ],
+                  "track": {
+                    "id": "82945948",
+                    "name": "Nature Boy"
+                  }
+                },
+                "spotify": {
+                  "album": {
+                    "name": "SouLonely",
+                    "id": "17ikXP1ek4LAeOwZlqWcTR"
+                  },
+                  "artists": [
+                    {
+                      "id": "2EZyYI0e7pcSkzJ3b5VM0P",
+                      "name": "Soul One"
+                    }
+                  ],
+                  "track": {
+                    "id": "6JnVhDH3dZlUvmxzchEe7K",
+                    "name": "Keep It Off"
+                  }
+                }
+              },
+              "external_ids": {
+                "isrc": "KRB471800162",
+                "upc": "0888272046854"
+              },
+              "label": "STEREO TRIBE",
+              "album": {
+                "name": "SouLonely"
+              },
+              "duration_ms": 234710,
+              "db_begin_time_offset_ms": 27700,
+              "artists": [
+                {
+                  "name": "Soul One"
+                }
+              ],
+              "sample_begin_time_offset_ms": 2240,
+              "sample_end_time_offset_ms": 4840
+            },
+            {
+              "play_offset_ms": 37120,
+              "result_from": 1,
+              "external_metadata": {
+                "deezer": {
+                  "album": {
+                    "name": "SouLonely",
+                    "id": "165715372"
+                  },
+                  "artists": [
+                    {
+                      "id": "345705",
+                      "name": "Soul One"
+                    }
+                  ],
+                  "track": {
+                    "id": "1045146772",
+                    "name": "Keep It Off"
+                  }
+                },
+                "spotify": {
+                  "album": {
+                    "name": "SouLonely",
+                    "id": "17ikXP1ek4LAeOwZlqWcTR"
+                  },
+                  "artists": [
+                    {
+                      "id": "2EZyYI0e7pcSkzJ3b5VM0P",
+                      "name": "Soul One"
+                    }
+                  ],
+                  "track": {
+                    "id": "6JnVhDH3dZlUvmxzchEe7K",
+                    "name": "Keep It Off"
+                  }
+                }
+              },
+              "score": 79,
+              "title": "불 켜지마",
+              "acrid": "52c253db97a21283b13fc55cec861519",
+              "release_date": "2018-02-02",
+              "db_end_time_offset_ms": 30940,
+              "album": {
+                "name": "SouLonely"
+              },
+              "external_ids": {
+                "isrc": "KRB471800162",
+                "upc": "0888272046854"
+              },
+              "label": "STEREO TRIBE",
+              "genres": [
+                {
+                  "name": "Asian Music",
+                  "id": 16
+                }
+              ],
+              "duration_ms": 234590,
+              "db_begin_time_offset_ms": 27620,
+              "artists": [
+                {
+                  "name": "소울원(Soul One)"
+                }
+              ],
+              "sample_begin_time_offset_ms": 2240,
+              "sample_end_time_offset_ms": 5560
+            }
+          ],
+          "timestamp_utc": "2026-07-04 08:52:26"
+        }
+      }
+    },
+    {
+      "job_id": "b44af384",
+      "finding_type": "music",
+      "timestamp_start": 30.0,
+      "timestamp_end": 42.0,
+      "timestamp_display": "00:30",
+      "title": "Reyate Reyameye",
+      "author": "Hozan Şervan",
+      "rights_holder": "Rojin Müzik",
+      "source": "acrcloud",
+      "external_id": "0cd2347709dbc20986d78b4f61462623",
+      "confidence_score": 0.94,
+      "risk_score": 0.94,
+      "risk_level": "HIGH",
+      "description": "'Reyate Reyameye' by Hozan Şervan (© Rojin Müzik)",
+      "raw_response": {
+        "status": {
+          "version": "1.0",
+          "msg": "Success",
+          "code": 0
+        },
+        "result_type": 0,
+        "cost_time": 0.97099995613098,
+        "metadata": {
+          "music": [
+            {
+              "play_offset_ms": 29720,
+              "result_from": 1,
+              "external_metadata": {
+                "deezer": {
+                  "album": {
+                    "name": "Şexani",
+                    "id": "192691942"
+                  },
+                  "artists": [
+                    {
+                      "name": "Hozan Şervan",
+                      "id": "53684982"
+                    }
+                  ],
+                  "track": {
+                    "id": "1174496992",
+                    "name": "Reyate Reyameye"
+                  }
+                }
+              },
+              "score": 94,
+              "title": "Reyate Reyameye",
+              "acrid": "0cd2347709dbc20986d78b4f61462623",
+              "release_date": "2020-12-01",
+              "db_end_time_offset_ms": 27400,
+              "album": {
+                "name": "Şexani"
+              },
+              "external_ids": {
+                "isrc": "DGA052089670",
+                "upc": "3616551430608"
+              },
+              "label": "Rojin Müzik",
+              "genres": [
+                {
+                  "name": "World Music / Regional Folklore - Ethnic"
+                }
+              ],
+              "duration_ms": 1091000,
+              "db_begin_time_offset_ms": 25980,
+              "artists": [
+                {
+                  "name": "Hozan Şervan"
+                }
+              ],
+              "sample_begin_time_offset_ms": 8000,
+              "sample_end_time_offset_ms": 9420
+            },
+            {
+              "play_offset_ms": 29700,
+              "result_from": 1,
+              "external_metadata": {
+                "youtube": {
+                  "vid": "ODxiFecgp8k"
+                },
+                "deezer": {
+                  "album": {
+                    "name": "Vigilance Have Not Seen You for a Long Time",
+                    "id": "251655242"
+                  },
+                  "artists": [
+                    {
+                      "name": "Jincheng Zhang",
+                      "id": "13208975"
+                    }
+                  ],
+                  "track": {
+                    "id": "1463764782",
+                    "name": "Whittle Have Not Seen You for a Long Time"
+                  }
+                },
+                "spotify": {
+                  "album": {
+                    "name": "Vigilance Have Not Seen You for a Long Time",
+                    "id": "0DpAItjg0hZRWCYQ5LgurQ"
+                  },
+                  "artists": [
+                    {
+                      "name": "Jincheng Zhang",
+                      "id": "4U6txP0SZsHtp5aEyfvgvA"
+                    }
+                  ],
+                  "track": {
+                    "id": "2OjAf20KLcL2cyFUCl1SW7",
+                    "name": "Whittle Have Not Seen You for a Long Time"
+                  }
+                }
+              },
+              "score": 55,
+              "acrid": "c6abb2ef6dc6f7dea24d83e9b0f6c741",
+              "release_date": "2021-08-11",
+              "sample_begin_time_offset_ms": 7660,
+              "external_ids": {
+                "isrc": "NLHR52109805"
+              },
+              "db_end_time_offset_ms": 27760,
+              "album": {
+                "name": "Vigilance Have Not Seen You for a Long Time"
+              },
+              "duration_ms": 188003,
+              "db_begin_time_offset_ms": 25620,
+              "artists": [
+                {
+                  "name": "Jincheng Zhang"
+                }
+              ],
+              "title": "Whittle Have Not Seen You for a Long Time",
+              "sample_end_time_offset_ms": 9800
+            }
+          ],
+          "timestamp_utc": "2026-07-04 08:52:26"
+        }
+      }
+    },
+    {
+      "job_id": "b44af384",
+      "finding_type": "music",
+      "timestamp_start": 170.0,
+      "timestamp_end": 182.0,
+      "timestamp_display": "02:50",
+      "title": "Ode To My Family",
+      "author": "Cranberries",
+      "rights_holder": "Universal Music",
+      "source": "acrcloud",
+      "external_id": "f8711952b8ce92e5cd489b64fc34809a",
+      "confidence_score": 1.0,
+      "risk_score": 1.0,
+      "risk_level": "HIGH",
+      "description": "'Ode To My Family' by Cranberries (© Universal Music)",
+      "raw_response": {
+        "status": {
+          "msg": "Success",
+          "code": 0,
+          "version": "1.0"
+        },
+        "result_type": 0,
+        "cost_time": 0.29900002479553,
+        "metadata": {
+          "music": [
+            {
+              "release_date": "2002-01-01",
+              "db_begin_time_offset_ms": 1700,
+              "db_end_time_offset_ms": 7540,
+              "play_offset_ms": 7880,
+              "result_from": 3,
+              "label": "Universal Music",
+              "duration_ms": 270707,
+              "works": [
+                {
+                  "id": "T0300168028",
+                  "creators": [
+                    {
+                      "ipi": 162550193,
+                      "roles": [
+                        "Composer"
+                      ],
+                      "name": "HOGAN NOEL ANTHONY",
+                      "last_name": "HOGAN"
+                    },
+                    {
+                      "ipi": 162555570,
+                      "roles": [
+                        "Composer"
+                      ],
+                      "name": "O RIORDAN DOLORES MARY",
+                      "last_name": "O RIORDAN"
+                    },
+                    {
+                      "ipi": 160187388,
+                      "roles": [
+                        "Publisher"
+                      ],
+                      "name": "WARNER CHAPPELL MUSIC LTD",
+                      "last_name": "WARNER CHAPPELL MUSIC LTD"
+                    }
+                  ],
+                  "iswc": "T0300168028",
+                  "name": "ODE TO MY FAMILY"
+                }
+              ],
+              "sample_begin_time_offset_ms": 5560,
+              "sample_end_time_offset_ms": 11400,
+              "external_ids": {
+                "upc": "0044006309026",
+                "isrc": "USIR29400440"
+              },
+              "exids": "musicbrainz",
+              "title": "Ode To My Family",
+              "genres": [
+                {
+                  "name": "Rock"
+                }
+              ],
+              "artists": [
+                {
+                  "name": "Cranberries"
+                }
+              ],
+              "external_metadata": {
+                "musicbrainz": {
+                  "track": {
+                    "id": "00bd8820-f19e-4459-a3e6-0390ada318cc"
+                  }
+                },
+                "deezer": {
+                  "track": {
+                    "id": "1089715202",
+                    "name": "Ode To My Family"
+                  },
+                  "artists": [
+                    {
+                      "name": "The Cranberries",
+                      "id": "196"
+                    }
+                  ],
+                  "album": {
+                    "name": ""
+                  }
+                },
+                "spotify": {
+                  "track": {
+                    "id": "6j1Ew081K6EHFGkTV0PvQi",
+                    "name": "Ode To My Family"
+                  },
+                  "artists": [
+                    {
+                      "id": "7t0rwkOPGlDPEhaOcVtOt9",
+                      "name": "The Cranberries"
+                    }
+                  ],
+                  "album": {
+                    "name": "Najlepsze hity dla Ciebie - Pop Ballads",
+                    "id": "0Vpx1yRHXwEoILy3xviWRA"
+                  }
+                },
+                "youtube": {
+                  "vid": "Zz-DJr1Qs54"
+                }
+              },
+              "album": {
+                "name": "No Need To Argue (The Complete Sessions 1994-1995)"
+              },
+              "score": 100,
+              "acrid": "f8711952b8ce92e5cd489b64fc34809a"
+            }
+          ],
+          "timestamp_utc": "2026-07-04 08:52:36"
+        }
+      }
+    },
+    {
+      "job_id": "b44af384",
+      "finding_type": "music",
+      "timestamp_start": 200.0,
+      "timestamp_end": 212.0,
+      "timestamp_display": "03:20",
+      "title": "왜 불러",
+      "author": "이장희",
+      "rights_holder": "Yehyang Entertainment",
+      "source": "acrcloud",
+      "external_id": "7b32dca9c4dc961e4f66733696d3983e",
+      "confidence_score": 0.97,
+      "risk_score": 0.97,
+      "risk_level": "HIGH",
+      "description": "'왜 불러' by 이장희 (© Yehyang Entertainment)",
+      "raw_response": {
+        "status": {
+          "msg": "Success",
+          "code": 0,
+          "version": "1.0"
+        },
+        "result_type": 0,
+        "cost_time": 0.95900011062622,
+        "metadata": {
+          "music": [
+            {
+              "duration_ms": 151000,
+              "release_date": "2014-03-01",
+              "sample_begin_time_offset_ms": 3060,
+              "sample_end_time_offset_ms": 6000,
+              "db_begin_time_offset_ms": 0,
+              "db_end_time_offset_ms": 2940,
+              "play_offset_ms": 9220,
+              "result_from": 1,
+              "album": {
+                "name": "무교동 포크음악의 전설 7080 쎄시봉"
+              },
+              "external_ids": {
+                "upc": "8809418681748",
+                "isrc": "KRY661432323"
+              },
+              "artists": [
+                {
+                  "name": "이장희"
+                }
+              ],
+              "external_metadata": {
+                "deezer": {
+                  "track": {
+                    "id": "996905882",
+                    "name": "Why call"
+                  },
+                  "artists": [
+                    {
+                      "id": "56865502",
+                      "name": "Song Chang-Sik"
+                    }
+                  ],
+                  "album": {
+                    "name": "The long ago Memories of the lunch",
+                    "id": "155692022"
+                  }
+                },
+                "spotify": {
+                  "track": {
+                    "id": "7LHtDudMwMwwzwO5nzWJEx",
+                    "name": "Why call"
+                  },
+                  "artists": [
+                    {
+                      "id": "2eamIRvhNj5K7zOWofqhxR",
+                      "name": "Song Chang-Sik"
+                    }
+                  ],
+                  "album": {
+                    "name": "The long ago Memories of the lunch",
+                    "id": "09UO73hwV7TaByqxTdGxme"
+                  }
+                },
+                "youtube": {
+                  "vid": "5s55Igz8woo"
+                }
+              },
+              "label": "Yehyang Entertainment",
+              "title": "왜 불러",
+              "score": 97,
+              "genres": [
+                {
+                  "name": "Musique asiatique",
+                  "id": 16
+                }
+              ],
+              "acrid": "7b32dca9c4dc961e4f66733696d3983e"
+            }
+          ],
+          "timestamp_utc": "2026-07-04 08:52:40"
+        }
+      }
+    },
+    {
+      "job_id": "b44af384",
+      "finding_type": "music",
+      "timestamp_start": 220.0,
+      "timestamp_end": 232.0,
+      "timestamp_display": "03:40",
+      "title": "I Am Man (Drama 'Wild Times 'theme) (Feat. Kim JiHyeon)",
+      "author": "Leehyuk June",
+      "rights_holder": "Plaza Mayor Company, Ltd.",
+      "source": "acrcloud",
+      "external_id": "bedf24d8ba9a2add4d6dcf06d02a4a0d",
+      "confidence_score": 0.73,
+      "risk_score": 0.73,
+      "risk_level": "MEDIUM",
+      "description": "'I Am Man (Drama 'Wild Times 'theme) (Feat. Kim JiHyeon)' by Leehyuk June (© Plaza Mayor Company, Ltd.)",
+      "raw_response": {
+        "status": {
+          "msg": "Success",
+          "code": 0,
+          "version": "1.0"
+        },
+        "result_type": 0,
+        "cost_time": 1.0710000991821,
+        "metadata": {
+          "music": [
+            {
+              "duration_ms": 172000,
+              "release_date": "2013-06-19",
+              "sample_begin_time_offset_ms": 9500,
+              "sample_end_time_offset_ms": 11740,
+              "db_begin_time_offset_ms": 0,
+              "db_end_time_offset_ms": 2560,
+              "play_offset_ms": 2560,
+              "result_from": 1,
+              "album": {
+                "name": "Dramatic OST"
+              },
+              "external_ids": {
+                "isrc": "GBMEZ2050781",
+                "upc": "0195081755823"
+              },
+              "artists": [
+                {
+                  "name": "Leehyuk June"
+                }
+              ],
+              "external_metadata": {
+                "deezer": {
+                  "track": {
+                    "id": "1080044212",
+                    "name": "I Am Man (Drama 'Wild Times 'theme)"
+                  },
+                  "artists": [
+                    {
+                      "name": "Leehyuk June",
+                      "id": "4714183"
+                    },
+                    {
+                      "name": "Kim JiHyeon",
+                      "id": "107032662"
+                    }
+                  ],
+                  "album": {
+                    "name": ""
+                  }
+                },
+                "spotify": {
+                  "track": {
+                    "id": "0LfqLjbz91tkOWnuLHI3gk",
+                    "name": "I Am Man - Drama 'Wild Times 'theme"
+                  },
+                  "artists": [
+                    {
+                      "id": "1f0meVoDh30a8VZkTuKovZ",
+                      "name": "Leehyuk June"
+                    },
+                    {
+                      "id": "1rkHIuC9DGTOVE9Mylu37v",
+                      "name": "Kim JiHyeon"
+                    }
+                  ],
+                  "album": {
+                    "name": "Dramatic OST",
+                    "id": "1ydtm9apEb2WQ2MDcbjIzR"
+                  }
+                }
+              },
+              "label": "Plaza Mayor Company, Ltd.",
+              "title": "I Am Man (Drama 'Wild Times 'theme) (Feat. Kim JiHyeon)",
+              "score": 73,
+              "genres": [
+                {
+                  "name": "Films/Jeux vidéo",
+                  "id": 173
+                },
+                {
+                  "name": "Musiques de films",
+                  "id": 174
+                }
+              ],
+              "acrid": "bedf24d8ba9a2add4d6dcf06d02a4a0d"
+            },
+            {
+              "duration_ms": 172060,
+              "release_date": "2020-10-16",
+              "sample_begin_time_offset_ms": 9500,
+              "sample_end_time_offset_ms": 11740,
+              "db_begin_time_offset_ms": 0,
+              "db_end_time_offset_ms": 2840,
+              "play_offset_ms": 2840,
+              "result_from": 1,
+              "album": {
+                "name": "Dramtic 1- Drama OST Collection"
+              },
+              "external_ids": {
+                "upc": "0195081755823",
+                "isrc": "GBMEZ2050781"
+              },
+              "artists": [
+                {
+                  "name": "Lee Hyuk jun"
+                }
+              ],
+              "external_metadata": {
+                "youtube": {
+                  "vid": "hER7jE5SwI8"
+                },
+                "deezer": {
+                  "track": {
+                    "id": "1867163617",
+                    "name": "I am a Man (With Jihyun Kim)-The Age of Wild Men End Credit"
+                  },
+                  "artists": [
+                    {
+                      "langs": [
+                        {
+                          "code": "ko-hang",
+                          "name": "이혁준"
+                        }
+                      ],
+                      "name": "Lee Hyuk jun",
+                      "id": "175900997"
+                    }
+                  ],
+                  "album": {
+                    "name": "Dramtic 1- Drama OST Collection",
+                    "id": "346558147"
+                  }
+                },
+                "spotify": {
+                  "track": {
+                    "id": "3abdxb6U0lmViHR2R6Zf1t",
+                    "name": "I am a Man (With Jihyun Kim)-The Age of Wild Men End Credit"
+                  },
+                  "artists": [
+                    {
+                      "name": "Lee Hyuk jun",
+                      "id": "1WHzeSIMusTagrZy8jlm6F"
+                    }
+                  ],
+                  "album": {
+                    "name": "Dramtic 1- Drama OST Collection",
+                    "id": "6XHeMI4RrYMyH1MPzkvqRy"
+                  }
+                }
+              },
+              "genres": [
+                {
+                  "name": "Films/Jeux vidéo",
+                  "id": 173
+                },
+                {
+                  "name": "Musiques de films",
+                  "id": 174
+                }
+              ],
+              "title": "I am a Man (With Jihyun Kim)-The Age of Wild Men End Credit",
+              "score": 70,
+              "label": "RIAK",
+              "acrid": "ff366d0f7f5cbbf4ace4e01c53ed0823"
+            },
+            {
+              "duration_ms": 171000,
+              "release_date": "2013-06-19",
+              "sample_begin_time_offset_ms": 9500,
+              "sample_end_time_offset_ms": 11740,
+              "db_begin_time_offset_ms": 0,
+              "db_end_time_offset_ms": 2760,
+              "play_offset_ms": 2760,
+              "result_from": 1,
+              "album": {
+                "name": "Dramatic 1.5  - 야인시대 OST Special (이혁준 드라마작품집)"
+              },
+              "external_ids": {
+                "upc": "8809585334447",
+                "isrc": "KRRAR1722244"
+              },
+              "artists": [
+                {
+                  "name": "이혁준"
+                }
+              ],
+              "external_metadata": {
+                "deezer": {
+                  "track": {
+                    "id": "1895582157",
+                    "name": "I am a Man (Humming version)-The Age of Wild Men Main theme"
+                  },
+                  "artists": [
+                    {
+                      "langs": [
+                        {
+                          "code": "ko-hang",
+                          "name": "이혁준"
+                        }
+                      ],
+                      "name": "Lee Hyuk jun",
+                      "id": "175900997"
+                    }
+                  ],
+                  "album": {
+                    "name": "Dramtic 1.5 - The Age of Wild Men (Original Soundtrack) Special",
+                    "id": "352417547"
+                  }
+                },
+                "spotify": {
+                  "track": {
+                    "id": "2eqHIynYbf9DUzfimMpdyn",
+                    "name": "I am a Man (Humming version)-The Age of Wild Men Main theme"
+                  },
+                  "artists": [
+                    {
+                      "name": "Lee Hyuk jun",
+                      "id": "1WHzeSIMusTagrZy8jlm6F"
+                    }
+                  ],
+                  "album": {
+                    "name": "Dramtic 1.5 - The Age of Wild Men (Original Soundtrack) Special",
+                    "id": "1ZnXtVHF2tStyYw2EuFbPK"
+                  }
+                }
+              },
+              "genres": [
+                {
+                  "name": "Films/Jeux vidéo",
+                  "id": 173
+                },
+                {
+                  "name": "Musiques de films",
+                  "id": 174
+                }
+              ],
+              "title": "나 사나이다 (Hummimg) - 야인시대 주제가",
+              "score": 55,
+              "label": "RIAK",
+              "acrid": "f3b3be6af6d604f95f5a43276c525128"
+            }
+          ],
+          "timestamp_utc": "2026-07-04 08:52:40"
+        }
+      }
+    },
+    {
+      "job_id": "b44af384",
+      "finding_type": "image",
+      "timestamp_start": 231.35,
+      "timestamp_end": 231.35,
+      "timestamp_display": "03:51",
+      "title": "인터넷 이미지 발견: SBS",
+      "rights_holder": "",
+      "source": "google_vision_web_search",
+      "confidence_score": 0.72,
+      "risk_score": 0.739,
+      "risk_level": "HIGH",
+      "description": "Google 역이미지: SBS에서 발견됨",
+      "reference_url": null
+    },
+    {
+      "job_id": "b44af384",
+      "finding_type": "music",
+      "timestamp_start": 280.0,
+      "timestamp_end": 292.0,
+      "timestamp_display": "04:40",
+      "title": "집에가자 (Vocal 윤수진)",
+      "author": "염창동김민철",
+      "rights_holder": "",
+      "source": "acrcloud",
+      "external_id": "5fcdce740558f83607b3f35e1624c3eb",
+      "confidence_score": 0.85,
+      "risk_score": 0.85,
+      "risk_level": "HIGH",
+      "description": "'집에가자 (Vocal 윤수진)' by 염창동김민철",
+      "raw_response": {
+        "status": {
+          "version": "1.0",
+          "msg": "Success",
+          "code": 0
+        },
+        "result_type": 0,
+        "cost_time": 1.047000169754,
+        "metadata": {
+          "music": [
+            {
+              "play_offset_ms": 15860,
+              "result_from": 1,
+              "external_metadata": {},
+              "score": 85,
+              "acrid": "5fcdce740558f83607b3f35e1624c3eb",
+              "release_date": "2018-09-05",
+              "title": "집에가자 (Vocal 윤수진)",
+              "db_begin_time_offset_ms": 7900,
+              "external_ids": {
+                "isrc": "KRB751425141",
+                "upc": "0888388041729"
+              },
+              "album": {
+                "name": "집에가자"
+              },
+              "db_end_time_offset_ms": 10140,
+              "duration_ms": 200000,
+              "artists": [
+                {
+                  "name": "염창동김민철"
+                }
+              ],
+              "sample_begin_time_offset_ms": 3780,
+              "sample_end_time_offset_ms": 6020
+            }
+          ],
+          "timestamp_utc": "2026-07-04 08:52:44"
+        }
+      }
+    },
+    {
+      "job_id": "b44af384",
+      "finding_type": "music",
+      "timestamp_start": 300.0,
+      "timestamp_end": 332.0,
+      "timestamp_display": "05:00",
+      "title": "사랑해도 될까요?",
+      "author": "유리상자",
+      "rights_holder": "Ko music",
+      "source": "acrcloud",
+      "external_id": "90693b9086fbc3bb5963ab3d2b7560c5",
+      "confidence_score": 0.7,
+      "risk_score": 0.794,
+      "risk_level": "HIGH",
+      "description": "'사랑해도 될까요?' by 유리상자 (© Ko music) [05:00~05:32 약 32초 사용, 청크 2개 일치]",
+      "raw_response": {
+        "status": {
+          "msg": "Success",
+          "code": 0,
+          "version": "1.0"
+        },
+        "result_type": 0,
+        "cost_time": 0.3529999256134,
+        "metadata": {
+          "music": [
+            {
+              "duration_ms": 217000,
+              "release_date": "2001-11-01",
+              "sample_begin_time_offset_ms": 3620,
+              "sample_end_time_offset_ms": 9980,
+              "db_begin_time_offset_ms": 62920,
+              "db_end_time_offset_ms": 69280,
+              "play_offset_ms": 70960,
+              "result_from": 3,
+              "label": "Ko music",
+              "artists": [
+                {
+                  "name": "유리상자"
+                }
+              ],
+              "external_metadata": {
+                "deezer": {
+                  "track": {
+                    "id": "824519892",
+                    "name": "Can I love you?"
+                  },
+                  "artists": [
+                    {
+                      "name": "Yurisangja",
+                      "id": "3261891"
+                    }
+                  ],
+                  "album": {
+                    "name": ""
+                  }
+                },
+                "spotify": {
+                  "track": {
+                    "id": "5hbtq4keJZtoSCj35PTksG",
+                    "name": "Can I love you?"
+                  },
+                  "artists": [
+                    {
+                      "id": "0yHsQ2vzDleLT7qjgo7qt7",
+                      "name": "Yurisangja"
+                    }
+                  ],
+                  "album": {
+                    "name": "1997;2003 Yurisangja Best Album",
+                    "id": "21FL5AoZwDJ3TZsy8sPsN9"
+                  }
+                },
+                "youtube": {
+                  "vid": "hjmvxmqJt6Q"
+                }
+              },
+              "title": "사랑해도 될까요?",
+              "album": {
+                "name": "시나브로"
+              },
+              "external_ids": {
+                "isrc": "KRA341634436",
+                "upc": "8804775181726"
+              },
+              "score": 70,
+              "acrid": "90693b9086fbc3bb5963ab3d2b7560c5"
+            }
+          ],
+          "timestamp_utc": "2026-07-04 08:52:45"
+        }
+      }
+    },
+    {
+      "job_id": "b44af384",
+      "finding_type": "video_clip",
+      "timestamp_start": 301.56666666666666,
+      "timestamp_end": 301.56666666666666,
+      "timestamp_display": "05:01",
+      "title": "YouTube 원본 의심: Outlast 2: Full Game Walkthrough (4K 60f",
+      "rights_holder": "",
+      "source": "youtube_api_entity_search",
+      "confidence_score": 0.7,
+      "risk_score": 0.65,
+      "risk_level": "MEDIUM",
+      "description": "Vision 엔티티 'Outlast II' YouTube 검색: 'Outlast 2: Full Game Walkthrough (4K 60fps)' — 채널: Boss Fight Database",
+      "reference_url": "https://www.youtube.com/watch?v=pnvFiYTsaYk"
+    },
+    {
+      "job_id": "b44af384",
+      "finding_type": "music",
+      "timestamp_start": 330.0,
+      "timestamp_end": 342.0,
+      "timestamp_display": "05:30",
+      "title": "시놉시스",
+      "author": "김대홍",
+      "rights_holder": "",
+      "source": "acrcloud",
+      "external_id": "57e40f24d26245fa9a971fdba1fe6248",
+      "confidence_score": 0.7,
+      "risk_score": 0.7,
+      "risk_level": "MEDIUM",
+      "description": "'시놉시스' by 김대홍",
+      "raw_response": {
+        "status": {
+          "msg": "Success",
+          "code": 0,
+          "version": "1.0"
+        },
+        "result_type": 0,
+        "cost_time": 0.97699999809265,
+        "metadata": {
+          "music": [
+            {
+              "duration_ms": 145914,
+              "release_date": "1998-12-19",
+              "sample_begin_time_offset_ms": 1440,
+              "sample_end_time_offset_ms": 4100,
+              "db_begin_time_offset_ms": 6400,
+              "db_end_time_offset_ms": 9060,
+              "title": "시놉시스",
+              "result_from": 1,
+              "play_offset_ms": 16700,
+              "artists": [
+                {
+                  "name": "김대홍"
+                }
+              ],
+              "external_metadata": {
+                "deezer": {
+                  "track": {
+                    "id": "1783707877",
+                    "name": "시놉시스"
+                  },
+                  "artists": [
+                    {
+                      "name": "김대홍",
+                      "id": "119232802"
+                    }
+                  ],
+                  "album": {
+                    "name": "미술관 옆 동물원 (Original Soundtrack)",
+                    "id": "325768777"
+                  }
+                },
+                "spotify": {
+                  "track": {
+                    "id": "0kMC66FW2UCeTTTSYvcUSV",
+                    "name": "시놉시스"
+                  },
+                  "artists": [
+                    {
+                      "name": "김대홍",
+                      "id": "2UOuHpsk0RwkpYyqhu0FO7"
+                    }
+                  ],
+                  "album": {
+                    "name": "미술관 옆 동물원 (Original Soundtrack)",
+                    "id": "7nHFFbAdr0Yjwhz0xdE6DQ"
+                  }
+                }
+              },
+              "album": {
+                "name": "미술관 옆 동물원 (Original Soundtrack)"
+              },
+              "external_ids": {
+                "isrc": "ZZA0P2206070"
+              },
+              "score": 70,
+              "acrid": "57e40f24d26245fa9a971fdba1fe6248"
+            },
+            {
+              "duration_ms": 146050,
+              "release_date": "1998-11-30",
+              "sample_begin_time_offset_ms": 1440,
+              "sample_end_time_offset_ms": 4080,
+              "db_begin_time_offset_ms": 6420,
+              "db_end_time_offset_ms": 9060,
+              "play_offset_ms": 16720,
+              "result_from": 1,
+              "score": 55,
+              "artists": [
+                {
+                  "name": "김대홍"
+                }
+              ],
+              "title": "시놉시스",
+              "external_metadata": {
+                "deezer": {
+                  "track": {
+                    "id": "1783707877",
+                    "name": "시놉시스"
+                  },
+                  "artists": [
+                    {
+                      "name": "김대홍",
+                      "id": "119232802"
+                    }
+                  ],
+                  "album": {
+                    "name": "미술관 옆 동물원 (Original Soundtrack)",
+                    "id": "325768777"
+                  }
+                },
+                "spotify": {
+                  "track": {
+                    "id": "0kMC66FW2UCeTTTSYvcUSV",
+                    "name": "시놉시스"
+                  },
+                  "artists": [
+                    {
+                      "name": "김대홍",
+                      "id": "2UOuHpsk0RwkpYyqhu0FO7"
+                    }
+                  ],
+                  "album": {
+                    "name": "미술관 옆 동물원 (Original Soundtrack)",
+                    "id": "7nHFFbAdr0Yjwhz0xdE6DQ"
+                  }
+                }
+              },
+              "genres": [
+                {
+                  "name": "Musique asiatique",
+                  "id": 16
+                }
+              ],
+              "album": {
+                "name": "미술관 옆 동물원 O.S.T (Art Museum By The Zoo)"
+              },
+              "external_ids": {
+                "upc": "0191953176291",
+                "isrc": "ZZA0P2206070"
+              },
+              "label": "Mercury Records",
+              "acrid": "e2fcf6d7ff6c7c63eafb2d1e174417f5"
+            }
+          ],
+          "timestamp_utc": "2026-07-04 08:52:46"
+        }
+      }
+    },
+    {
+      "job_id": "b44af384",
+      "finding_type": "music",
+      "timestamp_start": 380.0,
+      "timestamp_end": 392.0,
+      "timestamp_display": "06:20",
+      "title": "Грустные (Из сериала Доктор Стив)",
+      "author": "Виктор Албычаков",
+      "rights_holder": "Виктор Албычаков",
+      "source": "acrcloud",
+      "external_id": "77f75c36537ec5b6fb313d6263d31b0c",
+      "confidence_score": 1.0,
+      "risk_score": 1.0,
+      "risk_level": "HIGH",
+      "description": "'Грустные (Из сериала Доктор Стив)' by Виктор Албычаков (© Виктор Албычаков)",
+      "raw_response": {
+        "status": {
+          "msg": "Success",
+          "code": 0,
+          "version": "1.0"
+        },
+        "result_type": 0,
+        "cost_time": 0.32599997520447,
+        "metadata": {
+          "music": [
+            {
+              "duration_ms": 371000,
+              "release_date": "2022-03-01",
+              "sample_begin_time_offset_ms": 9740,
+              "sample_end_time_offset_ms": 11140,
+              "db_begin_time_offset_ms": 248940,
+              "db_end_time_offset_ms": 250340,
+              "title": "Грустные (Из сериала Доктор Стив)",
+              "result_from": 3,
+              "play_offset_ms": 250940,
+              "artists": [
+                {
+                  "name": "Виктор Албычаков"
+                }
+              ],
+              "external_metadata": {
+                "deezer": {
+                  "track": {
+                    "id": "1674085307",
+                    "name": "Грустные (Из сериала Доктор Стив)"
+                  },
+                  "artists": [
+                    {
+                      "name": "Виктор Албычаков",
+                      "id": "157175522"
+                    }
+                  ],
+                  "album": {
+                    "name": "Грустные (Из сериала Доктор Стив)",
+                    "id": "300088307"
+                  }
+                },
+                "spotify": {
+                  "track": {
+                    "id": "6zgW3XehjM7OrNHZMvAz71",
+                    "name": "Грустные (Из сериала Доктор Стив)"
+                  },
+                  "artists": [
+                    {
+                      "name": "Виктор Албычаков",
+                      "id": "02Oq0FffDKwz4kcpJNJCai"
+                    }
+                  ],
+                  "album": {
+                    "name": "Грустные (Из сериала Доктор Стив)",
+                    "id": "5LUYUcS7zDcTGydSC793CP"
+                  }
+                }
+              },
+              "label": "Виктор Албычаков",
+              "album": {
+                "name": "Грустные (Из сериала Доктор Стив)"
+              },
+              "external_ids": {
+                "isrc": "RUA1H2284460",
+                "upc": "5063015122711"
+              },
+              "score": 100,
+              "acrid": "77f75c36537ec5b6fb313d6263d31b0c"
+            },
+            {
+              "duration_ms": 256000,
+              "release_date": "2022-06-07",
+              "sample_begin_time_offset_ms": 9740,
+              "sample_end_time_offset_ms": 11240,
+              "db_begin_time_offset_ms": 153560,
+              "db_end_time_offset_ms": 155060,
+              "play_offset_ms": 155560,
+              "result_from": 3,
+              "album": {
+                "name": "raja tani kani dum dhle"
+              },
+              "external_ids": {
+                "upc": "3616848059123",
+                "isrc": "FRX202243204"
+              },
+              "label": "front music",
+              "artists": [
+                {
+                  "name": "Satyam Singham"
+                }
+              ],
+              "external_metadata": {
+                "youtube": {
+                  "vid": "owqXV40jW7o"
+                },
+                "deezer": {
+                  "track": {
+                    "id": "1782109357",
+                    "name": "raja tani kani dum dhle"
+                  },
+                  "artists": [
+                    {
+                      "name": "Satyam Singham",
+                      "id": "75765622"
+                    }
+                  ],
+                  "album": {
+                    "name": "raja tani kani dum dhle",
+                    "id": "325435897"
+                  }
+                },
+                "spotify": {
+                  "track": {
+                    "id": "3tTUjwb8WiyyMqRNQFXgMe",
+                    "name": "raja tani kani dum dhle"
+                  },
+                  "artists": [
+                    {
+                      "name": "Satyam Singham",
+                      "id": "2G5lBdc2N5wPPUGbFSmhyU"
+                    }
+                  ],
+                  "album": {
+                    "name": "raja tani kani dum dhle",
+                    "id": "5YxEFIcXsq3OzuqH0UdLgg"
+                  }
+                }
+              },
+              "title": "raja tani kani dum dhle",
+              "genres": [
+                {
+                  "name": "Indian - Bhojpuri"
+                }
+              ],
+              "score": 85,
+              "acrid": "e09f305980d414a551e0f8768b48f804"
+            }
+          ],
+          "timestamp_utc": "2026-07-04 08:52:49"
+        }
+      }
+    },
+    {
+      "job_id": "b44af384",
+      "finding_type": "music",
+      "timestamp_start": 390.0,
+      "timestamp_end": 412.0,
+      "timestamp_display": "06:30",
+      "title": "raja tani kani dum dhle",
+      "author": "Satyam Singham",
+      "rights_holder": "front music",
+      "source": "acrcloud",
+      "external_id": "e09f305980d414a551e0f8768b48f804",
+      "confidence_score": 1.0,
+      "risk_score": 1.0,
+      "risk_level": "HIGH",
+      "description": "'raja tani kani dum dhle' by Satyam Singham (© front music) [06:30~06:52 약 22초 사용, 청크 2개 일치]",
+      "raw_response": {
+        "status": {
+          "msg": "Success",
+          "code": 0,
+          "version": "1.0"
+        },
+        "result_type": 0,
+        "cost_time": 0.53999996185303,
+        "metadata": {
+          "music": [
+            {
+              "duration_ms": 256000,
+              "release_date": "2022-06-07",
+              "sample_begin_time_offset_ms": 0,
+              "sample_end_time_offset_ms": 8480,
+              "db_begin_time_offset_ms": 154420,
+              "db_end_time_offset_ms": 162900,
+              "play_offset_ms": 165560,
+              "result_from": 3,
+              "album": {
+                "name": "raja tani kani dum dhle"
+              },
+              "external_ids": {
+                "upc": "3616848059123",
+                "isrc": "FRX202243204"
+              },
+              "label": "front music",
+              "artists": [
+                {
+                  "name": "Satyam Singham"
+                }
+              ],
+              "external_metadata": {
+                "youtube": {
+                  "vid": "owqXV40jW7o"
+                },
+                "deezer": {
+                  "track": {
+                    "id": "1782109357",
+                    "name": "raja tani kani dum dhle"
+                  },
+                  "artists": [
+                    {
+                      "name": "Satyam Singham",
+                      "id": "75765622"
+                    }
+                  ],
+                  "album": {
+                    "name": "raja tani kani dum dhle",
+                    "id": "325435897"
+                  }
+                },
+                "spotify": {
+                  "track": {
+                    "id": "3tTUjwb8WiyyMqRNQFXgMe",
+                    "name": "raja tani kani dum dhle"
+                  },
+                  "artists": [
+                    {
+                      "name": "Satyam Singham",
+                      "id": "2G5lBdc2N5wPPUGbFSmhyU"
+                    }
+                  ],
+                  "album": {
+                    "name": "raja tani kani dum dhle",
+                    "id": "5YxEFIcXsq3OzuqH0UdLgg"
+                  }
+                }
+              },
+              "title": "raja tani kani dum dhle",
+              "genres": [
+                {
+                  "name": "Indian - Bhojpuri"
+                }
+              ],
+              "score": 100,
+              "acrid": "e09f305980d414a551e0f8768b48f804"
+            },
+            {
+              "duration_ms": 371000,
+              "release_date": "2022-03-01",
+              "sample_begin_time_offset_ms": 0,
+              "sample_end_time_offset_ms": 11140,
+              "db_begin_time_offset_ms": 249320,
+              "db_end_time_offset_ms": 260460,
+              "title": "Грустные (Из сериала Доктор Стив)",
+              "result_from": 3,
+              "play_offset_ms": 260920,
+              "artists": [
+                {
+                  "name": "Виктор Албычаков"
+                }
+              ],
+              "external_metadata": {
+                "deezer": {
+                  "track": {
+                    "id": "1674085307",
+                    "name": "Грустные (Из сериала Доктор Стив)"
+                  },
+                  "artists": [
+                    {
+                      "name": "Виктор Албычаков",
+                      "id": "157175522"
+                    }
+                  ],
+                  "album": {
+                    "name": "Грустные (Из сериала Доктор Стив)",
+                    "id": "300088307"
+                  }
+                },
+                "spotify": {
+                  "track": {
+                    "id": "6zgW3XehjM7OrNHZMvAz71",
+                    "name": "Грустные (Из сериала Доктор Стив)"
+                  },
+                  "artists": [
+                    {
+                      "name": "Виктор Албычаков",
+                      "id": "02Oq0FffDKwz4kcpJNJCai"
+                    }
+                  ],
+                  "album": {
+                    "name": "Грустные (Из сериала Доктор Стив)",
+                    "id": "5LUYUcS7zDcTGydSC793CP"
+                  }
+                }
+              },
+              "label": "Виктор Албычаков",
+              "album": {
+                "name": "Грустные (Из сериала Доктор Стив)"
+              },
+              "external_ids": {
+                "isrc": "RUA1H2284460",
+                "upc": "5063015122711"
+              },
+              "score": 100,
+              "acrid": "77f75c36537ec5b6fb313d6263d31b0c"
+            }
+          ],
+          "timestamp_utc": "2026-07-04 08:52:50"
+        }
+      }
+    }
+  ],
+  "summary": {
+    "overall_risk_level": "HIGH",
+    "overall_risk_score": 1.0,
+    "total_issues_found": 12,
+    "by_type": {
+      "music": 10,
+      "image": 1,
+      "video_clip": 1
+    },
+    "high_count": 9,
+    "medium_count": 3,
+    "low_count": 0
+  }
+}

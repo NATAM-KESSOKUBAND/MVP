@@ -56,8 +56,14 @@ def get_shared_ocr():
         if _engine is None and not _failed:
             try:
                 import easyocr
-                _engine = easyocr.Reader(["ko", "en"], gpu=False, verbose=False)
-                logger.info("shared_ocr_loaded")
+                # GPU 자동 감지: CUDA 가능 시 OCR 5~10배 가속 (없으면 CPU 폴백)
+                try:
+                    import torch
+                    _gpu = bool(torch.cuda.is_available())
+                except Exception:
+                    _gpu = False
+                _engine = easyocr.Reader(["ko", "en"], gpu=_gpu, verbose=False)
+                logger.info("shared_ocr_loaded", gpu=_gpu)
             except ImportError:
                 logger.warning("easyocr_not_installed")
                 _failed = True

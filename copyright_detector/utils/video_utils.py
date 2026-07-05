@@ -95,6 +95,34 @@ def extract_audio(video_path: str, output_path: str = None,
     return output_path
 
 
+def load_wav_mono(path: str) -> Tuple[np.ndarray, int]:
+    """
+    16bit PCM WAV → (int16 ndarray, sample_rate).
+    extract_audio()가 만든 mono 16kHz wav를 메모리에 한 번만 로드해
+    청크 추출 시 ffmpeg 프로세스 기동(청크당 1회)을 전부 제거한다.
+    """
+    import wave
+    with wave.open(path, "rb") as wf:
+        sr = wf.getframerate()
+        n_ch = wf.getnchannels()
+        raw = wf.readframes(wf.getnframes())
+    data = np.frombuffer(raw, dtype=np.int16)
+    if n_ch > 1:
+        data = data.reshape(-1, n_ch).mean(axis=1).astype(np.int16)
+    return data, sr
+
+
+def write_wav_mono(path: str, data: np.ndarray, sample_rate: int) -> str:
+    """int16 ndarray → 16bit PCM mono WAV 파일 (ACRCloud/AudD 업로드용)"""
+    import wave
+    with wave.open(path, "wb") as wf:
+        wf.setnchannels(1)
+        wf.setsampwidth(2)
+        wf.setframerate(sample_rate)
+        wf.writeframes(np.ascontiguousarray(data, dtype=np.int16).tobytes())
+    return path
+
+
 def extract_audio_chunk(video_path: str, start_sec: float, duration_sec: float,
                         output_path: str) -> str:
     """특정 구간 오디오 추출 (ACRCloud API 호출용)"""

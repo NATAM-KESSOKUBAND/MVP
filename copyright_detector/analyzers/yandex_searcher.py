@@ -76,12 +76,31 @@ def _domain(url: str) -> str:
 _result_cache: Dict[str, Dict] = {}
 _cache_lock = threading.Lock()
 _CACHE_MAX = 200
+_call_count = 0          # 작업당 실제 SerpAPI 호출 수 (캐시 히트 제외)
+_budget_warned = False
 
 
 def clear_yandex_cache() -> None:
-    """새 분석 작업 시작 시 호출: Yandex 검색 결과 캐시 초기화."""
+    """새 분석 작업 시작 시 호출: 캐시 + 호출 예산 초기화."""
+    global _call_count, _budget_warned
     with _cache_lock:
         _result_cache.clear()
+        _call_count = 0
+        _budget_warned = False
+
+
+def _consume_budget() -> bool:
+    """작업당 SerpAPI 호출 예산 차감. 예산 소진 시 False."""
+    global _call_count, _budget_warned
+    with _cache_lock:
+        if _call_count >= config.pipeline.yandex_max_calls_per_job:
+            if not _budget_warned:
+                _budget_warned = True
+                logger.warning("yandex_budget_exhausted",
+                               limit=config.pipeline.yandex_max_calls_per_job)
+            return False
+        _call_count += 1
+        return True
 
 
 def _frame_phash(frame_bgr: np.ndarray) -> str:
@@ -187,6 +206,10 @@ def yandex_reverse_search(frame_bgr: np.ndarray,
     if cached is not None:
         logger.debug("yandex_cache_hit", ts=timestamp_ms)
         return cached
+
+    # ── 작업당 호출 예산 확인 (SerpAPI는 검색당 과금 — 비용 상한) ──
+    if not _consume_budget():
+        return _empty_result(error="yandex per-job budget exhausted")
 
     # ── 이미지 인코딩 ──
     ok, buf = cv2.imencode(".jpg", frame_bgr, [cv2.IMWRITE_JPEG_QUALITY, 85])

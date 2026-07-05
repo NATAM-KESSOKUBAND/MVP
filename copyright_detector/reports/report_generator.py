@@ -155,6 +155,9 @@ def generate_html_report(results: Dict) -> str:
     <div class="risk-badge">{risk_emoji} {risk_level} — {risk_score:.1f}%</div>
   </div>
 
+  <!-- YouTube Studio 관점 예측 -->
+  {_build_youtube_panel(summary.get('youtube'))}
+
   <!-- Stats -->
   <div class="stats-grid">
     <div class="stat-card">
@@ -203,6 +206,42 @@ def generate_html_report(results: Dict) -> str:
 </html>"""
 
     return html
+
+
+def _build_youtube_panel(yt: Dict) -> str:
+    """유튜브 스튜디오 관점 예측 패널 (수익화 영향/클레임 확률/차단·경고 위험)."""
+    if not yt:
+        return ""
+    monet = yt.get("monetization_impact", "없음")
+    monet_color = {"높음": "#ef4444", "중간": "#f59e0b",
+                   "낮음": "#3b82f6", "없음": "#10b981"}.get(monet, "#10b981")
+    claim = yt.get("claim_probability", 0)
+
+    def _risk_pill(label, val):
+        c = {"있음": "#ef4444", "낮음": "#f59e0b", "없음": "#10b981"}.get(val, "#10b981")
+        return (f'<div style="flex:1;text-align:center;padding:10px;background:var(--surface2);'
+                f'border-radius:8px"><div style="font-size:12px;color:var(--muted)">{label}</div>'
+                f'<div style="font-size:16px;font-weight:700;color:{c};margin-top:2px">{val}</div></div>')
+
+    return f"""
+  <div style="background:var(--surface);border:1px solid var(--border);border-left:4px solid {monet_color};
+              border-radius:12px;padding:24px;margin-bottom:24px">
+    <div class="section-title">📺 유튜브 스튜디오 예측 <span style="font-size:12px;color:var(--muted);font-weight:400">(추정치 — 실제 조치는 권리자 정책에 따라 다름)</span></div>
+    <div style="font-size:17px;font-weight:700;margin:8px 0 16px">{yt.get('headline', '')}</div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px">
+      <div style="flex:1;text-align:center;padding:10px;background:var(--surface2);border-radius:8px">
+        <div style="font-size:12px;color:var(--muted)">수익화 영향(노란 딱지)</div>
+        <div style="font-size:16px;font-weight:700;color:{monet_color};margin-top:2px">{monet}</div>
+      </div>
+      <div style="flex:1;text-align:center;padding:10px;background:var(--surface2);border-radius:8px">
+        <div style="font-size:12px;color:var(--muted)">Content ID 클레임 확률</div>
+        <div style="font-size:16px;font-weight:700;margin-top:2px">{claim}%</div>
+      </div>
+      {_risk_pill("차단 위험", yt.get("block_risk", "없음"))}
+      {_risk_pill("저작권 경고(Strike)", yt.get("strike_risk", "없음"))}
+    </div>
+    <div style="font-size:13px;color:var(--muted)">💡 {yt.get('advice', '')}</div>
+  </div>"""
 
 
 def _build_timeline_html(timeline: List[Dict], duration: float) -> str:
@@ -280,6 +319,13 @@ def _build_sections_html(findings_by_type: Dict) -> str:
             else:
                 src_html = src
 
+            yt_label = f.get("yt_outcome_label", "")
+            yt_emoji = f.get("yt_emoji", "")
+            yt_claim = f.get("yt_claim_prob", "")
+            yt_html = (f'<span style="font-size:12px">{yt_emoji} {yt_label}</span>'
+                       f'<div style="font-size:11px;color:var(--muted);margin-top:2px">클레임 {yt_claim}</div>'
+                       if yt_label else "")
+
             rows += f"""<tr>
               <td><span class="ts">{ts_display}</span></td>
               <td>{f.get('title', '')}</td>
@@ -288,6 +334,7 @@ def _build_sections_html(findings_by_type: Dict) -> str:
                 <div class="score-bar"><div class="score-fill" style="width:{score_pct}%;background:{color}"></div></div>
                 <span class="{risk_class}">{risk_emoji} {score_pct:.0f}%</span>
               </td>
+              <td>{yt_html}</td>
               <td style="color:var(--muted);font-size:12px">{src_html}</td>
               <td style="font-size:12px;color:var(--muted)">{f.get('description', '')[:120]}</td>
             </tr>"""
@@ -298,7 +345,7 @@ def _build_sections_html(findings_by_type: Dict) -> str:
           <table>
             <thead><tr>
               <th>시간</th><th>제목</th><th>권리자</th>
-              <th>위험도</th><th>소스</th><th>설명</th>
+              <th>위험도</th><th>유튜브 조치(예측)</th><th>소스</th><th>설명</th>
             </tr></thead>
             <tbody>{rows}</tbody>
           </table>

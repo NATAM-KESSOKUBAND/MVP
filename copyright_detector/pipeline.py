@@ -14,6 +14,7 @@ import structlog
 from config import config
 from database.db_manager import get_db_manager
 from database.models import AnalysisStatus, RiskLevel
+from youtube_risk import summarize_youtube_impact, youtube_impact_for_finding
 from utils.video_utils import (
     compute_video_hash, get_video_info,
     extract_audio, extract_frames_smart, cleanup_temp_files,
@@ -186,6 +187,8 @@ def format_results(job_id: str, video_path: str, video_info: Dict,
             },
             "high_risk_count": sum(1 for f in all_findings if f.get("risk_level") == "HIGH"),
             "medium_risk_count": sum(1 for f in all_findings if f.get("risk_level") == "MEDIUM"),
+            # 유튜브 스튜디오 관점 예측 (노란 딱지/클레임/차단/경고 가능성)
+            "youtube": summarize_youtube_impact(all_findings),
         },
 
         "findings_by_type": {
@@ -201,9 +204,10 @@ def format_results(job_id: str, video_path: str, video_info: Dict,
 
 
 def _format_findings(findings: List[Dict]) -> List[Dict]:
-    """결과 데이터 정리 (raw_response 제거 등)"""
+    """결과 데이터 정리 (raw_response 제거 등) + 유튜브 조치 예측 부착"""
     clean = []
     for f in findings:
+        yt = youtube_impact_for_finding(f)
         clean.append({
             "timestamp": f.get("timestamp_display", "00:00"),
             "timestamp_start_sec": f.get("timestamp_start", 0),
@@ -216,6 +220,11 @@ def _format_findings(findings: List[Dict]) -> List[Dict]:
             "confidence": f"{round(f.get('confidence_score', 0) * 100, 1)}%",
             "risk_score": f"{round(f.get('risk_score', 0) * 100, 1)}%",
             "risk_level": f.get("risk_level", "SAFE"),
+            # 유튜브 스튜디오 관점: 이 항목이 실제로 어떤 조치를 부를지
+            "yt_outcome": yt["yt_outcome"],
+            "yt_outcome_label": yt["yt_outcome_label"],
+            "yt_emoji": yt["yt_emoji"],
+            "yt_claim_prob": f"{round(yt['yt_claim_prob'] * 100)}%",
             "description": f.get("description", ""),
             "reference_url": f.get("reference_url"),
         })
@@ -338,7 +347,10 @@ class CopyrightAnalysisPipeline:
             logger.info("step5_parallel_analysis", job_id=job_id, modules=5)
             t5 = time.time()
 
-            music_task      = self.music_analyzer.analyze(video_path, job_id)
+            # audio_path 전달 → 음악 분석이 추출된 wav를 메모리 슬라이스
+            # (청크당 ffmpeg 프로세스 기동 제거: 30분 영상 기준 ~180회 → 0회)
+            music_task      = self.music_analyzer.analyze(video_path, job_id,
+                                                          audio_path=audio_path)
             image_task      = self.image_analyzer.analyze(frames, job_id)
             font_task       = self.font_analyzer.analyze(frames, job_id)
             video_clip_task = self.video_clip_analyzer.analyze(frames, job_id)

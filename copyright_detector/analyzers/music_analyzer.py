@@ -13,12 +13,20 @@ from typing import List, Dict, Optional, Tuple
 from concurrent.futures import ThreadPoolExecutor
 import structlog
 import requests
+import numpy as np
 
 from config import config
 from database.db_manager import get_db_manager
-from utils.video_utils import get_audio_chunks, get_video_info
+from utils.video_utils import (
+    extract_audio_chunk, get_video_info, load_wav_mono, write_wav_mono,
+)
 
 logger = structlog.get_logger()
+
+
+def _song_key(r: Dict) -> str:
+    """청크 매칭 결과의 곡 식별 키 (ISRC 우선, 없으면 제목+아티스트)"""
+    return r.get("isrc") or f"{r.get('title', '')}_{r.get('artist', '')}"
 
 
 # ─────────────────────────────────────────────
@@ -216,45 +224,136 @@ class MusicAnalyzer:
         self.db = get_db_manager()
         self.executor = ThreadPoolExecutor(max_workers=4)
 
-    async def analyze(self, video_path: str, job_id: str) -> List[Dict]:
+    async def analyze(self, video_path: str, job_id: str,
+                      audio_path: Optional[str] = None) -> List[Dict]:
         """
-        영상의 전체 오디오를 청크 단위로 병렬 분석
-        Returns: 발견된 저작권 음악 목록
+        2단계 프로브 방식 음악 분석 (API 비용 ~50% 절감, 정확도 유지)
+
+          1단계: stride 간격(기본 2 → 20초 간격)으로만 API 조회
+          2단계: 히트 양옆의 미조회 청크만 추가 조회 (구간 경계 정밀화)
+          추론:  양옆이 같은 곡으로 확인된 미조회 청크는 API 없이 매칭 처리
+          무음:  RMS가 임계값 미만인 청크는 API 호출 자체를 스킵
+
+        fingerprint 12초가 10초 step 양옆을 덮으므로 stride=2에서
+        미커버 오디오는 최대 ~8초 → ACRCloud 최소 매칭 길이(5~10초)와 같은
+        수준이라 실질적인 재현율 손실이 없다.
+
+        audio_path: pipeline이 이미 추출한 mono 16k wav.
+                    있으면 메모리 슬라이스로 청크 생성 (청크당 ffmpeg 제거).
         """
         logger.info("music_analysis_start", job_id=job_id)
 
-        # 오디오 청크 생성 + 병렬 API 호출
+        info = get_video_info(video_path)
+        total_duration = info.get("duration", 0)
+        chunk_dur = config.pipeline.audio_fingerprint_duration
+        step = max(chunk_dur - config.pipeline.audio_chunk_overlap, 1)
+
+        # 청크 시작 시각 계획 (추출은 조회가 필요할 때만)
+        starts: List[float] = []
+        t = 0.0
+        while t < total_duration and total_duration - t >= 3:
+            starts.append(t)
+            t += step
+        if not starts:
+            return []
+
+        # 전체 오디오 wav 로드 → 이후 청크는 메모리 슬라이스 (ffmpeg 호출 X)
+        audio_data, sample_rate = None, config.pipeline.audio_sample_rate
+        if audio_path and os.path.exists(audio_path):
+            try:
+                audio_data, sample_rate = load_wav_mono(audio_path)
+            except Exception as e:
+                logger.warning("audio_wav_load_failed", error=str(e))
+
         loop = asyncio.get_event_loop()
-        tasks = []
-
-        chunks = list(get_audio_chunks(
-            video_path,
-            chunk_duration=config.pipeline.audio_fingerprint_duration,
-            overlap=config.pipeline.audio_chunk_overlap
-        ))
-
-        logger.info("audio_chunks_created", count=len(chunks), job_id=job_id)
-
-        # 병렬 처리 (최대 4개 동시)
         semaphore = asyncio.Semaphore(4)
+        results_by_idx: Dict[int, Optional[Dict]] = {}
+        skipped_silence = 0
+        probed_count = 0
 
-        async def analyze_chunk(start_time: float, chunk_path: str):
+        def _make_chunk(idx: int) -> Optional[str]:
+            """청크 wav 준비. 무음이면 None (API 스킵)."""
+            start = starts[idx]
+            dur = min(chunk_dur, total_duration - start)
+            chunk_path = str(config.TEMP_DIR / f"chunk_{job_id}_{idx:04d}.wav")
+            if audio_data is not None:
+                s = int(start * sample_rate)
+                e = int((start + dur) * sample_rate)
+                seg = audio_data[s:e]
+                if seg.size < sample_rate * 3:  # 3초 미만
+                    return None
+                rms = float(np.sqrt(np.mean(
+                    (seg.astype(np.float32) / 32768.0) ** 2)))
+                if rms < config.pipeline.music_silence_rms:
+                    return None  # 무음 → API 호출 불필요
+                return write_wav_mono(chunk_path, seg, sample_rate)
+            # 폴백: wav 로드 실패 시 기존 방식 (ffmpeg 개별 추출)
+            try:
+                return extract_audio_chunk(video_path, start, dur, chunk_path)
+            except Exception as e:
+                logger.warning("chunk_extraction_failed", start=start, error=str(e))
+                return None
+
+        async def probe(idx: int):
+            nonlocal skipped_silence, probed_count
+            if idx in results_by_idx:
+                return
+            results_by_idx[idx] = None  # 예약 (중복 프로브 방지)
             async with semaphore:
-                return await loop.run_in_executor(
-                    self.executor,
-                    self._analyze_single_chunk,
-                    start_time, chunk_path, job_id
-                )
+                chunk_path = await loop.run_in_executor(
+                    self.executor, _make_chunk, idx)
+                if not chunk_path:
+                    skipped_silence += 1
+                    return
+                probed_count += 1
+                results_by_idx[idx] = await loop.run_in_executor(
+                    self.executor, self._analyze_single_chunk,
+                    starts[idx], chunk_path, job_id)
 
-        results = await asyncio.gather(
-            *[analyze_chunk(start, path) for start, path in chunks],
-            return_exceptions=True
-        )
+        # ── 1단계: stride 간격 프로브 ──
+        stride = max(1, config.pipeline.music_probe_stride)
+        await asyncio.gather(
+            *[probe(i) for i in range(0, len(starts), stride)],
+            return_exceptions=True)
 
-        hits = [r for r in results if r and not isinstance(r, Exception)]
+        # ── 2단계: 히트 경계 정밀화 + 내부 청크 추론 ──
+        if stride > 1:
+            hit_key = {i: _song_key(r)
+                       for i, r in results_by_idx.items() if r}
+            boundary: set = set()
+            inferred: Dict[int, Dict] = {}
+            for i in sorted(hit_key):
+                for j in range(i - stride + 1, i + stride):
+                    if not (0 <= j < len(starts)) or j in results_by_idx \
+                            or j in boundary or j in inferred:
+                        continue
+                    left = results_by_idx.get(j - 1)
+                    right = results_by_idx.get(j + 1)
+                    if left and right and _song_key(left) == _song_key(right):
+                        # 양옆이 같은 곡 → 사이 청크는 API 없이 매칭 처리
+                        weaker = min(left, right,
+                                     key=lambda r: r.get("confidence", 0))
+                        inferred[j] = {**weaker, "start_time": starts[j]}
+                    else:
+                        boundary.add(j)
+            for j, r in inferred.items():
+                results_by_idx[j] = r
+            if boundary:
+                logger.info("music_boundary_refine",
+                            extra_probes=len(boundary),
+                            inferred=len(inferred), job_id=job_id)
+                await asyncio.gather(*[probe(j) for j in boundary],
+                                     return_exceptions=True)
+
+        hits = [r for r in results_by_idx.values()
+                if r and not isinstance(r, Exception)]
         findings = self._build_findings_from_hits(hits, job_id)
 
-        logger.info("music_analysis_done", findings=len(findings), job_id=job_id)
+        logger.info("music_analysis_done",
+                    findings=len(findings),
+                    api_probed=probed_count,
+                    silence_skipped=skipped_silence,
+                    total_chunks=len(starts), job_id=job_id)
         return findings
 
     def _build_findings_from_hits(self, hits: List[Dict], job_id: str) -> List[Dict]:
@@ -271,9 +370,6 @@ class MusicAnalyzer:
 
         chunk_dur = config.pipeline.audio_fingerprint_duration
         step = max(chunk_dur - config.pipeline.audio_chunk_overlap, 1)
-
-        def _song_key(r: Dict) -> str:
-            return r.get("isrc") or f"{r.get('title', '')}_{r.get('artist', '')}"
 
         by_song: Dict[str, List[Dict]] = {}
         for r in hits:

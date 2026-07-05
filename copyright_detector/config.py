@@ -99,6 +99,29 @@ class PipelineConfig:
     audio_chunk_overlap: int = 2          # overlap between chunks
     audio_fingerprint_duration: int = 12  # ACRCloud fingerprint length
 
+    # 음악 인식 비용 절감 (2단계 프로브)
+    #   stride=2: 1단계에서 청크 2개당 1개만 API 조회 → 히트 주변만 2단계 정밀 조회.
+    #   미조회 구간의 미커버 오디오는 최대 ~8초 (fingerprint 12s가 양옆을 덮음)
+    #   → ACRCloud가 안정적으로 매칭하려면 5~10초가 필요하므로 실질 정확도 손실 없음.
+    #   1 = 전수 조사 (기존 방식)
+    music_probe_stride: int = int(os.getenv("MUSIC_PROBE_STRIDE", "2"))
+    #   무음 게이트: 정규화 RMS가 이 값 미만인 청크는 API 호출 스킵 (인트로/아웃트로 무음)
+    music_silence_rms: float = float(os.getenv("MUSIC_SILENCE_RMS", "0.003"))
+
+    # 역검색 API 작업당 호출 상한 (비용 상한선 — 캐시 히트는 카운트 제외)
+    #   Google Vision Web Detection: $3.5/1000건 → 40건 = 작업당 최대 $0.14
+    #   SerpAPI(Yandex): 플랜에 따라 검색당 ~$0.01+ → 15건 상한
+    vision_max_calls_per_job: int = int(os.getenv("VISION_MAX_CALLS_PER_JOB", "40"))
+    yandex_max_calls_per_job: int = int(os.getenv("YANDEX_MAX_CALLS_PER_JOB", "15"))
+
+    # 다운로드 화질 상한 (px, 세로 해상도)
+    #   분석 다운스트림이 모두 축소해서 사용하므로 원본 HD가 불필요:
+    #     CLIP → 224px, Google Vision 역검색 → 800px, Yandex → JPEG 재인코딩
+    #   유일하게 해상도가 의미 있는 곳은 워터마크/방송자막 OCR인데 720p면 충분.
+    #   1080p→720p로 다운로드 용량 2~4배, 프레임 디코딩 시간 절감.
+    #   0 = 무제한(원본 최고화질). 작은 워터마크 정확도가 아쉬우면 1080으로.
+    download_max_height: int = int(os.getenv("DOWNLOAD_MAX_HEIGHT", "720"))
+
     # 영상 프레임 추출 (extract_frames_smart 파라미터)
     frame_extraction_fps: float = 1.0     # target FPS (길이에 따라 자동 축소)
     frame_phash_threshold: int = 12       # 유사 프레임 스킵 threshold (64비트 중)
