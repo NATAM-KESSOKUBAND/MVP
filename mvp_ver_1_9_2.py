@@ -934,6 +934,39 @@ def _safe_json_parse(text: str, context: str = "") -> object:
     return None
 
 
+def _parse_429_error(err) -> dict:
+    """
+    Gemini 429(RESOURCE_EXHAUSTED) 에러에서 원인 한도와 권장 대기시간을 추출.
+    반환: {"metric": <어떤 한도>, "retry_delay": <초 or None>, "raw": <에러 전문>}
+    metric 예: '..._per_minute'(RPM), '...token..._per_minute'(TPM), '..._per_day'(RPD)
+    """
+    raw = str(err)
+    metric = None
+    for pat in (r"quotaMetric['\"]?\s*[:=]\s*['\"]([^'\"]+)",
+                r"quotaId['\"]?\s*[:=]\s*['\"]([^'\"]+)"):
+        m = re.search(pat, raw)
+        if m:
+            metric = m.group(1)
+            break
+    retry_delay = None
+    m = re.search(r"retryDelay['\"]?\s*[:=]\s*['\"]?(\d+(?:\.\d+)?)s", raw)
+    if m:
+        retry_delay = float(m.group(1))
+    return {"metric": metric, "retry_delay": retry_delay, "raw": raw}
+
+
+def _classify_429_kind(metric: str) -> str:
+    """quotaMetric 문자열 → RPM/TPM/RPD 사람이 읽는 라벨."""
+    m = (metric or "").lower()
+    if "day" in m:
+        return "RPD(일일 요청)"
+    if "token" in m:
+        return "TPM(분당 토큰)"
+    if "request" in m or "minute" in m:
+        return "RPM(분당 요청)"
+    return "미상"
+
+
 def _salvage_segments(text: str) -> list:
     """
     전사 응답({"segments":[...]})이 출력 토큰 한도로 잘렸을 때,
@@ -1741,8 +1774,19 @@ class CrisisConsultantSystem:
                         return idx, merged
                     except Exception as e:
                         if "429" in str(e):
-                            wait = (attempt + 1) * 15 + idx * 2
-                            print(f"  ⚠️  배치 {idx+1} 할당량 초과 → {wait}초 대기 ({attempt+1}/3)")
+                            info   = _parse_429_error(e)
+                            metric = info["metric"] or "(quotaMetric 미표기)"
+                            kind   = _classify_429_kind(info["metric"])
+                            # retryDelay가 있으면 그만큼(+지터), 없으면 기존 방식으로 폴백
+                            if info["retry_delay"] is not None:
+                                wait = info["retry_delay"] + idx * 2 + 1
+                            else:
+                                wait = (attempt + 1) * 15 + idx * 2
+                            print(f"  ⚠️  배치 {idx+1} 429 할당량 초과 [한도:{kind}] "
+                                  f"→ {wait:.0f}초 대기 ({attempt+1}/3)")
+                            print(f"       ↳ quotaMetric: {metric}")
+                            if attempt == 0:  # 첫 실패 때만 전문 출력(로그 폭주 방지)
+                                print(f"       ↳ 에러 전문: {info['raw'][:500]}")
                             time.sleep(wait)
                         else:
                             print(f"  ⚠️  배치 {idx+1} 오류 ({attempt+1}/3): {e}")

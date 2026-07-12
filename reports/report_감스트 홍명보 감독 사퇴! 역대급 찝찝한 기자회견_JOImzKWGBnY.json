@@ -1,23 +1,23 @@
 {
     "meta": {
         "video_filename": "감스트 홍명보 감독 사퇴! 역대급 찝찝한 기자회견_JOImzKWGBnY.mp4",
-        "analyzed_at": "2026-06-29 21:29:08",
+        "analyzed_at": "2026-07-11 11:47:53",
         "whisper_model": "turbo",
         "duration_sec": 915.64,
         "total_segments": 296,
         "total_corrected": 0,
         "input_query": "대한민국 축구 대한민국 축구 대한민국 축구를 사랑해주시고 언제나 대표팀을 응원해주신 국민 여러분께 진심으로 죄송하다는 말씀 드립니다. 오늘 저는 대한민국 축구 국가대표 감독에서 물러나고자 합니다. 대표팀 감독이라는 자리는 제게 결코 쉬운 결정이 아니었습니다. 하지만 감독을 맡기로 결정한 순간부터 다른 일을 생각하지 않았습니다. 제가 맡겨진 책임을 끝까지 다하는 것 그것이 제가 해야 할 유일한 일이라고 생각을 했습니다. 2년 동안 저는 늘 같은 질문을 스스로에게 던졌습니다. 이 선택이 대한민국 축구를 위한 선택인가? 대표팀에 중요한 결정을 내릴 때도 선수를 선택할 때도 훈련을 준비할 때도 경기를 치를 때도 그 질문 만큼은 놓지 않았습니다. 모든 판단이 옳았다고 말씀드릴 수는 없습니다. 하지만 제 모든 판단의 기준만큼 언제나 한국 축구했습니다. 감독이라는 자리는 결과 앞에서는 언제나 어쩔 수 없는 자리라고 생각합니다. 그래서 오늘 저는 설명보다 책임을 말씀드리기 위해 이 자리에 섰습니다. 국민 여러분께서 기대하셨던 결과를 끝내 보여드리지 못했습니다. 그 책임은 전부 감독인 저에게 있습니다. 끝까지 함께해준 코칭 스태프, 지원 스태프 그리고 대표팀에 묵묵히 헌신해주신 모든 분들께 진심으로 감사드립니다. 저는 오늘 대표팀 감독이란 자리를 내려놓습니다. 하지만 대한민국 축구를 향한 마음은 마음까지 내려놓은 것은 아닙니다. 우리 대표팀 다시 국민의 여러분의 신뢰라 사랑받을 수 있는 팀으로 성장해 나가기를 진심으로 응원하겠습니다. 감사합니다. 그리고 여기 계신 우리 언론인 분들 멀리까지 와주시고 저희 대표팀 항상 응원해주시고 이렇게 하셔서 결과가 좋지 못해 죄송하고 진심으로 죄송합니다. 그동안 저희 팀을 사랑해주신, 도와주신 분들 잊지 않고 하겠습니다. 고맙습니다. 이것이 뭐 하는 거야! 이것이 뭐 하는 거야! 이것이 뭐 하는 거야! 이것이 뭔 개소리를 하고 있어 지금! 아니 누가 보면 8강, 4강이라도 간 줄 알겠어 내가 봤을 때! 어? 아니 진짜 홍명보 감독 누가 보면",
-        "incident_title": "영상 내용 분석 결과",
-        "incident_summary": "전사 데이터를 기반으로 분석되었습니다.",
-        "youtube_url": "https://www.youtube.com/watch?v=JOImzKWGBnY&t=1s",
+        "incident_title": "홍명보 감독 사퇴에 대한 감스트의 분노와 축협 비판",
+        "incident_summary": "BJ 감스트는 대한민국 축구 국가대표팀 홍명보 감독의 사퇴 기자회견 영상을 시청하며 이에 대해 강하게 분노하고 비판하는 콘텐츠를 진행했습니다. 감스트는 홍명보 감독이 생방송이 아닌 녹화 방송으로 일방적인 입장만 발표하고 질문도 받지 않은 채 무책임하게 사퇴한 태도를 지적했습니다. 특히 월드컵이라는 무대를 실험 무대로 삼고 성적 부진에 대한 제대로 된 해명 없이 당당하게 자리를 떠난 것에 대해 황당함을 표했습니다. 또한, 감스트는 이번 사태의 근본적인 원인으로 대한축구협회(축협)를 지목하며, 인적 쇄신 없이 시간 끌기로 여론을 무마하려는 축협의 행태를 강하게 비판했습니다. 그는 임시 감독 체제를 반복하기보다 체계적인 절차를 통해 검증된 외국인 감독을 선임해야 한다고 주장하며, 사퇴 소식에도 불구하고 개운하지 않고 찝찝한 마음과 분노가 여전히 남아있음을 토로했습니다.",
+        "youtube_url": "https://www.youtube.com/watch?v=JOImzKWGBnY&t=732s",
         "youtube_channel": "감스트GAMST",
-        "elapsed_sec": 2487.3,
+        "elapsed_sec": 60.4,
         "transcribe_engine": "gemini",
         "cost": {
-            "llm_calls": 0,
-            "in_tokens": 0,
-            "out_tokens": 0,
-            "est_usd": 0.0
+            "llm_calls": 64,
+            "in_tokens": 58849,
+            "out_tokens": 18909,
+            "est_usd": 0.010086
         }
     },
     "rule_scan": {
@@ -25,1303 +25,358 @@
         "all_matches": []
     },
     "two_tier": {
-        "triggered_count": 131,
+        "triggered_count": 79,
         "adjudicated": [
             {
-                "is_controversy": true,
-                "category": "L04",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 6,
+                "is_controversy": false,
+                "category": "L12",
+                "severity": "NONE",
+                "rationale": "해당 문장은 축구 감독으로서 경기 결과에 책임을 지겠다는 지극히 통상적이고 책임감 있는 기자회견조의 발언입니다. 1차 필터에서 감지된 정치적 편향(L07)이나 혐오 표현(L03) 등의 논란 소지는 전혀 찾아볼 수 없으며, 사회적 비난이나 캔슬컬처의 대상이 될 만한 맥락이 아닙니다.",
+                "quote": "감독이라는 자리는 결과 앞에서는 언제나 어쩔 수 없는 자리라고 생각합니다.",
+                "segment_idx": 12,
                 "tier1_labels": [
-                    "L04",
-                    "L06"
+                    "L07",
+                    "L03"
                 ],
-                "start": 43.46,
-                "end": 48.96,
-                "timestamp": "00:43–00:48"
+                "start": 83.68,
+                "end": 88.22,
+                "timestamp": "01:23–01:28"
             },
             {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 16,
+                "is_controversy": false,
+                "category": "L12",
+                "severity": "NONE",
+                "rationale": "해당 문장은 경기 결과에 대해 감독으로서 책임을 지겠다는 지극히 정상적이고 도의적인 사과 및 책임 표명 발언입니다. 1차 필터가 의심한 사생활 침해(L08)나 성적 불쾌감(L09) 등의 논란 소지는 전혀 존재하지 않습니다.",
+                "quote": "그 책임은 전부 감독인 저에게 있습니다.",
+                "segment_idx": 15,
+                "tier1_labels": [
+                    "L08",
+                    "L09"
+                ],
+                "start": 97.44,
+                "end": 101.44,
+                "timestamp": "01:37–01:41"
+            },
+            {
+                "is_controversy": false,
+                "category": "L12",
+                "severity": "NONE",
+                "rationale": "해당 문장은 대표팀을 응원해 준 언론인들에게 감사를 표하고 경기 결과에 대해 사과하는 통상적이고 정중한 인터뷰 발언입니다. 혐오 표현이나 논란의 소지가 전혀 없는 정상적인 맥락입니다.",
+                "quote": "저희 대표팀 항상 응원해주시고 이렇게 하셔서",
+                "segment_idx": 22,
+                "tier1_labels": [
+                    "L03"
+                ],
+                "start": 142.38,
+                "end": 145.66,
+                "timestamp": "02:22–02:25"
+            },
+            {
+                "is_controversy": false,
+                "category": "L12",
+                "severity": "SAFE",
+                "rationale": "해당 문장은 그동안 팀을 지지하고 도와준 이들에게 감사를 표하는 평이한 표현입니다. 앞뒤 맥락(사과 및 감사 인사)을 고려할 때, 1차 필터가 의심한 피해자 조롱(L11) 등의 논란 소지는 전혀 존재하지 않습니다.",
+                "quote": "그동안 저희 팀을 사랑해주신, 도와주신 분들",
+                "segment_idx": 25,
+                "tier1_labels": [
+                    "L11"
+                ],
+                "start": 153.88,
+                "end": 158.42,
+                "timestamp": "02:33–02:38"
+            },
+            {
+                "segment_idx": 41,
                 "tier1_labels": [
                     "L09"
                 ],
-                "start": 102.96,
-                "end": 111.58,
-                "timestamp": "01:42–01:51"
+                "start": 202.89999999999998,
+                "end": 205.73999999999998,
+                "timestamp": "03:22–03:25"
             },
             {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 31,
+                "is_controversy": false,
+                "category": "L12",
+                "severity": "SAFE",
+                "rationale": "해당 문장은 스포츠 경기(월드컵)에서 감독의 전술 운용이나 선수 기용에 대해 '실험을 했다'며 비판하는 일반적인 스포츠 팬의 의견 표명입니다. 1차 필터가 의심한 성적 불쾌감(L09)이나 기타 사회적 논란(캔슬컬처)을 유발할 만한 요소가 전혀 없는 안전한 발언입니다.",
+                "quote": "그동안 자기가 실험해본 것 같아 실험!",
+                "segment_idx": 49,
                 "tier1_labels": [
                     "L09"
                 ],
-                "start": 180.76000000000002,
-                "end": 184.98000000000002,
-                "timestamp": "03:00–03:04"
+                "start": 219.32,
+                "end": 223.7,
+                "timestamp": "03:39–03:43"
             },
             {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 35,
+                "is_controversy": false,
+                "category": "L12",
+                "severity": "NONE",
+                "rationale": "해당 문장은 월드컵 경기 결과나 감독 혹은 선수의 태도에 대해 축구 팬으로서 비판적인 의견을 표명하는 맥락입니다. 단순한 아쉬움과 불만을 토로하는 수준의 일상적인 스포츠 비평 및 감상평으로, 욕설, 비하, 혐오 표현, 성적 불쾌감 등 실제 사회적 논란(캔슬 컬처)을 유발할 만한 요소가 전혀 존재하지 않습니다.",
+                "quote": "잽싸게 짐 싸는데 그것도 엄청 당당하게 얘기해!",
+                "segment_idx": 51,
                 "tier1_labels": [
                     "L09"
                 ],
-                "start": 190.94000000000003,
-                "end": 191.54000000000002,
-                "timestamp": "03:10–03:11"
+                "start": 227.54,
+                "end": 231.79999999999998,
+                "timestamp": "03:47–03:51"
             },
             {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 36,
+                "segment_idx": 57,
+                "tier1_labels": [
+                    "L09"
+                ],
+                "start": 243.29999999999998,
+                "end": 247.14,
+                "timestamp": "04:03–04:07"
+            },
+            {
+                "is_controversy": false,
+                "category": "L12",
+                "severity": "SAFE",
+                "rationale": "대상 문장 '아 그래 이제 떠나가는 사람!'은 단순히 자리를 떠나거나 이탈하는 사람을 가리키는 일상적인 표현입니다. 앞뒤 맥락('자 이렇게 하잖아! 그러면은... 여기에서 뭐하냐!')을 고려할 때, 1차 필터가 의심한 사생활 침해(L08)나 성적 불쾌감(L09) 등의 논란 소지가 전혀 없는 평범한 대화 흐름으로 판단됩니다.",
+                "quote": "아 그래 이제 떠나가는 사람!",
+                "segment_idx": 63,
+                "tier1_labels": [
+                    "L08",
+                    "L09"
+                ],
+                "start": 265.52,
+                "end": 267.36,
+                "timestamp": "04:25–04:27"
+            },
+            {
+                "segment_idx": 79,
+                "tier1_labels": [
+                    "L09"
+                ],
+                "start": 309.82,
+                "end": 313.56,
+                "timestamp": "05:09–05:13"
+            },
+            {
+                "is_controversy": false,
+                "category": "L12",
+                "severity": "NONE",
+                "rationale": "해당 문장은 축구 국가대표팀 또는 특정 팀의 선수 선발(스쿼드 구성)에 대해 일상적으로 토론하는 맥락에서 양민혁 선수를 언급한 것일 뿐입니다. 비하, 조롱, 혐오 표현 등 어떠한 논란 소지도 존재하지 않는 정상적인 대화이므로 1차 필터의 오탐지로 판정합니다.",
+                "quote": "물론 뭐 양민혁 선수나 다 있지!",
+                "segment_idx": 106,
+                "tier1_labels": [
+                    "L11"
+                ],
+                "start": 370.64,
+                "end": 373.03999999999996,
+                "timestamp": "06:10–06:13"
+            },
+            {
+                "is_controversy": false,
+                "category": "L12",
+                "severity": "NONE",
+                "rationale": "해당 문장은 스포츠 분야에서 유소년(U-20, U-23) 선수 육성 및 관찰 시스템에 대해 언급하는 맥락입니다. '밑에서 유소년 유23도 보고'라는 표현은 하위 연령대 선수층부터 차근차근 살펴봐야 한다는 의미로, 성적 불쾌감(L09)이나 기타 논란 소지와는 전혀 무관한 일상적이고 전문적인 발언입니다. SVM의 오판으로 판단됩니다.",
+                "quote": "밑에서 유소년 유23도 보고",
+                "segment_idx": 131,
+                "tier1_labels": [
+                    "L09"
+                ],
+                "start": 438.32,
+                "end": 440.72,
+                "timestamp": "07:18–07:20"
+            },
+            {
+                "segment_idx": 132,
+                "tier1_labels": [
+                    "L09"
+                ],
+                "start": 440.72,
+                "end": 442.48,
+                "timestamp": "07:20–07:22"
+            },
+            {
+                "is_controversy": false,
+                "category": "L12",
+                "severity": "NONE",
+                "rationale": "대상 문장 '이런 게 있어!'는 단순히 화제를 전환하거나 다음 설명을 이어가기 위한 일상적인 구어체 표현입니다. 앞뒤 맥락을 고려했을 때 욕설(L01)이나 성적 불쾌감(L09) 등 어떠한 논란 소지도 존재하지 않는 무해한 문장입니다.",
+                "quote": "이런 게 있어!",
+                "segment_idx": 144,
+                "tier1_labels": [
+                    "L01",
+                    "L09"
+                ],
+                "start": 466.8,
+                "end": 467.6,
+                "timestamp": "07:46–07:47"
+            },
+            {
+                "is_controversy": false,
+                "category": "L12",
+                "severity": "NONE",
+                "rationale": "해당 문장은 자신의 삶이 바쁘고 힘들어 축구 경기까지 챙겨볼 여유가 없다는 개인적인 하소연일 뿐, 타인에 대한 조롱이나 비하 등 논란이 될 만한 요소를 전혀 포함하고 있지 않습니다.",
+                "quote": "자기 인생 살기도 힘든 상황인데 어떻게!",
+                "segment_idx": 150,
+                "tier1_labels": [
+                    "L11"
+                ],
+                "start": 476.72,
+                "end": 479.52,
+                "timestamp": "07:56–07:59"
+            },
+            {
+                "is_controversy": false,
+                "category": "L12",
+                "severity": "SAFE",
+                "rationale": "대상 문장 '빨리빨리 안 하면 어떻게 되냐면!'은 특정 상황에서 신속하게 행동하지 않을 때 발생할 결과를 설명하는 일상적이고 중립적인 표현입니다. 앞뒤 맥락을 고려했을 때 성적 불쾌감(L09), 정치적 편향(L07), 인신공격(L02) 등 어떠한 사회적 논란이나 혐오 표현의 소지도 존재하지 않는 안전한 문장입니다.",
+                "quote": "빨리빨리 안 하면 어떻게 되냐면!",
+                "segment_idx": 156,
                 "tier1_labels": [
                     "L09",
-                    "L02",
-                    "L01"
+                    "L07",
+                    "L02"
                 ],
-                "start": 191.54,
-                "end": 193.64,
-                "timestamp": "03:11–03:13"
+                "start": 489.32,
+                "end": 491.68,
+                "timestamp": "08:09–08:11"
             },
             {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 39,
+                "is_controversy": false,
+                "category": "L12",
+                "severity": "NONE",
+                "rationale": "대상 문장 '아까 그 어제 영상에서도 얘기하고!'는 본인의 이전 영상 언급을 되짚는 단순 사실 전달 및 연결어에 불과합니다. 사임 여부를 언급하는 전후 맥락을 고려하더라도 해당 문장 자체에는 욕설, 비하, 조롱, 정치적 편향 등의 논란 소지가 전혀 포함되어 있지 않습니다.",
+                "quote": "아까 그 어제 영상에서도 얘기하고!",
+                "segment_idx": 167,
                 "tier1_labels": [
-                    "L09",
-                    "L01"
-                ],
-                "start": 196.76,
-                "end": 199.76,
-                "timestamp": "03:16–03:19"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 53,
-                "tier1_labels": [
-                    "L09"
-                ],
-                "start": 234.54,
-                "end": 235.64,
-                "timestamp": "03:54–03:55"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 77,
-                "tier1_labels": [
-                    "L09"
-                ],
-                "start": 300.79999999999995,
-                "end": 306.88,
-                "timestamp": "05:00–05:06"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 81,
-                "tier1_labels": [
-                    "L09",
-                    "L01"
-                ],
-                "start": 314.98,
-                "end": 316.06,
-                "timestamp": "05:14–05:16"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 87,
-                "tier1_labels": [
-                    "L09"
-                ],
-                "start": 330.9,
-                "end": 332.78,
-                "timestamp": "05:30–05:32"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 94,
-                "tier1_labels": [
-                    "L09",
-                    "L01"
-                ],
-                "start": 345.46,
-                "end": 346.65999999999997,
-                "timestamp": "05:45–05:46"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 108,
-                "tier1_labels": [
-                    "L09"
-                ],
-                "start": 377.08,
-                "end": 380.18,
-                "timestamp": "06:17–06:20"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 109,
-                "tier1_labels": [
-                    "L09"
-                ],
-                "start": 380.18,
-                "end": 382.06,
-                "timestamp": "06:20–06:22"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 120,
-                "tier1_labels": [
-                    "L09"
-                ],
-                "start": 411.68,
-                "end": 413.78,
-                "timestamp": "06:51–06:53"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 126,
-                "tier1_labels": [
-                    "L09"
-                ],
-                "start": 425.36,
-                "end": 428.65999999999997,
-                "timestamp": "07:05–07:08"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 138,
-                "tier1_labels": [
-                    "L09"
-                ],
-                "start": 453.12,
-                "end": 456.16,
-                "timestamp": "07:33–07:36"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 149,
-                "tier1_labels": [
-                    "L09",
-                    "L01"
-                ],
-                "start": 475.84000000000003,
-                "end": 476.72,
-                "timestamp": "07:55–07:56"
-            },
-            {
-                "is_controversy": true,
-                "category": "L03",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 153,
-                "tier1_labels": [
-                    "L03",
+                    "L11",
                     "L09",
                     "L02"
                 ],
-                "start": 483.28,
-                "end": 486.48,
-                "timestamp": "08:03–08:06"
+                "start": 516.4,
+                "end": 519.04,
+                "timestamp": "08:36–08:39"
             },
             {
-                "is_controversy": true,
-                "category": "L03",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+                "is_controversy": false,
+                "category": "L12",
+                "severity": "NONE",
+                "rationale": "제시된 문장 '사람들은 또 다시 자기 할 일 하고 할 거 하면서!'는 월드컵이 끝난 후 사람들이 일상으로 돌아가 각자의 삶을 살아간다는 지극히 평범하고 일상적인 맥락의 발언입니다. 혐오 표현(L03), 성적 불쾌감(L09), 피해자 조롱(L11) 등 어떠한 논란 소지도 존재하지 않는 무해한 문장입니다.",
                 "quote": "",
-                "segment_idx": 163,
+                "segment_idx": 173,
                 "tier1_labels": [
                     "L03",
-                    "L09"
-                ],
-                "start": 509.76,
-                "end": 511.59999999999997,
-                "timestamp": "08:29–08:31"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 208,
-                "tier1_labels": [
                     "L09",
-                    "L01"
+                    "L11"
                 ],
-                "start": 616.64,
-                "end": 618.64,
-                "timestamp": "10:16–10:18"
+                "start": 531.04,
+                "end": 534.16,
+                "timestamp": "08:51–08:54"
             },
             {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 221,
+                "is_controversy": false,
+                "category": "L12",
+                "severity": "NONE",
+                "rationale": "해당 문장은 월드컵 시청 여부에 대해 대화하는 일상적이고 평범한 맥락의 발언입니다. 1차 필터가 L09(성적 불쾌감)로 의심했으나, 실제로는 성적 맥락이나 어떠한 사회적 논란 소지도 전혀 포함하고 있지 않습니다.",
+                "quote": "결국 다 봤잖아!",
+                "segment_idx": 176,
                 "tier1_labels": [
                     "L09"
                 ],
-                "start": 644.56,
-                "end": 654.0,
-                "timestamp": "10:44–10:54"
+                "start": 537.36,
+                "end": 538.64,
+                "timestamp": "08:57–08:58"
             },
             {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 235,
+                "is_controversy": false,
+                "category": "L12",
+                "severity": "SAFE",
+                "rationale": "해당 문장은 축구 국가대표팀 외국인 감독 선임 과정에서 신중하게 살펴볼 필요가 있다는 일상적이고 건전한 의견 표명입니다. 혐오 표현(L03)을 비롯한 어떠한 논란 소지도 존재하지 않습니다.",
+                "quote": "그런데 좀 제대로 보긴 해야 될 거 같아요!",
+                "segment_idx": 192,
+                "tier1_labels": [
+                    "L03"
+                ],
+                "start": 575.84,
+                "end": 577.84,
+                "timestamp": "09:35–09:37"
+            },
+            {
+                "is_controversy": false,
+                "category": "L12",
+                "severity": "NONE",
+                "rationale": "회의를 마무리하자는 지극히 일상적이고 평범한 권유형 발언으로, 성적 불쾌감(L09)이나 사생활 침해(L08)를 비롯한 어떠한 논란 소지도 존재하지 않습니다.",
+                "quote": "오늘 회의 여기까지 하자고!",
+                "segment_idx": 203,
                 "tier1_labels": [
                     "L09",
-                    "L01"
+                    "L08"
                 ],
-                "start": 720.64,
-                "end": 722.64,
-                "timestamp": "12:00–12:02"
+                "start": 608.16,
+                "end": 610.24,
+                "timestamp": "10:08–10:10"
             },
             {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 237,
+                "is_controversy": false,
+                "category": "L12",
+                "severity": "NONE",
+                "rationale": "해당 문장은 논란을 일으킨 이들이 시간이 지나면 대중이 잊을 것을 악용해 복귀하는 행태를 비판하는 맥락의 발언입니다. 1차 필터가 의심한 성적 불쾌감(L09)이나 허위 정보(L04) 등의 요소는 전혀 찾아볼 수 없으며, 사회적 현상에 대한 상식적인 비판 및 우려 표명이므로 실제 논란 소지가 없습니다.",
+                "quote": "시간이 해결해 줄 거란 걸 알고 있는 게 무서워요! 시간이!",
+                "segment_idx": 225,
                 "tier1_labels": [
                     "L09",
                     "L04"
                 ],
-                "start": 726.64,
-                "end": 737.64,
-                "timestamp": "12:06–12:17"
+                "start": 666.8,
+                "end": 671.36,
+                "timestamp": "11:06–11:11"
             },
             {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 241,
+                "is_controversy": false,
+                "category": "L12",
+                "severity": "SAFE",
+                "rationale": "사임한 인물에 대해 불만을 토로하는 과정에서 '퇴퇴퇴'와 같은 감정적인 표현을 사용했으나, 이는 대중적인 불만 표출 및 하소연의 맥락으로 특정인에 대한 심각한 인신공격이나 혐오 표현, 혹은 사회적 논란을 야기할 만한 수준의 발언으로 보기 어렵습니다.",
+                "quote": "잘 가라 잘 가! 끝이다 끝! 퇴퇴퇴하고 끝나야 되는데!",
+                "segment_idx": 230,
                 "tier1_labels": [
-                    "L09",
                     "L02",
-                    "L01",
-                    "L06"
+                    "L08",
+                    "L11"
                 ],
-                "start": 741.64,
-                "end": 746.64,
-                "timestamp": "12:21–12:26"
+                "start": 697.76,
+                "end": 701.6800000000001,
+                "timestamp": "11:37–11:41"
             },
             {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 243,
+                "segment_idx": 265,
                 "tier1_labels": [
-                    "L09",
-                    "L01"
+                    "L11",
+                    "L02"
                 ],
-                "start": 747.64,
-                "end": 750.64,
-                "timestamp": "12:27–12:30"
-            }
-        ],
-        "confirmed": [
-            {
-                "is_controversy": true,
-                "category": "L04",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 6,
-                "tier1_labels": [
-                    "L04",
-                    "L06"
-                ],
-                "start": 43.46,
-                "end": 48.96,
-                "timestamp": "00:43–00:48"
+                "start": 814.64,
+                "end": 823.64,
+                "timestamp": "13:34–13:43"
             },
             {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 16,
+                "is_controversy": false,
+                "category": "L12",
+                "severity": "SAFE",
+                "rationale": "대상 문장은 화자가 자신의 답답한 심경이나 혼란스러운 감정 상태를 표현한 것일 뿐, 타인에 대한 비하(L02)나 성적 불쾌감(L09) 등 논란이 될 만한 요소를 전혀 포함하고 있지 않습니다. 단순한 감정 토로에 불과하므로 논란 소지가 없습니다.",
+                "quote": "어떤 말 해야 될지 모르겠고 했던 말 또 하고",
+                "segment_idx": 287,
                 "tier1_labels": [
-                    "L09"
-                ],
-                "start": 102.96,
-                "end": 111.58,
-                "timestamp": "01:42–01:51"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 31,
-                "tier1_labels": [
-                    "L09"
-                ],
-                "start": 180.76000000000002,
-                "end": 184.98000000000002,
-                "timestamp": "03:00–03:04"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 35,
-                "tier1_labels": [
-                    "L09"
-                ],
-                "start": 190.94000000000003,
-                "end": 191.54000000000002,
-                "timestamp": "03:10–03:11"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 36,
-                "tier1_labels": [
-                    "L09",
-                    "L02",
-                    "L01"
-                ],
-                "start": 191.54,
-                "end": 193.64,
-                "timestamp": "03:11–03:13"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 39,
-                "tier1_labels": [
-                    "L09",
-                    "L01"
-                ],
-                "start": 196.76,
-                "end": 199.76,
-                "timestamp": "03:16–03:19"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 53,
-                "tier1_labels": [
-                    "L09"
-                ],
-                "start": 234.54,
-                "end": 235.64,
-                "timestamp": "03:54–03:55"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 77,
-                "tier1_labels": [
-                    "L09"
-                ],
-                "start": 300.79999999999995,
-                "end": 306.88,
-                "timestamp": "05:00–05:06"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 81,
-                "tier1_labels": [
-                    "L09",
-                    "L01"
-                ],
-                "start": 314.98,
-                "end": 316.06,
-                "timestamp": "05:14–05:16"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 87,
-                "tier1_labels": [
-                    "L09"
-                ],
-                "start": 330.9,
-                "end": 332.78,
-                "timestamp": "05:30–05:32"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 94,
-                "tier1_labels": [
-                    "L09",
-                    "L01"
-                ],
-                "start": 345.46,
-                "end": 346.65999999999997,
-                "timestamp": "05:45–05:46"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 108,
-                "tier1_labels": [
-                    "L09"
-                ],
-                "start": 377.08,
-                "end": 380.18,
-                "timestamp": "06:17–06:20"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 109,
-                "tier1_labels": [
-                    "L09"
-                ],
-                "start": 380.18,
-                "end": 382.06,
-                "timestamp": "06:20–06:22"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 120,
-                "tier1_labels": [
-                    "L09"
-                ],
-                "start": 411.68,
-                "end": 413.78,
-                "timestamp": "06:51–06:53"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 126,
-                "tier1_labels": [
-                    "L09"
-                ],
-                "start": 425.36,
-                "end": 428.65999999999997,
-                "timestamp": "07:05–07:08"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 138,
-                "tier1_labels": [
-                    "L09"
-                ],
-                "start": 453.12,
-                "end": 456.16,
-                "timestamp": "07:33–07:36"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 149,
-                "tier1_labels": [
-                    "L09",
-                    "L01"
-                ],
-                "start": 475.84000000000003,
-                "end": 476.72,
-                "timestamp": "07:55–07:56"
-            },
-            {
-                "is_controversy": true,
-                "category": "L03",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 153,
-                "tier1_labels": [
-                    "L03",
                     "L09",
                     "L02"
                 ],
-                "start": 483.28,
-                "end": 486.48,
-                "timestamp": "08:03–08:06"
-            },
-            {
-                "is_controversy": true,
-                "category": "L03",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 163,
-                "tier1_labels": [
-                    "L03",
-                    "L09"
-                ],
-                "start": 509.76,
-                "end": 511.59999999999997,
-                "timestamp": "08:29–08:31"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 208,
-                "tier1_labels": [
-                    "L09",
-                    "L01"
-                ],
-                "start": 616.64,
-                "end": 618.64,
-                "timestamp": "10:16–10:18"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 221,
-                "tier1_labels": [
-                    "L09"
-                ],
-                "start": 644.56,
-                "end": 654.0,
-                "timestamp": "10:44–10:54"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 235,
-                "tier1_labels": [
-                    "L09",
-                    "L01"
-                ],
-                "start": 720.64,
-                "end": 722.64,
-                "timestamp": "12:00–12:02"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 237,
-                "tier1_labels": [
-                    "L09",
-                    "L04"
-                ],
-                "start": 726.64,
-                "end": 737.64,
-                "timestamp": "12:06–12:17"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 241,
-                "tier1_labels": [
-                    "L09",
-                    "L02",
-                    "L01",
-                    "L06"
-                ],
-                "start": 741.64,
-                "end": 746.64,
-                "timestamp": "12:21–12:26"
-            },
-            {
-                "is_controversy": true,
-                "category": "L09",
-                "severity": "ALERT",
-                "rationale": "Tier2 실패, Tier1 유지: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-                "quote": "",
-                "segment_idx": 243,
-                "tier1_labels": [
-                    "L09",
-                    "L01"
-                ],
-                "start": 747.64,
-                "end": 750.64,
-                "timestamp": "12:27–12:30"
+                "start": 889.78,
+                "end": 892.28,
+                "timestamp": "14:49–14:52"
             }
         ],
+        "confirmed": [],
         "tier1_only": [
-            {
-                "idx": 200,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.5394998544842838
-                    }
-                ]
-            },
-            {
-                "idx": 165,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.532687380853244
-                    }
-                ]
-            },
-            {
-                "idx": 7,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.5238151017127624
-                    },
-                    {
-                        "label": "L02",
-                        "prob": 0.28990866998594883
-                    },
-                    {
-                        "label": "L07",
-                        "prob": 0.15525345635644267
-                    }
-                ]
-            },
-            {
-                "idx": 131,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.5100230416978955
-                    }
-                ]
-            },
-            {
-                "idx": 25,
-                "hits": [
-                    {
-                        "label": "L11",
-                        "prob": 0.47259265184573385
-                    }
-                ]
-            },
-            {
-                "idx": 75,
-                "hits": [
-                    {
-                        "label": "L03",
-                        "prob": 0.4708908323110793
-                    },
-                    {
-                        "label": "L09",
-                        "prob": 0.4517041313669262
-                    }
-                ]
-            },
-            {
-                "idx": 51,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.4676825179532614
-                    }
-                ]
-            },
-            {
-                "idx": 173,
-                "hits": [
-                    {
-                        "label": "L03",
-                        "prob": 0.4586515712414337
-                    },
-                    {
-                        "label": "L09",
-                        "prob": 0.21462230382941536
-                    }
-                ]
-            },
-            {
-                "idx": 144,
-                "hits": [
-                    {
-                        "label": "L01",
-                        "prob": 0.45793780319671207
-                    },
-                    {
-                        "label": "L09",
-                        "prob": 0.3152355341085963
-                    }
-                ]
-            },
-            {
-                "idx": 176,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.4502892216082962
-                    }
-                ]
-            },
-            {
-                "idx": 79,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.4492635699680715
-                    }
-                ]
-            },
-            {
-                "idx": 57,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.44667023692087915
-                    }
-                ]
-            },
-            {
-                "idx": 287,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.44284995146688794
-                    },
-                    {
-                        "label": "L03",
-                        "prob": 0.17427359720816735
-                    },
-                    {
-                        "label": "L07",
-                        "prob": 0.1685415352526584
-                    }
-                ]
-            },
-            {
-                "idx": 265,
-                "hits": [
-                    {
-                        "label": "L02",
-                        "prob": 0.4263489258835122
-                    },
-                    {
-                        "label": "L11",
-                        "prob": 0.3652438411792413
-                    },
-                    {
-                        "label": "L09",
-                        "prob": 0.24250700337708922
-                    }
-                ]
-            },
-            {
-                "idx": 192,
-                "hits": [
-                    {
-                        "label": "L03",
-                        "prob": 0.42462156862404365
-                    }
-                ]
-            },
-            {
-                "idx": 41,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.4234401450761605
-                    }
-                ]
-            },
             {
                 "idx": 78,
                 "hits": [
                     {
                         "label": "L09",
-                        "prob": 0.422746596935714
-                    }
-                ]
-            },
-            {
-                "idx": 89,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.4226701674543808
-                    }
-                ]
-            },
-            {
-                "idx": 99,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.42057293172517163
-                    }
-                ]
-            },
-            {
-                "idx": 22,
-                "hits": [
-                    {
-                        "label": "L03",
-                        "prob": 0.4154238185304121
-                    }
-                ]
-            },
-            {
-                "idx": 15,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.40942521858112907
-                    },
-                    {
-                        "label": "L08",
-                        "prob": 0.2971150638312194
-                    }
-                ]
-            },
-            {
-                "idx": 225,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.4050408984932667
-                    },
-                    {
-                        "label": "L04",
-                        "prob": 0.33752162619489906
-                    }
-                ]
-            },
-            {
-                "idx": 263,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.39554765070413334
-                    }
-                ]
-            },
-            {
-                "idx": 167,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.3898744414336408
-                    },
-                    {
-                        "label": "L11",
-                        "prob": 0.3388016810926964
-                    },
-                    {
-                        "label": "L02",
-                        "prob": 0.25049624589710356
-                    }
-                ]
-            },
-            {
-                "idx": 115,
-                "hits": [
-                    {
-                        "label": "L03",
-                        "prob": 0.38788974176227947
-                    },
-                    {
-                        "label": "L09",
-                        "prob": 0.2487618026508629
-                    }
-                ]
-            },
-            {
-                "idx": 194,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.3809839962702771
-                    }
-                ]
-            },
-            {
-                "idx": 260,
-                "hits": [
-                    {
-                        "label": "L04",
-                        "prob": 0.37906952334630767
-                    },
-                    {
-                        "label": "L06",
-                        "prob": 0.19286188133487697
-                    }
-                ]
-            },
-            {
-                "idx": 197,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.3748993998812301
-                    }
-                ]
-            },
-            {
-                "idx": 127,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.3705259558821608
-                    }
-                ]
-            },
-            {
-                "idx": 156,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.3658269496060279
-                    },
-                    {
-                        "label": "L02",
-                        "prob": 0.18705378240587903
-                    },
-                    {
-                        "label": "L07",
-                        "prob": 0.1583624864733743
-                    }
-                ]
-            },
-            {
-                "idx": 63,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.36301576987992384
-                    },
-                    {
-                        "label": "L08",
-                        "prob": 0.27390348741741605
-                    }
-                ]
-            },
-            {
-                "idx": 119,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.35772470961495917
-                    }
-                ]
-            },
-            {
-                "idx": 56,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.35674317421288015
-                    },
-                    {
-                        "label": "L11",
-                        "prob": 0.24730865891148196
-                    }
-                ]
-            },
-            {
-                "idx": 52,
-                "hits": [
-                    {
-                        "label": "L01",
-                        "prob": 0.35092216668108966
-                    },
-                    {
-                        "label": "L09",
-                        "prob": 0.28018331047823775
-                    },
-                    {
-                        "label": "L02",
-                        "prob": 0.21870134742369246
-                    }
-                ]
-            },
-            {
-                "idx": 60,
-                "hits": [
-                    {
-                        "label": "L07",
-                        "prob": 0.34677302762086765
-                    },
-                    {
-                        "label": "L09",
-                        "prob": 0.23202461889413512
-                    }
-                ]
-            },
-            {
-                "idx": 45,
-                "hits": [
-                    {
-                        "label": "L07",
-                        "prob": 0.3378967852385135
-                    },
-                    {
-                        "label": "L09",
-                        "prob": 0.23460678952778222
-                    }
-                ]
-            },
-            {
-                "idx": 203,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.3334774156206562
-                    },
-                    {
-                        "label": "L08",
-                        "prob": 0.25119660578071756
-                    }
-                ]
-            },
-            {
-                "idx": 106,
-                "hits": [
-                    {
-                        "label": "L11",
-                        "prob": 0.32350153699387574
-                    },
-                    {
-                        "label": "L02",
-                        "prob": 0.1923323773810647
-                    }
-                ]
-            },
-            {
-                "idx": 145,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.3182825111224218
-                    },
-                    {
-                        "label": "L03",
-                        "prob": 0.29024459941397585
-                    },
-                    {
-                        "label": "L01",
-                        "prob": 0.165594245235074
-                    }
-                ]
-            },
-            {
-                "idx": 277,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.31527629186308753
-                    },
-                    {
-                        "label": "L02",
-                        "prob": 0.2732151607455372
-                    },
-                    {
-                        "label": "L01",
-                        "prob": 0.2646027815716234
-                    }
-                ]
-            },
-            {
-                "idx": 49,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.30885743542070576
-                    }
-                ]
-            },
-            {
-                "idx": 132,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.3053172020310603
-                    }
-                ]
-            },
-            {
-                "idx": 74,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.302073798416355
-                    }
-                ]
-            },
-            {
-                "idx": 188,
-                "hits": [
-                    {
-                        "label": "L06",
-                        "prob": 0.2967262917264396
-                    }
-                ]
-            },
-            {
-                "idx": 9,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.2893149245242356
-                    }
-                ]
-            },
-            {
-                "idx": 12,
-                "hits": [
-                    {
-                        "label": "L07",
-                        "prob": 0.2883358252709994
-                    },
-                    {
-                        "label": "L03",
-                        "prob": 0.255513640002693
-                    }
-                ]
-            },
-            {
-                "idx": 33,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.2840289263189714
-                    }
-                ]
-            },
-            {
-                "idx": 226,
-                "hits": [
-                    {
-                        "label": "L06",
-                        "prob": 0.2839276788510371
-                    },
-                    {
-                        "label": "L04",
-                        "prob": 0.21963615550546517
-                    },
-                    {
-                        "label": "L09",
-                        "prob": 0.17591185444772714
+                        "prob": 0.2636184791389581
                     }
                 ]
             },
@@ -1330,16 +385,16 @@
                 "hits": [
                     {
                         "label": "L09",
-                        "prob": 0.2733235638570568
+                        "prob": 0.25910808539415436
                     }
                 ]
             },
             {
-                "idx": 228,
+                "idx": 188,
                 "hits": [
                     {
-                        "label": "L09",
-                        "prob": 0.27049658463628745
+                        "label": "L06",
+                        "prob": 0.25450861088691157
                     }
                 ]
             },
@@ -1348,20 +403,7 @@
                 "hits": [
                     {
                         "label": "L09",
-                        "prob": 0.2688220275655454
-                    }
-                ]
-            },
-            {
-                "idx": 172,
-                "hits": [
-                    {
-                        "label": "L02",
-                        "prob": 0.26509767356829905
-                    },
-                    {
-                        "label": "L09",
-                        "prob": 0.22722859118280225
+                        "prob": 0.2501182710435552
                     }
                 ]
             },
@@ -1370,144 +412,25 @@
                 "hits": [
                     {
                         "label": "L09",
-                        "prob": 0.2647068676322774
+                        "prob": 0.24964811629796743
                     }
                 ]
             },
             {
-                "idx": 59,
-                "hits": [
-                    {
-                        "label": "L03",
-                        "prob": 0.25622182751966954
-                    }
-                ]
-            },
-            {
-                "idx": 152,
-                "hits": [
-                    {
-                        "label": "L03",
-                        "prob": 0.24921240702990902
-                    },
-                    {
-                        "label": "L08",
-                        "prob": 0.21199853540990848
-                    },
-                    {
-                        "label": "L02",
-                        "prob": 0.20981378358637892
-                    }
-                ]
-            },
-            {
-                "idx": 230,
-                "hits": [
-                    {
-                        "label": "L02",
-                        "prob": 0.23937932046613394
-                    },
-                    {
-                        "label": "L11",
-                        "prob": 0.2388828382755694
-                    },
-                    {
-                        "label": "L08",
-                        "prob": 0.16731489203445155
-                    },
-                    {
-                        "label": "L01",
-                        "prob": 0.1574417069869644
-                    }
-                ]
-            },
-            {
-                "idx": 5,
+                "idx": 9,
                 "hits": [
                     {
                         "label": "L09",
-                        "prob": 0.2331909253709778
+                        "prob": 0.24857705638133223
                     }
                 ]
             },
             {
-                "idx": 130,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.21249965725397266
-                    }
-                ]
-            },
-            {
-                "idx": 150,
-                "hits": [
-                    {
-                        "label": "L11",
-                        "prob": 0.20801206026293598
-                    }
-                ]
-            },
-            {
-                "idx": 175,
+                "idx": 226,
                 "hits": [
                     {
                         "label": "L06",
-                        "prob": 0.1982411562122855
-                    }
-                ]
-            },
-            {
-                "idx": 46,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.19047549758410726
-                    }
-                ]
-            },
-            {
-                "idx": 285,
-                "hits": [
-                    {
-                        "label": "L03",
-                        "prob": 0.18812001661756741
-                    }
-                ]
-            },
-            {
-                "idx": 84,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.18791225139255732
-                    }
-                ]
-            },
-            {
-                "idx": 113,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.18791225139255732
-                    }
-                ]
-            },
-            {
-                "idx": 58,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.1867661953922482
-                    }
-                ]
-            },
-            {
-                "idx": 122,
-                "hits": [
-                    {
-                        "label": "L09",
-                        "prob": 0.17882016944170193
+                        "prob": 0.23607259476741863
                     }
                 ]
             },
@@ -1516,29 +439,65 @@
                 "hits": [
                     {
                         "label": "L09",
-                        "prob": 0.17016864998699546
+                        "prob": 0.23255394978276572
                     }
                 ]
             },
             {
-                "idx": 13,
+                "idx": 45,
+                "hits": [
+                    {
+                        "label": "L07",
+                        "prob": 0.23046444661453064
+                    },
+                    {
+                        "label": "L11",
+                        "prob": 0.183244110160171
+                    }
+                ]
+            },
+            {
+                "idx": 56,
+                "hits": [
+                    {
+                        "label": "L11",
+                        "prob": 0.2234132650089046
+                    }
+                ]
+            },
+            {
+                "idx": 122,
                 "hits": [
                     {
                         "label": "L09",
-                        "prob": 0.16881776225650386
-                    },
-                    {
-                        "label": "L07",
-                        "prob": 0.16385216725432666
+                        "prob": 0.21867236703643292
                     }
                 ]
             },
             {
-                "idx": 190,
+                "idx": 175,
                 "hits": [
                     {
-                        "label": "L03",
-                        "prob": 0.16773816548322534
+                        "label": "L06",
+                        "prob": 0.21037266897211887
+                    }
+                ]
+            },
+            {
+                "idx": 127,
+                "hits": [
+                    {
+                        "label": "L09",
+                        "prob": 0.20723230968037348
+                    }
+                ]
+            },
+            {
+                "idx": 58,
+                "hits": [
+                    {
+                        "label": "L09",
+                        "prob": 0.203942247528403
                     }
                 ]
             },
@@ -1547,131 +506,92 @@
                 "hits": [
                     {
                         "label": "L09",
-                        "prob": 0.15745593446570352
+                        "prob": 0.19485144165735074
                     }
                 ]
             },
             {
-                "idx": 191,
+                "idx": 99,
                 "hits": [
                     {
-                        "label": "L04",
-                        "prob": 0.972177864768461
+                        "label": "L09",
+                        "prob": 0.18902405730006977
                     }
                 ]
             },
             {
-                "idx": 136,
+                "idx": 84,
                 "hits": [
                     {
-                        "label": "L04",
-                        "prob": 0.7605907288878793
-                    },
-                    {
-                        "label": "L07",
-                        "prob": 0.48022507982337836
+                        "label": "L09",
+                        "prob": 0.18577188071399683
                     }
                 ]
             },
             {
-                "idx": 170,
+                "idx": 113,
                 "hits": [
                     {
-                        "label": "L04",
-                        "prob": 0.7414960120672645
+                        "label": "L09",
+                        "prob": 0.18577188071399683
                     }
                 ]
             },
             {
-                "idx": 116,
+                "idx": 5,
                 "hits": [
                     {
-                        "label": "L07",
-                        "prob": 0.6992967466231518
+                        "label": "L09",
+                        "prob": 0.17301278602275302
                     }
                 ]
             },
             {
-                "idx": 141,
+                "idx": 35,
                 "hits": [
                     {
-                        "label": "L07",
-                        "prob": 0.6992967466231518
+                        "label": "L09",
+                        "prob": 0.17029930342923888
                     }
                 ]
             },
             {
-                "idx": 246,
+                "idx": 54,
                 "hits": [
                     {
                         "label": "L02",
-                        "prob": 0.6815842300098405
+                        "prob": 0.16909589725747753
+                    },
+                    {
+                        "label": "L11",
+                        "prob": 0.1679732968214205
                     }
                 ]
             },
             {
-                "idx": 50,
+                "idx": 130,
+                "hits": [
+                    {
+                        "label": "L09",
+                        "prob": 0.1627409101159468
+                    }
+                ]
+            },
+            {
+                "idx": 115,
+                "hits": [
+                    {
+                        "label": "L03",
+                        "prob": 0.1613682563325229
+                    }
+                ]
+            },
+            {
+                "idx": 126,
                 "hits": [
                     {
                         "label": "L02",
-                        "prob": 0.5691440953818471
-                    },
-                    {
-                        "label": "L07",
-                        "prob": 0.5059596167630082
-                    }
-                ]
-            },
-            {
-                "idx": 86,
-                "hits": [
-                    {
-                        "label": "L07",
-                        "prob": 0.5638672502270763
-                    },
-                    {
-                        "label": "L04",
-                        "prob": 0.4937625510369437
-                    }
-                ]
-            },
-            {
-                "idx": 222,
-                "hits": [
-                    {
-                        "label": "L08",
-                        "prob": 0.5425002171127596
-                    },
-                    {
-                        "label": "L01",
-                        "prob": 0.21745404984669206
-                    }
-                ]
-            },
-            {
-                "idx": 21,
-                "hits": [
-                    {
-                        "label": "L08",
-                        "prob": 0.5197961988115163
-                    }
-                ]
-            },
-            {
-                "idx": 107,
-                "hits": [
-                    {
-                        "label": "L04",
-                        "prob": 0.5091783805741357
-                    }
-                ]
-            },
-            {
-                "idx": 155,
-                "hits": [
-                    {
-                        "label": "L04",
-                        "prob": 0.5037941632230187
+                        "prob": 0.7750954068899424
                     }
                 ]
             },
@@ -1680,7 +600,7 @@
                 "hits": [
                     {
                         "label": "L07",
-                        "prob": 0.4894409153426579
+                        "prob": 0.5447243452915045
                     }
                 ]
             },
@@ -1689,55 +609,16 @@
                 "hits": [
                     {
                         "label": "L07",
-                        "prob": 0.4894409153426579
+                        "prob": 0.5447243452915045
                     }
                 ]
             },
             {
-                "idx": 270,
+                "idx": 21,
                 "hits": [
                     {
-                        "label": "L04",
-                        "prob": 0.461318524056373
-                    }
-                ]
-            },
-            {
-                "idx": 88,
-                "hits": [
-                    {
-                        "label": "L02",
-                        "prob": 0.4078091186780691
-                    },
-                    {
-                        "label": "L01",
-                        "prob": 0.31137846974512573
-                    }
-                ]
-            },
-            {
-                "idx": 196,
-                "hits": [
-                    {
-                        "label": "L02",
-                        "prob": 0.4078091186780691
-                    },
-                    {
-                        "label": "L01",
-                        "prob": 0.31137846974512573
-                    }
-                ]
-            },
-            {
-                "idx": 269,
-                "hits": [
-                    {
-                        "label": "L02",
-                        "prob": 0.3984585110371448
-                    },
-                    {
-                        "label": "L01",
-                        "prob": 0.16073821205185046
+                        "label": "L08",
+                        "prob": 0.4802836889213805
                     }
                 ]
             },
@@ -1746,29 +627,20 @@
                 "hits": [
                     {
                         "label": "L02",
-                        "prob": 0.39656086797606915
+                        "prob": 0.47592806857454056
                     },
                     {
                         "label": "L01",
-                        "prob": 0.2312046796767729
+                        "prob": 0.24048195364354225
                     }
                 ]
             },
             {
-                "idx": 291,
-                "hits": [
-                    {
-                        "label": "L01",
-                        "prob": 0.37908851054088155
-                    }
-                ]
-            },
-            {
-                "idx": 30,
+                "idx": 270,
                 "hits": [
                     {
                         "label": "L04",
-                        "prob": 0.37223492614540254
+                        "prob": 0.46173376474508815
                     }
                 ]
             },
@@ -1777,7 +649,7 @@
                 "hits": [
                     {
                         "label": "L08",
-                        "prob": 0.34863719123680503
+                        "prob": 0.4371782768886755
                     }
                 ]
             },
@@ -1786,43 +658,7 @@
                 "hits": [
                     {
                         "label": "L08",
-                        "prob": 0.3316136195821524
-                    }
-                ]
-            },
-            {
-                "idx": 148,
-                "hits": [
-                    {
-                        "label": "L07",
-                        "prob": 0.32413425032176
-                    }
-                ]
-            },
-            {
-                "idx": 219,
-                "hits": [
-                    {
-                        "label": "L07",
-                        "prob": 0.30446370507982873
-                    }
-                ]
-            },
-            {
-                "idx": 82,
-                "hits": [
-                    {
-                        "label": "L02",
-                        "prob": 0.2964483445974081
-                    }
-                ]
-            },
-            {
-                "idx": 220,
-                "hits": [
-                    {
-                        "label": "L01",
-                        "prob": 0.29430927689996234
+                        "prob": 0.41601945469817947
                     }
                 ]
             },
@@ -1831,16 +667,52 @@
                 "hits": [
                     {
                         "label": "L02",
-                        "prob": 0.2740566468670098
+                        "prob": 0.38043638390310797
                     }
                 ]
             },
             {
-                "idx": 187,
+                "idx": 148,
                 "hits": [
                     {
                         "label": "L07",
-                        "prob": 0.27146467316999706
+                        "prob": 0.37960508922426217
+                    }
+                ]
+            },
+            {
+                "idx": 155,
+                "hits": [
+                    {
+                        "label": "L04",
+                        "prob": 0.3289794637406016
+                    }
+                ]
+            },
+            {
+                "idx": 60,
+                "hits": [
+                    {
+                        "label": "L07",
+                        "prob": 0.3284598852687427
+                    }
+                ]
+            },
+            {
+                "idx": 82,
+                "hits": [
+                    {
+                        "label": "L02",
+                        "prob": 0.3203977475713007
+                    }
+                ]
+            },
+            {
+                "idx": 222,
+                "hits": [
+                    {
+                        "label": "L08",
+                        "prob": 0.3126391288945645
                     }
                 ]
             },
@@ -1849,52 +721,78 @@
                 "hits": [
                     {
                         "label": "L02",
-                        "prob": 0.2564904325359819
+                        "prob": 0.28532344445928
                     }
                 ]
             },
             {
-                "idx": 19,
+                "idx": 291,
                 "hits": [
                     {
-                        "label": "L08",
-                        "prob": 0.23472082415263432
+                        "label": "L01",
+                        "prob": 0.24942670470843278
                     }
                 ]
             },
             {
-                "idx": 114,
-                "hits": [
-                    {
-                        "label": "L07",
-                        "prob": 0.20397002797777608
-                    }
-                ]
-            },
-            {
-                "idx": 38,
+                "idx": 88,
                 "hits": [
                     {
                         "label": "L02",
-                        "prob": 0.1839408155445817
+                        "prob": 0.23448613586959355
+                    },
+                    {
+                        "label": "L01",
+                        "prob": 0.15838101574197108
                     }
                 ]
             },
             {
-                "idx": 91,
+                "idx": 232,
                 "hits": [
                     {
-                        "label": "L07",
-                        "prob": 0.16917670525242373
+                        "label": "L02",
+                        "prob": 0.22481819496881922
                     }
                 ]
             },
             {
-                "idx": 40,
+                "idx": 219,
                 "hits": [
                     {
                         "label": "L07",
-                        "prob": 0.16471253078838885
+                        "prob": 0.20467735860242744
+                    }
+                ]
+            },
+            {
+                "idx": 52,
+                "hits": [
+                    {
+                        "label": "L01",
+                        "prob": 0.1928440499133875
+                    },
+                    {
+                        "label": "L02",
+                        "prob": 0.15997814179811287
+                    }
+                ]
+            },
+            {
+                "idx": 277,
+                "hits": [
+                    {
+                        "label": "L02",
+                        "prob": 0.18825912845347167
+                    }
+                ]
+            },
+            {
+                "idx": 260,
+                "hits": [
+                    {
+                        "label": "L04",
+                        "prob": 0.18759458858451966
                     }
                 ]
             },
@@ -1903,7 +801,79 @@
                 "hits": [
                     {
                         "label": "L08",
-                        "prob": 0.16034925869310004
+                        "prob": 0.18121555183070304
+                    }
+                ]
+            },
+            {
+                "idx": 30,
+                "hits": [
+                    {
+                        "label": "L04",
+                        "prob": 0.17642781394526202
+                    }
+                ]
+            },
+            {
+                "idx": 145,
+                "hits": [
+                    {
+                        "label": "L02",
+                        "prob": 0.17365407033040708
+                    }
+                ]
+            },
+            {
+                "idx": 19,
+                "hits": [
+                    {
+                        "label": "L08",
+                        "prob": 0.16531684978895295
+                    }
+                ]
+            },
+            {
+                "idx": 269,
+                "hits": [
+                    {
+                        "label": "L02",
+                        "prob": 0.1620890575068314
+                    }
+                ]
+            },
+            {
+                "idx": 256,
+                "hits": [
+                    {
+                        "label": "L02",
+                        "prob": 0.1616368948998724
+                    }
+                ]
+            },
+            {
+                "idx": 172,
+                "hits": [
+                    {
+                        "label": "L02",
+                        "prob": 0.16147255952086048
+                    }
+                ]
+            },
+            {
+                "idx": 38,
+                "hits": [
+                    {
+                        "label": "L02",
+                        "prob": 0.15786953585752275
+                    }
+                ]
+            },
+            {
+                "idx": 187,
+                "hits": [
+                    {
+                        "label": "L07",
+                        "prob": 0.15297690016935822
                     }
                 ]
             }
@@ -1912,17 +882,17 @@
     "spread_stage": {
         "stage": "Early",
         "reasons": [
-            "[유튜브 지표] 조회수 196,252회, CVR 1.3% → 일반적 확산 범위",
-            "[참고] 좋아요 17,019 / 댓글 2,600 / 구독자 3,000,000명"
+            "[유튜브 지표] 조회수 2,455,150회, CVR 0.2% → 일반적 확산 범위",
+            "[참고] 좋아요 37,123 / 댓글 5,100 / 구독자 3,010,000명"
         ],
         "metrics": {
-            "cvr": 1.32,
-            "like_ratio": 8.67,
-            "sub_view_ratio": 6.5,
-            "view_count": 196252,
-            "like_count": 17019,
-            "comment_count": 2600,
-            "subscriber_count": 3000000,
+            "cvr": 0.21,
+            "like_ratio": 1.51,
+            "sub_view_ratio": 81.6,
+            "view_count": 2455150,
+            "like_count": 37123,
+            "comment_count": 5100,
+            "subscriber_count": 3010000,
             "upload_date": "20260629"
         },
         "source": "youtube_meta"
@@ -1932,11 +902,36 @@
             "L12 해당 없음"
         ],
         "primary": "L12",
-        "reason": "ML 분류 (신뢰도 0.94)"
+        "reason": "ML 분류 (신뢰도 0.96)"
     },
-    "similar_cases": [],
-    "pattern_summary": "",
-    "worst_actions": [],
+    "similar_cases": [
+        {
+            "rank": 1,
+            "title": "유튜버 곽튜브, 월드컵 직관 영상 중 아스날 관련 발언으로 비난 및 사과",
+            "controversy_type": "attitude_issue",
+            "distance": 0.728,
+            "response_pattern": []
+        },
+        {
+            "rank": 2,
+            "title": "유튜버 이노냥, 멕시코 월드컵 경기장에서 '눈찢기' 인종차별 피해",
+            "controversy_type": "hate_speech",
+            "distance": 0.7313,
+            "response_pattern": []
+        },
+        {
+            "rank": 3,
+            "title": "극우 유튜버 전한길 '윤석열 미국 망명시키려 했다' 발언 논란",
+            "controversy_type": "attitude_issue",
+            "distance": 0.7686,
+            "response_pattern": []
+        }
+    ],
+    "pattern_summary": "제시된 사례 데이터를 바탕으로 분석한 결과는 다음과 같습니다.\n\n### 1. 위기 확산의 공통적 경로\n* **대중적 주목도가 높은 공간 및 콘텐츠를 통한 노출:** 월드컵 경기장 현장, 직관 영상 콘텐츠, 기자회견, 시위 현장 등 대중의 이목이 집중되는 상황에서 위기가 시작되는 경향이 있습니다.\n* **부적절한 발언 및 행동의 전파:** 특정 축구 클럽 관련 발언(사례 1), 인종차별적 행위(사례 2), 극단적인 정치적 주장(사례 3), 또는 기대 이하의 성과 상황에서 진행된 입장 표명(입력 사건) 등이 대중에게 그대로 전달되며 논란이 확산되는 패턴이 관찰됩니다.\n* **이해관계자 및 대중의 직접적인 항의:** 발언이나 행동이 공개된 직후, 현장에 있던 인물이나 온라인 관객, 팬들의 즉각적인 비난과 거센 반발이 이어지며 위기가 본격화되는 경로를 보입니다.\n\n### 2. 과거 대응 방식에 따른 여론의 반응 패턴\n* **해명성 발언에 대한 격렬한 반발:** 결과가 좋지 않은 상태에서 본인의 판단 기준을 해명하거나 미화하려는 태도를 보일 경우, 현장에서 즉각적인 고성이나 \"개소리를 하고 있다\"와 같은 극단적인 분노와 야유를 유발하는 패턴이 관찰됩니다(입력 사건).\n* **공식적 조치 및 사과 요구:** 인종차별과 같은 국제적·윤리적 위기 상황에서는 당사자의 사과 및 직위 사퇴뿐만 아니라, 관련 공식 기관(FIFA 등)의 개입으로 이어지는 경향이 있습니다(사례 2).\n* **사과문 게재를 통한 대응:** 부적절한 발언으로 비난을 받았을 때 사과문을 게재하여 대응하는 방식이 나타나기도 합니다(사례 1).\n\n### 3. 위기가 심화되었던 결정적 트리거(Trigger)\n* **기대치와 현실의 괴리를 간과한 입장 표명:** 대중이 기대했던 결과(예: 축구 성적)에 미치지 못했음에도 불구하고, 스스로를 옹호하는 듯한 뉘앙스의 해명이나 중도 사퇴 의사를 밝히는 행위가 대중의 분노를 폭발시키는 트리거로 작용함이 관찰됩니다(입력 사건).\n* **팬층 및 특정 집단의 감정을 자극하는 발언:** 월드컵 직관 영상 등 다수가 시청하는 플랫폼에서 특정 클럽(아스날)을 언급하는 등 부적절한 발언을 제어 없이 노출하는 행위가 트리거가 됩니다(사례 1).\n* **사회적·정치적 민감성을 고려하지 않은 극단적 발언의 반복:** 시위 현장과 같은 민감한 장소에서 '임시정부 수립', '망명' 등 극단적이고 자극적인 정치적 주장을 지속적으로 제기하는 행위가 논란을 심화시키는 트리거로 작용합니다(사례 3).",
+    "worst_actions": [
+        "시청자 가스라이팅",
+        "실시간 스트리밍으로 억울함 호소"
+    ],
     "transcript_analysis": [
         {
             "segment_id": 0,
@@ -1945,7 +940,7 @@
             "timestamp": "00:00–00:02",
             "corrected_text": "대한민국 축구",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.78)"
         },
         {
             "segment_id": 1,
@@ -1954,7 +949,7 @@
             "timestamp": "00:02–00:04",
             "corrected_text": "대한민국 축구",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.78)"
         },
         {
             "segment_id": 2,
@@ -1963,7 +958,7 @@
             "timestamp": "00:04–00:24",
             "corrected_text": "대한민국 축구를 사랑해주시고 언제나 대표팀을 응원해주신 국민 여러분께 진심으로 죄송하다는 말씀 드립니다.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.74)"
         },
         {
             "segment_id": 3,
@@ -1972,7 +967,7 @@
             "timestamp": "00:24–00:30",
             "corrected_text": "오늘 저는 대한민국 축구 국가대표 감독에서 물러나고자 합니다.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.83)"
+            "reason": "ML 분류 (신뢰도 0.85)"
         },
         {
             "segment_id": 4,
@@ -1981,7 +976,7 @@
             "timestamp": "00:31–00:36",
             "corrected_text": "대표팀 감독이라는 자리는 제게 결코 쉬운 결정이 아니었습니다.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.72)"
         },
         {
             "segment_id": 5,
@@ -1990,7 +985,7 @@
             "timestamp": "00:37–00:42",
             "corrected_text": "하지만 감독을 맡기로 결정한 순간부터 다른 일을 생각하지 않았습니다.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.78)"
+            "reason": "ML 분류 (신뢰도 0.80)"
         },
         {
             "segment_id": 6,
@@ -1998,8 +993,8 @@
             "end": 48.96,
             "timestamp": "00:43–00:48",
             "corrected_text": "제가 맡겨진 책임을 끝까지 다하는 것 그것이 제가 해야 할 유일한 일이라고 생각을 했습니다.",
-            "label": "L04 사실과 다른 정보의 의도적·비의도적 유포",
-            "reason": "ML 분류 (신뢰도 0.79)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.87)"
         },
         {
             "segment_id": 7,
@@ -2007,8 +1002,8 @@
             "end": 57.120000000000005,
             "timestamp": "00:48–00:57",
             "corrected_text": "2년 동안 저는 늘 같은 질문을 스스로에게 던졌습니다.",
-            "label": "L09 성적 발언·표현으로 인한 불쾌감 유발",
-            "reason": "ML 분류 (신뢰도 0.52)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.87)"
         },
         {
             "segment_id": 8,
@@ -2017,7 +1012,7 @@
             "timestamp": "00:58–01:00",
             "corrected_text": "이 선택이 대한민국 축구를 위한 선택인가?",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.72)"
         },
         {
             "segment_id": 9,
@@ -2026,7 +1021,7 @@
             "timestamp": "01:01–01:10",
             "corrected_text": "대표팀에 중요한 결정을 내릴 때도 선수를 선택할 때도 훈련을 준비할 때도 경기를 치를 때도 그 질문 만큼은 놓지 않았습니다.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.59)"
+            "reason": "ML 분류 (신뢰도 0.67)"
         },
         {
             "segment_id": 10,
@@ -2035,7 +1030,7 @@
             "timestamp": "01:10–01:16",
             "corrected_text": "모든 판단이 옳았다고 말씀드릴 수는 없습니다.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.59)"
+            "reason": "ML 분류 (신뢰도 0.70)"
         },
         {
             "segment_id": 11,
@@ -2044,7 +1039,7 @@
             "timestamp": "01:18–01:22",
             "corrected_text": "하지만 제 모든 판단의 기준만큼 언제나 한국 축구했습니다.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.65)"
+            "reason": "ML 분류 (신뢰도 0.76)"
         },
         {
             "segment_id": 12,
@@ -2053,7 +1048,7 @@
             "timestamp": "01:23–01:28",
             "corrected_text": "감독이라는 자리는 결과 앞에서는 언제나 어쩔 수 없는 자리라고 생각합니다.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.66)"
+            "reason": "ML 분류 (신뢰도 0.64)"
         },
         {
             "segment_id": 13,
@@ -2062,7 +1057,7 @@
             "timestamp": "01:29–01:33",
             "corrected_text": "그래서 오늘 저는 설명보다 책임을 말씀드리기 위해 이 자리에 섰습니다.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.80)"
+            "reason": "ML 분류 (신뢰도 0.78)"
         },
         {
             "segment_id": 14,
@@ -2071,7 +1066,7 @@
             "timestamp": "01:34–01:37",
             "corrected_text": "국민 여러분께서 기대하셨던 결과를 끝내 보여드리지 못했습니다.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 15,
@@ -2088,8 +1083,8 @@
             "end": 111.58,
             "timestamp": "01:42–01:51",
             "corrected_text": "끝까지 함께해준 코칭 스태프, 지원 스태프 그리고 대표팀에 묵묵히 헌신해주신 모든 분들께 진심으로 감사드립니다.",
-            "label": "L09 성적 발언·표현으로 인한 불쾌감 유발",
-            "reason": "ML 분류 (신뢰도 0.58)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.87)"
         },
         {
             "segment_id": 17,
@@ -2107,7 +1102,7 @@
             "timestamp": "01:56–02:01",
             "corrected_text": "하지만 대한민국 축구를 향한 마음은 마음까지 내려놓은 것은 아닙니다.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.74)"
+            "reason": "ML 분류 (신뢰도 0.79)"
         },
         {
             "segment_id": 19,
@@ -2116,7 +1111,7 @@
             "timestamp": "02:01–02:08",
             "corrected_text": "우리 대표팀 다시 국민의 여러분의 신뢰라 사랑받을 수 있는 팀으로 성장해 나가기를 진심으로 응원하겠습니다.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.71)"
+            "reason": "ML 분류 (신뢰도 0.79)"
         },
         {
             "segment_id": 20,
@@ -2125,7 +1120,7 @@
             "timestamp": "02:10–02:11",
             "corrected_text": "감사합니다.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.81)"
+            "reason": "ML 분류 (신뢰도 0.78)"
         },
         {
             "segment_id": 21,
@@ -2134,7 +1129,7 @@
             "timestamp": "02:11–02:22",
             "corrected_text": "그리고 여기 계신 우리 언론인 분들 멀리까지 와주시고",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.60)"
+            "reason": "ML 분류 (신뢰도 0.77)"
         },
         {
             "segment_id": 22,
@@ -2143,7 +1138,7 @@
             "timestamp": "02:22–02:25",
             "corrected_text": "저희 대표팀 항상 응원해주시고 이렇게 하셔서",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.54)"
+            "reason": "ML 분류 (신뢰도 0.67)"
         },
         {
             "segment_id": 23,
@@ -2152,7 +1147,7 @@
             "timestamp": "02:25–02:29",
             "corrected_text": "결과가 좋지 못해 죄송하고",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 24,
@@ -2161,7 +1156,7 @@
             "timestamp": "02:29–02:32",
             "corrected_text": "진심으로 죄송합니다.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.67)"
         },
         {
             "segment_id": 25,
@@ -2179,7 +1174,7 @@
             "timestamp": "02:38–02:42",
             "corrected_text": "잊지 않고 하겠습니다. 고맙습니다.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.79)"
+            "reason": "ML 분류 (신뢰도 0.80)"
         },
         {
             "segment_id": 27,
@@ -2188,7 +1183,7 @@
             "timestamp": "02:42–02:53",
             "corrected_text": "이것이 뭐 하는 거야!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.91)"
+            "reason": "ML 분류 (신뢰도 0.92)"
         },
         {
             "segment_id": 28,
@@ -2197,7 +1192,7 @@
             "timestamp": "02:53–02:54",
             "corrected_text": "이것이 뭐 하는 거야!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.91)"
+            "reason": "ML 분류 (신뢰도 0.92)"
         },
         {
             "segment_id": 29,
@@ -2206,7 +1201,7 @@
             "timestamp": "02:55–02:57",
             "corrected_text": "이것이 뭐 하는 거야!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.91)"
+            "reason": "ML 분류 (신뢰도 0.92)"
         },
         {
             "segment_id": 30,
@@ -2215,7 +1210,7 @@
             "timestamp": "02:57–02:59",
             "corrected_text": "이것이 뭔 개소리를 하고 있어 지금!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.77)"
+            "reason": "ML 분류 (신뢰도 0.87)"
         },
         {
             "segment_id": 31,
@@ -2223,8 +1218,8 @@
             "end": 184.98000000000002,
             "timestamp": "03:00–03:04",
             "corrected_text": "아니 누가 보면 8강, 4강이라도 간 줄 알겠어 내가 봤을 때!",
-            "label": "L09 성적 발언·표현으로 인한 불쾌감 유발",
-            "reason": "ML 분류 (신뢰도 0.62)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.89)"
         },
         {
             "segment_id": 32,
@@ -2233,7 +1228,7 @@
             "timestamp": "03:04–03:05",
             "corrected_text": "어?",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 33,
@@ -2242,7 +1237,7 @@
             "timestamp": "03:06–03:09",
             "corrected_text": "아니 진짜 홍명보 감독 누가 보면 8강, 4강 간 줄 알겠어요!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.68)"
+            "reason": "ML 분류 (신뢰도 0.90)"
         },
         {
             "segment_id": 34,
@@ -2251,7 +1246,7 @@
             "timestamp": "03:10–03:10",
             "corrected_text": "네?",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 35,
@@ -2259,8 +1254,8 @@
             "end": 191.54000000000002,
             "timestamp": "03:10–03:11",
             "corrected_text": "그리고 녹화?",
-            "label": "L09 성적 발언·표현으로 인한 불쾌감 유발",
-            "reason": "ML 분류 (신뢰도 0.58)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.79)"
         },
         {
             "segment_id": 36,
@@ -2268,8 +1263,8 @@
             "end": 193.64,
             "timestamp": "03:11–03:13",
             "corrected_text": "생방송도 아니고 녹화?",
-            "label": "L09 성적 발언·표현으로 인한 불쾌감 유발",
-            "reason": "ML 분류 (신뢰도 0.70)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.86)"
         },
         {
             "segment_id": 37,
@@ -2278,7 +1273,7 @@
             "timestamp": "03:14–03:14",
             "corrected_text": "녹화로?",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 38,
@@ -2287,7 +1282,7 @@
             "timestamp": "03:15–03:16",
             "corrected_text": "이것이 맞아?",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.64)"
+            "reason": "ML 분류 (신뢰도 0.67)"
         },
         {
             "segment_id": 39,
@@ -2295,8 +1290,8 @@
             "end": 199.76,
             "timestamp": "03:16–03:19",
             "corrected_text": "아니 대한민국 대표팀 그렇게 망쳐놓고",
-            "label": "L09 성적 발언·표현으로 인한 불쾌감 유발",
-            "reason": "ML 분류 (신뢰도 0.54)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.85)"
         },
         {
             "segment_id": 40,
@@ -2305,7 +1300,7 @@
             "timestamp": "03:19–03:22",
             "corrected_text": "그냥 남몰라라 하고 바로 런 하면은",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.80)"
+            "reason": "ML 분류 (신뢰도 0.83)"
         },
         {
             "segment_id": 41,
@@ -2314,7 +1309,7 @@
             "timestamp": "03:22–03:25",
             "corrected_text": "이것이 뭐 기분이 나아지세요? 좀 좋으세요? 어떻게?",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.59)"
+            "reason": "ML 분류 (신뢰도 0.60)"
         },
         {
             "segment_id": 42,
@@ -2323,7 +1318,7 @@
             "timestamp": "03:26–03:26",
             "corrected_text": "네?",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 43,
@@ -2332,7 +1327,7 @@
             "timestamp": "03:27–03:28",
             "corrected_text": "너무하네 진짜로",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 44,
@@ -2341,7 +1336,7 @@
             "timestamp": "03:28–03:30",
             "corrected_text": "질문도 안 받고",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 45,
@@ -2350,7 +1345,7 @@
             "timestamp": "03:30–03:32",
             "corrected_text": "녹화로 하고 자기 할 말만 하고",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.50)"
         },
         {
             "segment_id": 46,
@@ -2377,7 +1372,7 @@
             "timestamp": "03:37–03:39",
             "corrected_text": "주머니에 손 놓고 딱 가는 게 이것이 뭐야!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.85)"
+            "reason": "ML 분류 (신뢰도 0.89)"
         },
         {
             "segment_id": 49,
@@ -2394,8 +1389,8 @@
             "end": 227.54,
             "timestamp": "03:43–03:47",
             "corrected_text": "월드컵을 증명하는 자리인데 실험하고 그것이 안 되니까",
-            "label": "L02 특정인·집단을 대상으로 한 비하 표현",
-            "reason": "ML 분류 (신뢰도 0.57)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.85)"
         },
         {
             "segment_id": 51,
@@ -2413,7 +1408,7 @@
             "timestamp": "03:51–03:54",
             "corrected_text": "아니 너무 당당해서 따라할 수가 없어!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.73)"
+            "reason": "ML 분류 (신뢰도 0.86)"
         },
         {
             "segment_id": 53,
@@ -2421,8 +1416,8 @@
             "end": 235.64,
             "timestamp": "03:54–03:55",
             "corrected_text": "나도 아까 따라했는데",
-            "label": "L09 성적 발언·표현으로 인한 불쾌감 유발",
-            "reason": "ML 분류 (신뢰도 0.62)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.85)"
         },
         {
             "segment_id": 54,
@@ -2431,7 +1426,7 @@
             "timestamp": "03:55–03:58",
             "corrected_text": "원래 나도 상대모사 좀 할 줄 아는데 아예 못 따라하겠어!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.58)"
+            "reason": "ML 분류 (신뢰도 0.72)"
         },
         {
             "segment_id": 55,
@@ -2440,7 +1435,7 @@
             "timestamp": "03:58–04:01",
             "corrected_text": "너무 너무 어이가 없어가지고",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.87)"
+            "reason": "ML 분류 (신뢰도 0.86)"
         },
         {
             "segment_id": 56,
@@ -2449,7 +1444,7 @@
             "timestamp": "04:01–04:03",
             "corrected_text": "아니 솔직히 말해가지고 전술",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.55)"
+            "reason": "ML 분류 (신뢰도 0.88)"
         },
         {
             "segment_id": 57,
@@ -2458,7 +1453,7 @@
             "timestamp": "04:03–04:07",
             "corrected_text": "약간 그것 아니야! 약간 될까 말까 하는 식으로",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.69)"
         },
         {
             "segment_id": 58,
@@ -2467,7 +1462,7 @@
             "timestamp": "04:07–04:13",
             "corrected_text": "약간 뭔가 이 실험해보고 안되면 다시 빼고 이렇게 좀 이렇게 좀 해야 되는데",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.74)"
+            "reason": "ML 분류 (신뢰도 0.77)"
         },
         {
             "segment_id": 59,
@@ -2476,7 +1471,7 @@
             "timestamp": "04:13–04:19",
             "corrected_text": "그것이 아니라 그냥 무작정 이상하게 전술 써가지고 이것이 뭐 하는 거예요 진짜로!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.91)"
+            "reason": "ML 분류 (신뢰도 0.92)"
         },
         {
             "segment_id": 60,
@@ -2485,7 +1480,7 @@
             "timestamp": "04:19–04:21",
             "corrected_text": "아니 나는 오늘 솔직히 말하잖아!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.73)"
+            "reason": "ML 분류 (신뢰도 0.86)"
         },
         {
             "segment_id": 61,
@@ -2494,7 +1489,7 @@
             "timestamp": "04:21–04:23",
             "corrected_text": "아 예 진심으로 죄송합니다!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.67)"
         },
         {
             "segment_id": 62,
@@ -2503,7 +1498,7 @@
             "timestamp": "04:23–04:25",
             "corrected_text": "자 이렇게 하잖아! 그러면은",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.76)"
+            "reason": "ML 분류 (신뢰도 0.83)"
         },
         {
             "segment_id": 63,
@@ -2512,7 +1507,7 @@
             "timestamp": "04:25–04:27",
             "corrected_text": "아 그래 이제 떠나가는 사람!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.58)"
+            "reason": "ML 분류 (신뢰도 0.76)"
         },
         {
             "segment_id": 64,
@@ -2521,7 +1516,7 @@
             "timestamp": "04:27–04:28",
             "corrected_text": "여기에서 뭐하냐!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 65,
@@ -2539,7 +1534,7 @@
             "timestamp": "04:29–04:30",
             "corrected_text": "아우 씨!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 67,
@@ -2566,7 +1561,7 @@
             "timestamp": "04:34–04:35",
             "corrected_text": "아..",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 70,
@@ -2575,7 +1570,7 @@
             "timestamp": "04:35–04:37",
             "corrected_text": "진짜 이것은 아닌 것 같습니다 여러분들!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.93)"
+            "reason": "ML 분류 (신뢰도 0.88)"
         },
         {
             "segment_id": 71,
@@ -2584,7 +1579,7 @@
             "timestamp": "04:37–04:39",
             "corrected_text": "진짜 이것은 아닌 것 같습니다 여러분들!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.93)"
+            "reason": "ML 분류 (신뢰도 0.88)"
         },
         {
             "segment_id": 72,
@@ -2593,7 +1588,7 @@
             "timestamp": "04:39–04:46",
             "corrected_text": "그런데 여기서 진짜 여러분들 대한민국 축구 대표팀 축협 다 갈아야 돼요 진짜로!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.97)"
+            "reason": "ML 분류 (신뢰도 0.95)"
         },
         {
             "segment_id": 73,
@@ -2602,7 +1597,7 @@
             "timestamp": "04:46–04:49",
             "corrected_text": "우리 다시 살리려면은 축협 밑에부터 다 갈아야 돼!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.66)"
+            "reason": "ML 분류 (신뢰도 0.69)"
         },
         {
             "segment_id": 74,
@@ -2611,7 +1606,7 @@
             "timestamp": "04:49–04:54",
             "corrected_text": "왜냐하면 아까도 말했지만 분명히 이제 여기서 그것 할 거란 말이야!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.80)"
+            "reason": "ML 분류 (신뢰도 0.89)"
         },
         {
             "segment_id": 75,
@@ -2620,7 +1615,7 @@
             "timestamp": "04:54–04:57",
             "corrected_text": "이 외국인 감독을 선임하려고 하는 척 할 거란 말이야!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.52)"
+            "reason": "ML 분류 (신뢰도 0.82)"
         },
         {
             "segment_id": 76,
@@ -2629,7 +1624,7 @@
             "timestamp": "04:57–05:00",
             "corrected_text": "그러면은 그 또 무게중심이 여기로 쏠려!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.71)"
+            "reason": "ML 분류 (신뢰도 0.84)"
         },
         {
             "segment_id": 77,
@@ -2637,8 +1632,8 @@
             "end": 306.88,
             "timestamp": "05:00–05:06",
             "corrected_text": "그러면은 이제 또 축구 그 대한축구협회에 있는 사람들이 또 안 잘리고 그대로 일을 한단 말이야 또!",
-            "label": "L09 성적 발언·표현으로 인한 불쾌감 유발",
-            "reason": "ML 분류 (신뢰도 0.87)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.86)"
         },
         {
             "segment_id": 78,
@@ -2647,7 +1642,7 @@
             "timestamp": "05:06–05:09",
             "corrected_text": "그리고 내가 봤을 때 임시감독도 하지마! 그냥 임시감독!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.75)"
+            "reason": "ML 분류 (신뢰도 0.84)"
         },
         {
             "segment_id": 79,
@@ -2656,7 +1651,7 @@
             "timestamp": "05:09–05:13",
             "corrected_text": "그 들어가는 국대 감독도 내가 봤을 때 다!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.69)"
         },
         {
             "segment_id": 80,
@@ -2665,7 +1660,7 @@
             "timestamp": "05:13–05:14",
             "corrected_text": "그것 돼! 저 다 잘려!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 81,
@@ -2673,8 +1668,8 @@
             "end": 316.06,
             "timestamp": "05:14–05:16",
             "corrected_text": "아니 그 저 뭐야!",
-            "label": "L09 성적 발언·표현으로 인한 불쾌감 유발",
-            "reason": "ML 분류 (신뢰도 0.83)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.86)"
         },
         {
             "segment_id": 82,
@@ -2683,7 +1678,7 @@
             "timestamp": "05:16–05:19",
             "corrected_text": "아 그런데 말이 안 나오네 그 욕먹어! 욕먹어! 진짜 욕먹어!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.92)"
+            "reason": "ML 분류 (신뢰도 0.88)"
         },
         {
             "segment_id": 83,
@@ -2692,7 +1687,7 @@
             "timestamp": "05:19–05:21",
             "corrected_text": "욕빠지대 욕빠지대 욕빠지!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 84,
@@ -2701,7 +1696,7 @@
             "timestamp": "05:21–05:23",
             "corrected_text": "7개월 정도 남았거든요?",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.58)"
+            "reason": "ML 분류 (신뢰도 0.64)"
         },
         {
             "segment_id": 85,
@@ -2710,7 +1705,7 @@
             "timestamp": "05:23–05:27",
             "corrected_text": "그 전까지 그냥 감독 뽑는 데만 신경 써가지고 임시감독 하지 말고!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.82)"
+            "reason": "ML 분류 (신뢰도 0.81)"
         },
         {
             "segment_id": 86,
@@ -2718,8 +1713,8 @@
             "end": 330.9,
             "timestamp": "05:27–05:30",
             "corrected_text": "딱 외국인 감독 한 명! 외국인 감독으로 와! 무조건 외국인 감독!",
-            "label": "L07 특정 정치 성향의 일방적 주장 또는 선동",
-            "reason": "ML 분류 (신뢰도 0.56)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.85)"
         },
         {
             "segment_id": 87,
@@ -2727,8 +1722,8 @@
             "end": 332.78,
             "timestamp": "05:30–05:32",
             "corrected_text": "국내 감독은 이제 더 이상 안돼!",
-            "label": "L09 성적 발언·표현으로 인한 불쾌감 유발",
-            "reason": "ML 분류 (신뢰도 0.65)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.86)"
         },
         {
             "segment_id": 88,
@@ -2737,7 +1732,7 @@
             "timestamp": "05:32–05:35",
             "corrected_text": "홍명모 감독이 그렇게 망쳐놔가지고",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.68)"
         },
         {
             "segment_id": 89,
@@ -2746,7 +1741,7 @@
             "timestamp": "05:35–05:37",
             "corrected_text": "국내 감독에서 좋은 감독 당연히 있죠!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.59)"
+            "reason": "ML 분류 (신뢰도 0.79)"
         },
         {
             "segment_id": 90,
@@ -2755,7 +1750,7 @@
             "timestamp": "05:37–05:39",
             "corrected_text": "찾아보면 있지 당연히!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.75)"
+            "reason": "ML 분류 (신뢰도 0.86)"
         },
         {
             "segment_id": 91,
@@ -2764,7 +1759,7 @@
             "timestamp": "05:39–05:42",
             "corrected_text": "그런데 안돼 이제! 외국인 감독 무조건 가야 돼 그냥!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.92)"
+            "reason": "ML 분류 (신뢰도 0.93)"
         },
         {
             "segment_id": 92,
@@ -2773,7 +1768,7 @@
             "timestamp": "05:42–05:43",
             "corrected_text": "좀 장기적으로!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 93,
@@ -2790,8 +1785,8 @@
             "end": 346.65999999999997,
             "timestamp": "05:45–05:46",
             "corrected_text": "아니 왜냐면!",
-            "label": "L09 성적 발언·표현으로 인한 불쾌감 유발",
-            "reason": "ML 분류 (신뢰도 0.83)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.87)"
         },
         {
             "segment_id": 95,
@@ -2800,7 +1795,7 @@
             "timestamp": "05:46–05:48",
             "corrected_text": "이것 봐봐!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.74)"
+            "reason": "ML 분류 (신뢰도 0.86)"
         },
         {
             "segment_id": 96,
@@ -2809,7 +1804,7 @@
             "timestamp": "05:48–05:50",
             "corrected_text": "2030 월드컵 대 한국 선수 나이 봐봐!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.75)"
         },
         {
             "segment_id": 97,
@@ -2818,7 +1813,7 @@
             "timestamp": "05:50–05:54",
             "corrected_text": "손흥민, 김민재, 이강인, 이재성, 김순규, 조현우",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.75)"
         },
         {
             "segment_id": 98,
@@ -2827,7 +1822,7 @@
             "timestamp": "05:54–05:57",
             "corrected_text": "이강인 빼고 김민재 선수는 모르겠어!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.71)"
         },
         {
             "segment_id": 99,
@@ -2836,7 +1831,7 @@
             "timestamp": "05:57–05:58",
             "corrected_text": "거의 다 은퇴야 이제!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.61)"
+            "reason": "ML 분류 (신뢰도 0.80)"
         },
         {
             "segment_id": 100,
@@ -2845,7 +1840,7 @@
             "timestamp": "05:58–06:00",
             "corrected_text": "황인범, 백승호, 황희찬, 조..",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 101,
@@ -2854,7 +1849,7 @@
             "timestamp": "06:00–06:02",
             "corrected_text": "옌스, 오용규 빼고!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 102,
@@ -2863,7 +1858,7 @@
             "timestamp": "06:02–06:04",
             "corrected_text": "2030년에 저도 41살이것든요?",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 103,
@@ -2872,7 +1867,7 @@
             "timestamp": "06:04–06:07",
             "corrected_text": "그런데 선수들도 다 30 몇 세야!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.90)"
+            "reason": "ML 분류 (신뢰도 0.88)"
         },
         {
             "segment_id": 104,
@@ -2881,7 +1876,7 @@
             "timestamp": "06:07–06:08",
             "corrected_text": "그럼 다 은퇴할 나이가 돼!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.74)"
+            "reason": "ML 분류 (신뢰도 0.75)"
         },
         {
             "segment_id": 105,
@@ -2890,7 +1885,7 @@
             "timestamp": "06:08–06:10",
             "corrected_text": "그러면은 누구를 뽑을 거야!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.88)"
+            "reason": "ML 분류 (신뢰도 0.92)"
         },
         {
             "segment_id": 106,
@@ -2899,7 +1894,7 @@
             "timestamp": "06:10–06:13",
             "corrected_text": "물론 뭐 양민혁 선수나 다 있지!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.61)"
+            "reason": "ML 분류 (신뢰도 0.69)"
         },
         {
             "segment_id": 107,
@@ -2908,7 +1903,7 @@
             "timestamp": "06:13–06:17",
             "corrected_text": "그런데 그것이 문제가 아니라 우리가 지금 부족한 풀백들이나",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.83)"
+            "reason": "ML 분류 (신뢰도 0.87)"
         },
         {
             "segment_id": 108,
@@ -2916,8 +1911,8 @@
             "end": 380.18,
             "timestamp": "06:17–06:20",
             "corrected_text": "그 다음에 이제 또 김민재 선수도 은퇴 만약에 하면은",
-            "label": "L09 성적 발언·표현으로 인한 불쾌감 유발",
-            "reason": "ML 분류 (신뢰도 0.61)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.86)"
         },
         {
             "segment_id": 109,
@@ -2925,8 +1920,8 @@
             "end": 382.06,
             "timestamp": "06:20–06:22",
             "corrected_text": "이제 센터백도 좀 찾아야 되고",
-            "label": "L09 성적 발언·표현으로 인한 불쾌감 유발",
-            "reason": "ML 분류 (신뢰도 0.65)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.87)"
         },
         {
             "segment_id": 110,
@@ -2935,7 +1930,7 @@
             "timestamp": "06:22–06:24",
             "corrected_text": "공격수도 하나 더 찾아야 되고",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.71)"
+            "reason": "ML 분류 (신뢰도 0.83)"
         },
         {
             "segment_id": 111,
@@ -2953,7 +1948,7 @@
             "timestamp": "06:29–06:31",
             "corrected_text": "이것 장기적으로 봐야지! 장기적으로!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.74)"
+            "reason": "ML 분류 (신뢰도 0.86)"
         },
         {
             "segment_id": 113,
@@ -2962,7 +1957,7 @@
             "timestamp": "06:31–06:33",
             "corrected_text": "일본이 20년 정도 걸렸어요 여러분들!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.58)"
+            "reason": "ML 분류 (신뢰도 0.64)"
         },
         {
             "segment_id": 114,
@@ -2971,7 +1966,7 @@
             "timestamp": "06:33–06:36",
             "corrected_text": "그런데 우리나라는 내가 봤을 때 지금부터",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.83)"
+            "reason": "ML 분류 (신뢰도 0.91)"
         },
         {
             "segment_id": 115,
@@ -2980,7 +1975,7 @@
             "timestamp": "06:36–06:40",
             "corrected_text": "뭐 30년 월드컵, 34년 월드컵을 날리자가 아니라",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.55)"
         },
         {
             "segment_id": 116,
@@ -2988,8 +1983,8 @@
             "end": 402.64,
             "timestamp": "06:40–06:42",
             "corrected_text": "지금부터 천천히 준비해가지고",
-            "label": "L07 특정 정치 성향의 일방적 주장 또는 선동",
-            "reason": "ML 분류 (신뢰도 0.70)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.87)"
         },
         {
             "segment_id": 117,
@@ -2998,7 +1993,7 @@
             "timestamp": "06:42–06:45",
             "corrected_text": "밑에서부터 천천히 다시 올라가야 돼!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.57)"
+            "reason": "ML 분류 (신뢰도 0.81)"
         },
         {
             "segment_id": 118,
@@ -3016,7 +2011,7 @@
             "timestamp": "06:49–06:51",
             "corrected_text": "그리고 감독도 외국이 감독 딱 뽑고",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.63)"
+            "reason": "ML 분류 (신뢰도 0.75)"
         },
         {
             "segment_id": 120,
@@ -3024,8 +2019,8 @@
             "end": 413.78,
             "timestamp": "06:51–06:53",
             "corrected_text": "4 플러스 1년 계약으로 해서",
-            "label": "L09 성적 발언·표현으로 인한 불쾌감 유발",
-            "reason": "ML 분류 (신뢰도 0.58)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.85)"
         },
         {
             "segment_id": 121,
@@ -3034,7 +2029,7 @@
             "timestamp": "06:53–06:56",
             "corrected_text": "4년 잘하면 뭐 1년 더 플러스하고",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.75)"
         },
         {
             "segment_id": 122,
@@ -3043,7 +2038,7 @@
             "timestamp": "06:56–06:58",
             "corrected_text": "아니면 그 다음도 한 8년까지도 보고",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.80)"
+            "reason": "ML 분류 (신뢰도 0.82)"
         },
         {
             "segment_id": 123,
@@ -3061,7 +2056,7 @@
             "timestamp": "07:01–07:02",
             "corrected_text": "시스템 준비해서!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 125,
@@ -3070,7 +2065,7 @@
             "timestamp": "07:02–07:05",
             "corrected_text": "안 그러면은 이것 똑같아!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.74)"
+            "reason": "ML 분류 (신뢰도 0.87)"
         },
         {
             "segment_id": 126,
@@ -3078,8 +2073,8 @@
             "end": 428.65999999999997,
             "timestamp": "07:05–07:08",
             "corrected_text": "아 이제 홍영보 감독 그만뒀으니까 악의 축 날라갔다!",
-            "label": "L09 성적 발언·표현으로 인한 불쾌감 유발",
-            "reason": "ML 분류 (신뢰도 0.65)"
+            "label": "L02 특정인·집단을 대상으로 한 비하 표현",
+            "reason": "ML 분류 (신뢰도 0.78)"
         },
         {
             "segment_id": 127,
@@ -3088,7 +2083,7 @@
             "timestamp": "07:08–07:10",
             "corrected_text": "아 이제 끝이다! 이것이 아니라",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.54)"
+            "reason": "ML 분류 (신뢰도 0.70)"
         },
         {
             "segment_id": 128,
@@ -3097,7 +2092,7 @@
             "timestamp": "07:10–07:13",
             "corrected_text": "축첩부터 다 한번 처리하고",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.74)"
+            "reason": "ML 분류 (신뢰도 0.75)"
         },
         {
             "segment_id": 129,
@@ -3106,7 +2101,7 @@
             "timestamp": "07:13–07:16",
             "corrected_text": "그냥 대한민국 월드컵 멤버들도 처음부터 다시 다 살펴보고",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.84)"
+            "reason": "ML 분류 (신뢰도 0.83)"
         },
         {
             "segment_id": 130,
@@ -3115,7 +2110,7 @@
             "timestamp": "07:16–07:18",
             "corrected_text": "하나하나씩 이렇게 좀 보고",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.82)"
+            "reason": "ML 분류 (신뢰도 0.87)"
         },
         {
             "segment_id": 131,
@@ -3124,7 +2119,7 @@
             "timestamp": "07:18–07:20",
             "corrected_text": "밑에서 유소년 유23도 보고",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.58)"
+            "reason": "ML 분류 (신뢰도 0.55)"
         },
         {
             "segment_id": 132,
@@ -3133,7 +2128,7 @@
             "timestamp": "07:20–07:22",
             "corrected_text": "유20도 보고 이렇게 해야 돼!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.69)"
+            "reason": "ML 분류 (신뢰도 0.74)"
         },
         {
             "segment_id": 133,
@@ -3142,7 +2137,7 @@
             "timestamp": "07:22–07:24",
             "corrected_text": "유16이 여러분들!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 134,
@@ -3151,7 +2146,7 @@
             "timestamp": "07:24–07:26",
             "corrected_text": "중국한테 진 거 아세요? 혹시?",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.68)"
+            "reason": "ML 분류 (신뢰도 0.70)"
         },
         {
             "segment_id": 135,
@@ -3160,7 +2155,7 @@
             "timestamp": "07:26–07:28",
             "corrected_text": "정확히 2026년 5월 17일인데",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 136,
@@ -3168,8 +2163,8 @@
             "end": 451.20000000000005,
             "timestamp": "07:28–07:31",
             "corrected_text": "이 선수가 지금 손흥민 선수 세레머니 하고 있잖아!",
-            "label": "L04 사실과 다른 정보의 의도적·비의도적 유포",
-            "reason": "ML 분류 (신뢰도 0.76)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.85)"
         },
         {
             "segment_id": 137,
@@ -3178,7 +2173,7 @@
             "timestamp": "07:31–07:33",
             "corrected_text": "이것 4대2로 졌습니다 여러분들!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.74)"
+            "reason": "ML 분류 (신뢰도 0.86)"
         },
         {
             "segment_id": 138,
@@ -3186,8 +2181,8 @@
             "end": 456.16,
             "timestamp": "07:33–07:36",
             "corrected_text": "한국 축구 이것 성인이랑 무슨 상관이 왔는데",
-            "label": "L09 성적 발언·표현으로 인한 불쾌감 유발",
-            "reason": "ML 분류 (신뢰도 0.56)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.87)"
         },
         {
             "segment_id": 139,
@@ -3196,7 +2191,7 @@
             "timestamp": "07:36–07:37",
             "corrected_text": "이들이 미래니까!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 140,
@@ -3205,7 +2200,7 @@
             "timestamp": "07:39–07:40",
             "corrected_text": "이들이 미래니까!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 141,
@@ -3213,8 +2208,8 @@
             "end": 463.36,
             "timestamp": "07:40–07:43",
             "corrected_text": "지금부터 하나하나씩 다 천천히",
-            "label": "L07 특정 정치 성향의 일방적 주장 또는 선동",
-            "reason": "ML 분류 (신뢰도 0.70)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.87)"
         },
         {
             "segment_id": 142,
@@ -3223,7 +2218,7 @@
             "timestamp": "07:43–07:45",
             "corrected_text": "다 준비해야 돼 진짜로!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 143,
@@ -3241,7 +2236,7 @@
             "timestamp": "07:46–07:47",
             "corrected_text": "이런 게 있어!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.75)"
+            "reason": "ML 분류 (신뢰도 0.70)"
         },
         {
             "segment_id": 145,
@@ -3250,7 +2245,7 @@
             "timestamp": "07:47–07:50",
             "corrected_text": "우리나라가 이제 한 번에 이렇게 딱 뭐",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.62)"
+            "reason": "ML 분류 (신뢰도 0.77)"
         },
         {
             "segment_id": 146,
@@ -3268,7 +2263,7 @@
             "timestamp": "07:52–07:53",
             "corrected_text": "그런데 그것이!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.90)"
+            "reason": "ML 분류 (신뢰도 0.89)"
         },
         {
             "segment_id": 148,
@@ -3277,7 +2272,7 @@
             "timestamp": "07:53–07:55",
             "corrected_text": "저는 그걸로 뭘 하면 안 된다 생각해요!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.79)"
+            "reason": "ML 분류 (신뢰도 0.77)"
         },
         {
             "segment_id": 149,
@@ -3285,8 +2280,8 @@
             "end": 476.72,
             "timestamp": "07:55–07:56",
             "corrected_text": "아니 왜냐면!",
-            "label": "L09 성적 발언·표현으로 인한 불쾌감 유발",
-            "reason": "ML 분류 (신뢰도 0.83)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.87)"
         },
         {
             "segment_id": 150,
@@ -3295,7 +2290,7 @@
             "timestamp": "07:56–07:59",
             "corrected_text": "자기 인생 살기도 힘든 상황인데 어떻게!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.50)"
+            "reason": "ML 분류 (신뢰도 0.66)"
         },
         {
             "segment_id": 151,
@@ -3304,7 +2299,7 @@
             "timestamp": "07:59–08:01",
             "corrected_text": "내가 축구까지 보고 어떻게 그래!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.81)"
+            "reason": "ML 분류 (신뢰도 0.74)"
         },
         {
             "segment_id": 152,
@@ -3313,7 +2308,7 @@
             "timestamp": "08:01–08:03",
             "corrected_text": "당연히 그냥 좀 들끓었다가",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.91)"
+            "reason": "ML 분류 (신뢰도 0.87)"
         },
         {
             "segment_id": 153,
@@ -3321,8 +2316,8 @@
             "end": 486.48,
             "timestamp": "08:03–08:06",
             "corrected_text": "당연히 내 할 거 하는 게 요즘 인생사 아니야!",
-            "label": "L03 성별·인종·종교 등 기반 혐오 발언",
-            "reason": "ML 분류 (신뢰도 0.54)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.84)"
         },
         {
             "segment_id": 154,
@@ -3331,7 +2326,7 @@
             "timestamp": "08:06–08:07",
             "corrected_text": "맞잖아!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 155,
@@ -3358,7 +2353,7 @@
             "timestamp": "08:11–08:12",
             "corrected_text": "또!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 158,
@@ -3376,7 +2371,7 @@
             "timestamp": "08:17–08:18",
             "corrected_text": "됐어 됐어!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 160,
@@ -3385,7 +2380,7 @@
             "timestamp": "08:25–08:26",
             "corrected_text": "어! 이 자리였지!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 161,
@@ -3394,7 +2389,7 @@
             "timestamp": "08:26–08:28",
             "corrected_text": "오!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 162,
@@ -3403,7 +2398,7 @@
             "timestamp": "08:28–08:29",
             "corrected_text": "이 차 굿!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 163,
@@ -3411,8 +2406,8 @@
             "end": 511.59999999999997,
             "timestamp": "08:29–08:31",
             "corrected_text": "어! 이 자리가 역시 내 자리!",
-            "label": "L03 성별·인종·종교 등 기반 혐오 발언",
-            "reason": "ML 분류 (신뢰도 0.67)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.82)"
         },
         {
             "segment_id": 164,
@@ -3429,8 +2424,8 @@
             "end": 515.6,
             "timestamp": "08:32–08:35",
             "corrected_text": "어! 아니 이 인생 씨 사임한다면서요!",
-            "label": "L09 성적 발언·표현으로 인한 불쾌감 유발",
-            "reason": "ML 분류 (신뢰도 0.53)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.87)"
         },
         {
             "segment_id": 166,
@@ -3439,7 +2434,7 @@
             "timestamp": "08:35–08:36",
             "corrected_text": "또 얘기하는데!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 167,
@@ -3448,7 +2443,7 @@
             "timestamp": "08:36–08:39",
             "corrected_text": "아까 그 어제 영상에서도 얘기하고!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.52)"
         },
         {
             "segment_id": 168,
@@ -3457,7 +2452,7 @@
             "timestamp": "08:39–08:40",
             "corrected_text": "사임 안 하잖아!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 169,
@@ -3466,7 +2461,7 @@
             "timestamp": "08:40–08:44",
             "corrected_text": "이것이 진짜 처음부터 진짜 다 바꿔야 돼요 여러분들!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.97)"
+            "reason": "ML 분류 (신뢰도 0.96)"
         },
         {
             "segment_id": 170,
@@ -3474,8 +2469,8 @@
             "end": 527.68,
             "timestamp": "08:44–08:47",
             "corrected_text": "안 그러면은 일주일 지나고 한 달 뒤에 또 이것이",
-            "label": "L04 사실과 다른 정보의 의도적·비의도적 유포",
-            "reason": "ML 분류 (신뢰도 0.74)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.86)"
         },
         {
             "segment_id": 171,
@@ -3484,7 +2479,7 @@
             "timestamp": "08:47–08:49",
             "corrected_text": "다 잊혀져요 여러분들!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 172,
@@ -3493,7 +2488,7 @@
             "timestamp": "08:49–08:51",
             "corrected_text": "그러면은 어떻게 되냐면!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.73)"
         },
         {
             "segment_id": 173,
@@ -3511,7 +2506,7 @@
             "timestamp": "08:54–08:56",
             "corrected_text": "또 월드컵 기다리면은!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 175,
@@ -3520,7 +2515,7 @@
             "timestamp": "08:56–08:57",
             "corrected_text": "월드컵 이번에 안 본다 했는데!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.76)"
+            "reason": "ML 분류 (신뢰도 0.74)"
         },
         {
             "segment_id": 176,
@@ -3538,7 +2533,7 @@
             "timestamp": "08:58–09:00",
             "corrected_text": "그럼 보게 돼! 어쩔 수 없이 보게 돼!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.74)"
+            "reason": "ML 분류 (신뢰도 0.75)"
         },
         {
             "segment_id": 178,
@@ -3547,7 +2542,7 @@
             "timestamp": "09:00–09:01",
             "corrected_text": "월드컵은!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 179,
@@ -3556,7 +2551,7 @@
             "timestamp": "09:01–09:02",
             "corrected_text": "월드컵 분위기가 나오면 보게 된다!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 180,
@@ -3565,7 +2560,7 @@
             "timestamp": "09:02–09:03",
             "corrected_text": "그러면 또!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.71)"
+            "reason": "ML 분류 (신뢰도 0.73)"
         },
         {
             "segment_id": 181,
@@ -3574,7 +2569,7 @@
             "timestamp": "09:03–09:04",
             "corrected_text": "똑같은 일 반복!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 182,
@@ -3583,7 +2578,7 @@
             "timestamp": "09:04–09:06",
             "corrected_text": "또 똑같은 일 반복!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 183,
@@ -3592,7 +2587,7 @@
             "timestamp": "09:06–09:07",
             "corrected_text": "또 똑같은 일 반복!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 184,
@@ -3610,7 +2605,7 @@
             "timestamp": "09:08–09:10",
             "corrected_text": "이것 또 도돌이표 된다니까!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.74)"
+            "reason": "ML 분류 (신뢰도 0.86)"
         },
         {
             "segment_id": 186,
@@ -3619,7 +2614,7 @@
             "timestamp": "09:10–09:11",
             "corrected_text": "진짜로!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 187,
@@ -3628,7 +2623,7 @@
             "timestamp": "09:11–09:16",
             "corrected_text": "아니 나는 진짜 만약에 32강에 우리나라가 진출했잖아!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.69)"
+            "reason": "ML 분류 (신뢰도 0.89)"
         },
         {
             "segment_id": 188,
@@ -3637,7 +2632,7 @@
             "timestamp": "09:16–09:21",
             "corrected_text": "와 그러면은 사과할 때도 저 정도인데 얼마나 진짜 꺼드렉댔을까!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.79)"
+            "reason": "ML 분류 (신뢰도 0.83)"
         },
         {
             "segment_id": 189,
@@ -3646,7 +2641,7 @@
             "timestamp": "09:21–09:27",
             "corrected_text": "와.. 진짜로 그럼 사임 안 했을 거 같아 솔직히 말하면!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.61)"
+            "reason": "ML 분류 (신뢰도 0.59)"
         },
         {
             "segment_id": 190,
@@ -3655,7 +2650,7 @@
             "timestamp": "09:27–09:30",
             "corrected_text": "자 일단 우리나라가 해야 될 것은 아시안컵!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.76)"
+            "reason": "ML 분류 (신뢰도 0.81)"
         },
         {
             "segment_id": 191,
@@ -3663,8 +2658,8 @@
             "end": 575.84,
             "timestamp": "09:30–09:35",
             "corrected_text": "빨리 외국인 감독 선임하고 지금 시간 얼마 안 남았으니까 아시안컵 딱 준비하면서!",
-            "label": "L04 사실과 다른 정보의 의도적·비의도적 유포",
-            "reason": "ML 분류 (신뢰도 0.97)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.88)"
         },
         {
             "segment_id": 192,
@@ -3673,7 +2668,7 @@
             "timestamp": "09:35–09:37",
             "corrected_text": "그런데 좀 제대로 보긴 해야 될 거 같아요!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.58)"
+            "reason": "ML 분류 (신뢰도 0.70)"
         },
         {
             "segment_id": 193,
@@ -3682,7 +2677,7 @@
             "timestamp": "09:37–09:46",
             "corrected_text": "막 그렇다고 해서 진짜 막 너무 너무 길게 하지 말고 그래도 한 두 달 정도 길면 두 세 달 이 정도는 괜찮은데",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.91)"
+            "reason": "ML 분류 (신뢰도 0.92)"
         },
         {
             "segment_id": 194,
@@ -3691,7 +2686,7 @@
             "timestamp": "09:46–09:49",
             "corrected_text": "진짜 아니 두 세 달도 그런데 길긴 길어! 아니 딱 가가지고!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.79)"
+            "reason": "ML 분류 (신뢰도 0.95)"
         },
         {
             "segment_id": 195,
@@ -3709,7 +2704,7 @@
             "timestamp": "09:52–09:54",
             "corrected_text": "뭘 그렇게 막 오래 걸리고!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.72)"
         },
         {
             "segment_id": 197,
@@ -3718,7 +2713,7 @@
             "timestamp": "09:54–09:57",
             "corrected_text": "아니 그런데 제시 마치는 누구야! 하면서!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.68)"
+            "reason": "ML 분류 (신뢰도 0.89)"
         },
         {
             "segment_id": 198,
@@ -3727,7 +2722,7 @@
             "timestamp": "09:57–09:59",
             "corrected_text": "아흠!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 199,
@@ -3736,7 +2731,7 @@
             "timestamp": "10:01–10:02",
             "corrected_text": "아흠!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 200,
@@ -3744,8 +2739,8 @@
             "end": 605.44,
             "timestamp": "10:02–10:05",
             "corrected_text": "아니 이따 자 커피 한 잔이나 해야지!",
-            "label": "L09 성적 발언·표현으로 인한 불쾌감 유발",
-            "reason": "ML 분류 (신뢰도 0.54)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.87)"
         },
         {
             "segment_id": 201,
@@ -3754,7 +2749,7 @@
             "timestamp": "10:05–10:06",
             "corrected_text": "아흠!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 202,
@@ -3763,7 +2758,7 @@
             "timestamp": "10:06–10:08",
             "corrected_text": "아흠!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 203,
@@ -3772,7 +2767,7 @@
             "timestamp": "10:08–10:10",
             "corrected_text": "오늘 회의 여기까지 하자고!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.79)"
+            "reason": "ML 분류 (신뢰도 0.72)"
         },
         {
             "segment_id": 204,
@@ -3781,7 +2776,7 @@
             "timestamp": "10:10–10:11",
             "corrected_text": "다음 주에 또 보지?",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.53)"
+            "reason": "ML 분류 (신뢰도 0.56)"
         },
         {
             "segment_id": 205,
@@ -3790,7 +2785,7 @@
             "timestamp": "10:11–10:12",
             "corrected_text": "아흠!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 206,
@@ -3799,7 +2794,7 @@
             "timestamp": "10:12–10:15",
             "corrected_text": "이러지 말고 또!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 207,
@@ -3808,7 +2803,7 @@
             "timestamp": "10:15–10:16",
             "corrected_text": "어?",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 208,
@@ -3816,8 +2811,8 @@
             "end": 618.64,
             "timestamp": "10:16–10:18",
             "corrected_text": "아니 또 반칙 가가지고!",
-            "label": "L09 성적 발언·표현으로 인한 불쾌감 유발",
-            "reason": "ML 분류 (신뢰도 0.83)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.86)"
         },
         {
             "segment_id": 209,
@@ -3826,7 +2821,7 @@
             "timestamp": "10:18–10:19",
             "corrected_text": "어?",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 210,
@@ -3835,7 +2830,7 @@
             "timestamp": "10:19–10:19",
             "corrected_text": "어어?",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 211,
@@ -3844,7 +2839,7 @@
             "timestamp": "10:19–10:21",
             "corrected_text": "어?",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 212,
@@ -3853,7 +2848,7 @@
             "timestamp": "10:21–10:22",
             "corrected_text": "예!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 213,
@@ -3862,7 +2857,7 @@
             "timestamp": "10:22–10:23",
             "corrected_text": "홍명보 씨!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.74)"
         },
         {
             "segment_id": 214,
@@ -3871,7 +2866,7 @@
             "timestamp": "10:23–10:25",
             "corrected_text": "예 반갑습니다!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 215,
@@ -3880,7 +2875,7 @@
             "timestamp": "10:25–10:26",
             "corrected_text": "예!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 216,
@@ -3889,7 +2884,7 @@
             "timestamp": "10:26–10:30",
             "corrected_text": "저희 감독이 좀 되어주시면 감사하겠습니다!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 217,
@@ -3898,7 +2893,7 @@
             "timestamp": "10:30–10:31",
             "corrected_text": "예? 저요?",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 218,
@@ -3907,7 +2902,7 @@
             "timestamp": "10:31–10:33",
             "corrected_text": "아 또 이러지 말고!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 219,
@@ -3916,7 +2911,7 @@
             "timestamp": "10:33–10:40",
             "corrected_text": "아니 그런데 나는 솔직히 말하잖아! 검증된 감독이잖아! 검증된 감독이면 빨리빨리 우리가 저 데려올 수 있잖아! 여러분들!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.83)"
+            "reason": "ML 분류 (신뢰도 0.90)"
         },
         {
             "segment_id": 220,
@@ -3925,7 +2920,7 @@
             "timestamp": "10:40–10:44",
             "corrected_text": "그런데 그것이 뭐가 그렇게 오래 걸리는지 궁금해! 절차가!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.63)"
+            "reason": "ML 분류 (신뢰도 0.84)"
         },
         {
             "segment_id": 221,
@@ -3933,8 +2928,8 @@
             "end": 654.0,
             "timestamp": "10:44–10:54",
             "corrected_text": "아니 물론 한 두 달 이 정도는 기다리.. 당연히 뭐 왔다 갔다 하고 뭐 그런 것도 있고! 그런데 뭐가 그렇게 오래 걸리는지 저 궁금하다니까!",
-            "label": "L09 성적 발언·표현으로 인한 불쾌감 유발",
-            "reason": "ML 분류 (신뢰도 0.83)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.86)"
         },
         {
             "segment_id": 222,
@@ -3943,7 +2938,7 @@
             "timestamp": "10:54–10:58",
             "corrected_text": "우리 그때 뭐 새로운 감독 뽑는데 엄청 오래 걸리지 않았나?",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.63)"
+            "reason": "ML 분류 (신뢰도 0.73)"
         },
         {
             "segment_id": 223,
@@ -3952,7 +2947,7 @@
             "timestamp": "10:58–11:02",
             "corrected_text": "임시감독을 두 번 했잖아! 임시감독을 두 번을!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 224,
@@ -3961,7 +2956,7 @@
             "timestamp": "11:02–11:06",
             "corrected_text": "그런데 이것이 진짜 추측도 여러분들! 진짜로 레전드인 게 뭐냐면!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.98)"
+            "reason": "ML 분류 (신뢰도 0.97)"
         },
         {
             "segment_id": 225,
@@ -3970,7 +2965,7 @@
             "timestamp": "11:06–11:11",
             "corrected_text": "시간이 해결해 줄 거란 걸 알고 있는 게 무서워요! 시간이!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.63)"
+            "reason": "ML 분류 (신뢰도 0.71)"
         },
         {
             "segment_id": 226,
@@ -3979,7 +2974,7 @@
             "timestamp": "11:11–11:19",
             "corrected_text": "그니까 시간이 지나면 자기들이 욕 안 먹고 다시 계속 이렇게 할 수 있다는 걸 아는 게 그것이 무서워 진짜로!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.63)"
         },
         {
             "segment_id": 227,
@@ -3988,7 +2983,7 @@
             "timestamp": "11:19–11:24",
             "corrected_text": "아우 아우 아우 아우 아우 아우 너무 열받는다! 아우",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.87)"
+            "reason": "ML 분류 (신뢰도 0.86)"
         },
         {
             "segment_id": 228,
@@ -3997,7 +2992,7 @@
             "timestamp": "11:27–11:32",
             "corrected_text": "아니 아니 그런데 진짜 홍 감독님 진짜 기싸움 장난 아니네! 아니!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.84)"
+            "reason": "ML 분류 (신뢰도 0.96)"
         },
         {
             "segment_id": 229,
@@ -4006,7 +3001,7 @@
             "timestamp": "11:32–11:37",
             "corrected_text": "와 나 진짜 이것이.. 원래 이 정도면 사임하면 안 열받아야 되거든요?",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.95)"
+            "reason": "ML 분류 (신뢰도 0.92)"
         },
         {
             "segment_id": 230,
@@ -4024,7 +3019,7 @@
             "timestamp": "11:41–11:46",
             "corrected_text": "계속 뭔가를 남겨 계속! 계속 뭔가를 남겨 계속!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 232,
@@ -4042,7 +3037,7 @@
             "timestamp": "11:52–11:54",
             "corrected_text": "어?",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 234,
@@ -4051,7 +3046,7 @@
             "timestamp": "11:54–12:00",
             "corrected_text": "아아.. 중동팀 만난 대첩 버블로 50페이지 너무게 프레덴 시테이션을 준비했대!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 235,
@@ -4059,8 +3054,8 @@
             "end": 722.64,
             "timestamp": "12:00–12:02",
             "corrected_text": "이런 감독이랑! 어..",
-            "label": "L09 성적 발언·표현으로 인한 불쾌감 유발",
-            "reason": "ML 분류 (신뢰도 0.57)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.86)"
         },
         {
             "segment_id": 236,
@@ -4069,7 +3064,7 @@
             "timestamp": "12:04–12:06",
             "corrected_text": "일단은 뭐..",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 237,
@@ -4077,8 +3072,8 @@
             "end": 737.64,
             "timestamp": "12:06–12:17",
             "corrected_text": "저희도 저희가 무슨 일이 일어났는지 지금 잘 모르는 상황이기 때문에 저희도 좀 알아보고 있고 좀 환경적인 문제가 있었던 것 같습니다.",
-            "label": "L09 성적 발언·표현으로 인한 불쾌감 유발",
-            "reason": "ML 분류 (신뢰도 0.71)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.87)"
         },
         {
             "segment_id": 238,
@@ -4087,7 +3082,7 @@
             "timestamp": "12:17–12:19",
             "corrected_text": "어..",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 239,
@@ -4096,7 +3091,7 @@
             "timestamp": "12:19–12:20",
             "corrected_text": "음..",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 240,
@@ -4105,7 +3100,7 @@
             "timestamp": "12:20–12:21",
             "corrected_text": "음..",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 241,
@@ -4113,8 +3108,8 @@
             "end": 746.64,
             "timestamp": "12:21–12:26",
             "corrected_text": "민지 같은 경우는 다리가 아프다고 먼저 말을 해서 교체를 해줬고요.",
-            "label": "L09 성적 발언·표현으로 인한 불쾌감 유발",
-            "reason": "ML 분류 (신뢰도 0.77)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.83)"
         },
         {
             "segment_id": 242,
@@ -4123,7 +3118,7 @@
             "timestamp": "12:26–12:27",
             "corrected_text": "음..",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 243,
@@ -4131,8 +3126,8 @@
             "end": 750.64,
             "timestamp": "12:27–12:30",
             "corrected_text": "아니 이러고 있으니까 씨..",
-            "label": "L09 성적 발언·표현으로 인한 불쾌감 유발",
-            "reason": "ML 분류 (신뢰도 0.54)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.85)"
         },
         {
             "segment_id": 244,
@@ -4141,7 +3136,7 @@
             "timestamp": "12:30–12:32",
             "corrected_text": "와..",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 245,
@@ -4158,8 +3153,8 @@
             "end": 757.64,
             "timestamp": "12:35–12:37",
             "corrected_text": "한눈에 보는 홍명보 성적 체감!",
-            "label": "L02 특정인·집단을 대상으로 한 비하 표현",
-            "reason": "ML 분류 (신뢰도 0.68)"
+            "label": "L12 해당 없음",
+            "reason": "ML 분류 (신뢰도 0.84)"
         },
         {
             "segment_id": 247,
@@ -4168,7 +3163,7 @@
             "timestamp": "12:37–12:38",
             "corrected_text": "히딩크 4위!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 248,
@@ -4177,7 +3172,7 @@
             "timestamp": "12:38–12:39",
             "corrected_text": "아두보카트 17위!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 249,
@@ -4186,7 +3181,7 @@
             "timestamp": "12:39–12:40",
             "corrected_text": "허정무 15위!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 250,
@@ -4195,7 +3190,7 @@
             "timestamp": "12:40–12:41",
             "corrected_text": "홍명보 27위!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.74)"
         },
         {
             "segment_id": 251,
@@ -4204,7 +3199,7 @@
             "timestamp": "12:41–12:42",
             "corrected_text": "신태용 19위!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 252,
@@ -4213,7 +3208,7 @@
             "timestamp": "12:42–12:43",
             "corrected_text": "벤투 16위!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 253,
@@ -4222,7 +3217,7 @@
             "timestamp": "12:43–12:44",
             "corrected_text": "홍명보 34위!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.74)"
         },
         {
             "segment_id": 254,
@@ -4240,7 +3235,7 @@
             "timestamp": "12:45–12:46",
             "corrected_text": "어?",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 256,
@@ -4249,7 +3244,7 @@
             "timestamp": "12:46–12:54",
             "corrected_text": "어찌됐든 여러분들 마지막으로 그만뒀으니까 다행이고 저는 진짜 이 생각 있어요.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.90)"
+            "reason": "ML 분류 (신뢰도 0.82)"
         },
         {
             "segment_id": 257,
@@ -4258,7 +3253,7 @@
             "timestamp": "12:54–12:56",
             "corrected_text": "혹시나 더 한다고 할까봐.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 258,
@@ -4267,7 +3262,7 @@
             "timestamp": "12:57–12:58",
             "corrected_text": "예!",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 259,
@@ -4276,7 +3271,7 @@
             "timestamp": "12:58–12:59",
             "corrected_text": "정말 죄송합니다.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.81)"
+            "reason": "ML 분류 (신뢰도 0.79)"
         },
         {
             "segment_id": 260,
@@ -4285,7 +3280,7 @@
             "timestamp": "12:59–13:06",
             "corrected_text": "월드컵에서 안 좋은 모습 보여드려서 제가 아시안컵 때는 좋은 모습 보여드리겠습니다.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.75)"
+            "reason": "ML 분류 (신뢰도 0.78)"
         },
         {
             "segment_id": 261,
@@ -4294,7 +3289,7 @@
             "timestamp": "13:06–13:08",
             "corrected_text": "정말 죄송합니다.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.81)"
+            "reason": "ML 분류 (신뢰도 0.79)"
         },
         {
             "segment_id": 262,
@@ -4303,7 +3298,7 @@
             "timestamp": "13:08–13:14",
             "corrected_text": "나 이럴까봐 그랬는데 일단 그래도 양심! 양심이라고 말해야 될지 모르겠는데 어찌됐든 사임은 했어요.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.82)"
+            "reason": "ML 분류 (신뢰도 0.81)"
         },
         {
             "segment_id": 263,
@@ -4312,7 +3307,7 @@
             "timestamp": "13:14–13:25",
             "corrected_text": "사퇴는 본인이 이제 그만했으니까 그것이 일단 1차적으로 다행이고 2차적으로 빠르게 이제 일단 축협 사람들 조지고 그 다음에 3차적으로 빠르게 외국인 감독.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.70)"
+            "reason": "ML 분류 (신뢰도 0.92)"
         },
         {
             "segment_id": 264,
@@ -4321,7 +3316,7 @@
             "timestamp": "13:25–13:34",
             "corrected_text": "그 대신 좀 정확하게 좀 남들이 다 아는 감독으로 해서 좀 빨리 뽑고 이렇게 해서 좀 아시안컵 준비하면은 좋을 것 같습니다.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.88)"
+            "reason": "ML 분류 (신뢰도 0.90)"
         },
         {
             "segment_id": 265,
@@ -4330,7 +3325,7 @@
             "timestamp": "13:34–13:43",
             "corrected_text": "그리고 밑에서부터 처음부터 다시 천천히 시작한다는 걸로 그래서 우리도 예를 들어서 그 감독이 와서 만약에 좀 지더라도 처음에는 좀 많이 했으면 좋겠어요.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.68)"
+            "reason": "ML 분류 (신뢰도 0.82)"
         },
         {
             "segment_id": 266,
@@ -4339,7 +3334,7 @@
             "timestamp": "13:43–13:46",
             "corrected_text": "처음에는 좀 봐주고 이렇게 하면 좋을 것 같아요 여러분들.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.69)"
+            "reason": "ML 분류 (신뢰도 0.67)"
         },
         {
             "segment_id": 267,
@@ -4348,7 +3343,7 @@
             "timestamp": "13:46–13:50",
             "corrected_text": "천천히 천천히 진짜로 천천히 올라와요 천천히.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.81)"
         },
         {
             "segment_id": 268,
@@ -4357,7 +3352,7 @@
             "timestamp": "13:50–13:53",
             "corrected_text": "그런데 옛날에는 우리가 지잖아? 막 몰아있거든.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.90)"
+            "reason": "ML 분류 (신뢰도 0.88)"
         },
         {
             "segment_id": 269,
@@ -4366,7 +3361,7 @@
             "timestamp": "13:53–14:00",
             "corrected_text": "그런데 우리가 요즘 축구 한 2000 한 십몇년도만 봐도 그렇게 크게 뭘 안해.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.80)"
         },
         {
             "segment_id": 270,
@@ -4375,7 +3370,7 @@
             "timestamp": "14:00–14:03",
             "corrected_text": "기다려주고 봐주는 게 생겼어요 사실.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.56)"
+            "reason": "ML 분류 (신뢰도 0.60)"
         },
         {
             "segment_id": 271,
@@ -4384,7 +3379,7 @@
             "timestamp": "14:03–14:06",
             "corrected_text": "그리고 이임생씨 진짜 마지막으로 한마디만 할게요.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.77)"
+            "reason": "ML 분류 (신뢰도 0.79)"
         },
         {
             "segment_id": 272,
@@ -4393,7 +3388,7 @@
             "timestamp": "14:06–14:08",
             "corrected_text": "시청자가 바보가 아닙니다.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 273,
@@ -4402,7 +3397,7 @@
             "timestamp": "14:08–14:10",
             "corrected_text": "에?",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 274,
@@ -4411,7 +3406,7 @@
             "timestamp": "14:10–14:12",
             "corrected_text": "어?",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 275,
@@ -4420,7 +3415,7 @@
             "timestamp": "14:12–14:15",
             "corrected_text": "라볼피아나라는",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 276,
@@ -4429,7 +3424,7 @@
             "timestamp": "14:15–14:17",
             "corrected_text": "전술인데요.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 277,
@@ -4438,7 +3433,7 @@
             "timestamp": "14:17–14:21",
             "corrected_text": "밑에서부터 수비형 미드필더가 내려와서 아니 이딴 말 좀 하지 마세요.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.80)"
         },
         {
             "segment_id": 278,
@@ -4447,7 +3442,7 @@
             "timestamp": "14:21–14:23",
             "corrected_text": "제발 부탁드립니다 진짜로.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 279,
@@ -4456,7 +3451,7 @@
             "timestamp": "14:23–14:24",
             "corrected_text": "예.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 280,
@@ -4465,7 +3460,7 @@
             "timestamp": "14:24–14:28",
             "corrected_text": "진짜 이딴 말 좀 하지 마세요 진짜 바보가 아니니까.",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.91)"
+            "reason": "ML 분류 (신뢰도 0.89)"
         },
         {
             "segment_id": 281,
@@ -4474,7 +3469,7 @@
             "timestamp": "14:28–14:29",
             "corrected_text": "어휴..",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 282,
@@ -4483,7 +3478,7 @@
             "timestamp": "14:29–14:32",
             "corrected_text": "version",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 283,
@@ -4492,7 +3487,7 @@
             "timestamp": "14:32–14:42",
             "corrected_text": "version",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 284,
@@ -4501,7 +3496,7 @@
             "timestamp": "14:42–14:43",
             "corrected_text": "Tig",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 285,
@@ -4510,7 +3505,7 @@
             "timestamp": "14:43–14:47",
             "corrected_text": "아 뭔가 후련해야 되는데 후련한 마음이 없고",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.69)"
+            "reason": "ML 분류 (신뢰도 0.66)"
         },
         {
             "segment_id": 286,
@@ -4519,7 +3514,7 @@
             "timestamp": "14:47–14:49",
             "corrected_text": "더 찝찝하고 더 화가 나고",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 287,
@@ -4537,7 +3532,7 @@
             "timestamp": "14:52–14:53",
             "corrected_text": "또 짜증나고",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 289,
@@ -4546,7 +3541,7 @@
             "timestamp": "14:53–14:55",
             "corrected_text": "이것이 막 진짜 뭔가",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.95)"
+            "reason": "ML 분류 (신뢰도 0.94)"
         },
         {
             "segment_id": 290,
@@ -4555,7 +3550,7 @@
             "timestamp": "14:55–14:57",
             "corrected_text": "개운해야 되는데 막 불쾌하고",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.59)"
+            "reason": "ML 분류 (신뢰도 0.56)"
         },
         {
             "segment_id": 291,
@@ -4573,7 +3568,7 @@
             "timestamp": "14:59–15:01",
             "corrected_text": "뭐가 여기 안에 있는 것 같고",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.61)"
+            "reason": "ML 분류 (신뢰도 0.82)"
         },
         {
             "segment_id": 293,
@@ -4582,7 +3577,7 @@
             "timestamp": "15:01–15:02",
             "corrected_text": "이상이 찝찝하고",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 294,
@@ -4591,7 +3586,7 @@
             "timestamp": "15:02–15:06",
             "corrected_text": "네 일단은 여기까지 말하겠습니다 여러분들",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.00)"
+            "reason": "ML 분류 (신뢰도 0.51)"
         },
         {
             "segment_id": 295,
@@ -4600,10 +3595,26 @@
             "timestamp": "15:13–15:15",
             "corrected_text": "감사합니다",
             "label": "L12 해당 없음",
-            "reason": "ML 분류 (신뢰도 0.81)"
+            "reason": "ML 분류 (신뢰도 0.78)"
         }
     ],
-    "keyframe_analysis": [],
+    "keyframe_analysis": [
+        {
+            "time": "Point 1",
+            "tag": "짐 싸는 남성",
+            "screen_text": "쨌jJO3 UDO 단진미때 [최미입키=누크) 짐싸는데"
+        },
+        {
+            "time": "Point 2",
+            "tag": "의자에 앉음",
+            "screen_text": "쓰 비비O_[만입뷰 비즈망"
+        },
+        {
+            "time": "Point 3",
+            "tag": "남성과 자막",
+            "screen_text": "@ ULSY 아니 근데 진짜"
+        }
+    ],
     "transcript_files": {
         "raw": "samples/transcripts\\감스트 홍명보 감독 사퇴! 역대급 찝찝한 기자회견_JOImzKWGBnY_raw.json",
         "refined": "samples/transcripts\\감스트 홍명보 감독 사퇴! 역대급 찝찝한 기자회견_JOImzKWGBnY_refined.json"
@@ -4611,13 +3622,13 @@
     "youtube_meta": {
         "title": "감스트 홍명보 감독 사퇴! 역대급 찝찝한 기자회견",
         "channel": "감스트GAMST",
-        "view_count": 196252,
-        "like_count": 17019,
-        "comment_count": 2600,
-        "subscriber_count": 3000000,
+        "view_count": 2455150,
+        "like_count": 37123,
+        "comment_count": 5100,
+        "subscriber_count": 3010000,
         "upload_date": "20260629",
         "duration": 917,
-        "url": "https://www.youtube.com/watch?v=JOImzKWGBnY&t=1s",
+        "url": "https://www.youtube.com/watch?v=JOImzKWGBnY&t=732s",
         "video_id": "JOImzKWGBnY",
         "description": "[2026.06.28] 방송영상 입니다.\n\n#홍명보 #사퇴 #기자회견 #홍명보사퇴\n#북중미월드컵 #32강탈락 #월드컵 #축구 #국대 #월드컵탈락\n#손흥민 #오현규 #조규성 #김진규 #배준호 #백승호 #양현준 #엄지성 #이강인 #이동경 #이재성 #황인범 #황희찬 #김문환 #김민재 #김태현 #박진섭 #설영우 #옌스 #이기혁 #이태석 #이한범 #조위제 #김승규 #송범근 #조현우\n\n♥ GAMST YouTube channel subscribe please ♥\n\nGAMST YouTube https://goo.gl/i1A0oN\nGAMST Facebook http://facebook.com/gamst0108\nGAMST Instagram http://Instagram.com/gamst17172\nGAMST TV https://ch.sooplive.co.kr/devil0108\nGAMST TV watch live https://play.sooplive.co.kr/devil0108\n\nCOPYRIGHTS ⓒ",
         "tags": [
@@ -4637,69 +3648,186 @@
     "natam_risk": {
         "A": {
             "A-01": {
-                "level": "CARE",
-                "reason": "자동 평가 일시 지연 — 보수적 주의 단계 적용(수동 확인 권장)"
+                "level": "SAFE",
+                "reason": "정치적 진영이나 이념 갈등, 사회적 갈등을 직접적으로 유발하는 요소는 관찰되지 않음"
             },
             "A-02": {
-                "level": "CARE",
-                "reason": "자동 평가 일시 지연 — 보수적 주의 단계 적용(수동 확인 권장)"
+                "level": "ALERT",
+                "reason": "특정 축구 감독 및 축구협회 관계자들을 대상으로 강한 비판과 부정적 이미지를 반복적으로 형성하는 패턴이 관찰됨"
             },
             "A-03": {
-                "level": "CARE",
-                "reason": "자동 평가 일시 지연 — 보수적 주의 단계 적용(수동 확인 권장)"
+                "level": "SAFE",
+                "reason": "사생활이나 가족사 등 사적 영역에 대한 정보 노출이나 논란 소비 가능성은 확인되지 않음"
             },
             "A-04": {
-                "level": "CARE",
-                "reason": "자동 평가 일시 지연 — 보수적 주의 단계 적용(수동 확인 권장)"
+                "level": "SAFE",
+                "reason": "기존 이미지와 상반된 행동으로 인한 위선 프레임 형성 가능성은 본문 내용에서 확인하기 어려움"
             },
             "A-05": {
                 "level": "CARE",
-                "reason": "자동 평가 일시 지연 — 보수적 주의 단계 적용(수동 확인 권장)"
+                "reason": "감독의 사퇴 기자회견 자막과 크리에이터의 감정적 반응이 교차 편집되어 특정 발언만 왜곡되어 확산될 여지가 있음"
             },
             "A-06": {
-                "level": "CARE",
-                "reason": "자동 평가 일시 지연 — 보수적 주의 단계 적용(수동 확인 권장)"
+                "level": "ALERT",
+                "reason": "축구 국가대표팀 감독 사퇴 및 축구협회 쇄신 요구와 관련하여 커뮤니티 내 집단 갈등과 논쟁이 증폭될 가능성이 높음"
             },
             "A-07": {
-                "level": "CARE",
-                "reason": "자동 평가 일시 지연 — 보수적 주의 단계 적용(수동 확인 권장)"
+                "level": "ALERT",
+                "reason": "감독의 사퇴 발표 태도(주머니에 손을 넣는 행동 등)와 말투를 흉내 내며 조롱조로 소비하는 패턴이 관찰됨"
             },
             "A-08": {
                 "level": "CARE",
-                "reason": "자동 평가 일시 지연 — 보수적 주의 단계 적용(수동 확인 권장)"
+                "reason": "격앙된 어조와 비속어 섞인 표현으로 인해 브랜드나 광고주가 연계를 기피할 수 있는 분위기가 형성됨"
             },
             "A-09": {
-                "level": "CARE",
-                "reason": "자동 평가 일시 지연 — 보수적 주의 단계 적용(수동 확인 권장)"
+                "level": "ALERT",
+                "reason": "대중의 축구대표팀에 대한 실망감을 자극하며 분노와 과열 반응을 유도하는 감정 선동 경향이 나타남"
             },
             "A-10": {
-                "level": "CARE",
-                "reason": "자동 평가 일시 지연 — 보수적 주의 단계 적용(수동 확인 권장)"
+                "level": "ALERT",
+                "reason": "기존의 축구대표팀 경기력 논란, 감독 선임 과정의 잡음 등 과거 논란들과 결합되어 이슈가 추가 확산될 가능성이 존재함"
             }
         },
         "B": {
             "B-01": {
-                "level": "CARE",
-                "reason": "자동 평가 일시 지연 — 보수적 주의 단계 적용(수동 확인 권장)"
+                "level": "ALERT",
+                "reason": "\"개소리\", \"런 하면\" 등 특정 인물의 발언과 행동을 비하하고 모욕하는 표현이 지속적으로 사용됨"
             },
             "B-02": {
-                "level": "CARE",
-                "reason": "자동 평가 일시 지연 — 보수적 주의 단계 적용(수동 확인 권장)"
+                "level": "SAFE",
+                "reason": "신체적 폭력, 위협, 범죄 묘사 또는 불법 행위를 조장하는 표현은 관찰되지 않음"
             },
             "B-03": {
-                "level": "CARE",
-                "reason": "자동 평가 일시 지연 — 보수적 주의 단계 적용(수동 확인 권장)"
+                "level": "SAFE",
+                "reason": "성별, 인종, 지역 등 사회적 약자에 대한 차별이나 혐오 표현은 포함되어 있지 않음"
             },
             "B-04": {
-                "level": "CARE",
-                "reason": "자동 평가 일시 지연 — 보수적 주의 단계 적용(수동 확인 권장)"
+                "level": "SAFE",
+                "reason": "성적 암시나 신체 대상화 등 선정적인 표현은 확인되지 않음"
             },
             "B-05": {
                 "level": "CARE",
-                "reason": "자동 평가 일시 지연 — 보수적 주의 단계 적용(수동 확인 권장)"
+                "reason": "감정적인 욕설 및 비속어 사용으로 인해 플랫폼 광고 가이드라인 및 상업적 신뢰도와 충돌할 가능성이 있음"
             }
         },
-        "overall_a": "CARE",
-        "overall_b": "CARE"
+        "overall_a": "ALERT",
+        "overall_b": "ALERT"
+    },
+    "claim_check": {
+        "claims": [
+            {
+                "segment_idx": 223,
+                "timestamp": "10:58–11:02",
+                "claim": "임시감독을 두 번 했잖아! 임시감독을 두 번을!",
+                "domain": "역사/사회",
+                "checkworthiness": "MEDIUM",
+                "reason": "대한축구협회가 정식 감독 선임 전에 실제로 임시 감독 체제를 두 번 운영했는지 사실 확인 필요"
+            },
+            {
+                "segment_idx": 247,
+                "timestamp": "12:37–12:38",
+                "claim": "히딩크 4위!",
+                "domain": "통계/수치",
+                "checkworthiness": "MEDIUM",
+                "reason": "히딩크 감독 시절 월드컵 최종 성적이 4위가 맞는지 검증"
+            },
+            {
+                "segment_idx": 248,
+                "timestamp": "12:38–12:39",
+                "claim": "아두보카트 17위!",
+                "domain": "통계/수치",
+                "checkworthiness": "MEDIUM",
+                "reason": "아드보카트 감독 시절 월드컵 최종 성적이 17위가 맞는지 검증"
+            },
+            {
+                "segment_idx": 249,
+                "timestamp": "12:39–12:40",
+                "claim": "허정무 15위!",
+                "domain": "통계/수치",
+                "checkworthiness": "MEDIUM",
+                "reason": "허정무 감독 시절 월드컵 최종 성적이 15위가 맞는지 검증"
+            },
+            {
+                "segment_idx": 250,
+                "timestamp": "12:40–12:41",
+                "claim": "홍명보 27위!",
+                "domain": "통계/수치",
+                "checkworthiness": "MEDIUM",
+                "reason": "홍명보 감독의 첫 번째 월드컵(2014년) 최종 성적이 27위가 맞는지 검증"
+            },
+            {
+                "segment_idx": 251,
+                "timestamp": "12:41–12:42",
+                "claim": "신태용 19위!",
+                "domain": "통계/수치",
+                "checkworthiness": "MEDIUM",
+                "reason": "신태용 감독 시절 월드컵 최종 성적이 19위가 맞는지 검증"
+            },
+            {
+                "segment_idx": 252,
+                "timestamp": "12:42–12:43",
+                "claim": "벤투 16위!",
+                "domain": "통계/수치",
+                "checkworthiness": "MEDIUM",
+                "reason": "벤투 감독 시절 월드컵 최종 성적이 16위가 맞는지 검증"
+            },
+            {
+                "segment_idx": 253,
+                "timestamp": "12:43–12:44",
+                "claim": "홍명보 34위!",
+                "domain": "통계/수치",
+                "checkworthiness": "MEDIUM",
+                "reason": "홍명보 감독의 최근 월드컵 혹은 특정 대회 최종 성적이 34위가 맞는지 검증"
+            },
+            {
+                "segment_idx": 84,
+                "timestamp": "05:21–05:23",
+                "claim": "7개월 정도 남았거든요?",
+                "domain": "통계/수치",
+                "checkworthiness": "LOW",
+                "reason": "특정 대회나 일정까지 남은 기간이 실제로 7개월 정도인지 확인이 필요함"
+            },
+            {
+                "segment_idx": 113,
+                "timestamp": "06:31–06:33",
+                "claim": "일본이 20년 정도 걸렸어요 여러분들!",
+                "domain": "역사/사회",
+                "checkworthiness": "LOW",
+                "reason": "일본 축구의 시스템 구축 및 성장 기간이 실제로 20년 정도 소요되었는지 역사적 사실 검증 필요"
+            },
+            {
+                "segment_idx": 133,
+                "timestamp": "07:22–07:24",
+                "claim": "유16이 여러분들! 중국한테 진 거 아세요? 혹시?",
+                "domain": "역사/사회",
+                "checkworthiness": "LOW",
+                "reason": "대한민국 U-16 축구 대표팀이 최근 중국과의 경기에서 패배했는지 여부 확인 필요"
+            },
+            {
+                "segment_idx": 135,
+                "timestamp": "07:26–07:28",
+                "claim": "정확히 2026년 5월 17일인데",
+                "domain": "통계/수치",
+                "checkworthiness": "LOW",
+                "reason": "언급된 특정 경기나 사건의 일자가 2026년 5월 17일이 맞는지 확인 필요"
+            },
+            {
+                "segment_idx": 137,
+                "timestamp": "07:31–07:33",
+                "claim": "이것 4대2로 졌습니다 여러분들!",
+                "domain": "통계/수치",
+                "checkworthiness": "LOW",
+                "reason": "해당 경기의 최종 스코어가 4대2 패배가 맞는지 경기 결과 검증 필요"
+            },
+            {
+                "segment_idx": 234,
+                "timestamp": "11:54–12:00",
+                "claim": "중동팀 만난 대첩 버블로 50페이지 너무게 프레덴 시테이션을 준비했대!",
+                "domain": "인용/출처",
+                "checkworthiness": "LOW",
+                "reason": "특정 감독(박경훈 또는 바그너 등)이 50페이지가 넘는 프레젠테이션을 준비했다는 주장의 사실 여부 확인"
+            }
+        ],
+        "count": 14
     }
 }

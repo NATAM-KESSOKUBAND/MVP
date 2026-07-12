@@ -619,5 +619,41 @@
     "spread_stage": "legal",
     "response_pattern": [],
     "keyframes": []
+  },
+  {
+    "id": "case_046",
+    "title": "스트리머 얍얍 실내흡연 화재 및 반려동물 방치 논란",
+    "controversy_type": "attitude_issue",
+    "summary": "네이버 치지직 스트리머 얍얍이 자택에서 실내흡연을 하던 중 화재를 일으켰으며, 꽁초로 뒤덮인 집안에 반려묘를 방치했다는 동물 학대 및 안전 불감증 논란이 일어 자숙을 발표함.",
+    "spread_stage": "community",
+    "response_pattern": [],
+    "keyframes": []
+  },
+  {
+    "id": "case_047",
+    "title": "스트리머 박삐삐 페이커 비하 발언 논란",
+    "controversy_type": "hate_speech",
+    "summary": "SOOP 스트리머 박삐삐가 '로드 투 MSI(RTM)' 경기 중계 콘텐츠 진행 중 프로게이머 페이커를 향한 경솔한 비하성 언행을 하여 비판을 받고 공식 사과문을 발표함.",
+    "spread_stage": "media",
+    "response_pattern": [],
+    "keyframes": []
+  },
+  {
+    "id": "case_048",
+    "title": "유튜버 곽혈수 성폭행 피해 폭로 및 재판 진행",
+    "controversy_type": "illegal_issue",
+    "summary": "유튜버 곽혈수가 택시기사로부터 성폭행을 당한 피해 사실을 유튜브에 직접 폭로하였으며, 검찰이 피의자에게 징역 7년을 구형하고 비동의 강간죄 입법 촉구 여론이 확산됨.",
+    "spread_stage": "legal",
+    "response_pattern": [],
+    "keyframes": []
+  },
+  {
+    "id": "case_049",
+    "title": "인플루언서 김준희 타 크리에이터 영상 표절 폭로",
+    "controversy_type": "advertising_issue",
+    "summary": "인플루언서 김준희가 다른 인플루언서가 자신의 오리지널 영상 콘텐츠를 그대로 복사하여 붙여넣기 식으로 표절했다고 SNS를 통해 폭로함.",
+    "spread_stage": "early",
+    "response_pattern": [],
+    "keyframes": []
   }
 ]
