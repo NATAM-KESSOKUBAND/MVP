@@ -105,44 +105,30 @@ LOGO_RISK_MAP = {
 # Google Vision 클라이언트
 # ─────────────────────────────────────────────
 class GoogleVisionClient:
-    def __init__(self):
-        self._client = None
-        self._init_failed = False
-
-    def _get_client(self):
-        if self._init_failed:
-            return None
-        if not self._client:
-            try:
-                from google.cloud import vision
-                self._client = vision.ImageAnnotatorClient()
-            except Exception as e:
-                logger.warning("google_vision_unavailable", error=str(e))
-                self._init_failed = True
-        return self._client
-
+    """
+    브랜드 로고 감지.
+    인증 일원화: 서비스계정(google-credentials.json) 대신 GOOGLE_API_KEY(REST)를
+    쓰는 공용 GoogleVisionSearcher.detect_logos() 에 위임한다. 별도 클라이언트·
+    자격증명 파일이 필요 없어 웹 역검색과 동일한 인증 경로를 공유한다.
+    """
     def detect_logos(self, image_bytes: bytes) -> List[Dict]:
-        client = self._get_client()
-        if not client:
-            return []
         try:
-            from google.cloud import vision
-            image = vision.Image(content=image_bytes)
-            response = client.logo_detection(image=image)
-            logos = []
-            for logo in response.logo_annotations:
-                brand = logo.description.lower()
-                base_risk = LOGO_RISK_MAP.get(brand, 0.65)
-                logos.append({
-                    "brand_name": logo.description,
-                    "confidence": logo.score,
-                    "risk_score": min(base_risk * logo.score * 1.1, 1.0),
-                    "source": "google_vision",
-                })
-            return logos
+            annotations = get_searcher().detect_logos(image_bytes)
         except Exception as e:
             logger.error("google_vision_logo_error", error=str(e))
             return []
+        logos = []
+        for a in annotations:
+            score = a.get("score", 0.0)
+            brand = a.get("description", "")
+            base_risk = LOGO_RISK_MAP.get(brand.lower(), 0.65)
+            logos.append({
+                "brand_name": brand,
+                "confidence": score,
+                "risk_score": min(base_risk * score * 1.1, 1.0),
+                "source": "google_vision",
+            })
+        return logos
 
     # (제거됨) detect_web_entities:
     #   안전장치(자기 채널 필터·무료 출처 필터·가중치 임계값) 없이 완전 일치만으로

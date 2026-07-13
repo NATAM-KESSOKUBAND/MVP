@@ -14,9 +14,16 @@ _BASE_DIR = Path(__file__).parent
 # GOOGLE_APPLICATION_CREDENTIALS may be a relative path in .env (portable
 # across machines); google-cloud client libraries read this env var directly
 # and need an absolute path regardless of the process's working directory.
+# 단, 파일이 실제로 존재할 때만 export한다. 없는 경로를 남겨두면 google-cloud
+# 라이브러리가 'file not found'로 실패한다. (Vision은 GOOGLE_API_KEY REST 사용이라
+# 서비스계정 JSON이 없어도 정상 동작 — 인증 경로를 API 키로 일원화)
 _cred_path = os.getenv("GOOGLE_APPLICATION_CREDENTIALS", "")
-if _cred_path and not os.path.isabs(_cred_path):
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = str(_BASE_DIR / _cred_path)
+if _cred_path:
+    _abs_cred = Path(_cred_path) if os.path.isabs(_cred_path) else (_BASE_DIR / _cred_path)
+    if _abs_cred.exists():
+        os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = str(_abs_cred)
+    else:
+        os.environ.pop("GOOGLE_APPLICATION_CREDENTIALS", None)
 
 # ─────────────────────────────────────────────
 # API Keys

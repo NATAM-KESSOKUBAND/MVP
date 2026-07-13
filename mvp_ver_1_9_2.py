@@ -81,6 +81,56 @@ ENABLE_COST_METERING = os.getenv("ENABLE_COST_METERING", "1") == "1"
 _PRICE_PER_1K_IN  = float(os.getenv("PRICE_PER_1K_IN",  "0.000075"))
 _PRICE_PER_1K_OUT = float(os.getenv("PRICE_PER_1K_OUT", "0.00030"))
 
+# ── Gemini 안전 필터 완화 ──────────────────────────────────
+#   이 시스템은 유해·성적·혐오 콘텐츠를 '판정·분석'하는 도구다.
+#   기본 안전 임계값이면 분석 대상 텍스트(예: 성적 신체 묘사)에 필터가 걸려
+#   응답이 문자열 중간에서 잘리고(finish_reason=SAFETY) JSON 파싱이 실패한다.
+#   → 분석 목적이므로 4개 카테고리를 BLOCK_NONE으로 두어 응답이 잘리지 않게 한다.
+SAFETY_SETTINGS = [
+    {"category": "HARM_CATEGORY_HARASSMENT",        "threshold": "BLOCK_NONE"},
+    {"category": "HARM_CATEGORY_HATE_SPEECH",       "threshold": "BLOCK_NONE"},
+    {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_NONE"},
+    {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_NONE"},
+]
+
+# 개별 호출이 지정하지 않았을 때 강제할 출력 상한(잘림 방지 안전망).
+_DEFAULT_MAX_OUTPUT_TOKENS = 8192
+
+# ── 재현성(reproducibility) ────────────────────────────────
+#   동일 입력에 대해 매 실행 같은 결과가 나오도록 고정 seed를 전 호출에 주입한다.
+#   temperature>0 이어도 seed가 고정되면 샘플링이 재현되어 리포트(특히 NATAM
+#   15개 항목 등급)가 실행마다 흔들리는 것을 크게 줄인다.
+#   ※ LLM 재현성은 '동일 입력 + 동일 모델' 전제의 best-effort이며, 모델 버전
+#     변경·백엔드 라우팅까지 100% 보장하지는 않는다(완전 고정은 결과 캐싱 필요).
+#   GEMINI_SEED=0 또는 음수면 seed 주입을 끈다(무작위성 복원).
+_GEMINI_SEED = int(os.getenv("GEMINI_SEED", "42"))
+
+
+def _install_gemini_defaults(client):
+    """
+    client.models.generate_content 를 감싸 모든 호출에 공통 기본값을 주입한다.
+    - safety_settings: 성적/혐오 콘텐츠 분석 시 응답 잘림(SAFETY) 방지
+    - max_output_tokens: 미지정 호출의 토큰-한도 잘림 방지 안전망
+    - thinking_budget=0: 사고 토큰이 출력 예산을 먹어 JSON이 잘리는 것 방지
+    setdefault 이므로 개별 호출이 명시한 값은 그대로 유지된다.
+    """
+    _orig = client.models.generate_content
+
+    def _patched(*args, **kwargs):
+        cfg = kwargs.get("config")
+        if not isinstance(cfg, dict):
+            cfg = dict(cfg) if cfg else {}
+        cfg.setdefault("safety_settings",   SAFETY_SETTINGS)
+        cfg.setdefault("max_output_tokens", _DEFAULT_MAX_OUTPUT_TOKENS)
+        cfg.setdefault("thinking_config",   {"thinking_budget": 0})
+        if _GEMINI_SEED > 0:
+            cfg.setdefault("seed", _GEMINI_SEED)   # 재현성: 동일 입력 → 동일 출력
+        kwargs["config"] = cfg
+        return _orig(*args, **kwargs)
+
+    client.models.generate_content = _patched
+    return client
+
 LABEL_INFO = (
     "L01 직접적 욕설, L02 인신공격/비하, L03 혐오 표현, L04 허위 정보, "
     "L06 위험/자해 행동, L07 정치적 편향, L08 사생활 침해, "
@@ -398,7 +448,7 @@ def assess_natam_risk(
                     config={
                         "system_instruction": system_instruction,
                         "response_mime_type": "application/json",
-                        "temperature":        0.1,
+                        "temperature":        0.0,   # 0.1 → 0: 항목별 등급 흔들림 최소화(재현성)
                         "max_output_tokens":  max_tokens,        # 15개 항목 잘림 방지
                         "thinking_config":    {"thinking_budget": 0},  # 추론에 출력예산 낭비 방지
                     },
@@ -886,6 +936,66 @@ def _build_claim_check_rows(claims: list) -> str:
     return "\n".join(lines)
 
 
+def _repair_truncated_json(text: str):
+    """
+    잘린 JSON(객체·배열 공통)을 복구한다.
+    ① 열린 문자열/괄호를 닫아 파싱 시도 → 문자열 값 중간 절단이면 부분값 보존.
+    ② 실패하면 최상위(depth=1) 마지막 콤마 뒤의 미완성 항목을 잘라내고 재시도.
+    복구 실패 시 None.
+    """
+    s = text.strip()
+    if not s:
+        return None
+    if not (s.startswith('{') or s.startswith('[')):
+        idx = min([i for i in (s.find('{'), s.find('[')) if i != -1] or [-1])
+        if idx < 0:
+            return None
+        s = s[idx:]
+
+    def _close(fragment: str) -> str:
+        stack, in_str, esc = [], False, False
+        for ch in fragment:
+            if in_str:
+                if esc:            esc = False
+                elif ch == '\\':   esc = True
+                elif ch == '"':    in_str = False
+            elif ch == '"':        in_str = True
+            elif ch in '{[':       stack.append('}' if ch == '{' else ']')
+            elif ch in '}]':
+                if stack:          stack.pop()
+        out = fragment
+        if in_str:
+            out += '"'
+        return out + ''.join(reversed(stack))
+
+    frag = s
+    for _ in range(200):
+        frag = frag.rstrip().rstrip(',')
+        if not frag:
+            return None
+        try:
+            return json.loads(_close(frag))
+        except Exception:
+            pass
+        # 최상위 마지막 콤마 위치를 찾아 미완성 항목 절단
+        in_str, esc, depth, cut = False, False, 0, -1
+        for i, ch in enumerate(frag):
+            if in_str:
+                if esc:          esc = False
+                elif ch == '\\': esc = True
+                elif ch == '"':  in_str = False
+            else:
+                if ch == '"':    in_str = True
+                elif ch in '{[': depth += 1
+                elif ch in '}]': depth -= 1
+                elif ch == ',' and depth == 1:
+                    cut = i
+        if cut < 0:
+            return None
+        frag = frag[:cut]
+    return None
+
+
 def _safe_json_parse(text: str, context: str = "") -> object:
     """
     JSON 파싱 유틸.
@@ -908,24 +1018,24 @@ def _safe_json_parse(text: str, context: str = "") -> object:
     except json.JSONDecodeError:
         pass
 
-    # 3) 배열/오브젝트 패턴 직접 추출
+    # 3) 잘린 JSON 복구 (객체·배열 공통): 열린 문자열/괄호를 닫고,
+    #    실패 시 최상위 마지막 완성 항목까지 되돌려 재시도.
+    #    ※ 느슨한 정규식 추출(4)보다 먼저 시도해야 잘린 배열에서 첫 객체만
+    #      단일 dict로 잘못 뽑히는 것을 막는다.
+    recovered = _repair_truncated_json(stripped)
+    if recovered is not None:
+        tag = f" ({context})" if context else ""
+        n   = len(recovered) if isinstance(recovered, (list, dict)) else 1
+        kind = "개 객체" if isinstance(recovered, list) else "개 필드"
+        print(f"  ⚠️  JSON 절단 감지{tag} → 복구 성공 ({n}{kind})")
+        return recovered
+
+    # 4) 최후 폴백: 산문에 파묻힌 온전한 JSON을 정규식으로 추출
     for pat in [r'(\[[\s\S]+\])', r'(\{[\s\S]+\})']:
         m = re.search(pat, stripped)
         if m:
             try:
                 return json.loads(m.group(1))
-            except Exception:
-                pass
-
-    # 4) 불완전 배열 복구: 마지막으로 완성된 객체( }, ) 까지만 잘라내기
-    if stripped.lstrip().startswith('['):
-        last = stripped.rfind('},')
-        if last > 0:
-            try:
-                recovered = json.loads(stripped[:last + 1] + ']')
-                tag = f" ({context})" if context else ""
-                print(f"  ⚠️  JSON 절단 감지{tag} → {len(recovered)}개 객체로 복구 (원본 손실 없음)")
-                return recovered
             except Exception:
                 pass
 
@@ -1331,7 +1441,7 @@ class CrisisConsultantSystem:
         report_dir             = 'reports',
         controversy_model_path = CONTROVERSY_MODEL_PATH,
     ):
-        self.client = genai.Client(api_key=API_KEY)
+        self.client = _install_gemini_defaults(genai.Client(api_key=API_KEY))
         self.cost   = CostTracker()   # 분석 1건당 토큰/비용 계측
 
         if TRANSCRIBE_ENGINE == "whisper":

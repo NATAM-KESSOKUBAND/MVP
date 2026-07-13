@@ -29,7 +29,7 @@ import yaml
 from google import genai
 
 # 기존 시스템과 동일한 키/모델 재사용
-from mvp_ver_1_9_2 import API_KEY, GEN_MODEL
+from mvp_ver_1_9_2 import API_KEY, GEN_MODEL, _install_gemini_defaults
 
 # ────────────────────────────────────────────────
 # 설정
@@ -212,7 +212,7 @@ def structure_with_gemini(articles: list) -> dict:
     if not articles:
         return {"keywords": [], "cases": [], "samples": []}
 
-    client = genai.Client(api_key=API_KEY)
+    client = _install_gemini_defaults(genai.Client(api_key=API_KEY))
     digest = "\n".join(
         f"- [{a['title']}] {a['summary']}" for a in articles
     )

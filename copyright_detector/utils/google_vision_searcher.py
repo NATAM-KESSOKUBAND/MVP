@@ -613,6 +613,54 @@ class GoogleVisionSearcher:
         self._cache_set(frame, result)
         return result
 
+    def detect_logos(self, image_bytes: bytes, max_results: int = 5) -> List[Dict]:
+        """
+        LOGO_DETECTION — 브랜드 로고 감지 (search()와 동일한 images:annotate 엔드포인트).
+        서비스계정(google-credentials.json) 대신 GOOGLE_API_KEY(REST)로 인증하여
+        Vision 인증 방식을 하나로 일원화한다.
+        반환: [{"description": 브랜드명, "score": 신뢰도(0~1)}, ...]
+              (위험도 매핑·임계값은 호출자 정책에 위임)
+        """
+        if not self._enabled or not image_bytes:
+            return []
+
+        b64 = base64.b64encode(image_bytes).decode("ascii")
+        payload = {
+            "requests": [{
+                "image":    {"content": b64},
+                "features": [{"type": "LOGO_DETECTION", "maxResults": max_results}],
+            }]
+        }
+
+        try:
+            import requests as req_lib
+            resp = req_lib.post(
+                f"{VISION_API_URL}?key={self._api_key}",
+                json=payload,
+                timeout=15,
+            )
+            resp.raise_for_status()
+            data = resp.json()
+        except Exception as e:
+            status = getattr(getattr(e, "response", None), "status_code", 0)
+            if status == 429:
+                logger.warning("google_vision_quota_exceeded")
+            elif status == 400:
+                logger.warning("google_vision_bad_request", detail=str(e)[:120])
+            else:
+                logger.error("google_vision_logo_request_failed", error=str(e)[:120])
+            return []
+
+        try:
+            annotations = (data.get("responses") or [{}])[0].get("logoAnnotations") or []
+        except (AttributeError, IndexError, TypeError):
+            return []
+        return [
+            {"description": a.get("description", ""), "score": float(a.get("score", 0.0) or 0.0)}
+            for a in annotations
+            if a.get("description")
+        ]
+
 
 # ─────────────────────────────────────────────
 # 내부 헬퍼
