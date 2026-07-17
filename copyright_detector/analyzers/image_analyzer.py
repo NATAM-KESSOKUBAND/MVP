@@ -193,7 +193,7 @@ class ImageAnalyzer:
         self._ocr_ts: set = set()
 
     async def analyze(self, frames: List[Tuple[float, np.ndarray]],
-                      job_id: str) -> List[Dict]:
+                      job_id: str, progress=None) -> List[Dict]:
         logger.info("image_analysis_start", frames=len(frames), job_id=job_id)
 
         # 새 분석 작업 시작 시 역검색 캐시 초기화
@@ -202,6 +202,9 @@ class ImageAnalyzer:
 
         selected = self._select_key_frames(frames)
         logger.info("key_frames_selected", count=len(selected))
+        if progress:
+            # CLIP 배치(1) + 프레임 분석(N) 단계를 합쳐 진행률 표기
+            progress.set_total("image", len(selected) + 1, note="CLIP 분류")
 
         # OCR 예산: 20초 간격 프레임만 허용 (video_clip_analyzer의 OCR 주기와 정렬
         # → 동일 프레임은 OCR 캐시를 공유). FFT 감지 프레임은 예산과 무관하게 OCR.
@@ -222,17 +225,22 @@ class ImageAnalyzer:
             selected, job_id,
         )
         logger.info("clip_classification_done", findings=len(clip_findings))
+        if progress:
+            progress.advance("image", note="프레임 분석")
 
         # ── 프레임별 심층 분석 (OCR + API) ──
         semaphore = asyncio.Semaphore(6)
 
         async def analyze_frame(timestamp, frame):
             async with semaphore:
-                return await loop.run_in_executor(
+                r = await loop.run_in_executor(
                     self.executor,
                     self._analyze_single_frame,
                     timestamp, frame, job_id
                 )
+                if progress:
+                    progress.advance("image")
+                return r
 
         results = await asyncio.gather(
             *[analyze_frame(ts, frame) for ts, frame in selected],
@@ -254,6 +262,8 @@ class ImageAnalyzer:
         findings = clip_findings + frame_findings
         findings.sort(key=lambda x: x.get("timestamp_start", 0))
         logger.info("image_analysis_done", findings=len(findings), job_id=job_id)
+        if progress:
+            progress.done("image", note=f"{len(findings)}건 발견")
         return findings
 
     def _analyze_single_frame(self, timestamp: float, frame: np.ndarray,

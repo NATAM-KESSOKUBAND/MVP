@@ -418,26 +418,85 @@ class _ClipClassifier:
 # ─────────────────────────────────────────────
 _classifier = _ClipClassifier()
 
+# ── 프레임 단위 결과 캐시 (이중 계산 제거) ──
+# image_analyzer와 video_clip_analyzer가 같은 프레임에 CLIP을 각각 돌리므로,
+# 프레임 해시로 분류/임베딩 결과를 캐시 → 두 번째 호출은 추론 없이 재사용.
+# (30분 영상 320프레임 × 2분석기 = CLIP 640회 → 320회로 절반 절감)
+_frame_cache_lock = threading.Lock()
+_classify_cache: Dict[str, Optional[Dict]] = {}
+_embed_cache: Dict[str, Optional[np.ndarray]] = {}
+_FRAME_CACHE_MAX = 1200
+
+
+def _frame_key(frame: np.ndarray) -> str:
+    try:
+        import hashlib
+        small = cv2.resize(frame, (32, 32))
+        return hashlib.md5(small.tobytes()).hexdigest()
+    except Exception:
+        return ""
+
+
+def _cache_put(cache: dict, key: str, val):
+    if not key:
+        return
+    with _frame_cache_lock:
+        if len(cache) >= _FRAME_CACHE_MAX:
+            for k in list(cache.keys())[:200]:
+                del cache[k]
+        cache[key] = val
+
+
+def clear_clip_cache() -> None:
+    """새 분석 작업 시작 시 호출 가능 (프레임 캐시 초기화)."""
+    with _frame_cache_lock:
+        _classify_cache.clear()
+        _embed_cache.clear()
+
+
+def _batched_with_cache(frames: List[np.ndarray], cache: dict, compute) -> list:
+    """캐시 미스 프레임만 compute()로 배치 추론 후 결과 병합."""
+    keys = [_frame_key(f) for f in frames]
+    out = [None] * len(frames)
+    miss_idx, miss_frames = [], []
+    with _frame_cache_lock:
+        for i, k in enumerate(keys):
+            if k and k in cache:
+                out[i] = cache[k]
+            else:
+                miss_idx.append(i)
+                miss_frames.append(frames[i])
+    if miss_frames:
+        computed = compute(miss_frames)
+        for j, i in enumerate(miss_idx):
+            out[i] = computed[j] if j < len(computed) else None
+            _cache_put(cache, keys[i], out[i])
+    return out
+
 
 def classify_frame(frame: np.ndarray) -> Optional[Dict]:
     """단일 프레임 저작권 콘텐츠 분류."""
-    return _classifier.classify(frame)
+    return classify_frames_batch([frame])[0]
 
 
 def classify_frames_batch(frames: List[np.ndarray]) -> List[Optional[Dict]]:
-    """여러 프레임 배치 분류 (CLIP 모드에서는 forward pass 1회)."""
-    return _classifier.classify_batch(frames)
+    """여러 프레임 배치 분류 (프레임 캐시 → 이중 계산 방지)."""
+    if not frames:
+        return []
+    return _batched_with_cache(frames, _classify_cache, _classifier.classify_batch)
 
 
 def embed_frame(frame: np.ndarray) -> Optional[np.ndarray]:
     """단일 프레임 CLIP 임베딩 (512차원, 정규화). CLIP 미사용 환경이면 None."""
-    res = _classifier.embed_batch([frame])
+    res = embed_frames_batch([frame])
     return res[0] if res else None
 
 
 def embed_frames_batch(frames: List[np.ndarray]) -> List[Optional[np.ndarray]]:
-    """여러 프레임 CLIP 임베딩 배치 추출."""
-    return _classifier.embed_batch(frames)
+    """여러 프레임 CLIP 임베딩 배치 추출 (프레임 캐시 → 이중 계산 방지)."""
+    if not frames:
+        return []
+    return _batched_with_cache(frames, _embed_cache, _classifier.embed_batch)
 
 
 def make_finding_from_clip(

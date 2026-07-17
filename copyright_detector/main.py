@@ -150,8 +150,18 @@ async def main():
     parser.add_argument("--forget", metavar="종류:ID",
                         help="잘못 학습된 항목 삭제 (예: --forget emb:3) "
                              "종류: emb|logo|music|font|meme|clip")
+    parser.add_argument("--db-admin", action="store_true",
+                        help="브라우저에서 DB 보기·수정·삭제 (로컬 관리 페이지)")
 
     args = parser.parse_args()
+
+    # DB 관리 웹페이지
+    if args.db_admin:
+        import subprocess
+        admin = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                             "tools", "db_admin.py")
+        subprocess.run([sys.executable, admin])
+        return
 
     # DB 통계
     if args.stats:

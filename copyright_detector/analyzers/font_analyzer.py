@@ -343,6 +343,12 @@ class FontAnalyzer:
 
     async def analyze(self, frames: List[Tuple[float, np.ndarray]],
                       job_id: str) -> List[Dict]:
+        # 폰트 분석 보류 — config.pipeline.enable_font_analysis 로 재개
+        # (시각 폰트 분류 신뢰 불가 + 휴리스틱 오탐으로 전체 비활성)
+        if not getattr(config.pipeline, "enable_font_analysis", False):
+            logger.info("font_analysis_skipped_disabled", job_id=job_id)
+            return []
+
         logger.info("font_analysis_start", job_id=job_id)
 
         # 25초 간격 샘플링 (OCR 호출 수 최소화: 10분 영상 → ~24프레임)
@@ -469,15 +475,29 @@ class FontAnalyzer:
 
         return findings
 
+    # 식별 확신 게이트 — 237클래스 모델 실측 보정값 (2026-07 학습본 기준)
+    #   측정: 유료 OneShinhan conf 0.41/margin 0.31, Youandi 0.35/0.28
+    #         무료 배민주아 0.73/0.60, 미학습 굴림/맑은고딕 저신뢰 또는 무료클래스 오예측
+    # 유료: 클래스가 2/237뿐이라 미학습 폰트가 유료로 예측될 확률 극히 낮음(검증 오탐 0)
+    #       → 낮은 신뢰도라도 유료 클래스 예측이면 채택 (탐지율 확보)
+    _PAID_CONF_MIN   = 0.32
+    _PAID_MARGIN_MIN = 0.20
+    # 무료 폰트명 단정: 미학습 폰트가 무료 클래스로 그럴듯하게 오예측될 수 있어
+    #       (예: 굴림→ChosunGu 0.52) 훨씬 높은 확신 요구 → 아니면 "모름"
+    _FREE_CONF_MIN   = 0.62
+    _FREE_MARGIN_MIN = 0.38
+
     def _classify_font_cnn(self, roi: np.ndarray, text_data: List[Dict],
                             timestamp: float, job_id: str) -> Optional[Dict]:
         """
-        CNN 폰트 분류기로 자막 폰트 식별 → 상업 폰트일 때만 finding.
+        CNN 폰트 분류기로 자막 폰트 식별.
 
-        오탐 통제 (학습된 클래스만 구분 가능하므로 보수적으로):
-          - confidence ≥ 0.80 그리고 top1-top2 margin ≥ 0.25
-          - 예측 클래스가 commercial=True 인 경우만
-          - 무료/번들 폰트로 판정 → None (휴리스틱도 건너뜀 = 안전)
+        출력 정책 (사용자 요구: 학습된 폰트면 정확히, 아니면 '모름'):
+          · 확신(conf·margin 통과) + 유료  → 저작권 finding (HIGH), 정확한 폰트명
+          · 확신 + 무료                    → 정보 finding (SAFE), "무료 폰트 확인: {명}"
+          · 확신 부족 (한글 텍스트는 있음)  → "모름(미학습 폰트)" 정보 finding
+          · 텍스트 크롭 없음/분류 불가       → None
+        → 확신 없으면 절대 특정 폰트명을 단정하지 않음.
         """
         engine = get_font_classifier()
         if not engine.available:
@@ -511,31 +531,59 @@ class FontAnalyzer:
         if not result:
             return None
 
-        logger.debug("font_cnn_result",
-                     font=result["font_name"], conf=result["confidence"],
-                     margin=result["margin"], commercial=result["is_commercial"])
+        name = result["font_name"]
+        conf = result["confidence"]
+        margin = result["margin"]
+        is_comm = result["is_commercial"]
+        paid_ok = is_comm and conf >= self._PAID_CONF_MIN and margin >= self._PAID_MARGIN_MIN
+        free_ok = (not is_comm) and conf >= self._FREE_CONF_MIN and margin >= self._FREE_MARGIN_MIN
+        logger.debug("font_cnn_result", font=name, conf=conf, margin=margin,
+                     commercial=is_comm, paid_ok=paid_ok, free_ok=free_ok)
 
-        if not result["is_commercial"]:
-            return None   # 무료/번들 폰트 → 안전
-        if result["confidence"] < 0.80 or result["margin"] < 0.25:
-            return None   # 불확실 → finding 생성 안 함
+        # ── 유료 클래스 예측 + 게이트 통과 → 저작권 finding ──
+        if paid_ok:
+            return self._paid_finding(job_id, timestamp, result)
 
-        risk = result["risk"]
+        # ── 무료 폰트 고신뢰 식별 → 정보 finding ──
+        if free_ok:
+            return self._build_finding(
+                job_id, timestamp, f"무료 폰트: {name}", result["foundry"], 0.03,
+                confidence=round(conf, 3),
+                description=(
+                    f"AI 폰트 식별: {name} (무료 폰트, 신뢰도 {conf:.0%}) "
+                    f"— 저작권 위험 없음"
+                ),
+                font_info={"method": "cnn_classifier", "identified": True, **result},
+            )
+
+        # ── 그 외 전부 → "모름" (특정 폰트 단정 금지) ──
+        return self._build_finding(
+            job_id, timestamp, "모름 (미학습 폰트)", "", 0.0,
+            confidence=round(conf, 3),
+            description=(
+                f"폰트 식별 불가 — 학습된 폰트로 확신할 수 없음 "
+                f"(최고 후보 '{name}' 신뢰도 {conf:.0%}). 미학습 폰트로 추정."
+            ),
+            font_info={"method": "cnn_classifier", "identified": False, **result},
+        )
+
+    def _paid_finding(self, job_id, timestamp, result) -> Dict:
+        name = result["font_name"]
+        conf = result["confidence"]
         self.db.learn_from_finding("font", {
-            "font_name": result["font_name"],
+            "font_name": name,
             "foundry": result["foundry"],
             "license_type": "commercial",
             "requires_license": True,
         })
         return self._build_finding(
-            job_id, timestamp, result["font_name"],
-            result["foundry"], risk,
-            confidence=result["confidence"],
+            job_id, timestamp, f"유료 폰트: {name}", result["foundry"], result["risk"],
+            confidence=round(conf, 3),
             description=(
-                f"AI 폰트 분류: {result['font_name']} ({result['foundry']}) "
-                f"— 신뢰도 {result['confidence']:.0%}, 텍스트 라인 {result['n_crops']}개 분석"
+                f"AI 폰트 식별: {name} ({result['foundry']}) — 유료 폰트, "
+                f"신뢰도 {conf:.0%}, 텍스트 라인 {result['n_crops']}개 분석. 라이선스 확인 필요."
             ),
-            font_info={"method": "cnn_classifier", **result},
+            font_info={"method": "cnn_classifier", "identified": True, **result},
         )
 
     def _build_finding(self, job_id, timestamp, font_name, foundry,

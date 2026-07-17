@@ -1,17 +1,1 @@
-[
-  {
-    "file": "예시-격동고딕.otf",
-    "name": "격동고딕",
-    "commercial": true,
-    "foundry": "Sandoll",
-    "risk": 0.88,
-    "index": 0
-  },
-  {
-    "file": "예시-무료폰트.ttf",
-    "name": "무료폰트예시",
-    "commercial": false,
-    "foundry": "배포처",
-    "index": 0
-  }
-]
+[]

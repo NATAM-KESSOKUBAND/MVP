@@ -20,6 +20,7 @@ from utils.video_utils import (
     extract_audio, extract_frames_smart, cleanup_temp_files,
 )
 from utils.ocr_engine import clear_ocr_cache
+from utils.clip_engine import clear_clip_cache
 from analyzers.music_analyzer import MusicAnalyzer
 from analyzers.image_analyzer import ImageAnalyzer
 from analyzers.font_analyzer import FontAnalyzer
@@ -275,8 +276,9 @@ class CopyrightAnalysisPipeline:
         start_time = time.time()
         job_id = job_id or str(uuid.uuid4())[:8].upper()
 
-        # 작업 시작 시 OCR 캐시 초기화 (이전 작업 캐시 누적 방지)
+        # 작업 시작 시 캐시 초기화 (이전 작업 누적 방지)
         clear_ocr_cache()
+        clear_clip_cache()   # 프레임 CLIP 결과 캐시 (두 시각 분석기가 작업 내 공유)
 
         # 본인 소유 콘텐츠 필터 적용 (.env의 OWN_CHANNELS / OWN_DOMAINS)
         # → Vision이 본인 유튜브/사이트의 자기 콘텐츠를 위반으로 오탐하는 것 방지
@@ -318,42 +320,60 @@ class CopyrightAnalysisPipeline:
             metadata=video_info,
         )
 
+        # 진행률 게이지 (단계별 실시간 %) — 병목 확인용
+        from utils.progress import ProgressTracker
+        progress = ProgressTracker()
+        progress.add("extract", "📥 추출")
+        progress.add("music", "🎵 음악")
+        progress.add("image", "🖼️ 이미지")
+        progress.add("video_clip", "🎬 영상클립")
+
         try:
             # ─── Step 4: 오디오 + 프레임 병렬 추출 ───
             logger.info("step4_extraction", job_id=job_id)
             t4 = time.time()
+            progress.set_total("extract", 2, note="오디오+프레임")
 
-            audio_path, frames = await asyncio.gather(
-                asyncio.to_thread(
-                    extract_audio,
-                    video_path,
-                    str(config.TEMP_DIR / f"{job_id}_audio.wav")
-                ),
-                asyncio.to_thread(
-                    extract_frames_smart,
-                    video_path,
+            async def _extract_audio():
+                r = await asyncio.to_thread(
+                    extract_audio, video_path,
+                    str(config.TEMP_DIR / f"{job_id}_audio.wav"))
+                progress.advance("extract", note="오디오 완료")
+                return r
+
+            async def _extract_frames():
+                r = await asyncio.to_thread(
+                    extract_frames_smart, video_path,
                     config.pipeline.frame_extraction_fps,
                     config.pipeline.frame_phash_threshold,
-                    config.pipeline.frame_max_count,
-                )
-            )
+                    config.pipeline.frame_max_count)
+                progress.advance("extract", note=f"{len(r)}프레임")
+                return r
+
+            # 추출 진행 중에도 게이지가 돌도록 렌더 루프 동시 실행
+            render_task = asyncio.create_task(progress.render_loop())
+            audio_path, frames = await asyncio.gather(_extract_audio(), _extract_frames())
+            progress.done("extract", note=f"{len(frames)}프레임")
 
             logger.info("extraction_done",
                         audio=audio_path,
                         frames=len(frames),
                         elapsed=f"{time.time()-t4:.1f}s")
 
-            # ─── Step 5: 5개 분석 모듈 완전 병렬 ───
-            logger.info("step5_parallel_analysis", job_id=job_id, modules=5)
+            # ─── Step 5: 분석 모듈 완전 병렬 ───
+            logger.info("step5_parallel_analysis", job_id=job_id, modules=4)
             t5 = time.time()
 
             # audio_path 전달 → 음악 분석이 추출된 wav를 메모리 슬라이스
             # (청크당 ffmpeg 프로세스 기동 제거: 30분 영상 기준 ~180회 → 0회)
             music_task      = self.music_analyzer.analyze(video_path, job_id,
-                                                          audio_path=audio_path)
-            image_task      = self.image_analyzer.analyze(frames, job_id)
+                                                          audio_path=audio_path,
+                                                          progress=progress)
+            image_task      = self.image_analyzer.analyze(frames, job_id,
+                                                          progress=progress)
             font_task       = self.font_analyzer.analyze(frames, job_id)
-            video_clip_task = self.video_clip_analyzer.analyze(frames, job_id)
+            video_clip_task = self.video_clip_analyzer.analyze(frames, job_id,
+                                                               progress=progress)
 
             # 모든 분석 동시 실행
             music_findings, image_findings, font_findings, video_findings = \
@@ -365,7 +385,7 @@ class CopyrightAnalysisPipeline:
                     return_exceptions=True
                 )
 
-            # 에러 처리
+            # 에러 처리 + 미완료 단계 강제 종료 (렌더 루프가 멈추지 않도록)
             all_findings = []
             for name, result in [
                 ("music", music_findings),
@@ -375,8 +395,14 @@ class CopyrightAnalysisPipeline:
             ]:
                 if isinstance(result, Exception):
                     logger.error(f"{name}_analyzer_failed", error=str(result))
+                    progress.fail(name, note=str(result)[:40])
                 elif isinstance(result, list):
                     all_findings.extend(result)
+                    progress.done(name)
+            try:
+                await asyncio.wait_for(render_task, timeout=2.0)
+            except (asyncio.TimeoutError, Exception):
+                pass   # 게이지 렌더는 부가기능 — 실패해도 분석엔 영향 없음
 
             logger.info("parallel_analysis_done",
                         total_findings=len(all_findings),

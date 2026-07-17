@@ -120,13 +120,16 @@ class VideoClipAnalyzer:
         self.executor = ThreadPoolExecutor(max_workers=4)
 
     async def analyze(self, frames: List[Tuple[float, np.ndarray]],
-                      job_id: str) -> List[Dict]:
+                      job_id: str, progress=None) -> List[Dict]:
         logger.info("video_clip_analysis_start", frames=len(frames), job_id=job_id)
 
         # 새 분석 작업 시작 시 역검색 캐시 초기화
         # → 이전 작업의 캐시가 다음 작업에 영향을 주지 않도록
         clear_vision_cache()
         clear_yandex_cache()
+        if progress:
+            # 단계: 내부DB → OCR검사 → CLIP분류+역검색 (어느 단계가 병목인지 표시)
+            progress.set_total("video_clip", 3, note="내부 DB 스캔")
 
         findings = []
 
@@ -148,10 +151,15 @@ class VideoClipAnalyzer:
             logger.info("static_frames_queued", count=len(static_frames))
 
         loop = asyncio.get_event_loop()
+        if progress:
+            progress.advance("video_clip", note="OCR 워터마크 검사 중")
 
         # 3. 스톡 워터마크 / 방송 오버레이 OCR 검사 (대표 프레임만)
         ocr_findings = await self._ocr_scan_key_frames(frames, job_id)
         findings.extend(ocr_findings)
+
+        if progress:
+            progress.advance("video_clip", note="CLIP 분류 + 역검색 중")
 
         # 4. CLIP 배치 분류 + Vision/Yandex 역검색 (정지 이미지 프레임 포함)
         #    이미 자체 DB로 확정된 프레임(matched_ts)은 외부 API 호출에서 제외
@@ -166,6 +174,8 @@ class VideoClipAnalyzer:
         findings = self._deduplicate_findings(findings)
         findings.sort(key=lambda x: x.get("timestamp_start", 0))
         logger.info("video_clip_analysis_done", findings=len(findings), job_id=job_id)
+        if progress:
+            progress.done("video_clip", note=f"{len(findings)}건 발견")
         return findings
 
     # ─────────────────────────────────────────────

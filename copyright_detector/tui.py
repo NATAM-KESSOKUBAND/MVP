@@ -1,14 +1,3 @@
-"""
-tui.py - 저작권 감지기 터미널 UI
-─────────────────────────────────────────────
-사용법:
-  python tui.py                               # 대화형 모드
-  python tui.py "video.mp4"                  # 파일 직접 분석
-  python tui.py "https://youtu.be/xxxx"      # URL 직접 분석
-  python tui.py "video.mp4" --channel "내채널이름"
-  python tui.py "video.mp4" --channel "채널1,채널2"
-─────────────────────────────────────────────
-"""
 import sys
 import os
 import asyncio

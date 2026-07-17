@@ -225,7 +225,8 @@ class MusicAnalyzer:
         self.executor = ThreadPoolExecutor(max_workers=4)
 
     async def analyze(self, video_path: str, job_id: str,
-                      audio_path: Optional[str] = None) -> List[Dict]:
+                      audio_path: Optional[str] = None,
+                      progress=None) -> List[Dict]:
         """
         2단계 프로브 방식 음악 분석 (API 비용 ~50% 절감, 정확도 유지)
 
@@ -255,7 +256,14 @@ class MusicAnalyzer:
             starts.append(t)
             t += step
         if not starts:
+            if progress:
+                progress.done("music", note="오디오 없음")
             return []
+        if progress:
+            # 실제 API 조회는 stride 간격만 (진행률 기준)
+            _stride0 = max(1, config.pipeline.music_probe_stride)
+            progress.set_total("music", len(range(0, len(starts), _stride0)),
+                               note=f"{len(starts)}청크")
 
         # 전체 오디오 wav 로드 → 이후 청크는 메모리 슬라이스 (ffmpeg 호출 X)
         audio_data, sample_rate = None, config.pipeline.audio_sample_rate
@@ -304,11 +312,15 @@ class MusicAnalyzer:
                     self.executor, _make_chunk, idx)
                 if not chunk_path:
                     skipped_silence += 1
+                    if progress:
+                        progress.advance("music")
                     return
                 probed_count += 1
                 results_by_idx[idx] = await loop.run_in_executor(
                     self.executor, self._analyze_single_chunk,
                     starts[idx], chunk_path, job_id)
+                if progress:
+                    progress.advance("music")
 
         # ── 1단계: stride 간격 프로브 ──
         stride = max(1, config.pipeline.music_probe_stride)
@@ -354,6 +366,8 @@ class MusicAnalyzer:
                     api_probed=probed_count,
                     silence_skipped=skipped_silence,
                     total_chunks=len(starts), job_id=job_id)
+        if progress:
+            progress.done("music", note=f"{len(findings)}건 발견")
         return findings
 
     def _build_findings_from_hits(self, hits: List[Dict], job_id: str) -> List[Dict]:

@@ -639,6 +639,52 @@ class DatabaseManager:
             logger.info("learned_entry_deleted", kind=kind, id=entry_id)
             return True
 
+    # 종류별 모델 + 수정 가능 필드 화이트리스트 (관리 UI/CLI 공용)
+    _LEARNED_MODELS = {
+        "emb":   (KnownContentEmbedding,
+                  ["title", "rights_holder", "source", "risk_score", "reference_url"]),
+        "logo":  (KnownLogo, ["brand_name", "trademark_owner", "category"]),
+        "music": (KnownCopyrightedMusic, ["title", "artist", "rights_holder"]),
+        "font":  (KnownFont, ["font_name", "foundry", "license_type", "requires_license"]),
+        "meme":  (KnownMeme, ["title", "rights_holder", "source_type", "risk_score"]),
+        "clip":  (KnownVideoClip, ["title", "rights_holder", "source_platform"]),
+    }
+
+    def update_learned_entry(self, kind: str, entry_id: int, updates: Dict) -> bool:
+        """
+        학습 항목의 필드 수정 (관리 페이지에서 사용).
+        허용된 컬럼만 반영 (_LEARNED_MODELS 화이트리스트).
+        """
+        entry = self._LEARNED_MODELS.get(kind)
+        if entry is None:
+            return False
+        model, allowed = entry
+        with self.get_session() as session:
+            row = session.get(model, entry_id)
+            if row is None:
+                return False
+            changed = []
+            for k, v in updates.items():
+                if k not in allowed:
+                    continue
+                # 타입 보정
+                col_type = getattr(type(row), k).type.__class__.__name__.lower()
+                try:
+                    if "float" in col_type:
+                        v = float(v)
+                    elif "integer" in col_type:
+                        v = int(v)
+                    elif "boolean" in col_type:
+                        v = str(v).strip().lower() in ("1", "true", "yes", "on", "y")
+                except (ValueError, TypeError):
+                    continue
+                setattr(row, k, v)
+                changed.append(k)
+            if changed:
+                session.commit()
+                logger.info("learned_entry_updated", kind=kind, id=entry_id, fields=changed)
+            return bool(changed)
+
     def get_all_known_fonts(self) -> List[Dict]:
         """상업용 폰트 목록 반환"""
         with self.get_session() as session:

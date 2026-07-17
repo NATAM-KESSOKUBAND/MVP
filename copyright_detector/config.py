@@ -135,6 +135,11 @@ class PipelineConfig:
     frame_scene_threshold: float = 30.0   # scene change detection threshold
     frame_max_count: int = 320            # 최대 추출 프레임 수 (30분 영상 전체 커버: ~5.6초 간격)
 
+    # 폰트 분석 보류 (2026-07)
+    # 시각 기반 폰트 분류가 신뢰 불가로 판명(평범한 산세리프 구분 불가, 오탐 다수)
+    # → 폰트 분석 전체 비활성. 재개하려면 True로 변경 + 검증된 모델 필요.
+    enable_font_analysis: bool = False
+
     # 병렬 처리
     max_workers: int = 8                  # 병렬 워커 수
     batch_size: int = 10                  # 배치 처리 크기
