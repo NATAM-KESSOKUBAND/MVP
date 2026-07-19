@@ -42,6 +42,54 @@ OUTCOME_META = {
 }
 
 
+# 예측 조치 → risk_score 앵커 (하이브리드 재점수용).
+# 유튜브에서 '실제로 벌어질 일'의 심각도를 점수로 옮긴 것.
+OUTCOME_ANCHOR = {
+    "STRIKE":       0.92,   # 저작권 경고 — 채널 위협
+    "BLOCK":        0.85,   # 차단
+    "DEMONETIZE":   0.65,   # 수익 이전·노란 딱지
+    "REVENUE_RISK": 0.50,   # 부분 수익 영향
+    "MANUAL_RISK":  0.42,   # 정지 이미지 등 — 자동조치 낮음, 수동/법적 리스크
+    "TRADEMARK":    0.18,   # 상표권 — 유튜브 저작권 밖
+    "MINIMAL":      0.15,
+    "SAFE":         0.0,
+}
+
+
+def hybrid_risk_score(finding: Dict) -> tuple:
+    """
+    법적 risk_score를 '유튜브 스튜디오 실제 조치' 기준으로 재조정(하이브리드).
+
+    - 음악/영상클립: Content ID 자동조치 대상 → 법적점수와 조치앵커 중 높은 쪽(유지~강화)
+    - 정지 이미지/밈: 유튜브 자동조치 낮음 → 유형 기반 낮은 밴드로.
+                     단 스톡/뉴스/스튜디오 등 '메이저'면 바닥값(≈MEDIUM 경계) 유지.
+    - 로고: 상표권 → LOW 로 캡.
+
+    반환: (조정된 risk_score, 설명에 덧붙일 주석)
+    """
+    from config import config
+    ftype  = finding.get("finding_type") or finding.get("type") or "image"
+    legal  = float(finding.get("risk_score", 0) or 0)
+    src    = str(finding.get("source", ""))
+    holder = str(finding.get("rights_holder", "") or finding.get("author", ""))
+    outcome = youtube_impact_for_finding(finding)["yt_outcome"]
+    anchor  = OUTCOME_ANCHOR.get(outcome, 0.15)
+    major   = _is_major_rights_holder(src, holder)
+
+    if ftype in ("music", "video_clip"):
+        # 유튜브가 자동으로 잡는 유형 — 낮추지 않는다
+        return round(max(legal, anchor), 3), ""
+    if ftype in ("image", "meme"):
+        # 정지 이미지 — 유튜브 자동조치 낮음. 메이저(게티/뉴스/스튜디오)면 경계값, 아니면 낮게.
+        base = 0.45 if major else 0.30
+        new  = min(config.pipeline.image_risk_cap, base)
+        return round(new, 3), " [유튜브 자동조치 가능성 낮음 · 권리자 수동 신고(DMCA) 시 리스크]"
+    if ftype == "logo":
+        # 상표권 영역(유튜브 저작권 밖) → LOW 로만 보이게 (SAFE로 숨기지 않음)
+        return round(min(legal, 0.20), 3), " [상표권 이슈 · 유튜브 저작권 시스템 밖]"
+    return round(min(legal, 0.15), 3), ""
+
+
 def _claim_probability(ftype: str, confidence: float, risk_score: float) -> float:
     """Content ID(또는 수동) 클레임이 걸릴 확률 추정 (0~1)."""
     base, weight, cap = _CLAIM_MODEL.get(ftype, (0.05, 0.15, 0.40))

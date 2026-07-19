@@ -153,6 +153,8 @@ class DatabaseManager:
         새로운 발견을 자체 DB에 누적 학습
         - 새 항목이면 추가, 기존 항목이면 카운트 증가
         """
+        if not config.pipeline.learn_to_db:
+            return  # 학습 저장 비활성 (config.pipeline.learn_to_db)
         try:
             if finding_type == CopyrightType.MUSIC:
                 self._learn_music(data)
@@ -310,6 +312,8 @@ class DatabaseManager:
     # ─────────────────────────────────────────────
     def lookup_music_by_fingerprint(self, fingerprint_hash: str) -> Optional[Dict]:
         """자체 DB에서 음악 핑거프린트로 빠른 조회"""
+        if not config.pipeline.use_learned_db:
+            return None  # 자체 학습 DB 비활성
         with self.get_session() as session:
             music = session.execute(
                 select(KnownCopyrightedMusic).where(
@@ -331,6 +335,8 @@ class DatabaseManager:
 
     def lookup_logo_by_phash(self, phash: str, threshold: int = 10) -> Optional[Dict]:
         """자체 DB에서 perceptual hash로 로고 조회"""
+        if not config.pipeline.use_learned_db:
+            return None  # 자체 학습 DB 비활성
         with self.get_session() as session:
             logos = session.execute(
                 select(KnownLogo).where(KnownLogo.phash.isnot(None))
@@ -354,6 +360,8 @@ class DatabaseManager:
 
     def lookup_meme_by_phash(self, phash: str, threshold: int = 10) -> Optional[Dict]:
         """자체 DB에서 perceptual hash로 밈 템플릿 조회"""
+        if not config.pipeline.use_learned_db:
+            return None  # 자체 학습 DB 비활성
         with self.get_session() as session:
             memes = session.execute(
                 select(KnownMeme).where(KnownMeme.phash.isnot(None))
@@ -405,6 +413,8 @@ class DatabaseManager:
         threshold=6 (64비트 중): 거의 동일한 프레임만 → 오탐 매우 낮음.
         리사이즈/크롭/색보정된 변형은 이걸로 못 잡고 임베딩 조회가 담당.
         """
+        if not config.pipeline.use_learned_db:
+            return None  # 자체 학습 DB 비활성 → 매칭 안 함 (순수 API 결과만 사용)
         if not phash:
             return None
         try:
@@ -448,6 +458,8 @@ class DatabaseManager:
         Vision/Yandex로 출처가 확인된 프레임의 CLIP 임베딩 저장.
         다음 분석에서 같은 콘텐츠 재등장 시 API 호출 없이 즉시 감지된다.
         """
+        if not config.pipeline.learn_to_db:
+            return  # 학습 저장 비활성 (config.pipeline.learn_to_db)
         emb = data.get("embedding")
         if emb is None:
             return
@@ -491,6 +503,8 @@ class DatabaseManager:
         pHash와 달리 리사이즈/크롭/색보정/재인코딩된 변형도 잡는다.
         threshold 0.92: 같은 장면의 변형은 통과, 단순히 비슷한 분위기는 차단.
         """
+        if not config.pipeline.use_learned_db:
+            return None  # 자체 학습 DB 비활성 → 매칭 안 함 (순수 API 결과만 사용)
         import numpy as np
         if embedding is None:
             return None
@@ -687,6 +701,8 @@ class DatabaseManager:
 
     def get_all_known_fonts(self) -> List[Dict]:
         """상업용 폰트 목록 반환"""
+        if not config.pipeline.use_learned_db:
+            return []  # 자체 학습 DB 비활성
         with self.get_session() as session:
             fonts = session.execute(
                 select(KnownFont).where(KnownFont.requires_license == True)

@@ -2,10 +2,26 @@
 reports/report_generator.py - HTML/JSON 리포트 생성
 타임라인 시각화 포함
 """
+import re
 from typing import Dict, List
 from pathlib import Path
 from datetime import datetime
 from config import config
+
+
+def safe_filename_part(name: str, max_len: int = 60) -> str:
+    """
+    영상 제목 등을 파일명에 안전하게 쓰도록 정리.
+    Windows 금지문자(\\ / : * ? " < > |)와 제어문자를 _로, 공백은 정리.
+    """
+    if not name:
+        return ""
+    name = str(name).strip()
+    name = re.sub(r'[\\/:*?"<>|\x00-\x1f]', "_", name)  # 금지·제어문자 → _
+    name = re.sub(r"\s+", " ", name)                     # 공백 정리
+    name = re.sub(r"_{2,}", "_", name)                   # 연속 밑줄 → 하나
+    name = name.strip(" _.")                              # 양끝 밑줄/점/공백 제거
+    return name[:max_len].strip(" _.")
 
 RISK_COLORS = {
     "HIGH": "#ef4444",
@@ -43,6 +59,20 @@ def generate_html_report(results: Dict) -> str:
     processing_time = results.get("processing_time_sec", 0)
     total_issues = summary.get("total_issues_found", 0)
 
+    # 영상 제목·링크 (있을 때만 표기). 제목 없으면 파일명 사용.
+    import html as _html
+    video_title = results.get("video_title") or results.get("video_filename", "")
+    video_url = results.get("video_url") or ""
+    _title_disp = _html.escape(video_title)
+    if video_url:
+        _url_esc = _html.escape(video_url, quote=True)
+        video_link_html = (
+            f'&nbsp;|&nbsp; 🔗 <a href="{_url_esc}" target="_blank" '
+            f'style="color:#3b82f6;text-decoration:none">영상 링크</a>'
+        )
+    else:
+        video_link_html = ""
+
     # 타임라인 HTML
     timeline_html = _build_timeline_html(results.get("timeline", []), duration)
 
@@ -64,7 +94,7 @@ def generate_html_report(results: Dict) -> str:
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>저작권 분석 리포트 — {results.get('video_filename', '')}</title>
+<title>저작권 분석 리포트 — {_title_disp}</title>
 <style>
   :root {{
     --bg: #0f172a; --surface: #1e293b; --surface2: #334155;
@@ -146,7 +176,9 @@ def generate_html_report(results: Dict) -> str:
     <div>
       <div class="header-title">🔍 저작권 분석 리포트</div>
       <div class="header-sub">
-        📁 {results.get('video_filename', '')} &nbsp;|&nbsp;
+        🎬 {_title_disp}{video_link_html}
+      </div>
+      <div class="header-sub">
         ⏱️ {duration_str} &nbsp;|&nbsp;
         🕐 분석 시간: {processing_time:.0f}초 &nbsp;|&nbsp;
         🗂️ Job ID: {results.get('job_id', '')}
@@ -363,7 +395,15 @@ def save_report(results: Dict, output_dir: Path = None) -> str:
     output_dir.mkdir(parents=True, exist_ok=True)
 
     job_id = results.get("job_id", "unknown")
-    filename = f"copyright_report_{job_id}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.html"
+    # 파일명에 영상 제목 우선 사용(있으면), 없으면 파일명 → job_id 순 폴백
+    name_part = safe_filename_part(
+        results.get("video_title")
+        or Path(results.get("video_filename", "")).stem
+        or job_id
+    )
+    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+    filename = f"copyright_report_{name_part}_{ts}.html" if name_part \
+        else f"copyright_report_{job_id}_{ts}.html"
     filepath = output_dir / filename
 
     html = generate_html_report(results)

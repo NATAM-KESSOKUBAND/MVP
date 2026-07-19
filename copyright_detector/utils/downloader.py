@@ -42,6 +42,13 @@ def get_video_info_from_url(url: str) -> Dict:
         "uploader": info.get("uploader", info.get("channel", "")),
         "duration": int(info.get("duration") or 0),
         "ext":      info.get("ext", "mp4"),
+        "id":       info.get("id", ""),
+        # 원본 영상 페이지 URL (리포트에 링크로 표기). 없으면 입력 url로 폴백.
+        "webpage_url": info.get("webpage_url") or url,
+        # 채널 식별자 (본인채널 자동 필터용) — 이름/핸들/채널ID
+        "channel":      info.get("channel") or info.get("uploader") or "",
+        "uploader_id":  info.get("uploader_id") or "",   # 예: @handle
+        "channel_id":   info.get("channel_id") or "",    # 예: UCxxxxxxxx
     }
 
 

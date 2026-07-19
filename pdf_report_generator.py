@@ -914,6 +914,7 @@ def _detail_deps():
             "ACTIONS":       getattr(_m, "_DEFAULT_ACTIONS", {}),
             "worst_fx":      getattr(_m, "_rp_worst_fx", lambda a: "—"),
             "parse_pattern": getattr(_m, "_rp_parse_pattern", lambda t: ("—", "—", "—")),
+            "priority_matrix": getattr(_m, "_build_priority_matrix", lambda r: None),
             "WHISPER_MODEL":       getattr(_m, "WHISPER_MODEL", "—"),
             "GEN_MODEL":           getattr(_m, "GEN_MODEL", "—"),
             "GEMINI_REFINE_MODEL": getattr(_m, "GEMINI_REFINE_MODEL", "—"),
@@ -924,6 +925,7 @@ def _detail_deps():
             "STAGE_DESC": {}, "ACTIONS": {},
             "worst_fx": lambda a: "—",
             "parse_pattern": lambda t: ("—", "—", "—"),
+            "priority_matrix": lambda r: None,
             "WHISPER_MODEL": "—", "GEN_MODEL": "—",
             "GEMINI_REFINE_MODEL": "—", "EMBED_MODEL": "—",
         }
@@ -1203,15 +1205,21 @@ def _build_detail_pages(report: dict) -> list:
     story.append(Spacer(1, 4 * mm))
 
     story.append(_detail_sub("대응 우선순위 매트릭스"))
-    imm = actions.get("immediate", ["—"])
-    sht = actions.get("short", ["—"])
-    mid = actions.get("mid", ["—"])
-    story.append(_data_table(
-        ["우선순위", "행동", "예상 효과", "리스크"],
-        [["🔴 높음", _safe(imm[0]), "빠른 대응으로 확산 차단 가능", "섣부른 공개 대응 시 역풍 가능"],
-         ["🟡 중간", _safe(sht[0]), "전문가 협의로 리스크 최소화", "대응 지연 시 여론 주도권 상실"],
-         ["🟢 낮음", _safe(mid[0]), "장기적 신뢰 회복 기반 마련", "단기 효과 미미할 수 있음"]],
-        col_ratios=[0.13, 0.32, 0.3, 0.25]))
+    # [정확도 #2] 실제 감지 리스크 기반 매트릭스 (리포트별 상이)
+    pm = _dep["priority_matrix"](report)
+    if pm:
+        story.append(_data_table(
+            ["우선순위", "행동", "예상 효과", "리스크"],
+            [["🔴 높음", _safe(pm["high"]["action"]), _safe(pm["high"]["effect"]), _safe(pm["high"]["risk"])],
+             ["🟡 중간", _safe(pm["mid"]["action"]),  _safe(pm["mid"]["effect"]),  _safe(pm["mid"]["risk"])],
+             ["🟢 낮음", _safe(pm["low"]["action"]),  _safe(pm["low"]["effect"]),  _safe(pm["low"]["risk"])]],
+            col_ratios=[0.13, 0.32, 0.3, 0.25]))
+    else:
+        imm = actions.get("immediate", ["—"])
+        story.append(_data_table(
+            ["우선순위", "행동", "예상 효과", "리스크"],
+            [["🔴 높음", _safe(imm[0]), "빠른 대응으로 확산 차단 가능", "섣부른 공개 대응 시 역풍 가능"]],
+            col_ratios=[0.13, 0.32, 0.3, 0.25]))
     story.append(Spacer(1, 4 * mm))
 
     story.append(_detail_sub("논란 라벨 정의"))

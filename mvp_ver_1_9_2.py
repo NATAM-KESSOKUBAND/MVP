@@ -996,6 +996,116 @@ def _repair_truncated_json(text: str):
     return None
 
 
+# ════════════════════════════════════════════════════════
+# 🔧 리포트 정확도 개선 헬퍼
+#   ① 자막 감지 발언: 원시 SVM 대신 Tier2 LLM 판정으로 교정
+#   ② 대응 우선순위 매트릭스: 고정 템플릿 → 실제 감지 리스크 기반
+# ════════════════════════════════════════════════════════
+
+_LEVEL_RANK = {"SAFE": 0, "CARE": 1, "ALERT": 2, "DANGER": 3, "CRITICAL": 4}
+
+# NATAM 항목별 권장 조치 (우선순위 매트릭스 행동 도출용)
+_NATAM_RECO = {
+    "정치·이념 리스크":          "정치적 단정·진영 프레이밍 표현을 완화하거나 복수 시각을 제시",
+    "특정 인물·집단 낙인 리스크":  "실명·집단 언급은 사실 확인된 내용만 남기고 부정적 반복 표현 제거",
+    "사생활·윤리 리스크":        "개인정보·사생활 관련 언급은 당사자 동의 여부 확인 후 편집",
+    "이미지 역반전 리스크":       "기존 콘텐츠 방향과 상충되는 장면에 맥락 설명 추가 또는 삭제",
+    "맥락 절단·클립화 리스크":    "자극적 문구·썸네일을 실제 내용과 일치하도록 수정",
+    "갈등 증폭 리스크":          "편가르기·논쟁 유도 표현을 정보 전달 중심으로 재구성",
+    "밈화·조롱 소비 리스크":      "의도치 않게 클립 소비될 수 있는 구간을 재검토·자막 보완",
+    "브랜드 세이프티 리스크":     "광고주 비친화 표현(과한 욕설·자극적 분위기) 수위 조절",
+    "감정 선동 리스크":          "분노 유도·과격한 단정 표현을 팩트 중심 완화 표현으로 교체",
+    "기존 논란 결합 리스크":      "과거 논란과 연결될 수 있는 소재에 맥락 설명 추가",
+    "괴롭힘·모욕 표현 리스크":    "인신공격·조롱 발언 구간 삭제 또는 중립 표현으로 교체",
+    "폭력·위협·불법행위 리스크":  "폭력·위협·위험행동 조장 구간 삭제 또는 경고 문구 추가",
+    "혐오·차별 표현 리스크":      "성별·인종·지역 일반화/혐오 표현 삭제 (플랫폼 정책 위반 소지)",
+    "성적 표현·대상화 리스크":    "성적 암시·대상화 표현 수위 조절 또는 연령 제한 검토",
+    "광고친화성·상업 신뢰 리스크": "협찬 표기 여부 확인 및 브랜드 세이프티 충돌 요소 완화",
+}
+
+
+def _reconcile_transcript_with_tier2(ta: list, two_tier: dict) -> list:
+    """
+    [정확도 개선 #1] '감지된 발언' 표를 Tier2 LLM 맥락 판정으로 교정.
+
+    문제: transcript_analysis는 원시 SVM(bag-of-words) 출력이라 반어·인용·부정문을
+          못 읽어 오탐이 많다(= 사용자 피드백 "자막 감지 발언 정확도 하락").
+    해결: 이미 계산된 Tier2 LLM 판정(맥락+유사사례 반영, 오탐 제거)을 각 세그먼트에
+          덮어씌운다. is_controversy=False → L12로 강등(표에서 제외),
+          True → LLM의 category/rationale로 라벨·근거 교정.
+          Tier2 미판정 세그먼트는 원시 SVM 유지(하위 심각도).
+    """
+    if not ta or not two_tier:
+        return ta
+    verdicts = {a.get("segment_idx"): a
+                for a in two_tier.get("adjudicated", [])
+                if a.get("segment_idx") is not None}
+    if not verdicts:
+        return ta
+
+    out = []
+    for i, seg in enumerate(ta):
+        v = verdicts.get(i)
+        if v is None:
+            out.append(seg)
+            continue
+        if not v.get("is_controversy"):
+            # LLM이 맥락상 오탐으로 판정 → L12로 강등 (표시 필터에서 제외됨)
+            out.append({**seg, "label": "L12 해당 없음",
+                        "reason": f"Tier2 맥락 판정: 오탐 제거 "
+                                  f"(SVM 의심 «{seg.get('label','')}») — {v.get('rationale','')}"})
+        else:
+            cat = v.get("category") or (seg.get("label", "").split() or ["L12"])[0]
+            out.append({**seg,
+                        "label": f"{cat} {_LABEL_DESCS.get(cat, '해당 없음')}".strip(),
+                        "reason": f"Tier2 확정({v.get('severity','')}): "
+                                  f"{v.get('rationale', seg.get('reason',''))}"})
+    return out
+
+
+def _build_priority_matrix(report: dict) -> dict:
+    """
+    [정확도 개선 #2] 대응 우선순위 매트릭스를 실제 감지 리스크 기반으로 생성.
+
+    문제: 기존 매트릭스는 확산단계(4종)별 고정 행동 + 효과/리스크 하드코딩 →
+          모든 리포트가 사실상 동일(= 사용자 피드백 "매트릭스가 다 똑같음").
+    해결: NATAM A·B축에서 실제로 감지된 상위 리스크 항목을 심각도순으로 뽑아,
+          각 항목명에 맞는 권장 조치와 리포트별 예상효과를 생성한다.
+    반환: {"high":{...}, "mid":{...}, "low":{...}} — 각 {action, effect, risk}
+    """
+    natam = report.get("natam_risk", {})
+    items = []
+    for axis, axis_label in (("A", "커뮤니티 확산"), ("B", "플랫폼 정책")):
+        axis_defs = NATAM_A_AXES if axis == "A" else NATAM_B_AXES
+        for key, v in (natam.get(axis) or {}).items():
+            lv = v.get("level", "SAFE")
+            name = axis_defs.get(key, {}).get("name", key)
+            items.append({"name": name, "level": lv,
+                          "rank": _LEVEL_RANK.get(lv, 0), "axis": axis_label})
+
+    # 심각도 높은 순 정렬, ALERT 이상 우선
+    items.sort(key=lambda x: -x["rank"])
+    top = [it for it in items if it["rank"] >= 2][:3] or items[:3]
+
+    downsides = ["섣부른 공개 대응 시 역풍 가능",
+                 "대응 지연 시 여론 주도권 상실",
+                 "단기 효과는 제한적일 수 있음"]
+    slots = ["high", "mid", "low"]
+    matrix = {}
+    for i, slot in enumerate(slots):
+        if i < len(top):
+            it = top[i]
+            matrix[slot] = {
+                "action": _NATAM_RECO.get(it["name"], f"'{it['name']}' 관련 표현 재검토 및 수정"),
+                "effect": f"{it['axis']} 리스크 완화 — {it['name']}({it['level']})",
+                "risk":   downsides[i],
+            }
+        else:
+            matrix[slot] = {"action": "추가 조치 불필요 (감지된 상위 리스크 없음)",
+                            "effect": "현 수준 유지", "risk": "—"}
+    return matrix
+
+
 def _safe_json_parse(text: str, context: str = "") -> object:
     """
     JSON 파싱 유틸.
@@ -1182,6 +1292,7 @@ class CrisisReportEngine:
         wa_padded = (wa + ["—","—","—","—"])[:4]
         p_s, p_r, p_t = _rp_parse_pattern(pat)
         actions  = _DEFAULT_ACTIONS.get(stage, _DEFAULT_ACTIONS["Unknown"])
+        _pm      = _build_priority_matrix(report)   # 리포트별 우선순위 매트릭스
         label_1  = labels[0] if labels else "—"
         label_2  = labels[1] if len(labels) > 1 else "—"
 
@@ -1305,9 +1416,10 @@ class CrisisReportEngine:
             "ACTION_IMMEDIATE_1": actions["immediate"][0], "ACTION_IMMEDIATE_2": actions["immediate"][1],
             "ACTION_SHORT_1":     actions["short"][0],     "ACTION_SHORT_2":     actions["short"][1],
             "ACTION_MID_1":       actions["mid"][0],       "ACTION_MID_2":       actions["mid"][1],
-            "PRIORITY_HIGH_ACTION": actions["immediate"][0], "PRIORITY_HIGH_EFFECT": "빠른 대응으로 확산 차단 가능",     "PRIORITY_HIGH_RISK": "섣부른 공개 대응 시 역풍 가능",
-            "PRIORITY_MID_ACTION":  actions["short"][0],     "PRIORITY_MID_EFFECT":  "전문가 협의를 통한 리스크 최소화", "PRIORITY_MID_RISK":  "대응 지연 시 여론 주도권 상실",
-            "PRIORITY_LOW_ACTION":  actions["mid"][0],       "PRIORITY_LOW_EFFECT":  "장기적 신뢰 회복 기반 마련",       "PRIORITY_LOW_RISK":  "단기 효과 미미할 수 있음",
+            # [정확도 #2] 우선순위 매트릭스: 고정 템플릿 → 실제 감지 리스크 기반
+            "PRIORITY_HIGH_ACTION": _pm["high"]["action"], "PRIORITY_HIGH_EFFECT": _pm["high"]["effect"], "PRIORITY_HIGH_RISK": _pm["high"]["risk"],
+            "PRIORITY_MID_ACTION":  _pm["mid"]["action"],  "PRIORITY_MID_EFFECT":  _pm["mid"]["effect"],  "PRIORITY_MID_RISK":  _pm["mid"]["risk"],
+            "PRIORITY_LOW_ACTION":  _pm["low"]["action"],  "PRIORITY_LOW_EFFECT":  _pm["low"]["effect"],  "PRIORITY_LOW_RISK":  _pm["low"]["risk"],
             "EFFECTIVE_RESPONSE_PATTERNS": (
                 "유사 사례에서 초기 투명한 사실 관계 인정이 여론 악화를 줄이는 패턴이 관찰되었습니다. "
                 "반면 축소·부인·법적 대응 예고는 오히려 위기를 심화시키는 경향이 있습니다."
@@ -2740,6 +2852,11 @@ class CrisisConsultantSystem:
 
         elapsed = round(time.time() - t0, 1)
         print(f"\n⏱️  총 분석 시간: {elapsed}초")
+
+        # ── [정확도 #1] '감지된 발언'을 Tier2 LLM 판정으로 교정 ──
+        #   원시 SVM 오탐을 이미 계산된 맥락 판정으로 덮어씀 (표시 정확도↑)
+        transcript_analysis = _reconcile_transcript_with_tier2(
+            transcript_analysis, two_tier_result)
 
         # ── 보고서 구성 ────────────────────────────────────
         report = {

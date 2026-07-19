@@ -111,21 +111,44 @@ def is_url(target: str) -> bool:
     return target.startswith("http://") or target.startswith("https://")
 
 
+def _channels_from_meta(info: Dict) -> List[str]:
+    """
+    yt-dlp 메타에서 본인채널 필터에 쓸 식별자들을 추출(중복 제거, @ 제거).
+    이름/핸들/채널ID를 모두 등록해 URL·엔티티 어느 쪽으로 나오든 매칭되게 한다.
+    """
+    seen, out = set(), []
+    for v in (info.get("channel"), info.get("uploader"),
+              info.get("uploader_id"), info.get("channel_id")):
+        v = (v or "").strip().lstrip("@")
+        key = v.lower()
+        if v and key not in seen:
+            seen.add(key)
+            out.append(v)
+    return out
+
+
 # ─────────────────────────────────────────────
 # 다운로드
 # ─────────────────────────────────────────────
-def download_video_with_progress(url: str) -> str:
-    """URL에서 영상 다운로드 (진행 표시 포함)"""
+def download_video_with_progress(url: str):
+    """
+    URL에서 영상 다운로드 (진행 표시 포함).
+    반환: (파일경로, 메타) — 메타 = {"title": 제목, "url": 링크, "channels": [본인채널 후보]}
+    """
     from utils.downloader import get_video_info_from_url, download_video
 
+    meta = {"title": "", "url": url, "channels": []}
     if _RICH:
         console.print(f"\n[cyan]🔗 URL 메타데이터 확인 중...[/cyan] {url[:70]}")
         try:
             info = get_video_info_from_url(url)
+            meta["title"]    = info.get("title", "")
+            meta["url"]      = info.get("webpage_url") or url
+            meta["channels"] = _channels_from_meta(info)
             dur  = info.get("duration", 0)
             console.print(
                 f"  [green]✓[/green] 제목: [bold]{info.get('title', '?')[:60]}[/bold]\n"
-                f"       업로더: [dim]{info.get('uploader', '?')}[/dim]  "
+                f"       채널: [dim]{info.get('uploader', '?')}[/dim]  "
                 f"길이: [dim]{dur//60}분 {dur%60}초[/dim]"
             )
         except Exception:
@@ -133,6 +156,13 @@ def download_video_with_progress(url: str) -> str:
 
         console.print("\n[cyan]⬇️  영상 다운로드 중...[/cyan]")
     else:
+        try:
+            info = get_video_info_from_url(url)
+            meta["title"]    = info.get("title", "")
+            meta["url"]      = info.get("webpage_url") or url
+            meta["channels"] = _channels_from_meta(info)
+        except Exception:
+            pass
         print(f"\n[다운로드 중] {url}")
 
     download_dir = str(_ROOT / "temp" / "downloads")
@@ -143,7 +173,7 @@ def download_video_with_progress(url: str) -> str:
     else:
         print(f"저장 완료: {path}")
 
-    return path
+    return path, meta
 
 
 # ─────────────────────────────────────────────
@@ -177,72 +207,6 @@ def _build_summary(findings: List[Dict]) -> Dict:
         "high_count":   sum(1 for f in findings if f.get("risk_level") == "HIGH"),
         "medium_count": sum(1 for f in findings if f.get("risk_level") == "MEDIUM"),
         "low_count":    sum(1 for f in findings if f.get("risk_level") == "LOW"),
-    }
-
-
-async def run_analysis_pipeline(
-    video_path: str,
-    job_id:     str,
-    own_channels: List[str],
-) -> Dict:
-    """전체 분석 파이프라인 (비동기)"""
-    import logging
-    logging.disable(logging.CRITICAL)   # 분석 중 로그 출력 억제
-
-    from utils.video_utils       import extract_frames_smart, get_video_info
-    from analyzers.video_clip_analyzer import VideoClipAnalyzer
-    from analyzers.image_analyzer      import ImageAnalyzer
-    from analyzers.music_analyzer      import MusicAnalyzer
-    from utils.google_vision_searcher  import set_own_channels, clear_own_channels
-
-    # 자기 채널 등록
-    if own_channels:
-        set_own_channels(own_channels)
-    else:
-        clear_own_channels()
-
-    start = time.time()
-
-    # ── 1. 영상 정보 ──
-    video_info = get_video_info(video_path)
-
-    # ── 2. 프레임 추출 (동기, 스레드 실행) ──
-    loop = asyncio.get_event_loop()
-    frames = await loop.run_in_executor(
-        None,
-        lambda: extract_frames_smart(video_path, max_frames=100)
-    )
-
-    # ── 3. 병렬 분석 ──
-    video_analyzer = VideoClipAnalyzer()
-    image_analyzer = ImageAnalyzer()
-    music_analyzer = MusicAnalyzer()
-
-    video_findings, image_findings, music_findings = await asyncio.gather(
-        video_analyzer.analyze(frames, job_id),
-        image_analyzer.analyze(frames, job_id),
-        music_analyzer.analyze(video_path, job_id),
-        return_exceptions=True,
-    )
-
-    all_findings: List[Dict] = []
-    for result in (video_findings, image_findings, music_findings):
-        if isinstance(result, list):
-            all_findings.extend(result)
-
-    all_findings.sort(key=lambda x: x.get("timestamp_start", 0))
-
-    logging.disable(logging.NOTSET)  # 로그 복원
-
-    return {
-        "job_id":              job_id,
-        "video_path":          video_path,
-        "video_filename":      Path(video_path).name,
-        "video_duration":      video_info.get("duration", 0),
-        "processing_time_sec": time.time() - start,
-        "own_channels":        own_channels,
-        "findings":            all_findings,
-        "summary":             _build_summary(all_findings),
     }
 
 
@@ -361,51 +325,40 @@ def _display_plain(results, summary, level, score, findings, elapsed):
 # 리포트 저장
 # ─────────────────────────────────────────────
 def save_report_prompt(results: Dict):
-    """리포트 저장 여부 물어보기"""
+    """리포트 저장 — 묻지 않고 JSON·HTML 둘 다 항상 저장"""
     if _RICH:
         console.print()
-        console.rule("[dim]리포트 저장[/dim]")
-        console.print("\n  [dim]저장할 형식을 선택하세요:[/dim]")
-        console.print("  [bold]H[/bold] - HTML 리포트 (브라우저에서 보기)")
-        console.print("  [bold]J[/bold] - JSON 데이터 (원시 데이터)")
-        console.print("  [bold]B[/bold] - 둘 다")
-        console.print("  [bold]Enter[/bold] - 저장 건너뛰기\n")
-        choice = console.input("[cyan]선택[/cyan]: ").strip().upper()
-    else:
-        print("\n\n리포트 저장: [H] HTML  [J] JSON  [B] 둘 다  [Enter] 건너뜀")
-        choice = input("선택: ").strip().upper()
-
-    if not choice or choice not in ("H", "J", "B"):
-        if _RICH:
-            console.print("[dim]저장을 건너뜁니다.[/dim]")
-        return
+        console.rule("[dim]리포트 저장 (JSON + HTML)[/dim]")
 
     output_dir = _ROOT / "results"
     output_dir.mkdir(parents=True, exist_ok=True)
-    stem = Path(results["video_filename"]).stem[:40]
+    # 파일명에 영상 제목 우선 사용(있으면), 없으면 파일명
+    from reports.report_generator import safe_filename_part
+    stem = (safe_filename_part(results.get("video_title"), max_len=40)
+            or Path(results["video_filename"]).stem[:40])
     ts   = time.strftime("%Y%m%d_%H%M%S")
 
-    if choice in ("J", "B"):
-        json_path = output_dir / f"report_{stem}_{ts}.json"
-        with open(json_path, "w", encoding="utf-8") as f:
-            json.dump(results, f, ensure_ascii=False, indent=2, default=str)
-        _print_ok(f"JSON 저장: {json_path}")
+    # 1) JSON 항상 저장
+    json_path = output_dir / f"report_{stem}_{ts}.json"
+    with open(json_path, "w", encoding="utf-8") as f:
+        json.dump(results, f, ensure_ascii=False, indent=2, default=str)
+    _print_ok(f"JSON 저장: {json_path}")
 
-    if choice in ("H", "B"):
-        try:
-            from reports.report_generator import generate_html_report
-            html_path = output_dir / f"report_{stem}_{ts}.html"
-            # report_generator가 원하는 형식으로 변환
-            report_data = {
-                **results,
-                "findings_by_type": _group_by_type(results["findings"]),
-                "timeline":         results["findings"],
-            }
-            html_content = generate_html_report(report_data)
-            html_path.write_text(html_content, encoding="utf-8")
-            _print_ok(f"HTML 저장: {html_path}")
-        except Exception as e:
-            _print_warn(f"HTML 생성 실패: {e}")
+    # 2) HTML 항상 저장
+    try:
+        from reports.report_generator import generate_html_report
+        html_path = output_dir / f"report_{stem}_{ts}.html"
+        # report_generator가 원하는 형식으로 변환
+        report_data = {
+            **results,
+            "findings_by_type": _group_by_type(results["findings"]),
+            "timeline":         results["findings"],
+        }
+        html_content = generate_html_report(report_data)
+        html_path.write_text(html_content, encoding="utf-8")
+        _print_ok(f"HTML 저장: {html_path}")
+    except Exception as e:
+        _print_warn(f"HTML 생성 실패: {e}")
 
 
 def _group_by_type(findings: List[Dict]) -> Dict[str, List[Dict]]:
@@ -442,8 +395,10 @@ def _print_step(msg: str):
 # ─────────────────────────────────────────────
 # 진행 상황 표시 래퍼
 # ─────────────────────────────────────────────
-async def run_with_status(video_path: str, job_id: str, own_channels: List[str]) -> Dict:
+async def run_with_status(video_path: str, job_id: str, own_channels: List[str],
+                          video_meta: Dict = None) -> Dict:
     """분석을 단계별로 실행하며 상태 메시지 출력"""
+    video_meta = video_meta or {}
     import logging
     logging.disable(logging.CRITICAL)
 
@@ -452,6 +407,8 @@ async def run_with_status(video_path: str, job_id: str, own_channels: List[str])
     from analyzers.image_analyzer      import ImageAnalyzer
     from analyzers.music_analyzer      import MusicAnalyzer
     from utils.google_vision_searcher  import set_own_channels, clear_own_channels
+    from config import config
+    from pipeline import refine_findings, apply_hybrid_scoring
 
     if own_channels:
         set_own_channels(own_channels)
@@ -475,16 +432,17 @@ async def run_with_status(video_path: str, job_id: str, own_channels: List[str])
             f"│  해상도: {video_info.get('width', '?')}×{video_info.get('height', '?')}[/dim]"
         )
 
-    # 2. 프레임 추출
-    _print_step("프레임 추출 중...")
+    # 2. 프레임 추출 (배치 파이프라인과 동일하게 config 값 사용 → 긴 영상 커버 ↑)
+    _max_frames = config.pipeline.frame_max_count
+    _print_step(f"프레임 추출 중... (최대 {_max_frames}개)")
     if _RICH:
         with console.status("", spinner="dots"):
             frames = await loop.run_in_executor(
                 None,
-                lambda: extract_frames_smart(video_path, max_frames=100)
+                lambda: extract_frames_smart(video_path, max_frames=_max_frames)
             )
     else:
-        frames = extract_frames_smart(video_path, max_frames=100)
+        frames = extract_frames_smart(video_path, max_frames=_max_frames)
     _print_ok(f"{len(frames)}개 프레임 추출 완료")
 
     # 3. 분석기 초기화
@@ -521,6 +479,8 @@ async def run_with_status(video_path: str, job_id: str, own_channels: List[str])
     logging.disable(logging.NOTSET)
 
     all_findings = video_findings + image_findings + music_findings
+    all_findings = apply_hybrid_scoring(all_findings)  # 유튜브 기준 재점수
+    all_findings = refine_findings(all_findings)       # 오탐 억제 후처리 (약한 단일신호 → LOW)
     all_findings.sort(key=lambda x: x.get("timestamp_start", 0))
     elapsed = time.time() - start
 
@@ -528,6 +488,9 @@ async def run_with_status(video_path: str, job_id: str, own_channels: List[str])
         "job_id":              job_id,
         "video_path":          video_path,
         "video_filename":      Path(video_path).name,
+        # 영상 제목·링크 (URL로 받은 경우만 채워짐, 로컬 파일은 파일명이 대체)
+        "video_title":         video_meta.get("title") or Path(video_path).stem,
+        "video_url":           video_meta.get("url", ""),
         "video_duration":      dur,
         "processing_time_sec": elapsed,
         "own_channels":        own_channels,
@@ -574,22 +537,37 @@ def main():
         return
 
     # ── 자기 채널 결정 ──
+    #   · --channel 로 명시하면 그걸 최우선.
+    #   · URL 입력이면 아래 다운로드 단계에서 링크의 채널을 '자동 감지'해서 사용.
+    #   · 로컬 파일이면 링크가 없으니 직접 입력받는다.
+    manual_channels = None
     if args.channel:
-        own_channels = [c.strip().lstrip('@') for c in args.channel.split(',') if c.strip()]
-    else:
-        own_channels = get_own_channels_input()
+        manual_channels = [c.strip().lstrip('@') for c in args.channel.split(',') if c.strip()]
+    elif not is_url(target):
+        manual_channels = get_own_channels_input()
 
-    # ── URL이면 다운로드 ──
+    # ── URL이면 다운로드 (+ 채널 자동 감지) ──
     video_path = target
+    video_meta = {"title": "", "url": "", "channels": []}
     if is_url(target):
         try:
-            video_path = download_video_with_progress(target)
+            video_path, video_meta = download_video_with_progress(target)
         except Exception as e:
             if _RICH:
                 console.print(f"[red]❌ 다운로드 실패: {e}[/red]")
             else:
                 print(f"❌ 다운로드 실패: {e}")
             return
+
+    # 본인채널 필터 확정: 수동 지정이 있으면 우선, 없으면 링크에서 감지한 채널 사용
+    if manual_channels is not None:
+        own_channels = manual_channels
+    else:
+        own_channels = video_meta.get("channels", [])
+        if own_channels:
+            _msg = (f"🔎 링크에서 본인 채널 자동 감지: {', '.join(own_channels[:3])} "
+                    f"→ 오탐 방지 필터 적용")
+            console.print(f"[dim]{_msg}[/dim]") if _RICH else print(_msg)
 
     # ── 파일 존재 확인 ──
     if not Path(video_path).exists():
@@ -613,7 +591,7 @@ def main():
 
     # ── 분석 실행 ──
     try:
-        results = asyncio.run(run_with_status(video_path, job_id, own_channels))
+        results = asyncio.run(run_with_status(video_path, job_id, own_channels, video_meta))
     except KeyboardInterrupt:
         if _RICH:
             console.print("\n[yellow]⚠ 분석이 중단되었습니다.[/yellow]")

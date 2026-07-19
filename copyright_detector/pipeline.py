@@ -80,6 +80,74 @@ def aggregate_risk(findings: List[Dict]) -> Tuple[float, RiskLevel]:
     return overall, level
 
 
+def _level_from_score(score: float) -> str:
+    """risk_score → 등급 (config.risk 임계값 기준)."""
+    if score >= config.risk.HIGH_THRESHOLD:
+        return "HIGH"
+    if score >= config.risk.MEDIUM_THRESHOLD:
+        return "MEDIUM"
+    if score >= config.risk.LOW_THRESHOLD:
+        return "LOW"
+    return "SAFE"
+
+
+def apply_hybrid_scoring(findings: List[Dict]) -> List[Dict]:
+    """
+    유튜브 스튜디오 기준 하이브리드 재점수 (config.pipeline.youtube_aligned_scoring).
+    각 finding의 risk_score/risk_level 을 '유튜브 실제 조치 가능성'에 맞춰 재조정하고,
+    원래(법적) 점수는 legal_risk_score 에 보존한다.
+    """
+    if not config.pipeline.youtube_aligned_scoring:
+        return findings
+    from youtube_risk import hybrid_risk_score
+    out = []
+    for f in findings:
+        new_score, note = hybrid_risk_score(f)
+        g = dict(f)
+        g["legal_risk_score"] = f.get("risk_score")   # 법적 점수 보존
+        g["risk_score"] = new_score
+        g["risk_level"] = _level_from_score(new_score)
+        if note and note not in (g.get("description") or ""):
+            g["description"] = (g.get("description", "") or "") + note
+        out.append(g)
+    return out
+
+
+def refine_findings(findings: List[Dict]) -> List[Dict]:
+    """
+    정확도 후처리(오탐 억제) — 약한 '단일 신호' 시각 finding을 LOW(참고)로 강등.
+
+    대상: image/video_clip/logo 중
+      · 교차검증 없음 (source 에 '+' 없음, 즉 두 엔진 일치가 아님) AND
+      · confidence < config.pipeline.weak_visual_demote_conf
+    → risk_level 을 LOW 로, risk_score 를 LOW 상한 근처로 캡. (삭제 아님 — 리포트엔 남음)
+
+    music 등은 자체 신뢰도 체계(calculate_music_risk)가 있어 건드리지 않는다.
+    weak_visual_demote_conf=0 이면 아무것도 강등하지 않는다(기능 off).
+    """
+    thr = config.pipeline.weak_visual_demote_conf
+    if thr <= 0:
+        return findings
+    VISUAL = {"image", "video_clip", "logo"}
+    cap = config.risk.LOW_THRESHOLD + 0.05  # 강등 후 위험도 상한 (LOW 유지)
+    out = []
+    for f in findings:
+        conf = f.get("confidence_score", 0) or 0
+        cross_validated = "+" in (f.get("source", "") or "")  # 예: yandex+google_vision
+        if (f.get("finding_type") in VISUAL and not cross_validated
+                and conf < thr and f.get("risk_level") in ("HIGH", "MEDIUM")):
+            g = dict(f)
+            g["risk_level"] = "LOW"
+            g["risk_score"] = round(min(f.get("risk_score", 0.0), cap), 3)
+            g["demoted"] = True
+            g["description"] = (f.get("description", "")
+                                + " [단일 신호·낮은 신뢰도 → 참고(LOW)로 조정]")
+            out.append(g)
+        else:
+            out.append(f)
+    return out
+
+
 def _fmt_ts(seconds: float) -> str:
     m, s = divmod(int(seconds), 60)
     h, m = divmod(m, 60)
@@ -156,6 +224,8 @@ def merge_adjacent_findings(findings: List[Dict], max_gap: float = 90.0) -> List
 def format_results(job_id: str, video_path: str, video_info: Dict,
                    all_findings: List[Dict], processing_time: float) -> Dict:
     """최종 결과 딕셔너리 구성"""
+    all_findings = apply_hybrid_scoring(all_findings)  # 유튜브 기준 재점수
+    all_findings = refine_findings(all_findings)        # 오탐 억제 후처리
     risk_score, risk_level = aggregate_risk(all_findings)
 
     # 타입별 그룹핑

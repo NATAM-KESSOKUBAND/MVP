@@ -133,12 +133,26 @@ class PipelineConfig:
     frame_extraction_fps: float = 1.0     # target FPS (길이에 따라 자동 축소)
     frame_phash_threshold: int = 12       # 유사 프레임 스킵 threshold (64비트 중)
     frame_scene_threshold: float = 30.0   # scene change detection threshold
-    frame_max_count: int = 320            # 최대 추출 프레임 수 (30분 영상 전체 커버: ~5.6초 간격)
+    # 최대 추출 프레임 수 (30분 영상 전체 커버: ~5.6초 간격). 클수록 미탐↓ 정확도↑,
+    # 대신 시각 분석이 느려짐. 너무 느리면 .env 에서 FRAME_MAX_COUNT 를 낮춘다(예: 160).
+    frame_max_count: int = int(os.getenv("FRAME_MAX_COUNT", "320"))
 
     # 폰트 분석 보류 (2026-07)
     # 시각 기반 폰트 분류가 신뢰 불가로 판명(평범한 산세리프 구분 불가, 오탐 다수)
     # → 폰트 분석 전체 비활성. 재개하려면 True로 변경 + 검증된 모델 필요.
     enable_font_analysis: bool = False
+
+    # 자체 학습 DB — 읽기(탐지 반영)와 쓰기(학습 저장)를 독립적으로 제어 (2026-07)
+    #
+    # ① use_learned_db (읽기/반영): 자체 학습된 임베딩·로고 등을 탐지 결과에 반영할지.
+    #    오학습 항목이 정확도를 떨어뜨려 기본 False. False면 분석은 순수 API 결과만 사용.
+    #    .env: USE_LEARNED_DB=true 로 켤 수 있음.
+    use_learned_db: bool = os.getenv("USE_LEARNED_DB", "false").lower() == "true"
+    #
+    # ② learn_to_db (쓰기/학습): 분석 중 확인된 콘텐츠를 자체 DB에 계속 누적 학습할지.
+    #    기본 True — 탐지 반영(①)은 꺼도 데이터는 계속 쌓아두어, 나중에 ①을 켜면
+    #    그동안 학습된 걸 바로 활용할 수 있다. .env: LEARN_TO_DB=false 로 끌 수 있음.
+    learn_to_db: bool = os.getenv("LEARN_TO_DB", "true").lower() == "true"
 
     # 병렬 처리
     max_workers: int = 8                  # 병렬 워커 수
@@ -152,6 +166,24 @@ class PipelineConfig:
     music_confidence_threshold: float = 0.6
     image_confidence_threshold: float = 0.7
     logo_confidence_threshold: float = 0.75
+
+    # 정확도 튜닝 (2026-07)
+    # ① 약한 시각 finding 강등: 교차검증(두 엔진 일치) 없이 단일 신호로 잡힌
+    #    image/video_clip/logo 중 confidence 가 이 값 미만이면 위험도를 LOW(참고)로
+    #    하향한다. 오탐 1건이 영상 전체를 HIGH로 부풀리는 것을 막음. (music은 제외)
+    #    0 으로 두면 강등 안 함. .env: WEAK_VISUAL_DEMOTE_CONF
+    weak_visual_demote_conf: float = float(os.getenv("WEAK_VISUAL_DEMOTE_CONF", "0.70"))
+
+    # ② 유튜브 스튜디오 기준 점수 정렬 (하이브리드)
+    #    risk_score를 '법적 침해 심각도'가 아니라 '유튜브가 실제로 조치할 가능성'에 맞춰 재조정.
+    #    - 음악/영상클립: Content ID 자동조치 대상 → 유지~강화
+    #    - 정지 이미지:   유튜브 자동조치 낮음 → 하향(단 법적 리스크 바닥값 유지, MEDIUM 상한)
+    #    - 로고:          상표권 → 유튜브 저작권 시스템 밖 → LOW
+    #    원래(법적) 점수는 finding['legal_risk_score']에 보존한다.
+    #    False면 예전 법적 점수 그대로. .env: YOUTUBE_ALIGNED_SCORING
+    youtube_aligned_scoring: bool = os.getenv("YOUTUBE_ALIGNED_SCORING", "true").lower() == "true"
+    #    정지 이미지 위험도 상한 (유튜브 자동조치 낮음 → MEDIUM 이하로 캡)
+    image_risk_cap: float = float(os.getenv("IMAGE_RISK_CAP", "0.55"))
 
 
 # ─────────────────────────────────────────────

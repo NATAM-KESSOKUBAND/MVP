@@ -50,4 +50,6 @@ rich>=13.0.0
 serpapi>=0.1.5
 
 # Video download
-yt-dlp>=2024.1.0
+# 유튜브가 자주 바뀌어 구버전이면 'HTTP 403 Forbidden'이 난다.
+# 다운로드가 403으로 실패하면 최신으로 갱신: python -m pip install -U yt-dlp
+yt-dlp>=2026.7.0
