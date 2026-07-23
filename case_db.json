@@ -655,5 +655,32 @@
     "spread_stage": "early",
     "response_pattern": [],
     "keyframes": []
+  },
+  {
+    "id": "case_050",
+    "title": "유튜버 이노냥, 아르헨티나 메시 유니폼 훼손 및 걸레질 논란",
+    "controversy_type": "attitude_issue",
+    "summary": "월드컵 경기 중 인종차별 피해를 입어 동정을 받았던 한국인 유튜버 이노냥이 자신의 SNS에 리오넬 메시의 유니폼을 밟고 걸레질을 하는 영상을 올려 특정 국가 및 선수를 비하하고 조롱했다는 비판을 받음.",
+    "spread_stage": "media",
+    "response_pattern": [],
+    "keyframes": []
+  },
+  {
+    "id": "case_051",
+    "title": "스트리머 얍얍, 실내흡연으로 인한 자택 화재 사고",
+    "controversy_type": "illegal_issue",
+    "summary": "치지직에서 활동하는 스트리머 얍얍이 자택에서 실내흡연을 하던 중 부주의로 화재를 발생시켜 논란이 됨. 인명 피해는 없었으나 반려동물 안전 위협 및 부주의한 행동으로 자숙을 선언함.",
+    "spread_stage": "community",
+    "response_pattern": [],
+    "keyframes": []
+  },
+  {
+    "id": "case_052",
+    "title": "유튜버 김지유, 폴란드 이민 및 결혼 조작 페이크 다큐 논란",
+    "controversy_type": "advertising_issue",
+    "summary": "코미디언 겸 유튜버 김지유가 구독자들을 대상으로 실제 상황인 것처럼 폴란드 이민 및 결혼설을 연출했으나, 결국 조회수를 노린 페이크 다큐 형식의 조작 콘텐츠였음이 밝혀져 시청자 기만 논란이 일어남.",
+    "spread_stage": "community",
+    "response_pattern": [],
+    "keyframes": []
   }
 ]

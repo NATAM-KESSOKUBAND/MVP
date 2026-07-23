@@ -36,6 +36,7 @@ risk_policies:
     - 추천받은 거 아님
     - 부정선거론
     - 대통령 격노
+    - 입막음 의혹
     action: MARK_FLAG
     severity: HIGH
     description: 내돈내산 강조 후 뒷광고 정황 포착용
