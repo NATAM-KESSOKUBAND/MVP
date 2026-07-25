@@ -120,7 +120,8 @@ def print_summary(results: dict):
             if yt_label:
                 print(f"          └─ {yt_e} {yt_label} (클레임 {item.get('yt_claim_prob', '?')})")
     else:
-        print(f"  {'\033[92m'}✅ 높은 위험도 항목 없음{RESET}")
+        green = "\033[92m"
+        print(f"  {green}✅ 높은 위험도 항목 없음{RESET}")
 
     print(f"{'─'*60}\n")
 

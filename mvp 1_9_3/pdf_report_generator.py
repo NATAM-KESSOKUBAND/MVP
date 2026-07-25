@@ -1247,6 +1247,111 @@ def _build_detail_pages(report: dict) -> list:
 # 🏗️  메인 빌더
 # ════════════════════════════════════════════════════════
 
+_CR_TYPE_LABEL_PDF = {
+    "music": "음악", "video_clip": "영상클립", "image": "이미지",
+    "logo": "로고", "font": "폰트",
+}
+_CR_LEVEL_COLOR = {
+    "HIGH": "#DC2626", "MEDIUM": "#D97706", "LOW": "#2563EB", "SAFE": "#16A34A",
+}
+
+
+def _cr_score_num(f: dict) -> float:
+    try:
+        return float(str(f.get("risk_score", "0")).replace("%", ""))
+    except (ValueError, TypeError):
+        return 0.0
+
+
+def _build_copyright_pages(report: dict) -> list:
+    """
+    저작권 침해 분석(copyright_detector) 결과를 PDF 페이지로 렌더링.
+    report['copyright'] 가 있을 때만 generate_pdf_report 에서 호출된다(하위호환).
+    """
+    cr = report.get("copyright")
+    story = _detail_header("저작권", "©", "저작권 침해 분석",
+                           "음악·영상클립·이미지·로고·폰트 자동 탐지",
+                           icon_color=C["blue"])
+
+    if not cr:
+        story.append(Paragraph(
+            "저작권 분석이 수행되지 않았거나 실패하여 표시할 결과가 없습니다. "
+            "(copyright_detector 실행 로그를 확인하세요.)", ST["body"]))
+        return story
+
+    s     = cr.get("summary", {})
+    level = s.get("overall_risk_level", "SAFE")
+    score = s.get("overall_risk_score", 0)
+    dur   = cr.get("video_duration", 0)
+    dur_s = f"{dur:.0f}초" if isinstance(dur, (int, float)) else _safe(dur)
+    lvcol = _CR_LEVEL_COLOR.get(level, "#1A1A1A")
+
+    # ── 8-1 종합 결과 ──
+    story.append(_detail_sub("종합 결과"))
+    story.append(_kv_table([
+        ("전체 저작권 위험도", f"{level} — {score}%"),
+        ("발견 항목 수", f"{_safe(s.get('total_issues_found', 0))}건"),
+        ("HIGH / MEDIUM",
+         f"{_safe(s.get('high_risk_count', 0))}건 / {_safe(s.get('medium_risk_count', 0))}건"),
+        ("분석 영상 길이", dur_s),
+    ]))
+    story.append(Spacer(1, 4 * mm))
+
+    # ── 8-2 유튜브 예측 ──
+    yt = s.get("youtube")
+    if yt:
+        story.append(_detail_sub("유튜브 스튜디오 예측 (저작권 관점)"))
+        story.append(_kv_table([
+            ("예측 요약", _safe(yt.get("headline"))),
+            ("수익화 영향(노란 딱지)", _safe(yt.get("monetization_impact"))),
+            ("Content ID 클레임 확률", f"{_safe(yt.get('claim_probability'))}%"),
+            ("차단 위험 / Strike 위험",
+             f"{_safe(yt.get('block_risk'))} / {_safe(yt.get('strike_risk'))}"),
+            ("권고", _safe(yt.get("advice"))),
+        ]))
+        story.append(Spacer(1, 4 * mm))
+
+    # ── 8-3 분류별 탐지 건수 ──
+    by_type = s.get("by_type", {})
+    if by_type:
+        story.append(_detail_sub("분류별 탐지 건수"))
+        rows = [[_CR_TYPE_LABEL_PDF.get(t, t), f"{c}건"] for t, c in by_type.items()]
+        story.append(_data_table(["유형", "탐지 건수"], rows, col_ratios=[0.6, 0.4]))
+        story.append(Spacer(1, 4 * mm))
+
+    # ── 8-4 위험 타임라인 ──
+    story.append(_detail_sub("위험 타임라인 (위험도 높은 순 · 상위 15건)"))
+    risky = [f for f in cr.get("timeline", [])
+             if f.get("risk_level") in ("HIGH", "MEDIUM")]
+    risky.sort(key=lambda f: -_cr_score_num(f))
+    rows = []
+    for f in risky[:15]:
+        lv    = f.get("risk_level", "")
+        cxx   = _CR_LEVEL_COLOR.get(lv, "#1A1A1A")
+        title = _safe(f.get("title") or f.get("rights_holder"))
+        risk_cell = Paragraph(
+            f'<font color="{cxx}"><b>{lv} {_safe(f.get("risk_score", ""))}</b></font>',
+            ST["bold_sm"])
+        rows.append([
+            _safe(f.get("timestamp", "00:00")),
+            _CR_TYPE_LABEL_PDF.get(f.get("type", ""), f.get("type", "")),
+            title,
+            risk_cell,
+            _safe(f.get("yt_outcome_label")),
+        ])
+    if not rows:
+        rows = [["—", "—", "위험(HIGH/MEDIUM) 등급 항목 없음", "SAFE", "—"]]
+    story.append(_data_table(
+        ["시점", "유형", "제목/출처", "위험도", "유튜브 예상 조치"],
+        rows, col_ratios=[0.12, 0.13, 0.37, 0.18, 0.20]))
+    story.append(Spacer(1, 3 * mm))
+    story.append(Paragraph(
+        "※ 음악·영상클립은 Content ID 자동 조치 가능성이 높고, 이미지·로고는 자동 조치 "
+        "가능성이 낮습니다. 본 분석은 자동 탐지 결과이며 최종 판단은 권리자·법률 검토가 "
+        "필요합니다.", ST["body_sm"]))
+    return story
+
+
 def generate_pdf_report(report: dict, output_dir: str = "reports") -> str:
     """
     report dict → PDF 파일 생성
@@ -1283,6 +1388,10 @@ def generate_pdf_report(report: dict, output_dir: str = "reports") -> str:
     story += _build_page3(report)
     # 상세 리포트 (MD 리포트의 전체 정보 반영)
     story += _build_detail_pages(report)
+
+    # 저작권 침해 분석 (v1.9.3+) — report에 copyright 키가 있을 때만 렌더
+    if "copyright" in report:
+        story += _build_copyright_pages(report)
 
     doc.build(story, onFirstPage=_footer_callback, onLaterPages=_footer_callback)
     print(f"✅ PDF 리포트 생성 완료 → {path}")
