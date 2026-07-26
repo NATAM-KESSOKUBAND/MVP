@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>크리에이터 위기 분석</title>
+<title>크리에이터 위기·저작권 통합 분석</title>
 <style>
   :root {
     --bg: #0f1115; --card: #1a1d24; --line: #2a2e38;
@@ -48,6 +48,10 @@
   .lvl-ALERT{background:rgba(227,135,60,.15);color:var(--alert)}
   .lvl-DANGER{background:rgba(240,136,62,.18);color:var(--danger)}
   .lvl-CRITICAL{background:rgba(248,81,73,.18);color:var(--critical)}
+  .cr-HIGH{background:rgba(248,81,73,.18);color:var(--critical)}
+  .cr-MEDIUM{background:rgba(210,153,34,.15);color:var(--care)}
+  .cr-LOW{background:rgba(91,140,255,.15);color:var(--accent)}
+  .cr-SAFE{background:rgba(63,185,80,.15);color:var(--safe)}
   ul { margin: 6px 0; padding-left: 18px; }
   li { margin: 3px 0; }
   .dl { display:flex; gap:10px; margin-top:18px; flex-wrap:wrap; }
@@ -60,8 +64,8 @@
 </head>
 <body>
 <div class="wrap">
-  <h1>🎬 크리에이터 위기 분석</h1>
-  <div class="sub">유튜브·구글드라이브 URL, 로컬 영상 경로, 또는 텍스트를 입력하세요.</div>
+  <h1>🎬🛡️©️ 크리에이터 위기·저작권 통합 분석</h1>
+  <div class="sub">유튜브·구글드라이브 URL, 로컬 영상 경로, 또는 텍스트를 입력하세요. (영상 입력 시 위기 분석과 저작권 침해 분석을 함께 수행합니다)</div>
 
   <div class="card">
     <textarea id="input" placeholder="예) https://www.youtube.com/watch?v=...  또는  분석할 문장"></textarea>
@@ -224,6 +228,46 @@ function render(job, jobId) {
     h += '<ul>' + sims.map(c => '<li>' + escapeHtml(c.title||"") +
       (c.controversy_type ? ' <span class="kv">(' + escapeHtml(c.controversy_type) + ')</span>' : "") +
       '</li>').join("") + '</ul>';
+  }
+
+  // 저작권 침해 분석 (1.9.3 통합)
+  if (rep.hasOwnProperty("copyright")) {
+    const CR_EMOJI = { HIGH: "🔴", MEDIUM: "🟡", LOW: "🔵", SAFE: "✅" };
+    const CR_TYPE_LABEL = { music: "🎵 음악", video_clip: "🎬 영상클립", image: "🖼️ 이미지", logo: "🏷️ 로고", font: "🔤 폰트" };
+    const cr = rep.copyright;
+    h += '<div class="sec-h">저작권 침해 분석</div>';
+    if (cr) {
+      const s = cr.summary || {};
+      const level = s.overall_risk_level || "SAFE";
+      h += '<div class="pill">전체 위험도 <span class="badge cr-' + escapeHtml(level) + '">' +
+           (CR_EMOJI[level] || "") + ' ' + escapeHtml(level) + '</span> (' + (s.overall_risk_score || 0) + '%)</div>';
+      h += '<div class="pill">탐지 항목 ' + (s.total_issues_found || 0) + '건</div>';
+      const byType = s.by_type || {};
+      h += Object.entries(byType).map(([t, c]) =>
+        '<span class="pill">' + (CR_TYPE_LABEL[t] || escapeHtml(t)) + ' ' + c + '건</span>'
+      ).join("");
+
+      if (s.youtube) {
+        const yt = s.youtube;
+        h += '<div class="kv" style="margin-top:8px">📺 ' + escapeHtml(yt.headline || "") + '<br>' +
+             '수익화 영향: <b>' + escapeHtml(String(yt.monetization_impact || "-")) + '</b> · ' +
+             'Content ID 클레임 확률: <b>' + (yt.claim_probability != null ? yt.claim_probability : "-") + '%</b>' +
+             (yt.advice ? '<br>💡 ' + escapeHtml(yt.advice) : "") + '</div>';
+      }
+
+      const risky = (cr.timeline || []).filter(f => f.risk_level === "HIGH" || f.risk_level === "MEDIUM");
+      if (risky.length) {
+        h += '<ul>' + risky.slice(0, 10).map(f =>
+          '<li>' +
+          (f.timestamp ? '<b>[' + escapeHtml(f.timestamp) + ']</b> ' : '') +
+          escapeHtml(f.title || f.rights_holder || "-") +
+          ' <span class="kv">(' + (CR_EMOJI[f.risk_level] || "") + ' ' + escapeHtml(f.risk_level || "") +
+          ' ' + escapeHtml(String(f.risk_score || "")) + ')</span></li>'
+        ).join("") + '</ul>';
+      }
+    } else {
+      h += '<div class="kv">⚠️ 저작권 분석 미수행 (텍스트 입력이거나 분석 실패)</div>';
+    }
   }
 
   // 비용 (1.9.2)
