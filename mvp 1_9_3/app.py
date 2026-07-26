@@ -29,15 +29,22 @@ jobs = {}
 
 
 def _prune_old_jobs():
+    # 아직 실행 중인(queued/running) 작업은 오래 걸릴 수 있으므로 건드리지 않고,
+    # 끝난(done/error) 작업만 TTL이 지나면 정리한다.
     cutoff = time.time() - JOB_TTL_SECONDS
-    stale = [jid for jid, j in jobs.items() if j.get('created_at', 0) < cutoff]
+    stale = [
+        jid for jid, j in jobs.items()
+        if j.get('status') in ('done', 'error') and j.get('created_at', 0) < cutoff
+    ]
     for jid in stale:
         jobs.pop(jid, None)
 
 
 def _update_job(job_id, **fields):
     with _jobs_lock:
-        jobs[job_id].update(fields)
+        job = jobs.get(job_id)
+        if job is not None:
+            job.update(fields)
 
 
 def run_analysis(job_id, user_input):
