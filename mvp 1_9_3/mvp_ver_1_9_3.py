@@ -22,6 +22,7 @@ v1.9.2(크리에이터 위기/논란 분석)와 copyright_detector(저작권 침
 사용법:  python mvp_ver_1_9_3.py     (실행 후 URL/파일경로/텍스트 입력)
 """
 import os
+import re
 import sys
 import json
 import time
@@ -206,14 +207,42 @@ def build_copyright_placeholders(cr: dict | None) -> dict:
     }
 
 
+# ── 저작권 섹션(템플릿 8장) 마커: 저작권 미수행 시 이 구간을 통째로 제거 ──
+_CR_SECTION_START = "<!-- COPYRIGHT_SECTION_START -->"
+_CR_SECTION_END   = "<!-- COPYRIGHT_SECTION_END -->"
+
+
+def _apply_copyright_section(md_text: str, include: bool) -> str:
+    """
+    통합 MD 템플릿에서 저작권 섹션(마커로 감싼 8장)을 처리한다.
+      · include=True  → 마커 주석 줄만 제거(섹션 내용은 그대로 유지)
+      · include=False → 마커 사이(포함) 전체 제거(저작권 섹션 완전 삭제)
+    """
+    if include:
+        return re.sub(r'[ \t]*<!-- COPYRIGHT_SECTION_(?:START|END) -->[ \t]*\n?',
+                      '', md_text)
+    return re.sub(
+        re.escape(_CR_SECTION_START) + r'.*?' + re.escape(_CR_SECTION_END) + r'\n?',
+        '', md_text, flags=re.DOTALL)
+
+
 # ════════════════════════════════════════════════════════════════════
 # 통합 MD 리포트 엔진 (NATAM 엔진 재사용 + 저작권 플레이스홀더 추가)
 # ════════════════════════════════════════════════════════════════════
 class CrisisReportEngineV193(mvp.CrisisReportEngine):
     """NATAM 리포트 엔진을 상속해 {CR_*} 저작권 플레이스홀더를 얹은 통합 엔진."""
 
-    def __init__(self, template_path: str = V193_TEMPLATE, output_dir: str = "reports"):
+    def __init__(self, template_path: str = V193_TEMPLATE, output_dir: str = "reports",
+                 include_copyright: bool = True):
         super().__init__(template_path=template_path, output_dir=output_dir)
+        self.include_copyright = include_copyright
+
+    def _load_template(self) -> str | None:
+        # 템플릿을 읽은 뒤, 저작권 미수행이면 8장 섹션을 통째로 제거한다.
+        content = super()._load_template()
+        if content is None:
+            return None
+        return _apply_copyright_section(content, self.include_copyright)
 
     def _build_data_map(self, report: dict) -> dict:
         data_map = super()._build_data_map(report)          # NATAM 전체 플레이스홀더
@@ -248,22 +277,30 @@ def analyze_only(system, video_input: str, download_dir: str | None = None):
     return report, json_path
 
 
-def finalize_reports(report: dict, json_path: str, copyright_results: dict | None):
+def finalize_reports(report: dict, json_path: str, copyright_results: dict | None,
+                     include_copyright: bool = True):
     """
     NATAM report 에 저작권 결과를 병합하고 JSON·MD·PDF 3종을 모두 생성한다.
-    copyright_results 가 None 이어도 섹션에는 '미수행'으로 표기된다.
+      · include_copyright=True  → copyright 키를 넣어 저작권 섹션을 렌더
+        (copyright_results 가 None 이면 '미수행/실패'로 표기)
+      · include_copyright=False → copyright 키를 아예 제거해 JSON·PDF·MD 세 리포트
+        모두에서 저작권 섹션을 완전히 제외(사용자가 저작권 분석을 건너뛴 경우)
     """
-    report["copyright"] = copyright_results   # None 이어도 키를 넣어 섹션을 항상 렌더
+    if include_copyright:
+        report["copyright"] = copyright_results   # None 이어도 키를 넣어 섹션을 렌더
+    else:
+        report.pop("copyright", None)             # 키 제거 → 세 리포트 모두 저작권 섹션 제외
 
-    print("\n📄 통합 리포트(위기 + 저작권) 생성 중...")
+    print("\n📄 통합 리포트(위기 + 저작권) 생성 중..." if include_copyright
+          else "\n📄 위기 분석 리포트 생성 중... (저작권 섹션 제외)")
 
-    # ── JSON (저작권 포함하여 덮어쓰기) ──
+    # ── JSON (include_copyright=False 면 copyright 키 없이 저장) ──
     mvp._save_json(report, json_path)
 
-    # ── MD (통합 템플릿) ──
-    md_path = CrisisReportEngineV193().create_report(report)
+    # ── MD (통합 템플릿; 저작권 미수행 시 8장 섹션 제거) ──
+    md_path = CrisisReportEngineV193(include_copyright=include_copyright).create_report(report)
 
-    # ── PDF (저작권 섹션 포함) ──
+    # ── PDF (report 에 copyright 키가 있을 때만 저작권 페이지 렌더) ──
     pdf_path = None
     gen_pdf = getattr(mvp, "_gen_pdf", None)
     if getattr(mvp, "_PDF_AVAILABLE", False) and gen_pdf:
@@ -280,7 +317,8 @@ def finalize_reports(report: dict, json_path: str, copyright_results: dict | Non
 # ════════════════════════════════════════════════════════════════════
 # 통합 요약 배너
 # ════════════════════════════════════════════════════════════════════
-def print_combined_banner(natam_report: dict | None, copyright_results: dict | None):
+def print_combined_banner(natam_report: dict | None, copyright_results: dict | None,
+                          copyright_requested: bool = True):
     """NATAM 위기 결과와 저작권 결과를 한눈에 보이는 통합 요약."""
     print("\n" + "█" * 63)
     print("  🧩  통합 분석 요약  (NATAM 위기관리  +  저작권 침해)")
@@ -313,8 +351,10 @@ def print_combined_banner(natam_report: dict | None, copyright_results: dict | N
         if yt:
             print(f"       📺 유튜브 예측: 수익화영향 {yt.get('monetization_impact')}  |  "
                   f"Content ID 클레임확률 {yt.get('claim_probability')}%")
+    elif not copyright_requested:
+        print(f"       (사용자 선택으로 저작권 분석을 건너뜀 — 리포트에서 제외됨)")
     else:
-        print(f"       (결과 없음 / 건너뜀 — 위 저작권 로그 참조)")
+        print(f"       (결과 없음 / 실패 — 위 저작권 로그 참조)")
 
     print("█" * 63 + "\n")
 
@@ -323,6 +363,23 @@ def _print_report_paths(json_path, md_path, pdf_path):
     print(f"\n✅ 통합 JSON 보고서 : {json_path}")
     if md_path:  print(f"✅ 통합 MD  리포트  : {md_path}")
     if pdf_path: print(f"✅ 통합 PDF 리포트  : {pdf_path}")
+
+
+# ════════════════════════════════════════════════════════════════════
+# 저작권 분석 수행 여부 선택 (URL·영상 입력 직후 물어봄)
+# ════════════════════════════════════════════════════════════════════
+def ask_copyright_choice() -> bool:
+    """
+    URL·영상 입력 후, 저작권 침해 분석까지 함께 수행할지 물어본다.
+      · [Enter] 또는 y  → 위기 분석 + 저작권 침해 분석 (기본값)
+      · n               → NATAM 위기 분석만
+    """
+    ans = input("   ©️  저작권 침해 분석도 함께 수행할까요?  "
+                "[Y] 위기+저작권(기본)  /  [n] 위기 분석만 : ").strip().lower()
+    do_cr = ans not in ("n", "no", "ㄴ", "아니오", "아니", "x")
+    print("   → 위기 분석 + 저작권 침해 분석을 수행합니다." if do_cr
+          else "   → NATAM 위기 분석만 수행합니다.")
+    return do_cr
 
 
 # ════════════════════════════════════════════════════════════════════
@@ -348,10 +405,11 @@ def main():
 
     while True:
         print("\n" + "─" * 63)
-        print("유튜브 URL 입력      →  NATAM 위기 분석 + 저작권 침해 분석 (둘 다)")
-        print("영상 파일 경로 입력  →  NATAM 위기 분석 + 저작권 침해 분석 (둘 다)")
+        print("유튜브 URL 입력      →  NATAM 위기 분석  (저작권 분석 함께할지 선택)")
+        print("영상 파일 경로 입력  →  NATAM 위기 분석  (저작권 분석 함께할지 선택)")
         print("텍스트 입력          →  NATAM 위기 분석만 (영상이 없어 저작권 분석 불가)")
         print("[q]                  →  종료")
+        print("   ↳ URL·영상 입력 후 [Y] 위기+저작권 / [n] 위기 분석만 을 고릅니다.")
         user_input = input("💬 입력: ").strip().replace('"', '')
 
         if user_input.lower() == 'q':
@@ -362,45 +420,52 @@ def main():
 
         # ── 유튜브 URL ──────────────────────────────────────
         if mvp.is_youtube_url(user_input):
+            do_copyright = ask_copyright_choice()
             report, json_path = analyze_only(system, user_input, download_dir="downloads")
             mvp.print_report(report)
 
-            local_video = (report.get("youtube_meta") or {}).get("video_path")
-            if local_video:
-                copyright_results = run_copyright_detection(local_video)
-            else:
-                print("⚠️  다운로드된 영상 경로를 찾을 수 없어 저작권 분석을 건너뜁니다.")
-                copyright_results = None
+            copyright_results = None
+            if do_copyright:
+                local_video = (report.get("youtube_meta") or {}).get("video_path")
+                if local_video:
+                    copyright_results = run_copyright_detection(local_video)
+                else:
+                    print("⚠️  다운로드된 영상 경로를 찾을 수 없어 저작권 분석을 건너뜁니다.")
 
-            md_path, pdf_path = finalize_reports(report, json_path, copyright_results)
+            md_path, pdf_path = finalize_reports(report, json_path, copyright_results,
+                                                 include_copyright=do_copyright)
             _print_report_paths(json_path, md_path, pdf_path)
-            print_combined_banner(report, copyright_results)
+            print_combined_banner(report, copyright_results, copyright_requested=do_copyright)
 
         # ── Google Drive URL ────────────────────────────────
         elif mvp.is_google_drive_url(user_input):
+            do_copyright = ask_copyright_choice()
             # 한 번만 내려받아 두 분석이 같은 파일을 쓰도록 미리 다운로드
             dl = mvp.download_google_drive_video(user_input, "downloads")
             local_video = dl['video_path']
             report, json_path = analyze_only(system, local_video)
             mvp.print_report(report)
 
-            copyright_results = run_copyright_detection(local_video)
-            md_path, pdf_path = finalize_reports(report, json_path, copyright_results)
+            copyright_results = run_copyright_detection(local_video) if do_copyright else None
+            md_path, pdf_path = finalize_reports(report, json_path, copyright_results,
+                                                 include_copyright=do_copyright)
             _print_report_paths(json_path, md_path, pdf_path)
-            print_combined_banner(report, copyright_results)
+            print_combined_banner(report, copyright_results, copyright_requested=do_copyright)
 
         # ── 로컬 영상 파일 ──────────────────────────────────
         elif os.path.splitext(user_input)[1].lower() in VIDEO_EXTS:
             if not os.path.exists(user_input):
                 print("❌ 파일을 찾을 수 없습니다.")
                 continue
+            do_copyright = ask_copyright_choice()
             report, json_path = analyze_only(system, user_input)
             mvp.print_report(report)
 
-            copyright_results = run_copyright_detection(user_input)
-            md_path, pdf_path = finalize_reports(report, json_path, copyright_results)
+            copyright_results = run_copyright_detection(user_input) if do_copyright else None
+            md_path, pdf_path = finalize_reports(report, json_path, copyright_results,
+                                                 include_copyright=do_copyright)
             _print_report_paths(json_path, md_path, pdf_path)
-            print_combined_banner(report, copyright_results)
+            print_combined_banner(report, copyright_results, copyright_requested=do_copyright)
 
         # ── 텍스트 직접 입력 (영상 없음 → NATAM 분석만) ─────
         else:
@@ -460,15 +525,16 @@ def main():
                 "transcript_files":    {},
                 "youtube_meta":        {},
                 "natam_risk":          natam_result,
-                "copyright":           None,   # 텍스트 입력은 영상이 없어 저작권 분석 미수행
+                # 텍스트 입력은 영상이 없어 저작권 분석 미수행 → copyright 키를 아예 넣지 않아
+                # JSON·MD 리포트에서 저작권 섹션을 완전히 제외한다.
             }
 
             os.makedirs("reports", exist_ok=True)
             json_path = os.path.join("reports", f"report_{ts}.json")
             mvp._save_json(report, json_path)
 
-            print("📄 통합 MD 리포트 생성 중...")
-            md_path = CrisisReportEngineV193().create_report(report)
+            print("📄 위기 분석 MD 리포트 생성 중... (저작권 섹션 제외)")
+            md_path = CrisisReportEngineV193(include_copyright=False).create_report(report)
 
             mvp.print_report(report)
             print(f"\n✅ JSON 보고서 : {json_path}")

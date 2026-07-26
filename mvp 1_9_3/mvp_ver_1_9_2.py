@@ -1281,11 +1281,9 @@ class CrisisReportEngine:
 
     def create_report(self, report: dict) -> str | None:
         try:
-            if not os.path.exists(self.template_path):
-                print(f"❌ 템플릿 파일이 없습니다: {self.template_path}")
+            content = self._load_template()
+            if content is None:
                 return None
-            with open(self.template_path, "r", encoding="utf-8") as f:
-                content = f.read()
 
             data_map = self._build_data_map(report)
             for key, value in data_map.items():
@@ -1305,6 +1303,14 @@ class CrisisReportEngine:
         except Exception as e:
             print(f"❌ MD 리포트 생성 실패: {e}")
             return None
+
+    def _load_template(self) -> str | None:
+        """템플릿 파일을 읽어 문자열로 반환. 하위 클래스에서 후처리(섹션 가감) 가능."""
+        if not os.path.exists(self.template_path):
+            print(f"❌ 템플릿 파일이 없습니다: {self.template_path}")
+            return None
+        with open(self.template_path, "r", encoding="utf-8") as f:
+            return f.read()
 
     def _build_data_map(self, report: dict) -> dict:
         meta   = report.get("meta", {})

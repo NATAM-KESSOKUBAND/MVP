@@ -282,6 +282,7 @@
   □ 외부 링크 유입 경로 확인
 ```
 
+<!-- COPYRIGHT_SECTION_START -->
 ---
 
 ## 8. 저작권 침해 분석 (Copyright Infringement Analysis)
@@ -321,6 +322,7 @@
 > 🎵 음악·🎬 영상클립은 Content ID 자동 조치 대상이 될 가능성이 높고,
 > 🖼️ 이미지·🏷️ 로고는 자동 조치 가능성이 낮습니다(권리자 수동 신고 시 조치 가능).
 
+<!-- COPYRIGHT_SECTION_END -->
 ---
 
 ## 부록 (Appendix)
