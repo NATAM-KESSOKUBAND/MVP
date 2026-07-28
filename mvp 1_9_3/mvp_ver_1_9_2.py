@@ -61,13 +61,22 @@ FFMPEG_BIN        = os.getenv("FFMPEG_BIN", "ffmpeg")     # 영상→오디오 �
 #   Tier1(SVM): 재현율 우선 → 의심 구간을 '넓게' 트리거 (낮은 임계값)
 #   Tier2(LLM): 트리거된 구간만 맥락+유사사례+룰매칭과 함께 최종 판정
 TIER1_TRIGGER_THRESHOLD = float(os.getenv("TIER1_TRIGGER_THRESHOLD", "0.15"))  # 0.3 → 0.15 (recall↑)
-TIER2_CONTEXT_WINDOW    = 1     # 트리거 세그먼트 앞뒤 N개를 맥락으로 동봉
-TIER2_MAX_SEGMENTS      = 25    # 비용 상한: Tier2로 보낼 최대 세그먼트 수
+TIER2_CONTEXT_WINDOW    = 1     # (단건 폴백용) 트리거 세그먼트 앞뒤 N개를 맥락으로 동봉
+TIER2_MAX_SEGMENTS      = 25    # (구) 단건 Tier2 상한 — 배치 전량판정으로 대체됨
 ENABLE_TIER2            = os.getenv("ENABLE_TIER2", "1") == "1"
+
+# [정확도] 트리거된 '모든' 구간을 Tier2 맥락 판정 → 표시되는 문장 전부가 확정을 거침.
+#   비용·지연은 배치(묶음) 호출로 억제하고, 각 배치는 '전체 자막'을 맥락으로 공유(정확도↑).
+TIER2_BATCH_SIZE     = int(os.getenv("TIER2_BATCH_SIZE", "12"))     # 한 호출로 판정할 대상 문장 수
+TIER2_MAX_ADJUDICATE = int(os.getenv("TIER2_MAX_ADJUDICATE", "300"))  # 폭주 방지 안전 상한
 
 # 문장 분석 표시: 이 신뢰도(확률) 이상인 라벨은 모두 표기(멀티라벨).
 #   한 문장이 여러 유형에 걸릴 수 있으므로 top-1만 쓰지 않고 임계값 이상을 전부 노출.
 SEG_LABEL_MULTI_THRESHOLD = float(os.getenv("SEG_LABEL_MULTI_THRESHOLD", "0.3"))
+
+# 유사 사례(5-1): 이 거리 '이하'(=충분히 유사)인 사례만 최대 3개 표시. 없으면 공백.
+#   ※ 거리는 낮을수록 유사(FAISS L2). 관측값이 대체로 커서 기본 0.5면 대부분 공백일 수 있음.
+SIMILAR_CASE_MAX_DISTANCE = float(os.getenv("SIMILAR_CASE_MAX_DISTANCE", "0.5"))
 
 # 고심각도 라벨 — false negative 비용이 큰 카테고리.
 #   이 라벨이 Tier1에서 잡히면 '무조건' Tier2 LLM 검토를 강제한다(심각도별 컴퓨트 라우팅).
@@ -332,32 +341,45 @@ NATAM_A_AXES = {
     },
 }
 
-# B축 — 플랫폼 리스크 정의
+# B축 — 플랫폼 리스크 정의 ('플랫폼 리스크 유형 표' 기준: 5개 항목)
+#   각 항목: name / desc(관찰 가능한 신호+보조 신호) + criteria(핵심 판별 기준) + exclude(AI 판단 제외 요소)
 NATAM_B_AXES = {
     "B-01": {
-        "label_id": "PLATFORM_HARASSMENT",
-        "name":     "괴롭힘·모욕 표현 리스크",
-        "desc":     "인신공격·조롱·모욕 표현·지속적 비하 등 플랫폼 정책 위반 가능성",
+        "label_id": "PLATFORM_HARASSMENT_HATE",
+        "name":     "괴롭힘·혐오·차별 표현 리스크",
+        "desc":     "욕설·모욕 표현, 특정 집단(성별·인종·국적·종교·연령 등)에 대한 비하·혐오 표현. "
+                    "보조 신호: 욕설 반복, 일반화 표현('OO는 다~'), 강조 표현",
+        "criteria": "욕설·모욕 키워드, 또는 집단명 + 부정적 표현이 동시에 등장",
+        "exclude":  "농담 여부·친밀한 관계·풍자·실제 의도·법적 혐오 표현 해당 여부",
     },
     "B-02": {
         "label_id": "PLATFORM_VIOLENCE_ILLEGALITY",
         "name":     "폭력·위협·불법행위 리스크",
-        "desc":     "폭력 표현·위협 발언·범죄 묘사·위험행동 조장 등",
+        "desc":     "폭력·위협·범죄 행위를 지칭하는 동사. 보조 신호: 명령형 문장, 행위 정당화 표현",
+        "criteria": "폭력·범죄 동사 + 대상(피해자)이 존재",
+        "exclude":  "실제 실행 의도·법적 판단",
     },
     "B-03": {
-        "label_id": "PLATFORM_HATE_DISCRIMINATION",
-        "name":     "혐오·차별 표현 리스크",
-        "desc":     "성별·인종·지역 일반화·차별 표현·혐오 밈·사회적 약자 조롱",
+        "label_id": "PLATFORM_COPYRIGHT",
+        "name":     "저작권 리스크",
+        "desc":     "타인의 음악·영상·이미지·폰트·로고·캐릭터·브랜드 사용. "
+                    "보조 신호: 워터마크, 브랜드 로고, 인기 음원, 상업용 폰트 사용",
+        "criteria": "저작권 보호 콘텐츠 또는 라이선스 확인이 필요한 요소가 언급·탐지됨",
+        "exclude":  "실제 라이선스 보유 여부·공정 이용(Fair Use) 해당 여부·법적 침해 여부",
     },
     "B-04": {
         "label_id": "PLATFORM_SEXUAL_CONTENT",
         "name":     "성적 표현·대상화 리스크",
-        "desc":     "성적 암시·신체 대상화·선정성·성희롱 표현",
+        "desc":     "성적 단어·외모 평가·신체 부위 언급. 보조 신호: 특정 인물 또는 신체 부위 지칭",
+        "criteria": "성적 표현 키워드 포함",
+        "exclude":  "수위 판단·성적 의도",
     },
     "B-05": {
         "label_id": "PLATFORM_AD_FRIENDLY",
-        "name":     "광고친화성·상업 신뢰 리스크",
-        "desc":     "과도한 욕설·충격형 썸네일·광고 제한 가능 요소·브랜드 세이프티 충돌",
+        "name":     "광고친화성 정책 리스크",
+        "desc":     "광고·협찬·수익 관련 발언. 보조 신호: 과장, 단정적 성과 표현",
+        "criteria": "광고성 표현 + 고지(유료광고 표기) 표현이 부재",
+        "exclude":  "실제 계약 존재 여부",
     },
 }
 
@@ -398,14 +420,16 @@ def assess_natam_risk(
         "overall_b": "SAFE",
     }
     """
-    a_items_desc = "\n".join(
-        f'  "{k}": {v["name"]} — {v["desc"]}'
-        for k, v in NATAM_A_AXES.items()
-    )
-    b_items_desc = "\n".join(
-        f'  "{k}": {v["name"]} — {v["desc"]}'
-        for k, v in NATAM_B_AXES.items()
-    )
+    def _fmt_axis(k, v):
+        s = f'  "{k}": {v["name"]} — {v["desc"]}'
+        if v.get("criteria"):
+            s += f'\n       · 핵심 판별 기준: {v["criteria"]}'
+        if v.get("exclude"):
+            s += f'\n       · 판단 제외(이 요소는 판정하지 말 것): {v["exclude"]}'
+        return s
+
+    a_items_desc = "\n".join(_fmt_axis(k, v) for k, v in NATAM_A_AXES.items())
+    b_items_desc = "\n".join(_fmt_axis(k, v) for k, v in NATAM_B_AXES.items())
 
     # 분석 텍스트가 너무 길면 앞부분만 사용
     input_text = f"[사건 개요]\n{summary}\n\n[자막 내용 요약]\n{transcript_text[:2000]}"
@@ -941,6 +965,24 @@ def _seg_display_label(label_str: str, exclude=("L12", "L04")) -> str:
     return ", ".join(f"{lid} {_LABEL_DESCS.get(lid, '해당 없음')}" for lid in kept)
 
 
+def _build_similar_case_block(cases: list) -> str:
+    """5-1 유사 사례 블록을 동적 생성. 조건(거리 이하)을 만족하는 사례가 없으면 공백('')."""
+    if not cases:
+        return ""
+    parts = []
+    for c in cases[:3]:
+        rp = ", ".join(c.get("response_pattern", [])) or "—"
+        parts.append(
+            f"#### 🔵 사례 {_rp_safe(c.get('rank'), '')} — {_rp_safe(c.get('title'), '—')}\n\n"
+            "| 항목 | 내용 |\n|------|------|\n"
+            f"| 논란 유형 | {_rp_safe(c.get('controversy_type'), '—')} |\n"
+            f"| 유사도 거리 | {_rp_safe(c.get('distance'), '—')} (낮을수록 유사) |\n"
+            f"| 취한 대응 | {rp} |\n"
+            f"| 결과 | {_rp_safe(c.get('outcome'), '데이터 없음')} |"
+        )
+    return "\n\n".join(parts)
+
+
 def _build_transcript_rows(ta: list) -> str:
     """주요 발언 테이블 행 반환(타임스탬프 포함).
     세그먼트별로 신뢰도 높은 라벨을 모두 표시(멀티라벨).
@@ -1123,9 +1165,10 @@ def _build_priority_matrix(report: dict) -> dict:
             items.append({"name": name, "level": lv,
                           "rank": _LEVEL_RANK.get(lv, 0), "axis": axis_label})
 
-    # 심각도 높은 순 정렬, ALERT 이상 우선
+    # 심각도 높은 순 정렬. ALERT 이상만 '대응 대상'.
+    #   딱히 대응할 게 없으면(ALERT 이상 없음) 채우지 않고 그대로 여백으로 남긴다.
     items.sort(key=lambda x: -x["rank"])
-    top = [it for it in items if it["rank"] >= 2][:3] or items[:3]
+    top = [it for it in items if it["rank"] >= 2][:3]   # ← 예전 'or items[:3]' 폴백 제거
 
     downsides = ["섣부른 공개 대응 시 역풍 가능",
                  "대응 지연 시 여론 주도권 상실",
@@ -1141,8 +1184,8 @@ def _build_priority_matrix(report: dict) -> dict:
                 "risk":   downsides[i],
             }
         else:
-            matrix[slot] = {"action": "추가 조치 불필요 (감지된 상위 리스크 없음)",
-                            "effect": "현 수준 유지", "risk": "—"}
+            # 대응할 상위 리스크 없음 → 빈 칸(여백)으로 남김
+            matrix[slot] = {"action": "", "effect": "", "risk": ""}
     return matrix
 
 
@@ -1461,6 +1504,7 @@ class CrisisReportEngine:
             "CASE_1_TITLE": cv(0,"title"), "CASE_1_TYPE": cv(0,"controversy_type"), "CASE_1_DISTANCE": cv(0,"distance"), "CASE_1_RESPONSE": cr(0), "CASE_1_OUTCOME": cv(0,"outcome","데이터 없음"),
             "CASE_2_TITLE": cv(1,"title"), "CASE_2_TYPE": cv(1,"controversy_type"), "CASE_2_DISTANCE": cv(1,"distance"), "CASE_2_RESPONSE": cr(1), "CASE_2_OUTCOME": cv(1,"outcome","데이터 없음"),
             "CASE_3_TITLE": cv(2,"title"), "CASE_3_TYPE": cv(2,"controversy_type"), "CASE_3_DISTANCE": cv(2,"distance"), "CASE_3_RESPONSE": cr(2), "CASE_3_OUTCOME": cv(2,"outcome","데이터 없음"),
+            "SIMILAR_CASES_BLOCK": _build_similar_case_block(cases),   # 5-1 동적 블록(없으면 공백)
             "PATTERN_SPREAD_PATH": p_s, "PATTERN_RESPONSE_REACTION": p_r, "PATTERN_TRIGGER": p_t,
             "ACTION_IMMEDIATE_1": actions["immediate"][0], "ACTION_IMMEDIATE_2": actions["immediate"][1],
             "ACTION_SHORT_1":     actions["short"][0],     "ACTION_SHORT_2":     actions["short"][1],
@@ -2320,6 +2364,84 @@ class CrisisConsultantSystem:
         res["timestamp"]    = _seg_timestamp(segments[i])   # 'mm:ss–mm:ss'
         return res
 
+    def _numbered_transcript(self, segments, max_chars=24000) -> str:
+        """전체 자막을 [i] 형식으로 번호 매겨 1회 구성(배치 Tier2가 공유하는 전체 맥락)."""
+        lines = []
+        for i, s in enumerate(segments):
+            t = (s.get("corrected_text") or s.get("text", "") or "").replace("\n", " ").strip()
+            lines.append(f"[{i}] {t}")
+        txt = "\n".join(lines)
+        return txt if len(txt) <= max_chars else txt[:max_chars] + "\n…(이하 생략)"
+
+    def _tier2_adjudicate_batch(self, segments, trigs, rule_hits, similar_titles, numbered) -> list:
+        """
+        여러 트리거를 '전체 자막 맥락'과 함께 한 번의 LLM 호출로 일괄 판정.
+          · 단건(_tier2_adjudicate) 대비 호출 수↓(비용·지연↓) + 전체 맥락 반영으로 정확도↑.
+          · 배치가 놓친 대상은 단건 Tier2로 폴백 → '모든 대상이 맥락 판정'됨을 보장.
+        """
+        targets = [t["idx"] for t in trigs]
+        tlab = "; ".join(
+            f"[{t['idx']}] " + ", ".join(f"{h['label']}({h['prob']:.2f})" for h in t["hits"])
+            for t in trigs
+        )
+        prompt = (
+            "너는 한국 캔슬컬처 리스크 판정관이다. 아래 [전체 자막] 맥락을 참고해, "
+            "[판정 대상] 각 문장이 '실제 논란 소지'인지 최종 판정하라.\n"
+            "[중요] 반어·인용·부정문·단순 사실전달·타인 발언 인용이면 is_controversy=false. "
+            "화자 본인이 진심으로 한 발화만 true.\n\n"
+            f"[전체 자막]\n{numbered}\n\n"
+            f"[판정 대상 인덱스] {targets}\n"
+            f"[대상별 1차 의심 라벨] {tlab}\n"
+            f"[룰 매칭] {rule_hits if rule_hits else '없음'}\n"
+            f"[유사 과거사례] {', '.join(similar_titles) if similar_titles else '없음'}\n"
+            f"[라벨 목록] {LABEL_INFO}\n\n"
+            "[출력 — JSON 배열만. 판정 대상 인덱스마다 정확히 1개.]\n"
+            '[{"segment_idx":3,"is_controversy":true,"category":"L09","severity":"DANGER",'
+            '"rationale":"앞뒤 맥락상 …","quote":"문제 문장"}]'
+        )
+        arr = None
+        try:
+            resp = self.client.models.generate_content(
+                model=GEN_MODEL, contents=prompt,
+                config={"response_mime_type": "application/json", "temperature": 0.1,
+                        "max_output_tokens": 8192, "thinking_config": {"thinking_budget": 0}},
+            )
+            self.cost.add(resp, "tier2")
+            data = _safe_json_parse(resp.text, "Tier2 배치")
+            if isinstance(data, list):
+                arr = data
+            elif isinstance(data, dict):
+                arr = data.get("results") or data.get("verdicts") or data.get("items") or []
+        except Exception as e:
+            print(f"   ⚠️ Tier2 배치 실패({e}) → 단건 폴백")
+
+        by_idx = {}
+        for v in (arr or []):
+            if isinstance(v, dict) and v.get("segment_idx") is not None:
+                try:
+                    by_idx[int(v["segment_idx"])] = v
+                except (TypeError, ValueError):
+                    pass
+
+        out, missing = [], []
+        for t in trigs:
+            i = t["idx"]
+            v = by_idx.get(i)
+            if v is None:
+                missing.append(t)
+                continue
+            v["segment_idx"]  = i
+            v["tier1_labels"] = [h["label"] for h in t["hits"]]
+            v["start"]        = segments[i].get("start")
+            v["end"]          = segments[i].get("end")
+            v["timestamp"]    = _seg_timestamp(segments[i])
+            out.append(v)
+
+        # 배치가 못 돌려준 대상은 단건 Tier2로 확실히 맥락 판정
+        for t in missing:
+            out.append(self._tier2_adjudicate(segments, t, rule_hits, similar_titles))
+        return out
+
     def two_tier_classify(self, segments: list, rule_hits=None, similar_titles=None) -> dict:
         """
         전체 오케스트레이션:
@@ -2338,28 +2460,32 @@ class CrisisConsultantSystem:
             return {"triggered_count": len(triggered), "adjudicated": [],
                     "confirmed": [], "tier1_only": triggered}
 
-        # 심각도 라우팅: 고심각도 먼저, 그다음 일반 — 비용 상한까지만 Tier2
+        # 트리거된 '모든' 구간을 Tier2로 — 고심각도 먼저 정렬 후 안전 상한까지 전량 판정.
         triggered.sort(key=lambda t: (not t["high_severity"], -t["hits"][0]["prob"]))
-        to_judge   = triggered[:TIER2_MAX_SEGMENTS]
-        tier1_only = triggered[TIER2_MAX_SEGMENTS:]
+        to_judge   = triggered[:TIER2_MAX_ADJUDICATE]
+        tier1_only = triggered[TIER2_MAX_ADJUDICATE:]   # 상한 초과분만(보통 없음)
+
+        # 전체 자막을 1회 번호매김 → 모든 배치가 같은 맥락 공유(정확도↑)
+        numbered = self._numbered_transcript(segments)
+        batches  = [to_judge[i:i + TIER2_BATCH_SIZE]
+                    for i in range(0, len(to_judge), TIER2_BATCH_SIZE)]
 
         adjudicated = []
         with ThreadPoolExecutor(max_workers=_REFINE_CONCURRENCY) as ex:
-            futs = {
-                ex.submit(self._tier2_adjudicate, segments, t, rule_hits, similar_titles): t
-                for t in to_judge
-            }
+            futs = [ex.submit(self._tier2_adjudicate_batch, segments, b,
+                              rule_hits, similar_titles, numbered) for b in batches]
             for fut in as_completed(futs):
                 try:
-                    adjudicated.append(fut.result())
+                    adjudicated.extend(fut.result())
                 except Exception as e:
-                    print(f"   ⚠️ Tier2 판정 실패: {e}")
+                    print(f"   ⚠️ Tier2 배치 판정 실패: {e}")
 
         confirmed = [a for a in adjudicated if a.get("is_controversy")]
         adjudicated.sort(key=lambda a: a.get("segment_idx", 0))
         confirmed.sort(key=lambda a: a.get("segment_idx", 0))
-        print(f"   🎯 2-Tier: 트리거 {len(triggered)} → Tier2 판정 {len(adjudicated)} "
-              f"→ 확정 논란 {len(confirmed)} (오탐 {len(adjudicated)-len(confirmed)} 제거)")
+        print(f"   🎯 2-Tier: 트리거 {len(triggered)} → Tier2 판정 {len(adjudicated)}"
+              f"({len(batches)}배치) → 확정 논란 {len(confirmed)} "
+              f"(오탐 {len(adjudicated)-len(confirmed)} 제거)")
         return {
             "triggered_count": len(triggered),
             "adjudicated":     adjudicated,
@@ -2738,6 +2864,7 @@ class CrisisConsultantSystem:
         download_dir: str  = "downloads",
         gemini_batch: int  = 20,
         use_cache:    bool = True,
+        fresh:        bool = False,   # True면 이 영상의 이전 전사/교정 캐시를 지우고 처음부터
     ) -> tuple:
         t0 = time.time()
         youtube_meta = None
@@ -2767,6 +2894,24 @@ class CrisisConsultantSystem:
         raw_path     = os.path.join(output_dir, f"{base}_raw.json")
         refined_path = os.path.join(output_dir, f"{base}_refined.json")
         batch_dir    = os.path.join(output_dir, f"{base}_batch_cache")
+
+        # ── 처음부터 재분석(fresh): 이 영상의 이전 전사/교정 캐시를 삭제해 진짜 클린 재시작 ──
+        #    (batch_cache 의 resume 이 하드코딩 True 라, 삭제하지 않으면 오래된 배치가 재사용됨)
+        if fresh:
+            import shutil as _sh
+            removed = []
+            for _p in (raw_path, refined_path):
+                if os.path.exists(_p):
+                    try:
+                        os.remove(_p); removed.append(os.path.basename(_p))
+                    except OSError as _e:
+                        print(f"   ⚠️ 캐시 삭제 실패({_p}): {_e}")
+            if os.path.isdir(batch_dir):
+                try:
+                    _sh.rmtree(batch_dir); removed.append(os.path.basename(batch_dir) + "/")
+                except OSError as _e:
+                    print(f"   ⚠️ 배치 캐시 삭제 실패({batch_dir}): {_e}")
+            print(f"🧹 처음부터 재분석 — 이전 캐시 삭제: {', '.join(removed) if removed else '없음'}")
 
         # ── [1/3] 전사 ────────────────────────────────────
         engine_label = {"gemini": "Gemini", "clova": "Clova NEST"}.get(TRANSCRIBE_ENGINE, "Whisper")
@@ -2956,15 +3101,19 @@ class CrisisConsultantSystem:
             "two_tier":       two_tier_result,
             "spread_stage":   spread_result,
             "classification": classification,
+            # 거리 ≤ 임계값(충분히 유사)인 사례만, 가까운 순 최대 3개. 없으면 [] → 5-1 공백.
             "similar_cases": [
                 {
-                    "rank":             i + 1,
+                    "rank":             r + 1,
                     "title":            c["title"],
                     "controversy_type": c.get("controversy_type", ""),
                     "distance":         round(float(d), 4),
                     "response_pattern": c.get("response_pattern", []),
                 }
-                for i, (c, d) in enumerate(zip(cases, dists))
+                for r, (c, d) in enumerate(
+                    [(c, d) for c, d in zip(cases, dists)
+                     if round(float(d), 4) <= SIMILAR_CASE_MAX_DISTANCE][:3]
+                )
             ],
             "pattern_summary":     summary.strip() if isinstance(summary, str) else "",
             "worst_actions":       worst_actions,

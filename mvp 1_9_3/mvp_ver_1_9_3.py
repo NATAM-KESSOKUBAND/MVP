@@ -36,6 +36,13 @@ os.chdir(SCRIPT_DIR)
 # ── v1.9.2 를 모듈로 가져와 전부 재사용 ───────────────────────────────
 import mvp_ver_1_9_2 as mvp
 
+# ── 외부 확산 신호 수집기(2층: 크리에이터 전반 / 이번 사안) ─────────────
+try:
+    import spread_signals
+except Exception as _e:          # 모듈 문제로 전체 실행이 막히지 않도록 방어
+    spread_signals = None
+    print(f"⚠️  spread_signals 로드 실패 → 외부 확산 신호 건너뜀: {_e}")
+
 # ── 저작권 감지기 경로 ────────────────────────────────────────────────
 COPYRIGHT_DIR     = SCRIPT_DIR / "copyright_detector"
 COPYRIGHT_MAIN    = COPYRIGHT_DIR / "main.py"
@@ -226,6 +233,48 @@ def _apply_copyright_section(md_text: str, include: bool) -> str:
         '', md_text, flags=re.DOTALL)
 
 
+# ── 저작권 실측 → NATAM B-03(저작권) 연동 ──────────────────────────────
+# 저작권 위험도(HIGH/MEDIUM/LOW/SAFE) → NATAM 등급(SAFE/CARE/ALERT/DANGER/CRITICAL)
+_CR_LEVEL_TO_NATAM = {"HIGH": "DANGER", "MEDIUM": "ALERT", "LOW": "CARE", "SAFE": "SAFE"}
+
+
+def _merge_copyright_into_natam_b03(report: dict) -> None:
+    """
+    NATAM B-03(저작권) 등급을 copyright_detector 실측 결과로 확정한다.
+      · 저작권 분석 결과가 있으면 → 실측 위험도를 NATAM 등급으로 매핑해 B-03 반영.
+      · 없으면(미수행/실패)       → 텍스트 LLM 추측 대신 '판단 보류(N/A)'로 명시.
+      · 이후 B축 종합(overall_b)을 재계산(N/A 는 최하로 취급 → 종합에 영향 없음).
+    ※ 1_9_2 엔진은 그대로 두고, 저장·렌더 전에 B-03만 실측/보류로 교체한다.
+    """
+    natam = report.get("natam_risk")
+    if not natam or not isinstance(natam.get("B"), dict):
+        return
+    cr = report.get("copyright")
+    if not cr:
+        # 저작권 실측 미실행/실패 → 자막 텍스트 추측이 오해를 부르므로 '판단 보류'로 표기
+        natam["B"]["B-03"] = {
+            "level":  "N/A",
+            "reason": "저작권 실측 미실행 — 별도 저작권 분석 필요(판단 보류)",
+        }
+    else:
+        s        = cr.get("summary", {})
+        lv       = str(s.get("overall_risk_level", "SAFE")).upper()
+        natam_lv = _CR_LEVEL_TO_NATAM.get(lv, "SAFE")
+        score    = s.get("overall_risk_score", 0)
+        total    = s.get("total_issues_found", 0)
+        high     = s.get("high_risk_count", 0)
+        med      = s.get("medium_risk_count", 0)
+        natam["B"]["B-03"] = {
+            "level":  natam_lv,
+            "reason": (f"copyright_detector 실측 반영 — 위험도 {lv}({score}%), "
+                       f"탐지 {total}건(HIGH {high}·MEDIUM {med})"),
+        }
+    # B축 종합 등급(최댓값) 재계산 — N/A 등 미지정 등급은 최하(index 0)로 취급
+    levels = [v.get("level", "SAFE") for v in natam["B"].values()]
+    natam["overall_b"] = max(
+        levels, key=lambda l: mvp.NATAM_LEVELS.index(l) if l in mvp.NATAM_LEVELS else 0)
+
+
 # ════════════════════════════════════════════════════════════════════
 # 통합 MD 리포트 엔진 (NATAM 엔진 재사용 + 저작권 플레이스홀더 추가)
 # ════════════════════════════════════════════════════════════════════
@@ -245,19 +294,32 @@ class CrisisReportEngineV193(mvp.CrisisReportEngine):
         return _apply_copyright_section(content, self.include_copyright)
 
     def _build_data_map(self, report: dict) -> dict:
+        # 저작권 실측(copyright_detector) 결과를 NATAM B-03(저작권)에 먼저 반영
+        #   → 텍스트 LLM 판단 대신 실제 탐지값 사용(중복·불일치 제거). 없으면 원 LLM값 유지.
+        _merge_copyright_into_natam_b03(report)
         data_map = super()._build_data_map(report)          # NATAM 전체 플레이스홀더
         data_map.update(build_copyright_placeholders(report.get("copyright")))
+        # 3-4 외부 확산 신호 블록 + 2-4 외부 확산 신호 한 줄(실측 반영)
+        if spread_signals is not None:
+            data_map["SPREAD_EXTERNAL_BLOCK"] = spread_signals.build_block_md(report)
+            data_map["EXTERNAL_SIGNAL"]       = spread_signals.external_signal_label(report)
+        else:
+            data_map.setdefault("SPREAD_EXTERNAL_BLOCK",
+                                "> ⚪ 외부 확산 신호 모듈(spread_signals) 미로드.")
         return data_map
 
 
 # ════════════════════════════════════════════════════════════════════
 # NATAM 분석 실행 (내부 조기 리포트 생성은 억제) + 통합 리포트 생성
 # ════════════════════════════════════════════════════════════════════
-def analyze_only(system, video_input: str, download_dir: str | None = None):
+def analyze_only(system, video_input: str, download_dir: str | None = None,
+                 fresh: bool = False):
     """
     analyze_video_full 을 실행하되 '내부 MD/PDF 생성'을 잠시 억제한다.
     저작권 결과를 합쳐 최종 리포트를 만들어야 하므로, 여기서는 분석 결과(report)만 받는다.
     (내부 JSON은 저작권 없이 한 번 저장되지만, finalize 단계에서 덮어쓴다.)
+
+    fresh=True 면 이 영상의 이전 전사/교정 캐시를 지우고 처음부터 다시 분석한다.
     """
     orig_create  = system.report_engine.create_report
     orig_gen_pdf = getattr(mvp, "_gen_pdf", None)
@@ -266,7 +328,7 @@ def analyze_only(system, video_input: str, download_dir: str | None = None):
         mvp._gen_pdf = lambda report, output_dir="reports": None    # PDF 조기생성 억제
     try:
         kwargs = dict(video_input=video_input,
-                      output_dir="samples/transcripts", use_cache=True)
+                      output_dir="samples/transcripts", use_cache=True, fresh=fresh)
         if download_dir:
             kwargs["download_dir"] = download_dir
         report, json_path, _md, _pdf = system.analyze_video_full(**kwargs)
@@ -290,6 +352,20 @@ def finalize_reports(report: dict, json_path: str, copyright_results: dict | Non
         report["copyright"] = copyright_results   # None 이어도 키를 넣어 섹션을 렌더
     else:
         report.pop("copyright", None)             # 키 제거 → 세 리포트 모두 저작권 섹션 제외
+
+    # 외부 확산 신호(2차 유튜브·기사화·커뮤니티·나무위키·검색관심)를 수집해
+    #   report["spread_external"] 저장 + 확산 단계 상향(blend). 저장 전에 반영해야
+    #   JSON·MD·PDF 세 리포트가 일치한다. 실패해도 전체 흐름은 계속.
+    if spread_signals is not None:
+        try:
+            print("\n🌐 외부 확산 신호 수집 중(2차 유튜브·기사화·커뮤니티·나무위키)...")
+            spread_signals.enrich(report)
+        except Exception as e:
+            print(f"⚠️  외부 확산 신호 수집 건너뜀: {e}")
+
+    # B-03(저작권) NATAM 등급을 저작권 실측으로 확정(미실행이면 '판단 보류') —
+    #   저장 전에 반영해야 JSON·MD·PDF 세 리포트가 일치한다.
+    _merge_copyright_into_natam_b03(report)
 
     print("\n📄 통합 리포트(위기 + 저작권) 생성 중..." if include_copyright
           else "\n📄 위기 분석 리포트 생성 중... (저작권 섹션 제외)")
@@ -368,6 +444,22 @@ def _print_report_paths(json_path, md_path, pdf_path):
 # ════════════════════════════════════════════════════════════════════
 # 저작권 분석 수행 여부 선택 (URL·영상 입력 직후 물어봄)
 # ════════════════════════════════════════════════════════════════════
+def ask_reanalyze_choice() -> bool:
+    """
+    같은 영상을 다시 분석할 때 이전 transcript 캐시를 어떻게 할지 물어본다.
+      · [Enter] 또는 1  → 이어서: 이전 전사/교정 캐시가 있으면 재사용(빠름, 기본값)
+      · f 또는 2        → 처음부터: 이전 transcript(전사·교정·배치) 삭제 후 새로 분석
+    반환: fresh(True=처음부터 / False=이어서)
+    """
+    ans = input("   🔁  같은 영상 재분석 시?  "
+                "[Enter] 이어서(캐시 재사용·빠름)  /  [f] 처음부터(이전 transcript 삭제) : "
+                ).strip().lower()
+    fresh = ans in ("f", "2", "처음", "처음부터", "fresh", "new", "ㄹ")
+    print("   → 처음부터 재분석합니다 (이전 전사·교정 캐시 삭제)." if fresh
+          else "   → 이전 캐시가 있으면 재사용해 빠르게 진행합니다.")
+    return fresh
+
+
 def ask_copyright_choice() -> bool:
     """
     URL·영상 입력 후, 저작권 침해 분석까지 함께 수행할지 물어본다.
@@ -420,15 +512,17 @@ def main():
 
         # ── 유튜브 URL ──────────────────────────────────────
         if mvp.is_youtube_url(user_input):
+            fresh = ask_reanalyze_choice()
             do_copyright = ask_copyright_choice()
-            report, json_path = analyze_only(system, user_input, download_dir="downloads")
+            report, json_path = analyze_only(system, user_input, download_dir="downloads",
+                                             fresh=fresh)
             mvp.print_report(report)
 
             copyright_results = None
             if do_copyright:
                 local_video = (report.get("youtube_meta") or {}).get("video_path")
                 if local_video:
-                    copyright_results = run_copyright_detection(local_video)
+                    copyright_results = run_copyright_detection(local_video, force=fresh)
                 else:
                     print("⚠️  다운로드된 영상 경로를 찾을 수 없어 저작권 분석을 건너뜁니다.")
 
@@ -439,14 +533,15 @@ def main():
 
         # ── Google Drive URL ────────────────────────────────
         elif mvp.is_google_drive_url(user_input):
+            fresh = ask_reanalyze_choice()
             do_copyright = ask_copyright_choice()
             # 한 번만 내려받아 두 분석이 같은 파일을 쓰도록 미리 다운로드
             dl = mvp.download_google_drive_video(user_input, "downloads")
             local_video = dl['video_path']
-            report, json_path = analyze_only(system, local_video)
+            report, json_path = analyze_only(system, local_video, fresh=fresh)
             mvp.print_report(report)
 
-            copyright_results = run_copyright_detection(local_video) if do_copyright else None
+            copyright_results = run_copyright_detection(local_video, force=fresh) if do_copyright else None
             md_path, pdf_path = finalize_reports(report, json_path, copyright_results,
                                                  include_copyright=do_copyright)
             _print_report_paths(json_path, md_path, pdf_path)
@@ -457,11 +552,12 @@ def main():
             if not os.path.exists(user_input):
                 print("❌ 파일을 찾을 수 없습니다.")
                 continue
+            fresh = ask_reanalyze_choice()
             do_copyright = ask_copyright_choice()
-            report, json_path = analyze_only(system, user_input)
+            report, json_path = analyze_only(system, user_input, fresh=fresh)
             mvp.print_report(report)
 
-            copyright_results = run_copyright_detection(user_input) if do_copyright else None
+            copyright_results = run_copyright_detection(user_input, force=fresh) if do_copyright else None
             md_path, pdf_path = finalize_reports(report, json_path, copyright_results,
                                                  include_copyright=do_copyright)
             _print_report_paths(json_path, md_path, pdf_path)
