@@ -23,3 +23,7 @@ venv/
 downloads/
 transcripts/
 
+
+# local case database (generated data, exceeds GitHub 100MB limit)
+casedb/
+copyright_detector/_gitignore_test_tmp/

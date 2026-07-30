@@ -74,12 +74,37 @@ def run_analysis(job_id, user_input):
 
         else:
             # 텍스트 입력 → 영상이 없어 저작권 분석은 수행하지 않고 NATAM 분석만 수행
-            cases, dists, summary = system.search_and_analyze(user_input)
             classification = system.classify_controversy(user_input)
+            natam_result = mvp.assess_natam_risk(
+                client             = system.client,
+                system_instruction = system.system_instruction,
+                transcript_text    = '',
+                summary            = user_input,
+                gen_model          = mvp.GEN_MODEL,
+            )
+            # 위험 신호(NATAM A/B축 + 분류) 기반 트리거로 유사 사례 검색
+            cases, dists, summary = system.find_similar_cases(
+                base_text=user_input, natam_result=natam_result,
+                classification=classification, k=3, make_summary=True,
+            )
             report = {
                 'meta': {'input_query': user_input},
                 'classification': classification,
-                'similar_cases': [{'title': c['title']} for c in cases],
+                'natam_risk': natam_result,
+                'similar_cases': [
+                    {
+                        'rank':          c.get('rank'),
+                        'title':         c.get('제목', c.get('title', '')),
+                        '리스크':         c.get('리스크', ''),
+                        '세부 태그':      c.get('세부 태그', ''),
+                        '기사 요약':      c.get('기사 요약', ''),
+                        '리스크 포인트':  c.get('리스크 포인트', ''),
+                        '관련 법 및 정책': c.get('관련 법 및 정책', ''),
+                        '뉴스 링크':      c.get('뉴스 링크', ''),
+                        '언론사':         c.get('언론사', ''),
+                        'distance':      c.get('distance'),
+                    } for c in cases
+                ],
                 'pattern_summary': summary,
                 'copyright': None,
             }

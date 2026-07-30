@@ -1138,14 +1138,21 @@ def _build_detail_pages(report: dict) -> list:
     story.append(_detail_sub("검색된 유사 사례 Top 3"))
     if cases:
         for i, cs in enumerate(cases[:3], 1):
-            resp = ", ".join(cs.get("response_pattern", [])) if cs.get("response_pattern") else "—"
-            story.append(_kv_table([
-                (f"사례 {i}", _safe(cs.get("title"))),
-                ("논란 유형", cs.get("controversy_type")),
+            _risk = cs.get("리스크") or cs.get("controversy_type") or "—"
+            _tag  = cs.get("세부 태그") or ""
+            _src  = f"{cs.get('언론사','')} {cs.get('기사 작성일','')}".strip() or "—"
+            _rows = [
+                (f"사례 {i}", _safe(cs.get("제목") or cs.get("title"))),
+                ("리스크", _safe(_risk + (f" · {_tag}" if _tag else ""))),
                 ("유사도 거리", f"{_safe(cs.get('distance'))} (낮을수록 유사)"),
-                ("취한 대응", resp),
-                ("결과", cs.get("outcome", "데이터 없음")),
-            ]))
+                ("리스크 포인트", _safe(cs.get("리스크 포인트") or "—")),
+                ("관련 법·정책", _safe(cs.get("관련 법 및 정책") or "—")),
+                ("출처", _safe(_src)),
+            ]
+            _link = (cs.get("뉴스 링크") or "").strip()
+            if _link:
+                _rows.append(("원문", _link))
+            story.append(_kv_table(_rows))
             story.append(Spacer(1, 3 * mm))
     else:
         story.append(Paragraph("검색된 유사 사례가 없습니다.", ST["body_sm"]))

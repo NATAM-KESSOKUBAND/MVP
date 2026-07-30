@@ -36,6 +36,19 @@ try:
 except ImportError:
     _PDF_AVAILABLE = False
 
+# 유사 사례 엔진 v2 (NocoDB 사례집 기반) + 위험신호 트리거
+try:
+    from similar_case_engine import SimilarCaseEngine
+    from risk_trigger import (
+        build_trigger,
+        controversy_type_from_signals,
+        CORPUS_RISK_TO_CONTROVERSY_TYPE,
+    )
+    _SIM_ENGINE_AVAILABLE = True
+except Exception as _e:   # noqa: BLE001
+    _SIM_ENGINE_AVAILABLE = False
+    print(f"⚠️ 유사 사례 엔진 모듈 로드 불가: {_e}")
+
 
 # ════════════════════════════════════════════════════════
 # ⚙️  설정
@@ -971,14 +984,26 @@ def _build_similar_case_block(cases: list) -> str:
         return ""
     parts = []
     for c in cases[:3]:
-        rp = ", ".join(c.get("response_pattern", [])) or "—"
+        title = _rp_safe(c.get('제목') or c.get('title'), '—')
+        risk  = _rp_safe(c.get('리스크') or c.get('controversy_type'), '—')
+        tag   = _rp_safe(c.get('세부 태그'), '')
+        point = _rp_safe(c.get('리스크 포인트'), '—')
+        law   = _rp_safe(c.get('관련 법 및 정책'), '—')
+        press = _rp_safe(c.get('언론사'), '—')
+        date  = _rp_safe(c.get('기사 작성일'), '')
+        link  = (c.get('뉴스 링크') or '').strip()
+        dist  = _rp_safe(c.get('distance'), '—')
+        link_md = f"[기사 원문]({link})" if link else '—'
+        risk_disp = f"{risk}" + (f" · {tag}" if tag else "")
         parts.append(
-            f"#### 🔵 사례 {_rp_safe(c.get('rank'), '')} — {_rp_safe(c.get('title'), '—')}\n\n"
+            f"#### 🔵 사례 {_rp_safe(c.get('rank'), '')} — {title}\n\n"
             "| 항목 | 내용 |\n|------|------|\n"
-            f"| 논란 유형 | {_rp_safe(c.get('controversy_type'), '—')} |\n"
-            f"| 유사도 거리 | {_rp_safe(c.get('distance'), '—')} (낮을수록 유사) |\n"
-            f"| 취한 대응 | {rp} |\n"
-            f"| 결과 | {_rp_safe(c.get('outcome'), '데이터 없음')} |"
+            f"| 리스크 | {risk_disp} |\n"
+            f"| 유사도 거리 | {dist} (낮을수록 유사) |\n"
+            f"| 리스크 포인트 | {point} |\n"
+            f"| 관련 법·정책 | {law} |\n"
+            f"| 출처 | {press} {date} |\n"
+            f"| 원문 | {link_md} |"
         )
     return "\n\n".join(parts)
 
@@ -1663,9 +1688,8 @@ class CrisisConsultantSystem:
             self.whisper_model = None
             print("🤖 전사 엔진: Gemini Files API (Whisper 모델 로드 생략)")
 
-        with open(db_path, 'r', encoding='utf-8') as f:
-            self.cases = json.load(f)
-
+        # (v2) case_db.json 로드 제거 — 유사 사례는 similar_case_engine 이 담당한다.
+        #      db_path 인자는 하위 호환을 위해 남겨두지만 더 이상 사용하지 않는다.
         self.rules            = load_rules(rules_yaml)
         self.labels           = load_controversy_labels(labels_yaml)
         self.label_prompt_str = format_labels_for_prompt(self.labels)
@@ -1681,27 +1705,17 @@ class CrisisConsultantSystem:
             "3. 반드시 제공된 사례 데이터에 근거해서만 답변합니다."
         )
 
-        # ── FAISS 벡터 인덱스 빌드 (캐시 우선, 없으면 병렬 임베딩) ──
-        embed_cache_path = os.path.splitext(db_path)[0] + "_embeddings.npy"
-        print("⏳ 벡터 DB 빌드 중...")
-        if os.path.exists(embed_cache_path):
-            self.embeddings_np = np.load(embed_cache_path).astype('float32')
-            print(f"   📦 임베딩 캐시 로드 → {embed_cache_path}")
+        # ── (v2) 유사 사례 엔진 로드 (NocoDB 사례집 · 교체 가능한 임베딩 백엔드) ──
+        self.sim_engine = None
+        if _SIM_ENGINE_AVAILABLE:
+            print("⏳ 유사 사례 엔진 로드 중...")
+            try:
+                self.sim_engine = SimilarCaseEngine(verbose=True)
+            except Exception as _e:   # noqa: BLE001
+                print(f"⚠️ 유사 사례 인덱스 로드 실패: {_e}")
+                print("   → `python similar_case_engine.py build` 로 인덱스를 먼저 생성하세요.")
         else:
-            def _embed_one(case):
-                resp = self.client.models.embed_content(
-                    model=EMBED_MODEL, contents=case['summary'],
-                )
-                return resp.embeddings[0].values
-
-            with ThreadPoolExecutor(max_workers=8) as ex:
-                embeddings = list(ex.map(_embed_one, self.cases))
-            self.embeddings_np = np.array(embeddings).astype('float32')
-            np.save(embed_cache_path, self.embeddings_np)
-            print(f"   💾 임베딩 캐시 저장 → {embed_cache_path}")
-
-        self.index = faiss.IndexFlatL2(self.embeddings_np.shape[1])
-        self.index.add(self.embeddings_np)
+            print("⚠️ similar_case_engine 미탑재 → 유사 사례 검색 비활성화")
 
         # ── ML 논란 분류 모델 ─────────────────────────────────
         try:
@@ -1714,7 +1728,8 @@ class CrisisConsultantSystem:
             self.ml_model = None
             self.ml_mlb   = None
 
-        print(f"✅ 시스템 준비 완료! (사례 DB: {len(self.cases)}건)")
+        _n_cases = self.sim_engine.manifest.get("count", 0) if self.sim_engine else 0
+        print(f"✅ 시스템 준비 완료! (유사 사례 DB: {_n_cases:,}건)")
 
     # ────────────────────────────────────────────────────
     # 🎙️ Whisper 전사
@@ -2496,31 +2511,89 @@ class CrisisConsultantSystem:
     # ────────────────────────────────────────────────────
     # 🔍 RAG 검색 + 패턴 분석
     # ────────────────────────────────────────────────────
-    def search_and_analyze(self, query: str, k: int = 3) -> tuple:
-        resp = self.client.models.embed_content(model=EMBED_MODEL, contents=query)
-        qe   = np.array([resp.embeddings[0].values]).astype('float32')
-        dists, idxs = self.index.search(qe, k)
-        top = [self.cases[i] for i in idxs[0] if i != -1]
+    def _to_case(self, r: dict, rank: int) -> dict:
+        """엔진 결과(신규 스키마) → 리포트/다운스트림 호환 dict(옛 별칭 포함)."""
+        risk = r.get("리스크", "")
+        return {
+            # ── 신규 필드 ──
+            "제목":            r.get("제목", ""),
+            "리스크":          risk,
+            "세부 태그":       r.get("세부 태그", ""),
+            "핵심 문장":       r.get("핵심 문장", ""),
+            "기사 요약":       r.get("기사 요약", ""),
+            "리스크 포인트":   r.get("리스크 포인트", ""),
+            "관련 법 및 정책": r.get("관련 법 및 정책", ""),
+            "뉴스 링크":       r.get("뉴스 링크", ""),
+            "언론사":          r.get("언론사", ""),
+            "기사 작성일":     r.get("기사 작성일", ""),
+            "News ID":         r.get("News ID", ""),
+            "score":           r.get("score"),
+            "dense":           r.get("dense"),
+            "keyword_score":   r.get("keyword_score"),
+            "category_hit":    r.get("category_hit"),
+            # ── 하위 호환 별칭(옛 스키마 소비 코드 보호) ──
+            "rank":             rank,
+            "title":            r.get("제목", ""),
+            "controversy_type": CORPUS_RISK_TO_CONTROVERSY_TYPE.get(risk, ""),
+            "summary":          r.get("기사 요약", ""),
+            "distance":         round(1.0 - float(r.get("dense") or 0.0), 4),  # 코사인→거리
+            "response_pattern": [],   # 신규 데이터엔 없음
+            "outcome":          "",   # 신규 데이터엔 없음
+        }
 
+    def find_similar_cases(self, base_text: str = "", natam_result: dict = None,
+                           risk_sentences: list = None, classification: dict = None,
+                           k: int = 3, make_summary: bool = True) -> tuple:
+        """위험 신호로 트리거를 구성해 하이브리드 검색. (cases, dists, pattern_summary) 반환."""
+        if self.sim_engine is None:
+            return [], [], ""
+        trig  = build_trigger(natam_result, risk_sentences, classification, base_text=base_text)
+        query = trig["query_text"] or base_text
+        if not query.strip():
+            return [], [], ""
+        try:
+            raw = self.sim_engine.search(
+                query, keywords=trig["keywords"],
+                risk_categories=trig["risk_categories"], k=k,
+            )
+        except Exception as e:   # noqa: BLE001
+            # 쿼리 임베딩 실패(예: Gemini 지출 한도/네트워크) → 분석은 계속, 유사 사례만 생략
+            print(f"⚠️ 유사 사례 검색 실패(임베딩 API 문제 등): {str(e)[:120]}")
+            return [], [], ""
+        cases   = [self._to_case(r, i + 1) for i, r in enumerate(raw)]
+        dists   = [c["distance"] for c in cases]
+        summary = self._summarize_pattern(query, cases) if (make_summary and cases) else ""
+        return cases, dists, summary
+
+    def _summarize_pattern(self, query: str, cases: list) -> str:
+        """검색된 사례들의 공통 패턴을 LLM으로 3가지 요약(리포트 5-2용)."""
         ctx = "".join(
-            f"사례 {i}: {c['title']}\n- 유형: {c.get('controversy_type','N/A')}\n"
-            f"- 상황: {c['summary']}\n- 대응: {c.get('response_pattern',[])}\n"
-            f"- 결과: {c.get('keyframes',[])}\n\n"
-            for i, c in enumerate(top, 1)
+            f"사례 {i}: {c['제목']}\n- 리스크: {c['리스크']} ({c['세부 태그']})\n"
+            f"- 요약: {c['기사 요약']}\n- 리스크 포인트: {c['리스크 포인트']}\n"
+            f"- 관련 법/정책: {c['관련 법 및 정책']}\n\n"
+            for i, c in enumerate(cases, 1)
         )
         prompt = (
             f"입력된 사건: \"{query}\"\n\n유사 사례:\n{ctx}\n"
-            "다음 3가지를 요약해 주세요:\n"
-            "1. 위기 확산의 공통적 경로\n"
-            "2. 과거 대응 방식에 따른 여론의 반응 패턴\n"
-            "3. 위기가 심화되었던 결정적 트리거(Trigger)"
+            "다음 3가지를 사례 데이터에 근거해 객관적으로 요약해 주세요(명령·추천 금지):\n"
+            "1. 이 유형 리스크가 확산되는 공통적 경로\n"
+            "2. 관찰된 여론·언론의 반응 패턴\n"
+            "3. 리스크가 심화되는 결정적 트리거(Trigger)"
         )
-        resp2 = self.client.models.generate_content(
-            model=GEN_MODEL, contents=prompt,
-            config={"system_instruction": self.system_instruction},
-        )
-        self.cost.add(resp2, "search")
-        return top, dists[0], resp2.text
+        try:
+            resp = self.client.models.generate_content(
+                model=GEN_MODEL, contents=prompt,
+                config={"system_instruction": self.system_instruction},
+            )
+            self.cost.add(resp, "search")
+            return resp.text or ""
+        except Exception as e:   # noqa: BLE001
+            print(f"⚠️ 패턴 요약 생성 실패: {e}")
+            return ""
+
+    def search_and_analyze(self, query: str, k: int = 3) -> tuple:
+        """하위 호환 래퍼: 쿼리 텍스트만으로 가벼운 유사 검색(LLM 요약 없음)."""
+        return self.find_similar_cases(base_text=query, k=k, make_summary=False)
 
     # ────────────────────────────────────────────────────
     # 🏷️ 논란 유형 분류 (ML 우선 → Gemini 폴백)
@@ -3043,6 +3116,26 @@ class CrisisConsultantSystem:
         cases, dists, summary = search_result if isinstance(search_result, tuple) else ([], [], "")
         print(f"   NATAM — A축: {natam_result['overall_a']} | B축: {natam_result['overall_b']}")
 
+        # ── (v2) 위험 신호 기반 트리거로 유사 사례 재검색(최종 리포트용) ──
+        #   병렬 baseline 검색(raw_query)은 two_tier 힌트로 남기고, 최종 사례는
+        #   NATAM 발화 축 + 위험 문장 + 분류로 만든 트리거 검색 결과로 교체한다.
+        _risk_sents = [
+            (s.get("corrected_text") or s.get("text") or "").strip()
+            for s in (transcript_analysis or [])
+            if _seg_display_label(s.get("label", ""))
+        ]
+        _risk_sents = [s for s in _risk_sents if s][:8]
+        _tc, _td, _ts = self.find_similar_cases(
+            base_text      = summary_data.get("incident_overview", ""),
+            natam_result   = natam_result,
+            risk_sentences = _risk_sents,
+            classification = classification,
+            k              = 3,
+            make_summary   = True,
+        )
+        if _tc:
+            cases, dists, summary = _tc, _td, _ts
+
         # ── [하위] 룰스캔 union: raw + refined + 화면 OCR 텍스트 ──
         ocr_screen_text = " ".join(
             f.get("screen_text", "") for f in (video_frames or []) if f.get("screen_text")
@@ -3068,7 +3161,7 @@ class CrisisConsultantSystem:
             if cases and cases[0].get("incident_metadata"):
                 spread_result = self.spread_analyzer.predict_stage(cases[0])
 
-        detected_type = cases[0].get("controversy_type", "") if cases else ""
+        detected_type = controversy_type_from_signals(natam_result, classification, cases)
         worst_actions = self.get_risk_guide(detected_type, spread_result["stage"].lower())
 
         elapsed = round(time.time() - t0, 1)
@@ -3105,9 +3198,19 @@ class CrisisConsultantSystem:
             "similar_cases": [
                 {
                     "rank":             r + 1,
-                    "title":            c["title"],
+                    "title":            c.get("제목", c.get("title", "")),
+                    "제목":              c.get("제목", ""),
+                    "리스크":            c.get("리스크", ""),
+                    "세부 태그":         c.get("세부 태그", ""),
                     "controversy_type": c.get("controversy_type", ""),
                     "distance":         round(float(d), 4),
+                    "score":            c.get("score"),
+                    "기사 요약":         c.get("기사 요약", ""),
+                    "리스크 포인트":     c.get("리스크 포인트", ""),
+                    "관련 법 및 정책":   c.get("관련 법 및 정책", ""),
+                    "뉴스 링크":         c.get("뉴스 링크", ""),
+                    "언론사":            c.get("언론사", ""),
+                    "기사 작성일":       c.get("기사 작성일", ""),
                     "response_pattern": c.get("response_pattern", []),
                 }
                 for r, (c, d) in enumerate(
@@ -3323,18 +3426,8 @@ def main():
                 print(f"\n🚨 [룰 적발] {rule_result['policy']} ({rule_result['severity']}) "
                       f"→ {rule_result['action']}  원인어: '{rule_result['matched_word']}'")
 
-            print("\n⏳ 유사 사례 검색 중...")
-            cases, dists, summary = system.search_and_analyze(query)
             print("⏳ 논란 유형 분류 중...")
             classification = system.classify_controversy(query)
-
-            spread_result = {"stage": "Early", "reasons": [], "metrics": None}
-            if cases and cases[0].get("incident_metadata"):
-                spread_result = system.spread_analyzer.predict_stage(cases[0])
-            worst_actions = system.get_risk_guide(
-                cases[0].get("controversy_type", "") if cases else "",
-                spread_result["stage"].lower(),
-            )
 
             print("⏳ NATAM v2.0 리스크 평가 중...")
             natam_result = assess_natam_risk(
@@ -3345,6 +3438,20 @@ def main():
                 gen_model          = GEN_MODEL,
             )
             print(f"   A축 종합: {natam_result['overall_a']} | B축 종합: {natam_result['overall_b']}")
+
+            print("\n⏳ 위험 신호 기반 유사 사례 검색 중...")
+            cases, dists, summary = system.find_similar_cases(
+                base_text=query, natam_result=natam_result,
+                classification=classification, k=3, make_summary=True,
+            )
+
+            spread_result = {"stage": "Early", "reasons": [], "metrics": None}
+            if cases and cases[0].get("incident_metadata"):
+                spread_result = system.spread_analyzer.predict_stage(cases[0])
+            worst_actions = system.get_risk_guide(
+                controversy_type_from_signals(natam_result, classification, cases),
+                spread_result["stage"].lower(),
+            )
 
             ts     = datetime.now().strftime("%Y%m%d_%H%M%S")
             report = {
@@ -3359,9 +3466,19 @@ def main():
                 "similar_cases": [
                     {
                         "rank":             i + 1,
-                        "title":            c["title"],
+                        "title":            c.get("제목", c.get("title", "")),
+                        "제목":              c.get("제목", ""),
+                        "리스크":            c.get("리스크", ""),
+                        "세부 태그":         c.get("세부 태그", ""),
                         "controversy_type": c.get("controversy_type", ""),
                         "distance":         round(float(d), 4),
+                        "score":            c.get("score"),
+                        "기사 요약":         c.get("기사 요약", ""),
+                        "리스크 포인트":     c.get("리스크 포인트", ""),
+                        "관련 법 및 정책":   c.get("관련 법 및 정책", ""),
+                        "뉴스 링크":         c.get("뉴스 링크", ""),
+                        "언론사":            c.get("언론사", ""),
+                        "기사 작성일":       c.get("기사 작성일", ""),
                         "response_pattern": c.get("response_pattern", []),
                     }
                     for i, (c, d) in enumerate(zip(cases, dists))

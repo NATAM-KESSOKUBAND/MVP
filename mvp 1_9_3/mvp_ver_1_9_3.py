@@ -571,18 +571,8 @@ def main():
                 print(f"\n🚨 [룰 적발] {rule_result['policy']} ({rule_result['severity']}) "
                       f"→ {rule_result['action']}  원인어: '{rule_result['matched_word']}'")
 
-            print("\n⏳ 유사 사례 검색 중...")
-            cases, dists, summary = system.search_and_analyze(query)
             print("⏳ 논란 유형 분류 중...")
             classification = system.classify_controversy(query)
-
-            spread_result = {"stage": "Early", "reasons": [], "metrics": None}
-            if cases and cases[0].get("incident_metadata"):
-                spread_result = system.spread_analyzer.predict_stage(cases[0])
-            worst_actions = system.get_risk_guide(
-                cases[0].get("controversy_type", "") if cases else "",
-                spread_result["stage"].lower(),
-            )
 
             print("⏳ NATAM v2.0 리스크 평가 중...")
             natam_result = mvp.assess_natam_risk(
@@ -593,6 +583,20 @@ def main():
                 gen_model          = mvp.GEN_MODEL,
             )
             print(f"   A축 종합: {natam_result['overall_a']} | B축 종합: {natam_result['overall_b']}")
+
+            print("\n⏳ 위험 신호 기반 유사 사례 검색 중...")
+            cases, dists, summary = system.find_similar_cases(
+                base_text=query, natam_result=natam_result,
+                classification=classification, k=3, make_summary=True,
+            )
+
+            spread_result = {"stage": "Early", "reasons": [], "metrics": None}
+            if cases and cases[0].get("incident_metadata"):
+                spread_result = system.spread_analyzer.predict_stage(cases[0])
+            worst_actions = system.get_risk_guide(
+                mvp.controversy_type_from_signals(natam_result, classification, cases),
+                spread_result["stage"].lower(),
+            )
 
             ts     = mvp.datetime.now().strftime("%Y%m%d_%H%M%S")
             report = {
@@ -607,9 +611,19 @@ def main():
                 "similar_cases": [
                     {
                         "rank":             i + 1,
-                        "title":            c["title"],
+                        "title":            c.get("제목", c.get("title", "")),
+                        "제목":              c.get("제목", ""),
+                        "리스크":            c.get("리스크", ""),
+                        "세부 태그":         c.get("세부 태그", ""),
                         "controversy_type": c.get("controversy_type", ""),
                         "distance":         round(float(d), 4),
+                        "score":            c.get("score"),
+                        "기사 요약":         c.get("기사 요약", ""),
+                        "리스크 포인트":     c.get("리스크 포인트", ""),
+                        "관련 법 및 정책":   c.get("관련 법 및 정책", ""),
+                        "뉴스 링크":         c.get("뉴스 링크", ""),
+                        "언론사":            c.get("언론사", ""),
+                        "기사 작성일":       c.get("기사 작성일", ""),
                         "response_pattern": c.get("response_pattern", []),
                     }
                     for i, (c, d) in enumerate(zip(cases, dists))
