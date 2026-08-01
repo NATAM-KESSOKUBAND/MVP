@@ -532,13 +532,26 @@ def assess(report: dict) -> dict:
 # ════════════════════════════════════════════════════════════════════
 # 8) 진입점 — report 에 반영 + 단계 상향
 # ════════════════════════════════════════════════════════════════════
+def _strip_links_for_report(res: dict) -> dict:
+    """리포트(JSON)에 저장하기 전, 기사/영상 '원문 링크'와 개별 항목 목록을 제거한다.
+       리포트는 집계 건수만 사용하므로 url·items 를 빼도 표시에는 영향이 없다."""
+    if not isinstance(res, dict):
+        return res
+    for layer in ("layer_a", "layer_b"):
+        for sig in (res.get(layer) or {}).values():
+            if isinstance(sig, dict):
+                sig.pop("items", None)   # 기사/영상 제목 목록
+                sig.pop("url", None)     # 원문 링크(2차 유튜브·나무위키 등)
+    return res
+
+
 def enrich(report: dict) -> dict:
     """외부 확산 신호를 수집해 report['spread_external'] 저장 + spread_stage 상향(blend)."""
     try:
         res = assess(report)
     except Exception as e:
         res = {"status": "error", "note": f"확산 신호 수집 예외: {e}"}
-    report["spread_external"] = res
+    report["spread_external"] = _strip_links_for_report(res)
 
     if res.get("status") == "ok":
         sp  = report.setdefault("spread_stage", {})

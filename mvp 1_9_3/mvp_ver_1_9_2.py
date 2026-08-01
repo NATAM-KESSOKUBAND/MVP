@@ -991,9 +991,7 @@ def _build_similar_case_block(cases: list) -> str:
         law   = _rp_safe(c.get('관련 법 및 정책'), '—')
         press = _rp_safe(c.get('언론사'), '—')
         date  = _rp_safe(c.get('기사 작성일'), '')
-        link  = (c.get('뉴스 링크') or '').strip()
         dist  = _rp_safe(c.get('distance'), '—')
-        link_md = f"[기사 원문]({link})" if link else '—'
         risk_disp = f"{risk}" + (f" · {tag}" if tag else "")
         parts.append(
             f"#### 🔵 사례 {_rp_safe(c.get('rank'), '')} — {title}\n\n"
@@ -1002,8 +1000,7 @@ def _build_similar_case_block(cases: list) -> str:
             f"| 유사도 거리 | {dist} (낮을수록 유사) |\n"
             f"| 리스크 포인트 | {point} |\n"
             f"| 관련 법·정책 | {law} |\n"
-            f"| 출처 | {press} {date} |\n"
-            f"| 원문 | {link_md} |"
+            f"| 출처 | {press} {date} |"
         )
     return "\n\n".join(parts)
 
