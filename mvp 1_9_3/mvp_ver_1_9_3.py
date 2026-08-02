@@ -50,6 +50,13 @@ except Exception as _e:
     pdf_from_md = None
     print(f"⚠️  pdf_from_md 로드 실패 → PDF 생성 건너뜀: {_e}")
 
+# ── 통합 로깅(전체 콘솔 출력을 타임스탬프 로그 파일 하나로 기록) ──────────
+try:
+    import run_logging
+except Exception as _e:
+    run_logging = None
+    print(f"⚠️  run_logging 로드 실패 → 통합 로깅 건너뜀: {_e}")
+
 # ── 저작권 감지기 경로 ────────────────────────────────────────────────
 COPYRIGHT_DIR     = SCRIPT_DIR / "copyright_detector"
 COPYRIGHT_MAIN    = COPYRIGHT_DIR / "main.py"
@@ -100,9 +107,13 @@ def run_copyright_detection(video_path: str, force: bool = False) -> dict | None
     print("=" * 63)
 
     try:
-        proc = subprocess.run(cmd, cwd=str(COPYRIGHT_DIR), check=False)
-        if proc.returncode != 0:
-            print(f"⚠️  저작권 분석 프로세스가 비정상 종료(코드 {proc.returncode}).")
+        # 서브프로세스 출력도 통합 로그에 포함되도록 스트리밍(가능하면). 아니면 기존 방식.
+        if run_logging is not None:
+            rc = run_logging.stream_subprocess(cmd, cwd=str(COPYRIGHT_DIR))
+        else:
+            rc = subprocess.run(cmd, cwd=str(COPYRIGHT_DIR), check=False).returncode
+        if rc != 0:
+            print(f"⚠️  저작권 분석 프로세스가 비정상 종료(코드 {rc}).")
     except Exception as e:
         print(f"⚠️  저작권 분석 실행 실패: {e}")
         return None
@@ -486,10 +497,18 @@ def ask_copyright_choice() -> bool:
 # 메인 루프
 # ════════════════════════════════════════════════════════════════════
 def main():
+    # ── 통합 로깅 시작(콘솔 출력 전체를 logs/mvp193_*.log 로 기록) ──
+    #   MVP_LOGGING=0 이면 비활성. 배너보다 먼저 켜서 배너부터 로그에 남긴다.
+    log_path = None
+    if run_logging is not None and os.getenv("MVP_LOGGING", "1") != "0":
+        log_path = run_logging.setup()
+
     print("=" * 63)
     print("🛡️©️  CRISIS CONSULTANT v1.9.3 — 위기관리 + 저작권 통합 분석기")
     print("     NATAM v2.0 위기 분석  ⨉  copyright_detector 저작권 침해 감지")
     print("     리포트: 통합 MD · PDF · JSON 3종 동시 생성")
+    if log_path:
+        print(f"     📝 통합 로그: {log_path}")
     print("=" * 63)
 
     system = mvp.CrisisConsultantSystem(
