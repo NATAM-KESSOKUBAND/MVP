@@ -25,6 +25,11 @@
     padding: 12px; font-size: 15px; font-family: inherit;
   }
   .row { display: flex; gap: 10px; margin-top: 12px; align-items: center; }
+  .opts { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 12px; }
+  .opt { display: inline-flex; align-items: center; gap: 7px; font-size: 14px;
+         color: var(--text); cursor: pointer; user-select: none; }
+  .opt input { width: 16px; height: 16px; accent-color: var(--accent); cursor: pointer; }
+  .opt .note { color: var(--muted); font-size: 12px; }
   button {
     background: var(--accent); color: #fff; border: 0; border-radius: 8px;
     padding: 11px 20px; font-size: 15px; font-weight: 600; cursor: pointer;
@@ -60,6 +65,23 @@
   .err { color: var(--critical); }
   .kv { color: var(--muted); font-size: 13px; }
   pre.summary { white-space: pre-wrap; background:#11141a; border:1px solid var(--line); border-radius:8px; padding:12px; font-size:14px; font-family:inherit; margin:6px 0; }
+  /* 최종 MD 리포트를 파일과 동일하게 표시 */
+  .md-report { font-size: 14px; }
+  .md-report h1 { font-size: 20px; margin: 16px 0 8px; }
+  .md-report h2 { font-size: 18px; margin: 22px 0 8px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+  .md-report h3 { font-size: 15px; margin: 16px 0 6px; color: #cdd3dd; }
+  .md-report h4 { font-size: 14px; margin: 12px 0 4px; color: var(--accent); }
+  .md-report p { margin: 6px 0; }
+  .md-report table { border-collapse: collapse; width: 100%; margin: 8px 0; display: block; overflow-x: auto; }
+  .md-report th, .md-report td { border: 1px solid var(--line); padding: 6px 10px; text-align: left; font-size: 13px; vertical-align: top; }
+  .md-report th { background: #11141a; color: var(--muted); white-space: nowrap; }
+  .md-report blockquote { margin: 8px 0; padding: 6px 12px; border-left: 3px solid var(--line); color: var(--muted); background: #11141a; border-radius: 0 6px 6px 0; }
+  .md-report pre { background: #11141a; border: 1px solid var(--line); border-radius: 8px; padding: 12px; overflow-x: auto; font-size: 12.5px; line-height: 1.45; }
+  .md-report code { background: #11141a; border: 1px solid var(--line); border-radius: 4px; padding: 1px 5px; font-size: 12.5px; }
+  .md-report pre code { border: 0; padding: 0; background: none; }
+  .md-report hr { border: 0; border-top: 1px solid var(--line); margin: 20px 0; }
+  .md-report a { color: var(--accent); }
+  .md-report ul, .md-report ol { margin: 6px 0; padding-left: 20px; }
 </style>
 </head>
 <body>
@@ -69,6 +91,16 @@
 
   <div class="card">
     <textarea id="input" placeholder="예) https://www.youtube.com/watch?v=...  또는  분석할 문장"></textarea>
+    <div class="opts">
+      <label class="opt">
+        <input type="checkbox" id="doCopyright" checked>
+        저작권 침해 분석 함께
+      </label>
+      <label class="opt">
+        <input type="checkbox" id="fresh">
+        처음부터 다시 분석 <span class="note">(이전 transcript 캐시 삭제)</span>
+      </label>
+    </div>
     <div class="row">
       <button id="go" onclick="analyze()">분석 시작</button>
       <span class="hint">영상은 길이에 따라 수 분 걸릴 수 있어요.</span>
@@ -93,16 +125,19 @@ async function analyze() {
   const input = document.getElementById("input").value.trim();
   if (!input) { alert("입력값을 넣어주세요."); return; }
 
+  const fresh        = document.getElementById("fresh").checked;
+  const do_copyright = document.getElementById("doCopyright").checked;
+
   const goBtn = document.getElementById("go");
   goBtn.disabled = true;
   document.getElementById("result").classList.add("hidden");
-  showStatus(true, "분석 요청 중...");
+  showStatus(true, fresh ? "처음부터 다시 분석 요청 중..." : "분석 요청 중...");
 
   try {
     const res = await fetch("/analyze", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ input })
+      body: JSON.stringify({ input, fresh, do_copyright })
     });
     const data = await res.json();
     if (data.error) { fail(data.error); return; }
@@ -143,9 +178,36 @@ function fail(msg) {
   r.innerHTML = '<div class="err">⚠️ ' + escapeHtml(msg) + '</div>';
 }
 
-function render(job, jobId) {
+async function render(job, jobId) {
   showStatus(false);
   document.getElementById("go").disabled = false;
+  const r0 = document.getElementById("result");
+  r0.classList.remove("hidden");
+
+  // 다운로드 버튼 (리포트 위·아래에 배치)
+  let dl = "";
+  if (job.md_path)  dl += '<a href="/download/' + jobId + '/md"><button>📄 MD 다운로드</button></a>';
+  if (job.pdf_path) dl += '<a href="/download/' + jobId + '/pdf"><button>📑 PDF 다운로드</button></a>';
+  const dlHtml = dl ? '<div class="dl">' + dl + '</div>' : "";
+
+  // 최종 MD 파이널 리포트를 그대로 표시 (파일과 동일한 모든 정보)
+  if (job.md_path) {
+    r0.innerHTML = dlHtml + '<div class="md-report">리포트 불러오는 중...</div>';
+    try {
+      const res = await fetch("/report/" + jobId);
+      const data = await res.json();
+      if (data && data.html) {
+        r0.innerHTML = dlHtml + '<div class="md-report">' + data.html + '</div>' + dlHtml;
+        return;
+      }
+    } catch (e) { /* 아래 요약 뷰로 폴백 */ }
+  }
+
+  // 폴백: MD가 없거나 실패하면 기존 요약 뷰
+  r0.innerHTML = renderSummary(job, jobId);
+}
+
+function renderSummary(job, jobId) {
   const rep = job.report || {};
   const meta = rep.meta || {};
   let h = "";
@@ -284,9 +346,7 @@ function render(job, jobId) {
   if (job.pdf_path) dl += '<a href="/download/' + jobId + '/pdf"><button>📑 PDF 다운로드</button></a>';
   if (dl) h += '<div class="dl">' + dl + '</div>';
 
-  const r = document.getElementById("result");
-  r.classList.remove("hidden");
-  r.innerHTML = h;
+  return h;
 }
 
 function lvlBadge(label, level) {

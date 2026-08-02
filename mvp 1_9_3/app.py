@@ -9,6 +9,24 @@ import mvp_ver_1_9_3 as v193
 
 mvp = v193.mvp  # v1.9.2 엔진 (v193 내부에서 재사용 중인 모듈)
 
+# 최종 MD 리포트를 웹에서 그대로 보여주기 위한 MD→HTML 변환기
+try:
+    import markdown as _md
+except Exception:
+    _md = None
+
+
+def _report_html(md_path: str) -> str:
+    """생성된 최종 MD 리포트를 HTML로 변환(표/코드블록 포함). 실패 시 원문을 <pre>로."""
+    try:
+        text = Path(md_path).read_text(encoding='utf-8')
+    except Exception as e:
+        return f'<pre>리포트 파일을 읽을 수 없습니다: {e}</pre>'
+    if _md is None:
+        import html as _h
+        return '<pre>' + _h.escape(text) + '</pre>'
+    return _md.markdown(text, extensions=['tables', 'fenced_code', 'sane_lists'])
+
 app = Flask(__name__, template_folder=str(SCRIPT_DIR.parent / "templates"))
 
 # 시스템 초기화 (서버 시작 시 한 번만)
@@ -47,29 +65,40 @@ def _update_job(job_id, **fields):
             job.update(fields)
 
 
-def run_analysis(job_id, user_input):
+def run_analysis(job_id, user_input, fresh=False, do_copyright=True):
+    """
+    fresh=True        → 이 영상의 이전 전사/교정 캐시를 지우고 처음부터 재분석
+    do_copyright=True → 위기 분석 + 저작권 침해 분석 / False → 위기 분석만
+    """
     try:
         _update_job(job_id, status='running')
 
         if mvp.is_youtube_url(user_input):
-            report, json_path = v193.analyze_only(system, user_input, download_dir='downloads')
+            report, json_path = v193.analyze_only(system, user_input, download_dir='downloads',
+                                                  fresh=fresh)
             local_video = (report.get('youtube_meta') or {}).get('video_path')
-            copyright_results = v193.run_copyright_detection(local_video) if local_video else None
-            md_path, pdf_path = v193.finalize_reports(report, json_path, copyright_results)
+            copyright_results = (v193.run_copyright_detection(local_video, force=fresh)
+                                 if (do_copyright and local_video) else None)
+            md_path, pdf_path = v193.finalize_reports(report, json_path, copyright_results,
+                                                      include_copyright=do_copyright)
             _update_job(job_id, md_path=md_path, pdf_path=pdf_path)
 
         elif mvp.is_google_drive_url(user_input):
             dl = mvp.download_google_drive_video(user_input, 'downloads')
             local_video = dl['video_path']
-            report, json_path = v193.analyze_only(system, local_video)
-            copyright_results = v193.run_copyright_detection(local_video)
-            md_path, pdf_path = v193.finalize_reports(report, json_path, copyright_results)
+            report, json_path = v193.analyze_only(system, local_video, fresh=fresh)
+            copyright_results = (v193.run_copyright_detection(local_video, force=fresh)
+                                 if do_copyright else None)
+            md_path, pdf_path = v193.finalize_reports(report, json_path, copyright_results,
+                                                      include_copyright=do_copyright)
             _update_job(job_id, md_path=md_path, pdf_path=pdf_path)
 
         elif os.path.exists(user_input):
-            report, json_path = v193.analyze_only(system, user_input)
-            copyright_results = v193.run_copyright_detection(user_input)
-            md_path, pdf_path = v193.finalize_reports(report, json_path, copyright_results)
+            report, json_path = v193.analyze_only(system, user_input, fresh=fresh)
+            copyright_results = (v193.run_copyright_detection(user_input, force=fresh)
+                                 if do_copyright else None)
+            md_path, pdf_path = v193.finalize_reports(report, json_path, copyright_results,
+                                                      include_copyright=do_copyright)
             _update_job(job_id, md_path=md_path, pdf_path=pdf_path)
 
         else:
@@ -109,6 +138,16 @@ def run_analysis(job_id, user_input):
                 'copyright': None,
             }
 
+            # 텍스트 입력도 최종 MD 리포트를 생성 → 웹에서 파일과 동일하게 표시(저작권 섹션 제외)
+            ts = time.strftime('%Y%m%d_%H%M%S')
+            os.makedirs('reports', exist_ok=True)
+            json_path = os.path.join('reports', f'report_{ts}.json')
+            mvp._save_json(report, json_path)
+            md_path = v193.CrisisReportEngineV193(include_copyright=False).create_report(report)
+            pdf_path = (v193.pdf_from_md.render(md_path)
+                        if (md_path and v193.pdf_from_md) else None)
+            _update_job(job_id, md_path=md_path, pdf_path=pdf_path)
+
         _update_job(job_id, status='done', report=report)
 
     except Exception as e:
@@ -122,16 +161,22 @@ def index():
 
 @app.route('/analyze', methods=['POST'])
 def analyze():
-    user_input = request.json.get('input', '').strip()
+    data = request.json or {}
+    user_input = (data.get('input') or '').strip()
     if not user_input:
         return jsonify({'error': '입력값이 없습니다'}), 400
+
+    # 사용자가 화면에서 고른 옵션 (기본: 이어서 / 저작권 함께)
+    fresh        = bool(data.get('fresh', False))          # True=처음부터(캐시 삭제)
+    do_copyright = bool(data.get('do_copyright', True))    # True=저작권 분석 함께
 
     job_id = str(uuid.uuid4())
     with _jobs_lock:
         _prune_old_jobs()
         jobs[job_id] = {'status': 'queued', 'created_at': time.time()}
 
-    thread = threading.Thread(target=run_analysis, args=(job_id, user_input))
+    thread = threading.Thread(target=run_analysis,
+                              args=(job_id, user_input, fresh, do_copyright))
     thread.start()
 
     return jsonify({'job_id': job_id})
@@ -144,6 +189,17 @@ def status(job_id):
     if not job:
         return jsonify({'error': '없는 작업입니다'}), 404
     return jsonify(job)
+
+
+@app.route('/report/<job_id>')
+def report_html(job_id):
+    """최종 MD 리포트를 HTML로 변환해 반환(웹 화면에 파일과 동일하게 표시)."""
+    with _jobs_lock:
+        job = dict(jobs.get(job_id, {}))
+    path = job.get('md_path')
+    if not path or not os.path.exists(path):
+        return jsonify({'error': '리포트 없음'}), 404
+    return jsonify({'html': _report_html(path)})
 
 
 @app.route('/download/<job_id>/<file_type>')

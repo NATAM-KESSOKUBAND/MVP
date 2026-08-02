@@ -43,6 +43,13 @@ except Exception as _e:          # 모듈 문제로 전체 실행이 막히지 �
     spread_signals = None
     print(f"⚠️  spread_signals 로드 실패 → 외부 확산 신호 건너뜀: {_e}")
 
+# ── PDF 리포트 생성기(참고 스타일: MD → HTML → PDF) ─────────────────────
+try:
+    import pdf_from_md
+except Exception as _e:
+    pdf_from_md = None
+    print(f"⚠️  pdf_from_md 로드 실패 → PDF 생성 건너뜀: {_e}")
+
 # ── 저작권 감지기 경로 ────────────────────────────────────────────────
 COPYRIGHT_DIR     = SCRIPT_DIR / "copyright_detector"
 COPYRIGHT_MAIN    = COPYRIGHT_DIR / "main.py"
@@ -376,16 +383,17 @@ def finalize_reports(report: dict, json_path: str, copyright_results: dict | Non
     # ── MD (통합 템플릿; 저작권 미수행 시 8장 섹션 제거) ──
     md_path = CrisisReportEngineV193(include_copyright=include_copyright).create_report(report)
 
-    # ── PDF (report 에 copyright 키가 있을 때만 저작권 페이지 렌더) ──
+    # ── PDF (최종 MD 리포트를 '참고 스타일'로 렌더 — 내용은 MD와 100% 동일) ──
     pdf_path = None
-    gen_pdf = getattr(mvp, "_gen_pdf", None)
-    if getattr(mvp, "_PDF_AVAILABLE", False) and gen_pdf:
+    if md_path and pdf_from_md is not None:
         try:
-            pdf_path = gen_pdf(report, output_dir="reports")
+            pdf_path = pdf_from_md.render(md_path)
+            if pdf_path:
+                print(f"✅ PDF 리포트 생성 완료: {pdf_path}")
         except Exception as e:
             print(f"⚠️ PDF 생성 실패: {e}")
-    else:
-        print("⚠️ pdf_report_generator(reportlab) 미사용 → PDF 생성 건너뜀")
+    elif pdf_from_md is None:
+        print("⚠️ pdf_from_md 미로드 → PDF 생성 건너뜀")
 
     return md_path, pdf_path
 
@@ -645,10 +653,12 @@ def main():
 
             print("📄 위기 분석 MD 리포트 생성 중... (저작권 섹션 제외)")
             md_path = CrisisReportEngineV193(include_copyright=False).create_report(report)
+            pdf_path = pdf_from_md.render(md_path) if (md_path and pdf_from_md) else None
 
             mvp.print_report(report)
             print(f"\n✅ JSON 보고서 : {json_path}")
-            if md_path: print(f"✅ MD  리포트  : {md_path}")
+            if md_path:  print(f"✅ MD  리포트  : {md_path}")
+            if pdf_path: print(f"✅ PDF 리포트  : {pdf_path}")
             print("\nℹ️  텍스트 입력은 영상이 없어 저작권 침해 분석을 수행하지 않습니다.")
 
 
