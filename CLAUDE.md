@@ -22,6 +22,30 @@ Markdown/PDF/JSON report.
 - **The active copyright detector is `mvp 1_9_3/copyright_detector/`.** This
   is the only copyright-detection code that runs in practice.
 
+## Current scope vs. planned expansion
+
+- **`mvp 1_9_3/` is the current active application source of truth** — not
+  a permanent ceiling on what these agents will ever work on. As code is
+  actually added to this repo, agent scope expands with it.
+- **Planned direction**: NATAM is expected to expand toward AWS (raw video
+  storage, large-scale data processing, and large-scale AI training
+  preprocessing) plus a new AI training/evaluation/inference pipeline, and
+  toward Supabase for lightweight customer/application data.
+- **Do not assume this planned AWS/Supabase architecture is already
+  finalized or implemented** — it is a stated future direction, not a fact
+  about the current codebase. Separately, do not assume the current
+  codebase has *no* AWS-related code or dependencies either — check what's
+  actually in the repo (files, imports, config) before claiming either way.
+  Always keep what you've verified in the current code distinct from what
+  is merely planned.
+- **A future `cloud-infra-engineer` agent (Harness v2)** will own AWS/
+  Supabase infrastructure itself (provisioning, network, IAM, cost,
+  deployment). The existing agents (backend-architect, ai-pipeline-engineer,
+  data-quality-engineer, qa-engineer) own the application/data/AI logic
+  that runs on top of that infrastructure, not the infrastructure itself.
+- Do not invent specific AWS services, resource names, or a Supabase
+  schema that you haven't confirmed exist in this repo.
+
 ## Entry points
 
 Run everything from inside `mvp 1_9_3/` (paths below are relative to it).
